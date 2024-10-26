@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { ShineBorder } from "@/components/acernity/border";
-import { FollowerPointerCard } from "@/components/acernity/following-pointer";
-import Press from "@/components/socials";
-import { cn } from "@/utils/cn";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import React from "react";
+import { ShineBorder } from '@/components/acernity/border';
+import { FollowerPointerCard } from '@/components/acernity/following-pointer';
+import Press from '@/components/socials';
+import { cn } from '@/utils/cn';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import React from 'react';
 
 const LeftSection: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const LeftSection: React.FC = () => {
           idée.
         </span>
         <br />
-        Votre solution{" "}
+        Votre solution{' '}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
           Saas.
         </span>
@@ -46,10 +46,10 @@ const LeftSection: React.FC = () => {
         </p>
         <Press
           images={[
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png",
+            '/socials/logo0.png',
+            '/socials/logo1.png',
+            '/socials/logo2.png',
+            '/socials/logo3.png',
           ]}
           title="AS SEEN IN"
         />
@@ -85,26 +85,26 @@ const ImageStack: React.FC = () => {
             {index === 1 ? (
               <ShineBorder
                 className="relative size-full border rounded-full"
-                color={["#6BA1FA", "#266CDE", "#0945A7"]}
+                color={['#6BA1FA', '#266CDE', '#0945A7']}
               >
                 <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
-                  <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{" "}
+                  <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
                   <Image
                     src={`/hero/hero${index}.png`}
                     alt="Hero illustration"
                     fill
-                    className={cn("object-cover")}
+                    className={cn('object-cover')}
                   />
-                </div>{" "}
+                </div>{' '}
               </ShineBorder>
             ) : (
               <div className="relative w-[700px] h-[450px] bg-white rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{" "}
+                <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
                 <Image
                   src={`/hero/hero${index}.png`}
                   alt="Hero illustration"
                   fill
-                  className={cn("object-cover")}
+                  className={cn('object-cover')}
                 />
               </div>
             )}
@@ -143,11 +143,11 @@ const ImageStack: React.FC = () => {
                       duration: 0.8,
                       scale: {
                         duration: 4,
-                        ease: "easeOut",
+                        ease: 'easeOut',
                       },
                       hover: {
                         duration: 1,
-                        ease: "easeOut",
+                        ease: 'easeOut',
                       },
                     }}
                     className="w-full h-full object-cover rounded-lg blur-[1px]"

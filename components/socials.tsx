@@ -3,7 +3,7 @@ interface PressProps {
   title?: string;
 }
 
-export default function Press({ images, title = "FEATURED IN" }: PressProps) {
+export default function Press({ images, title = 'FEATURED IN' }: PressProps) {
   return (
     <section id="press">
       <div className="py-0">
@@ -13,14 +13,14 @@ export default function Press({ images, title = "FEATURED IN" }: PressProps) {
           </h3>
           <div className="relative mt-6 overflow-hidden">
             {/* Main scrolling container */}
-            <div className="flex animate-marquee-infinite">
+            <div className="flex animate-marquee-infinite items-center">
               {/* First set of logos */}
               <div className="flex min-w-full shrink-0 items-center justify-around gap-10">
                 {images.map((src, idx) => (
                   <img
                     key={`first-${idx}`}
                     src={src}
-                    className="h-10 w-fit pr-5"
+                    className="h-8 w-fit pr-5"
                     alt={`logo-${idx}`}
                   />
                 ))}
@@ -31,7 +31,7 @@ export default function Press({ images, title = "FEATURED IN" }: PressProps) {
                   <img
                     key={`second-${idx}`}
                     src={src}
-                    className="h-10 w-fit pr-5"
+                    className="h-8 w-fit pr-5"
                     alt={`logo-${idx}`}
                   />
                 ))}
