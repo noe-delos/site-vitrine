@@ -83,7 +83,6 @@ const ImageStack: React.FC = () => {
             ease: [0.25, 0.1, 0.25, 1],
           }}
         >
-          {' '}
           <FollowerPointerCard>
             {index === 1 ? (
               <ShineBorder
@@ -116,7 +115,7 @@ const ImageStack: React.FC = () => {
       ))}
 
       {/* Decorative Element */}
-      <div className="absolute bottom-10 right-0 translate-y-1/4 translate-x-1/4">
+      <div className="absolute bottom-10 lg:right-0 md:right-0 sm:right-20 translate-y-1/4 translate-x-1/4">
         <motion.div
           initial={{ x: 1000 }}
           animate={{ x: 180 }}
@@ -189,7 +188,7 @@ const RightSection: React.FC = () => {
 const Hero: React.FC = () => {
   return (
     <section className="min-h-[90vh] flex items-center px-6 overflow-x-hidden">
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-[85rem] ml-32 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <LeftSection />
           <RightSection />
