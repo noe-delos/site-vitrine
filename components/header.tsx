@@ -1,22 +1,35 @@
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const navItems = [
-    { label: 'Products', href: '#products' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Our Team', href: '/team' },
-    { label: 'Contact Us', href: '#contact' },
+    { label: "Notre équipe", href: "/team" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Nous contacter", href: "#contact" },
   ];
 
   return (
     <header className="fixed top-0 w-full bg-white/60 backdrop-blur-xl z-[9999] py-4 px-6 border-b border-gray-100 shadow-sm">
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-12">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 bg-white border-[1px] border-black rounded-md"></div>
-            <span className="text-xl font-semibold text-gray-900">Finpay</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/logo/logo-brand.png"
+              alt="Finpay Logo"
+              width={32}
+              height={32}
+              className="rounded-md"
+            />
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl font-semibold text-gray-900 p-0 m-0">
+                Consulting
+              </span>
+              <span className="text-sm text-gray-600 p-0 m-0 -mt-1">
+                software solutions
+              </span>
+            </div>
           </Link>
-
+          <div />
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Link
@@ -28,15 +41,6 @@ const Header = () => {
               </Link>
             ))}
           </div>
-        </div>
-
-        <div className="flex items-center space-x-4">
-          <button className="text-gray-600 hover:text-gray-900 font-medium">
-            Login
-          </button>
-          <button className="bg-white border-[1px] border-black text-black px-4 py-2 rounded-md hover:bg-gray-50 hover:border-gray-900 transition-all duration-200 font-medium">
-            Sign Up
-          </button>
         </div>
       </nav>
     </header>

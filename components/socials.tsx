@@ -3,7 +3,7 @@ interface PressProps {
   title?: string;
 }
 
-export default function Press({ images, title = 'FEATURED IN' }: PressProps) {
+export default function Press({ images, title = "FEATURED IN" }: PressProps) {
   return (
     <section id="press">
       <div className="py-0">
@@ -38,8 +38,8 @@ export default function Press({ images, title = 'FEATURED IN' }: PressProps) {
               </div>
             </div>
             {/* Gradient overlays */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black dark:from-gray-50"></div>
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black dark:from-gray-50"></div>
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-gray-50 dark:from-gray-50"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-gray-50 dark:from-gray-50"></div>
           </div>
         </div>
       </div>
