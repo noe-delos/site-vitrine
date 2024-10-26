@@ -2,6 +2,7 @@
 
 import { ShineBorder } from '@/components/acernity/border';
 import { FollowerPointerCard } from '@/components/acernity/following-pointer';
+import Press from '@/components/socials';
 import { cn } from '@/utils/cn';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -10,12 +11,17 @@ import React from 'react';
 const LeftSection: React.FC = () => {
   return (
     <div className="flex-1 space-y-8 pr-8">
-      <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-        Get paid early
+      <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+        <span>Votre </span>
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+          idée.
+        </span>
         <br />
-        save automatically
+        Votre solution{' '}
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+          Saas.
+        </span>
         <br />
-        <span className="text-blue-900">all your pay.</span>
       </h1>
 
       <p className="text-lg text-gray-600 max-w-xl">
@@ -27,9 +33,9 @@ const LeftSection: React.FC = () => {
         <input
           type="email"
           placeholder="Your business email"
-          className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none"
+          className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
         />
-        <button className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition font-medium whitespace-nowrap">
+        <button className="bg-white border-[1px] border-black px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium whitespace-nowrap">
           Get Started →
         </button>
       </div>
@@ -38,23 +44,15 @@ const LeftSection: React.FC = () => {
         <p className="text-sm text-gray-500 mb-6">
           Trusted by leading companies
         </p>
-        <div className="flex items-center space-x-12">
-          <img
-            src="/api/placeholder/120/40"
-            alt="Klarna"
-            className="h-8 opacity-40 hover:opacity-60 transition"
-          />
-          <img
-            src="/api/placeholder/120/40"
-            alt="Coinbase"
-            className="h-8 opacity-40 hover:opacity-60 transition"
-          />
-          <img
-            src="/api/placeholder/120/40"
-            alt="Instacart"
-            className="h-8 opacity-40 hover:opacity-60 transition"
-          />
-        </div>
+        <Press
+          images={[
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png',
+          ]}
+          title="AS SEEN IN"
+        />
       </div>
     </div>
   );
@@ -87,7 +85,7 @@ const ImageStack: React.FC = () => {
             {index === 1 ? (
               <ShineBorder
                 className="relative size-full border rounded-full"
-                color={['#A07CFE', '#FE8FB5', '#FFBE7B']}
+                color={['#6BA1FA', '#266CDE', '#0945A7']}
               >
                 <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
@@ -100,7 +98,7 @@ const ImageStack: React.FC = () => {
                 </div>{' '}
               </ShineBorder>
             ) : (
-              <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-[700px] h-[450px] bg-white rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
                 <Image
                   src={`/hero/hero${index}.png`}
@@ -115,7 +113,7 @@ const ImageStack: React.FC = () => {
       ))}
 
       {/* Decorative Element */}
-      <div className="absolute bottom-10 lg:right-0 md:right-0 sm:right-20 translate-y-1/4 translate-x-1/4">
+      <div className="absolute bottom-10 lg:right-0 md:right-0 translate-y-1/4 lg:translate-x-1/4 md:lg:translate-x-1/4">
         <motion.div
           initial={{ x: 1000 }}
           animate={{ x: 180 }}
@@ -160,11 +158,15 @@ const ImageStack: React.FC = () => {
                     transition={{ delay: 1.4, duration: 0.5 }}
                   >
                     <motion.span className="px-8 py-4 text-3xl font-bold rounded-lg text-gray-800 relative">
-                      {/* Gradient background with feathered edges and blur */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
-                      {/* Text content */}
-                      <span className="relative z-10">intégrez l'IA.</span>
+                      <span className="relative z-10">
+                        intégrez l'
+                        <span className="bg-gradient-to-r font-extrabold from-purple-600 to-blue-500 bg-clip-text text-transparent">
+                          IA
+                        </span>
+                        .
+                      </span>
                     </motion.span>
                   </motion.div>
                 </div>
@@ -187,12 +189,19 @@ const RightSection: React.FC = () => {
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-[90vh] flex items-center px-6 overflow-x-hidden">
-      <div className="max-w-[85rem] ml-32 w-full">
+    <section className="min-h-[90vh] flex items-center px-6 relative overflow-hidden">
+      <div className="max-w-[85rem] ml-32 w-full z-50">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <LeftSection />
           <RightSection />
         </div>
+      </div>
+      <div className="absolute z-0 top-8 -right-32">
+        <img
+          src="/logo/logo.png"
+          alt="Logo"
+          className="w-[32rem] h-fit object-contain"
+        />
       </div>
     </section>
   );
