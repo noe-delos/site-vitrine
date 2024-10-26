@@ -1,6 +1,7 @@
 'use client';
 
 import { ShineBorder } from '@/components/acernity/border';
+import { FollowerPointerCard } from '@/components/acernity/following-pointer';
 import { cn } from '@/utils/cn';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -82,11 +83,24 @@ const ImageStack: React.FC = () => {
             ease: [0.25, 0.1, 0.25, 1],
           }}
         >
-          {index === 1 ? (
-            <ShineBorder
-              className="relative size-full border rounded-full"
-              color={['#A07CFE', '#FE8FB5', '#FFBE7B']}
-            >
+          {' '}
+          <FollowerPointerCard>
+            {index === 1 ? (
+              <ShineBorder
+                className="relative size-full border rounded-full"
+                color={['#A07CFE', '#FE8FB5', '#FFBE7B']}
+              >
+                <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
+                  <Image
+                    src={`/hero/hero${index}.png`}
+                    alt="Hero illustration"
+                    fill
+                    className={cn('object-cover')}
+                  />
+                </div>{' '}
+              </ShineBorder>
+            ) : (
               <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
                 <Image
@@ -95,23 +109,14 @@ const ImageStack: React.FC = () => {
                   fill
                   className={cn('object-cover')}
                 />
-              </div>{' '}
-            </ShineBorder>
-          ) : (
-            <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
-              <Image
-                src={`/hero/hero${index}.png`}
-                alt="Hero illustration"
-                fill
-                className={cn('object-cover')}
-              />
-            </div>
-          )}
+              </div>
+            )}
+          </FollowerPointerCard>
         </motion.div>
       ))}
+
       {/* Decorative Element */}
-      <div className="absolute bottom-10  right-0 translate-y-1/4 translate-x-1/4">
+      <div className="absolute bottom-10 right-0 translate-y-1/4 translate-x-1/4">
         <motion.div
           initial={{ x: 1000 }}
           animate={{ x: 180 }}
@@ -120,20 +125,51 @@ const ImageStack: React.FC = () => {
             delay: 0.9,
             ease: [0.25, 0.1, 0.25, 1],
           }}
-          className="relative w-[300px] h-[200px] rounded-xl overflow-hidden border-blue-100 border-[1px]"
+          className="relative w-[300px] h-[200px] rounded-xl overflow-hidden group"
         >
-          {/* Gradient Border */}
-          <div className="absolute inset-0 p-[1px] rounded-xl bg-gradient-to-r from-blue-100/50 via-purple-200/50 to-pink-100/50">
-            {/* Content Container */}
-            <div className="w-full h-full rounded-xl backdrop-blur-[6px] bg-white/10 p-6 flex items-center justify-center">
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.1, duration: 0.5 }}
-                className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
-              >
-                2024
-              </motion.p>
+          {/* Outer Border */}
+          <div className="absolute inset-0 rounded-xl border border-blue-100">
+            {/* Semi-transparent space between borders */}
+            <div className="absolute inset-[1px] rounded-lg bg-white/5 backdrop-blur-[4px]">
+              {/* Inner Border with Gradient */}
+              <div className="absolute inset-[6px] rounded-lg border border-gradient-to-r from-blue-100/50 via-purple-200/50 to-pink-100/50">
+                {/* Content Container */}
+                <div className="w-full h-full rounded-lg backdrop-blur-[6px] bg-white/10 flex items-center justify-center overflow-hidden">
+                  <motion.img
+                    src="/hero/llms.png"
+                    alt="LLMs Hero"
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1.2 }}
+                    whileHover={{ scale: 1.4 }}
+                    transition={{
+                      delay: 1.1,
+                      duration: 0.8,
+                      scale: {
+                        duration: 4,
+                        ease: 'easeOut',
+                      },
+                      hover: {
+                        duration: 1,
+                        ease: 'easeOut',
+                      },
+                    }}
+                    className="w-full h-full object-cover rounded-lg blur-[1px]"
+                  />
+                  {/* Text Overlay */}
+                  <motion.div
+                    className="absolute inset-0 flex items-center justify-center"
+                    transition={{ delay: 1.4, duration: 0.5 }}
+                  >
+                    <motion.span className="px-8 py-4 text-3xl font-bold rounded-lg text-gray-800 relative">
+                      {/* Gradient background with feathered edges and blur */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
+                      {/* Text content */}
+                      <span className="relative z-10">intégrez l'IA.</span>
+                    </motion.span>
+                  </motion.div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
