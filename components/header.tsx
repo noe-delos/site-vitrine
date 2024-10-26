@@ -1,11 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
   const navItems = [
-    { label: "Notre équipe", href: "/team" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Nous contacter", href: "#contact" },
+    { label: 'Notre équipe', href: '/team' },
+    { label: 'Portfolio', href: '#portfolio' },
+    { label: 'Nous contacter', href: '#contact' },
   ];
 
   return (
@@ -14,7 +14,7 @@ const Header = () => {
         <div className="flex items-center space-x-12">
           <Link href="/" className="flex items-center space-x-3">
             <Image
-              src="/logo/logo-brand.png"
+              src="/logo/brand-logo.png"
               alt="Finpay Logo"
               width={32}
               height={32}
