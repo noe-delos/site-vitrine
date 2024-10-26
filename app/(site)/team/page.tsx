@@ -30,16 +30,6 @@ const teamMembers = [
 		linkedin: 'https://linkedin.com/in/hugo-pradier',
 	},
 	{
-		name: 'Xavier Pain',
-		role: 'Backend Engineer',
-		education: 'EPITA - Software Engineering',
-		expertise: ['Backend Development', 'API Design', 'Database Architecture'],
-		image: '/api/placeholder/400/400',
-		description:
-			'Specialized in building robust and scalable backend systems that power modern applications.',
-		linkedin: 'https://linkedin.com/in/xavier-pain',
-	},
-	{
 		name: 'Maxime Cividini',
 		role: 'Commercial',
 		education: 'ESSEC Business School - Business Development',
