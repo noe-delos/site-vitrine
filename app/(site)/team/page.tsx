@@ -97,16 +97,14 @@ export default function OurTeam() {
 			>
 				<div className="max-w-7xl mx-auto text-center">
 					<h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-						<span>Une </span>
+						<span>Une équipe d'</span>
 						<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
-							équipe d'experts
+							experts
 						</span>
-						<br />à votre{' '}
-						<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
-							écoute.
-						</span>
+						<br />à votre écoute
 						<br />
 					</h1>
+					<br />
 					<p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
 						Jeune, ambitieux et animé par l'excellence. Nous sommes une équipe
 						d'innovateurs passionnés par la création de solutions SaaS de pointe
