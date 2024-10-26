@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 const Header = () => {
 	const navItems = [
-		{ label: 'Products', href: '/products' },
-		{ label: 'Portfolio', href: '/learn' },
+		{ label: 'Products', href: '#products' },
+		{ label: 'Portfolio', href: '#portfolio' },
 		{ label: 'Our Team', href: '/team' },
-		{ label: 'Contact Us', href: '/pricing' },
+		{ label: 'Contact Us', href: '#contact' },
 	];
 
 	return (
