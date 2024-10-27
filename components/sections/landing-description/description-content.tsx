@@ -5,7 +5,7 @@ import { Compare } from '@/components/acernity/compare';
 import { GlobeDemo } from '@/components/acernity/globe-demo';
 import { cn } from '@/utils/cn';
 import { motion as m } from 'framer-motion';
-import { BrainIcon, ChartBarIcon, RocketIcon } from 'lucide-react';
+import { BrainIcon, RocketIcon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 const useInView = (margin = '0px') => {
@@ -240,7 +240,7 @@ export default function BentoGridSection() {
       className: 'col-span-3 lg:col-span-2 border-none',
       background: (
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute left-0 top-0 w-full h-1/2 border-b-none">
+          <div className="absolute left-0 top-0 w-full h-[50%] border-b-none">
             <Compare
               firstImage="https://assets.aceternity.com/code-solution.png"
               secondImage="https://www.datocms-assets.com/48294/1658500041-dashboard-design-19-wallq-wallet-concept-dashboard-dribbble.jpeg?auto=format"
@@ -250,7 +250,7 @@ export default function BentoGridSection() {
               slideMode="hover"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
         </div>
       ),
     },
@@ -309,7 +309,7 @@ export default function BentoGridSection() {
     },
     {
       id: 4,
-      Icon: ChartBarIcon,
+      Icon: null,
       name: 'Monitoring',
       description:
         "Surveillez en temps réel vos ressources cloud et applications. Visualisez la performance, l'utilisation et les coûts pour optimiser votre infrastructure.",
@@ -317,8 +317,18 @@ export default function BentoGridSection() {
       cta: 'En savoir plus',
       className: 'col-span-3 lg:col-span-1 border-none',
       background: (
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
+        <div className="absolute inset-0 overflow-hidden h-2/3">
+          <div className="relative w-full h-full flex flex-col">
+            <img
+              src="/hero/stat.png"
+              alt="Chart"
+              className="w-full h-full object-cover"
+            />
+            <div
+              className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none"
+              aria-hidden="true"
+            />
+          </div>
         </div>
       ),
     },
