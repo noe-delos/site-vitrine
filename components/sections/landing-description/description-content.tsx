@@ -1,23 +1,180 @@
-// bento-section.tsx
+'use client';
+
 import { BentoCard, BentoGrid } from '@/components/acernity/bento-grid';
-import { BrainIcon, CodeIcon, RocketIcon, SearchIcon } from 'lucide-react';
+import { Compare } from '@/components/acernity/compare';
+import { GlobeDemo } from '@/components/acernity/globe-demo';
+import { BrainIcon, ChartBarIcon, RocketIcon } from 'lucide-react';
+import { useEffect, useState } from 'react';
+
+const SpaceBackground = () => {
+  const [stars, setStars] = useState([]);
+
+  useEffect(() => {
+    // Generate random stars
+    const generateStars = () => {
+      const newStars = [];
+      for (let i = 0; i < 200; i++) {
+        newStars.push({
+          id: i,
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          size: Math.random() * 2 + 1,
+          opacity: Math.random() * 0.5 + 0.5,
+          twinkleSpeed: Math.random() * 3 + 1,
+        });
+      }
+      setStars(newStars as any);
+    };
+
+    generateStars();
+  }, []);
+
+  return (
+    <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950 to-purple-950 overflow-hidden">
+      {/* Stars */}
+      {stars.map((star: any) => (
+        <div
+          key={star.id}
+          className="absolute rounded-full bg-white animate-twinkle"
+          style={{
+            left: `${star.x}%`,
+            top: `${star.y}%`,
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            opacity: star.opacity,
+            animation: `twinkle ${star.twinkleSpeed}s ease-in-out infinite`,
+          }}
+        />
+      ))}
+
+      {/* Nebula effect */}
+      <div
+        className="absolute inset-0 bg-gradient-radial from-purple-500/20 via-transparent to-transparent"
+        style={{
+          transform: 'translate(-30%, -30%)',
+          width: '160%',
+          height: '160%',
+        }}
+      />
+
+      {/* Content overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30 pointer-events-none" />
+
+      <style jsx>{`
+        @keyframes twinkle {
+          0%,
+          100% {
+            opacity: 0.4;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+const FloatingIconsBackground = () => {
+  const icons = [
+    {
+      id: 0,
+      bottom: '10%',
+      right: '70%',
+      size: 'w-14 h-14',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png',
+    },
+    {
+      id: 1,
+      bottom: '60%',
+      right: '70%',
+      size: 'w-14 h-14',
+      src: 'https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/uosng4omsipht7cpvbi8',
+    },
+    {
+      id: 2,
+      bottom: '85%',
+      right: '40%',
+      size: 'w-14 h-14',
+      src: 'https://companieslogo.com/img/orig/stripe-1e3d81f8.png?t=1720244494',
+    },
+    {
+      id: 3,
+      bottom: '42%',
+      right: '40%',
+      size: 'w-14 h-14',
+      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8gV071l8VQBqOvaWyMctGOQ7zD30Z77Swyg&s',
+    },
+    {
+      id: 4,
+      bottom: '0%',
+      right: '40%',
+      size: 'w-14 h-14',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1024px-Visual_Studio_Code_1.35_icon.svg.png',
+    },
+    {
+      id: 5,
+      bottom: '10%',
+      right: '10%',
+      size: 'w-14 h-14',
+      src: 'https://logodownload.org/wp-content/uploads/2019/10/adobe-photoshop-logo.png',
+    },
+    {
+      id: 6,
+      bottom: '60%',
+      right: '10%',
+      size: 'w-14 h-14',
+      src: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png',
+    },
+  ];
+
+  return (
+    <div className="absolute inset-0 overflow-hidden h-1/2">
+      {/* Floating circles background */}
+      <div className="absolute inset-0">
+        {icons.map((icon) => (
+          <div
+            key={icon.id}
+            className={`absolute rounded-full ${icon.size} opacity-100 bg-white shadow-[0_0_5px_2px_rgba(0,0,0,0.1)] flex items-center justify-center`}
+            style={{
+              right: icon.right,
+              bottom: icon.bottom,
+            }}
+          >
+            <img
+              src={icon.src}
+              alt="Floating icon"
+              className="w-fit h-6 object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" />
+        <div className="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent" />
+        <div className="absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent" />
+      </div>
+    </div>
+  );
+};
 
 const features = [
   {
-    Icon: SearchIcon,
+    id: 0,
+    Icon: null,
     name: 'Immersion',
     description:
       'Avant de toucher une ligne de code, nous plongeons dans votre monde. Cette première étape consiste à comprendre en profondeur votre vision, votre marché et vos objectifs.',
     href: '#immersion',
     cta: 'En savoir plus',
     className: 'col-span-2 lg:col-span-1',
-    background: (
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-white" />
-      </div>
-    ),
+    background: <FloatingIconsBackground />,
   },
   {
+    id: 1,
     Icon: BrainIcon,
     name: 'Conception',
     description:
@@ -26,13 +183,23 @@ const features = [
     cta: 'En savoir plus',
     className: 'col-span-3 lg:col-span-3',
     background: (
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-white" />
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/hero/video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-xs" />
       </div>
     ),
   },
   {
-    Icon: CodeIcon,
+    id: 2,
+    Icon: null,
     name: 'Développement',
     description:
       'Notre équipe de développement, guidée par les principes agiles, construit votre produit. Nous travaillons en sprints courts, permettant des ajustements rapides et une transparence totale.',
@@ -40,36 +207,52 @@ const features = [
     cta: 'En savoir plus',
     className: 'col-span-3 lg:col-span-2 border-none',
     background: (
-      <div className="absolute inset-0 border-none">
-        <div className="absolute inset-0 bg-white" />
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute left-0 top-0 w-full h-1/2 border-b-none">
+          <Compare
+            firstImage="https://assets.aceternity.com/code-solution.png"
+            secondImage="https://www.datocms-assets.com/48294/1658500041-dashboard-design-19-wallq-wallet-concept-dashboard-dribbble.jpeg?auto=format"
+            firstImageClassName="object-cover object-left-top"
+            secondImageClassname="object-cover object-left-top"
+            className="w-full h-full"
+            slideMode="hover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
       </div>
     ),
   },
   {
+    id: 3,
     Icon: RocketIcon,
     name: 'Lancement',
     description:
       'Le grand jour arrive : le lancement de votre SaaS. Nous surveillons les performances, recueillons les retours utilisateurs et optimisons continuellement le produit.',
     href: '#lancement',
     cta: 'En savoir plus',
-    className: 'col-span-3 lg:col-span-1 border-none',
+    className: 'col-span-3 lg:col-span-1 border-none text-white',
+    textClassName: 'text-white',
     background: (
-      <div className="absolute inset-0 border-none">
-        <div className="absolute inset-0 bg-white" />
+      <div className="absolute inset-0 text-white">
+        <SpaceBackground />
+        <GlobeDemo />
+        {/* White overlay with gradient */}
+        {/* <div className="absolute inset-0 bg-gradient-to-b z-10 from-transparent via-black/80 to-black pointer-events-none backdrop-blur-xs" /> */}
       </div>
     ),
   },
   {
-    Icon: RocketIcon,
-    name: 'Lancement',
+    id: 4,
+    Icon: ChartBarIcon,
+    name: 'Monitoring',
     description:
-      'Le grand jour arrive : le lancement de votre SaaS. Nous surveillons les performances, recueillons les retours utilisateurs et optimisons continuellement le produit.',
-    href: '#lancement',
+      "Surveillez en temps réel vos ressources cloud et applications. Visualisez la performance, l'utilisation et les coûts pour optimiser votre infrastructure.",
+    href: '#monitoring',
     cta: 'En savoir plus',
     className: 'col-span-3 lg:col-span-1 border-none',
     background: (
-      <div className="absolute inset-0 border-none">
-        <div className="absolute inset-0 bg-white" />
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
       </div>
     ),
   },
@@ -77,17 +260,26 @@ const features = [
 
 export default function BentoGridSection() {
   return (
-    <div className="bg-white">
-      <div className="container mx-auto px-4 py-20">
+    <div className="relative bg-white overflow-hidden">
+      {/* Image gradient background */}
+      <div className="absolute top-2/3 left-[55%] -translate-x-1/2 -translate-y-1/2 w-[1700px] h-[1100px] opacity-30">
+        <img
+          src="/hero/gradient1.png"
+          alt="Gradient background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div className="relative container mx-auto px-4 py-20">
         <div className="max-w-3xl mb-16 space-y-4">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-6">
             <p className="text-sm uppercase tracking-wider text-gray-500">
               Notre approche
             </p>
-            <h2 className="text-4xl font-bold">
-              La technologie au service de votre{' '}
+            <h2 className="text-5xl font-bold">
+              Vos projets, notre{' '}
               <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
-                croissance
+                expertise
               </span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl">
@@ -99,10 +291,14 @@ export default function BentoGridSection() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <BentoGrid className="mb-4">
             {features.map((feature, idx) => (
-              <BentoCard key={idx} {...feature} />
+              <BentoCard
+                key={feature.id}
+                {...feature}
+                textClassName={feature.textClassName}
+              />
             ))}
           </BentoGrid>
         </div>
