@@ -196,7 +196,7 @@ const Hero: React.FC = () => {
           <RightSection />
         </div>
       </div>
-      <div className="absolute z-0 top-8 -right-32">
+      <div className="absolute z-0 top-15 -right-32">
         <img
           src="/logo/brand-logo-white.png"
           alt="Logo"
