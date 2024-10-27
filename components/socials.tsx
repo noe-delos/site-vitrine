@@ -1,3 +1,5 @@
+import { cn } from '@/utils/cn';
+
 interface PressProps {
   images: string[];
   title?: string;
@@ -20,7 +22,7 @@ export default function Press({ images, title = 'FEATURED IN' }: PressProps) {
                   <img
                     key={`first-${idx}`}
                     src={src}
-                    className="h-8 w-fit pr-5"
+                    className={cn('h-8 w-fit pr-5', idx === 0 && 'h-6')}
                     alt={`logo-${idx}`}
                   />
                 ))}
@@ -31,7 +33,7 @@ export default function Press({ images, title = 'FEATURED IN' }: PressProps) {
                   <img
                     key={`second-${idx}`}
                     src={src}
-                    className="h-8 w-fit pr-5"
+                    className={cn('h-8 w-fit pr-5', idx === 0 && 'h-6')}
                     alt={`logo-${idx}`}
                   />
                 ))}

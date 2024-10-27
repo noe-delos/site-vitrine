@@ -40,8 +40,8 @@ const LeftSection: React.FC = () => {
         </button>
       </div>
 
-      <div className="pt-12">
-        <p className="text-sm text-gray-500 mb-6">
+      <div className="pt-12 w-full flex flex-col">
+        <p className="text-sm text-gray-500 mb-6 self-center">
           Ces entreprises nous font confiance
         </p>
         <Press
@@ -51,7 +51,7 @@ const LeftSection: React.FC = () => {
             '/socials/logo2.png',
             '/socials/logo3.png',
           ]}
-          title="AS SEEN IN"
+          title=""
         />
       </div>
     </div>
