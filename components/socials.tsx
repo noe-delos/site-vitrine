@@ -22,7 +22,11 @@ export default function Press({ images, title = 'FEATURED IN' }: PressProps) {
                   <img
                     key={`first-${idx}`}
                     src={src}
-                    className={cn('h-8 w-fit pr-5', idx === 0 && 'h-6')}
+                    className={cn(
+                      'h-8 w-fit pr-5',
+                      idx === 0 && 'h-6',
+                      idx === 2 && 'mb-2',
+                    )}
                     alt={`logo-${idx}`}
                   />
                 ))}
@@ -33,7 +37,11 @@ export default function Press({ images, title = 'FEATURED IN' }: PressProps) {
                   <img
                     key={`second-${idx}`}
                     src={src}
-                    className={cn('h-8 w-fit pr-5', idx === 0 && 'h-6')}
+                    className={cn(
+                      'h-8 w-fit pr-5',
+                      idx === 0 && 'h-6',
+                      idx === 2 && 'mb-2',
+                    )}
                     alt={`logo-${idx}`}
                   />
                 ))}

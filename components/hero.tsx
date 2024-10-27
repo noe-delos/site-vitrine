@@ -198,7 +198,7 @@ const Hero: React.FC = () => {
       </div>
       <div className="absolute z-0 top-8 -right-32">
         <img
-          src="/logo/logo.png"
+          src="/logo/brand-logo-white.png"
           alt="Logo"
           className="w-[32rem] h-fit object-contain"
         />
