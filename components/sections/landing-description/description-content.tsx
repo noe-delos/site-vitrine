@@ -3,8 +3,37 @@
 import { BentoCard, BentoGrid } from '@/components/acernity/bento-grid';
 import { Compare } from '@/components/acernity/compare';
 import { GlobeDemo } from '@/components/acernity/globe-demo';
+import { cn } from '@/utils/cn';
+import { motion as m } from 'framer-motion';
 import { BrainIcon, ChartBarIcon, RocketIcon } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+const useInView = (margin = '0px') => {
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { rootMargin: margin },
+    );
+
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
+    }
+
+    return () => {
+      if (currentElement) {
+        observer.unobserve(currentElement);
+      }
+    };
+  }, [margin]);
+
+  return [elementRef, isVisible];
+};
 
 const SpaceBackground = () => {
   const [stars, setStars] = useState([]);
@@ -161,104 +190,139 @@ const FloatingIconsBackground = () => {
   );
 };
 
-const features = [
-  {
-    id: 0,
-    Icon: null,
-    name: 'Immersion',
-    description:
-      'Avant de toucher une ligne de code, nous plongeons dans votre monde. Cette première étape consiste à comprendre en profondeur votre vision, votre marché et vos objectifs.',
-    href: '#immersion',
-    cta: 'En savoir plus',
-    className: 'col-span-2 lg:col-span-1',
-    background: <FloatingIconsBackground />,
-  },
-  {
-    id: 1,
-    Icon: BrainIcon,
-    name: 'Conception',
-    description:
-      "Avec une compréhension claire de votre projet, nous passons à la phase de conception. Nous définissons l'architecture de votre SaaS et élaborons les fonctionnalités clés.",
-    href: '#conception',
-    cta: 'En savoir plus',
-    className: 'col-span-3 lg:col-span-3',
-    background: (
-      <div className="absolute inset-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/hero/video.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-white/60 backdrop-blur-xs" />
-      </div>
-    ),
-  },
-  {
-    id: 2,
-    Icon: null,
-    name: 'Développement',
-    description:
-      'Notre équipe de développement, guidée par les principes agiles, construit votre produit. Nous travaillons en sprints courts, permettant des ajustements rapides et une transparence totale.',
-    href: '#developpement',
-    cta: 'En savoir plus',
-    className: 'col-span-3 lg:col-span-2 border-none',
-    background: (
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute left-0 top-0 w-full h-1/2 border-b-none">
-          <Compare
-            firstImage="https://assets.aceternity.com/code-solution.png"
-            secondImage="https://www.datocms-assets.com/48294/1658500041-dashboard-design-19-wallq-wallet-concept-dashboard-dribbble.jpeg?auto=format"
-            firstImageClassName="object-cover object-left-top"
-            secondImageClassname="object-cover object-left-top"
-            className="w-full h-full"
-            slideMode="hover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
-      </div>
-    ),
-  },
-  {
-    id: 3,
-    Icon: RocketIcon,
-    name: 'Lancement',
-    description:
-      'Le grand jour arrive : le lancement de votre SaaS. Nous surveillons les performances, recueillons les retours utilisateurs et optimisons continuellement le produit.',
-    href: '#lancement',
-    cta: 'En savoir plus',
-    className: 'col-span-3 lg:col-span-1 border-none text-white',
-    textClassName: 'text-white',
-    background: (
-      <div className="absolute inset-0 text-white">
-        <SpaceBackground />
-        <GlobeDemo />
-        {/* White overlay with gradient */}
-        {/* <div className="absolute inset-0 bg-gradient-to-b z-10 from-transparent via-black/80 to-black pointer-events-none backdrop-blur-xs" /> */}
-      </div>
-    ),
-  },
-  {
-    id: 4,
-    Icon: ChartBarIcon,
-    name: 'Monitoring',
-    description:
-      "Surveillez en temps réel vos ressources cloud et applications. Visualisez la performance, l'utilisation et les coûts pour optimiser votre infrastructure.",
-    href: '#monitoring',
-    cta: 'En savoir plus',
-    className: 'col-span-3 lg:col-span-1 border-none',
-    background: (
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
-      </div>
-    ),
-  },
-];
-
 export default function BentoGridSection() {
+  const [containerRef, isVisible] = useInView('-100px');
+
+  const features = [
+    {
+      id: 0,
+      Icon: null,
+      name: 'Immersion',
+      description:
+        'Avant de toucher une ligne de code, nous plongeons dans votre monde. Cette première étape consiste à comprendre en profondeur votre vision, votre marché et vos objectifs.',
+      href: '#immersion',
+      cta: 'En savoir plus',
+      className: 'col-span-2 lg:col-span-1',
+      background: <FloatingIconsBackground />,
+    },
+    {
+      id: 1,
+      Icon: BrainIcon,
+      name: 'Conception',
+      description:
+        "Avec une compréhension claire de votre projet, nous passons à la phase de conception. Nous définissons l'architecture de votre SaaS et élaborons les fonctionnalités clés.",
+      href: '#conception',
+      cta: 'En savoir plus',
+      className: 'col-span-3 lg:col-span-3',
+      background: (
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/hero/video.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-white/60 backdrop-blur-xs" />
+        </div>
+      ),
+    },
+    {
+      id: 2,
+      Icon: null,
+      name: 'Développement',
+      description:
+        'Notre équipe de développement, guidée par les principes agiles, construit votre produit. Nous travaillons en sprints courts, permettant des ajustements rapides et une transparence totale.',
+      href: '#developpement',
+      cta: 'En savoir plus',
+      className: 'col-span-3 lg:col-span-2 border-none',
+      background: (
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute left-0 top-0 w-full h-1/2 border-b-none">
+            <Compare
+              firstImage="https://assets.aceternity.com/code-solution.png"
+              secondImage="https://www.datocms-assets.com/48294/1658500041-dashboard-design-19-wallq-wallet-concept-dashboard-dribbble.jpeg?auto=format"
+              firstImageClassName="object-cover object-left-top"
+              secondImageClassname="object-cover object-left-top"
+              className="w-full h-full"
+              slideMode="hover"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
+        </div>
+      ),
+    },
+    {
+      id: 3,
+      Icon: RocketIcon,
+      name: 'Lancement',
+      description:
+        'Le grand jour arrive : le lancement de votre SaaS. Nous surveillons les performances, recueillons les retours utilisateurs et optimisons continuellement le produit.',
+      href: '#lancement',
+      cta: 'En savoir plus',
+      className: 'col-span-3 lg:col-span-1 border-none text-white',
+      textClassName: 'text-white',
+      background: (
+        <div ref={containerRef as any} className="min-h-screen relative z-0">
+          {' '}
+          <div className="absolute  pointer-events-none z-50 h-full border-white transform-gpu flex-col gap-1 p-4 sm:p-6">
+            <div className="flex-1 h-28" />
+            <RocketIcon
+              className={cn(
+                'h-10 w-10 sm:h-12 text-white sm:w-12 pb-2 origin-left transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75',
+              )}
+            />
+            <h3
+              className={cn(
+                'text-lg sm:text-xl border-white font-semibold text-white',
+              )}
+            >
+              Lancement
+            </h3>
+            <p
+              className={cn(
+                'max-w-lg text-sm sm:text-base text-white border-white',
+              )}
+            >
+              Le grand jour arrive : le lancement de votre SaaS. Nous
+              surveillons les performances, recueillons les retours utilisateurs
+              et optimisons continuellement le produit.
+            </p>
+          </div>
+          {isVisible && (
+            <div className="z-10">
+              <GlobeDemo />
+              <m.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="z-0 m-0 p-0"
+              >
+                <SpaceBackground />
+              </m.div>
+            </div>
+          )}
+        </div>
+      ),
+    },
+    {
+      id: 4,
+      Icon: ChartBarIcon,
+      name: 'Monitoring',
+      description:
+        "Surveillez en temps réel vos ressources cloud et applications. Visualisez la performance, l'utilisation et les coûts pour optimiser votre infrastructure.",
+      href: '#monitoring',
+      cta: 'En savoir plus',
+      className: 'col-span-3 lg:col-span-1 border-none',
+      background: (
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
+        </div>
+      ),
+    },
+  ];
   return (
     <div className="relative bg-white overflow-hidden">
       {/* Image gradient background */}
