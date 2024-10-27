@@ -9,7 +9,6 @@ const Header = () => {
 	const pathname = usePathname();
 	const [isScrolled, setIsScrolled] = useState(false);
 
-	// Effet de scroll pour le background avec debounce pour plus de fluidité
 	useEffect(() => {
 		let timeoutId: NodeJS.Timeout;
 
@@ -18,7 +17,7 @@ const Header = () => {
 
 			timeoutId = setTimeout(() => {
 				setIsScrolled(window.scrollY > 20);
-			}, 10); // Petit délai pour plus de fluidité
+			}, 10);
 		};
 
 		window.addEventListener('scroll', updateScrolled, { passive: true });
@@ -29,19 +28,21 @@ const Header = () => {
 	}, []);
 
 	const navItems = [
+		{ label: 'Accueil', href: '/' },
 		{ label: 'Notre équipe', href: '/team' },
 		{ label: 'Portfolio', href: '#portfolio' },
 		{ label: 'Nous contacter', href: '#contact' },
 	];
 
+	// Mise à jour du style avec un effet blur plus prononcé
 	const headerStyle = {
-		backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
-		backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-		boxShadow: isScrolled ? '0 2px 20px rgba(0, 0, 0, 0.1)' : 'none',
+		backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.5)' : 'transparent',
+		backdropFilter: isScrolled ? 'blur(15px) saturate(180%)' : 'none',
+		WebkitBackdropFilter: isScrolled ? 'blur(15px) saturate(180%)' : 'none', // Support Safari
+		boxShadow: isScrolled ? 'rgba(17, 12, 46, 0.1) 0px 2px 20px 0px' : 'none',
 		transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
 	};
 
-	// Animation variants
 	const navVariants = {
 		hidden: { opacity: 0, y: -10 },
 		visible: {
@@ -69,8 +70,11 @@ const Header = () => {
 
 	return (
 		<motion.header
-			className="fixed top-0 w-full z-[9999] h-[4.5rem]"
-			style={headerStyle}
+			className="fixed top-0 w-full z-[9999] h-[4.5rem] border-b border-transparent transition-colors"
+			style={{
+				...headerStyle,
+				borderColor: isScrolled ? 'rgba(255, 255, 255, 0.3)' : 'transparent',
+			}}
 		>
 			<nav className="max-w-7xl mx-auto flex items-center justify-between h-full px-6">
 				<motion.div
@@ -131,7 +135,7 @@ const Header = () => {
 										{item.label}
 									</span>
 
-									{/* Indicateur actif */}
+									{/* Indicateur actif avec effet gradient */}
 									<motion.span
 										className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-full"
 										initial={false}
@@ -153,10 +157,13 @@ const Header = () => {
 											width: !isActive ? '100%' : '0%',
 											transition: { duration: 0.3 },
 										}}
-										transition={{
-											duration: 0.3,
-											ease: 'easeInOut',
-										}}
+									/>
+
+									{/* Effet de brillance au hover */}
+									<motion.span
+										className="absolute inset-0 -z-10 rounded-lg opacity-0 bg-white/10"
+										whileHover={{ opacity: 1 }}
+										transition={{ duration: 0.2 }}
 									/>
 								</Link>
 							</motion.div>
@@ -166,17 +173,25 @@ const Header = () => {
 
 				<motion.div variants={itemVariants} initial="hidden" animate="visible">
 					<motion.button
-						whileHover={{ scale: 1.03, y: -1 }}
+						whileHover={{ scale: 1.03 }}
 						whileTap={{ scale: 0.98 }}
 						transition={{ duration: 0.2 }}
-						className="bg-gradient-to-r from-[#7066CB] to-blue-500 text-white px-6 py-2 rounded-md hover:opacity-95 transition-opacity font-medium relative overflow-hidden group"
+						className="relative inline-flex items-center"
 					>
-						<span className="relative z-10">Nous contacter</span>
-						<motion.div
-							className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"
-							initial={{ scale: 0 }}
-							whileHover={{ scale: 1 }}
-						/>
+						{/* Gradient border container */}
+						<div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-md opacity-100 transition-opacity duration-300 group-hover:opacity-90" />
+
+						{/* White background and content */}
+						<div className="relative bg-white rounded-[5px] m-[1px] px-6 py-2 transition-all duration-300 hover:bg-gray-50">
+							<span className="text-gray-900 font-medium whitespace-nowrap">
+								Nous contacter
+							</span>
+						</div>
+
+						{/* Shine effect */}
+						<div className="absolute inset-0 rounded-md overflow-hidden">
+							<div className="absolute inset-0 translate-x-[-100%] animate-[shine_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform" />
+						</div>
 					</motion.button>
 				</motion.div>
 			</nav>

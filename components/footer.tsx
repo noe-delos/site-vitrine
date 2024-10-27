@@ -1,8 +1,6 @@
-// components/Footer.tsx
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
 import {
 	Facebook,
 	Instagram,
@@ -46,7 +44,7 @@ const Footer = () => {
 			className="bg-gradient-to-br from-gray-50 via-white to-gray-50"
 		>
 			{/* Decorative Top Border */}
-			<div className="h-[0.35px] w-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-200" />
+			<div className="h-[0.35px] w-full bg-gradient-to-r from-[#7066CB] via-blue-500 to-blue-400" />
 
 			{/* Main Footer Content */}
 			<div className="max-w-7xl mx-auto px-6 py-16">
@@ -94,7 +92,7 @@ const Footer = () => {
 									href={social.href}
 									whileHover={{ y: -3, scale: 1.1 }}
 									whileTap={{ scale: 0.95 }}
-									className="text-gray-400 hover:text-blue-600 transition-colors"
+									className="text-gray-400 hover:text-[#7066CB] transition-colors"
 								>
 									<social.icon className="h-5 w-5" />
 								</motion.a>
@@ -120,7 +118,7 @@ const Footer = () => {
 								>
 									<Link
 										href="#"
-										className="text-gray-600 hover:text-blue-600 transition-colors"
+										className="text-gray-600 hover:text-[#7066CB] transition-colors"
 									>
 										{item}
 									</Link>
@@ -155,7 +153,7 @@ const Footer = () => {
 									whileHover={item.motion}
 									className="flex items-center space-x-3 text-gray-600"
 								>
-									<item.icon className="h-5 w-5 text-blue-600" />
+									<item.icon className="h-5 w-5 text-[#7066CB]" />
 									<span>{item.text}</span>
 								</motion.li>
 							))}
@@ -176,14 +174,30 @@ const Footer = () => {
 								<input
 									type="email"
 									placeholder="Votre email"
-									className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-600 placeholder-gray-400"
+									className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#7066CB] focus:outline-none text-gray-600 placeholder-gray-400"
 								/>
+								{/* Nouveau style de bouton avec bordure gradient */}
 								<motion.button
-									whileHover={{ scale: 1.05 }}
-									whileTap={{ scale: 0.95 }}
-									className="absolute right-2 top-2 bg-blue-600 text-white px-4 py-1 rounded-md hover:bg-blue-700 transition-colors"
+									whileHover={{ scale: 1.03 }}
+									whileTap={{ scale: 0.98 }}
+									className="absolute right-2 top-2"
 								>
-									OK
+									<div className="relative inline-flex items-center">
+										{/* Gradient border container */}
+										<div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-md opacity-100 transition-opacity duration-300 group-hover:opacity-90" />
+
+										{/* White background and content */}
+										<div className="relative bg-white rounded-[5px] m-[1px] px-4 py-1 transition-all duration-300 hover:bg-gray-50">
+											<span className="text-gray-900 font-medium whitespace-nowrap">
+												OK
+											</span>
+										</div>
+
+										{/* Shine effect */}
+										<div className="absolute inset-0 rounded-md overflow-hidden">
+											<div className="absolute inset-0 translate-x-[-100%] animate-[shine_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform" />
+										</div>
+									</div>
 								</motion.button>
 							</div>
 						</motion.form>
@@ -217,8 +231,8 @@ const Footer = () => {
 									key={index}
 									href="#"
 									variants={fadeInUpVariants}
-									whileHover={{ color: '#2563EB' }}
-									className="text-gray-600 hover:text-blue-600 transition-colors"
+									whileHover={{ color: '#7066CB' }}
+									className="text-gray-600 hover:text-[#7066CB] transition-colors"
 								>
 									{item}
 								</motion.a>

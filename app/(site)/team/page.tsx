@@ -1,7 +1,5 @@
 'use client';
 
-import { ShineBorder } from '@/components/acernity/border';
-import { cn } from '@/utils/cn';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Linkedin } from 'lucide-react';
@@ -124,76 +122,72 @@ export default function OurTeam() {
 				>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
 						{teamMembers.map((member, index) => (
-							<ShineBorder key={member.name}>
-								<motion.div
-									key={member.name}
-									variants={itemVariants}
-									whileHover={{ y: -5 }}
-									className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
-								>
-									<div className="relative aspect-square mb-6 overflow-hidden rounded-xl">
-										<Image
-											src={member.image}
-											alt={member.name}
-											fill
-											className="object-cover object-center group-hover:scale-105 transition duration-300"
-										/>
+							<motion.div
+								key={member.name}
+								variants={itemVariants}
+								whileHover={{ y: -5 }}
+								className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+							>
+								<div className="relative aspect-square mb-6 overflow-hidden rounded-xl">
+									<Image
+										src={member.image}
+										alt={member.name}
+										fill
+										className="object-cover object-center group-hover:scale-105 transition duration-300"
+									/>
+								</div>
+								<div className="space-y-4">
+									<div className="flex items-start justify-between">
+										<div>
+											<h3 className="text-xl font-semibold text-gray-900">
+												{member.name}
+											</h3>
+											<p className="text-blue-600 font-medium">{member.role}</p>
+										</div>
+										<motion.a
+											whileHover={{ scale: 1.1 }}
+											whileTap={{ scale: 0.95 }}
+											href={member.linkedin}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="text-gray-400 hover:text-blue-600 transition"
+										>
+											<Linkedin className="w-6 h-6" />
+										</motion.a>
 									</div>
-									<div className="space-y-4">
-										<div className="flex items-start justify-between">
-											<div>
-												<h3 className="text-xl font-semibold text-gray-900">
-													{member.name}
-												</h3>
-												<p className="text-blue-600 font-medium">
-													{member.role}
-												</p>
-											</div>
-											<motion.a
-												whileHover={{ scale: 1.1 }}
-												whileTap={{ scale: 0.95 }}
-												href={member.linkedin}
-												target="_blank"
-												rel="noopener noreferrer"
-												className="text-gray-400 hover:text-blue-600 transition"
+
+									<div className="space-y-2">
+										<div className="flex items-center text-gray-600">
+											<svg
+												className="w-5 h-5 mr-2"
+												fill="none"
+												stroke="currentColor"
+												viewBox="0 0 24 24"
 											>
-												<Linkedin className="w-6 h-6" />
-											</motion.a>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													strokeWidth={2}
+													d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+												/>
+											</svg>
+											{member.education}
 										</div>
-
-										<div className="space-y-2">
-											<div className="flex items-center text-gray-600">
-												<svg
-													className="w-5 h-5 mr-2"
-													fill="none"
-													stroke="currentColor"
-													viewBox="0 0 24 24"
-												>
-													<path
-														strokeLinecap="round"
-														strokeLinejoin="round"
-														strokeWidth={2}
-														d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-													/>
-												</svg>
-												{member.education}
-											</div>
-											<p className="text-gray-600">{member.description}</p>
-										</div>
-
-										<div className="flex flex-wrap gap-2">
-											{member.expertise.map((skill) => (
-												<span
-													key={skill}
-													className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-												>
-													{skill}
-												</span>
-											))}
-										</div>
+										<p className="text-gray-600">{member.description}</p>
 									</div>
-								</motion.div>
-							</ShineBorder>
+
+									<div className="flex flex-wrap gap-2">
+										{member.expertise.map((skill) => (
+											<span
+												key={skill}
+												className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
+											>
+												{skill}
+											</span>
+										))}
+									</div>
+								</div>
+							</motion.div>
 						))}
 					</div>
 				</motion.div>
