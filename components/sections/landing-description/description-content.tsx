@@ -334,7 +334,7 @@ export default function BentoGridSection() {
     },
   ];
   return (
-    <div className="relative bg-white overflow-hidden">
+    <div className="relative bg-white overflow-hidden pb-56">
       {/* Image gradient background */}
       <div className="absolute top-2/3 left-[55%] -translate-x-1/2 -translate-y-1/2 w-[1700px] h-[1100px] opacity-30">
         <img
