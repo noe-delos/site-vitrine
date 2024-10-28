@@ -20,7 +20,7 @@ const airbnbCereal = localFont({
 });
 
 export const metadata: Metadata = {
-	title: 'SK Software Consulting',
+	title: 'KS Software Solutions',
 	description: 'Your Idea. Your saas.',
 };
 
