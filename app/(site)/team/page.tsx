@@ -24,7 +24,7 @@ interface Value {
 const teamMembers: TeamMember[] = [
 	{
 		name: 'Noé Campo',
-		role: 'Full-Stack Gen-AI Engineer',
+		role: 'Ingénieur Full-Stack GenAI',
 		education: 'EPITECH - Master Software Architecture',
 		expertise: [
 			'Full-Stack Development',
@@ -33,58 +33,42 @@ const teamMembers: TeamMember[] = [
 		],
 		image: '/team/noe.jpg',
 		description:
-			'Passionate about merging cutting-edge AI with practical business solutions.',
+			'Passionné par la fusion des technologies AI de pointe avec des solutions commerciales pratiques.',
 		linkedin: 'https://linkedin.com/in/noe-campo',
 	},
 	{
 		name: 'Hugo Pradier',
-		role: 'DevOps Engineer',
-		education: 'EPITECH - Master Cloud Architecture',
-		expertise: ['DevOps', 'SaaS Development', 'Cloud Architecture'],
+		role: 'Ingénieur DevOps',
+		education: 'IIT Madras',
+		expertise: ['DevOps', 'Développement SaaS', 'Architecture Cloud'],
 		image: '/team/hugo.jpg',
 		description:
-			'Expert in developing scalable cloud infrastructures and ensuring smooth deployment pipelines.',
+			'Expert dans le développement d’infrastructures cloud évolutives et l’assurance de pipelines de déploiement fluides.',
 		linkedin: 'https://linkedin.com/in/hugo-pradier',
 	},
 	{
 		name: 'Maxime Cividini',
 		role: 'Commercial',
-		education: 'ESSEC Business School - Business Development',
-		expertise: ['Business Strategy', 'Client Relations', 'Sales Management'],
+		education: 'Excelia Business School',
+		expertise: ['Business Strategy', 'Relations Clients', 'Gestion des Ventes'],
 		image: '/team/maxime.jpg',
 		description:
-			'Driving business growth through strategic partnerships and client relationships.',
-		linkedin: 'https://linkedin.com/in/nicolas-henaux',
+			'Favorise la croissance de l’entreprise grâce à des partenariats stratégiques et à la gestion des relations clients.',
+		linkedin: 'https://www.linkedin.com/in/maxime-cividini/',
 	},
 	{
 		name: 'Julien Bergerot',
-		role: 'Commercial',
-		education: 'ESSEC Business School - Business Development',
-		expertise: ['Business Strategy', 'Client Relations', 'Sales Management'],
+		role: 'Ingénieur GenAI',
+		education: 'École Polytechnique',
+		expertise: [
+			'Intégration de l’AI',
+			'Développement de modèles AI',
+			'Innovation Technologique',
+		],
 		image: '/team/julien.jpg',
 		description:
-			'Driving business growth through strategic partnerships and client relationships.',
-		linkedin: 'https://linkedin.com/in/nicolas-henaux',
-	},
-	{
-		name: 'Mélissa Naruto',
-		role: 'UI/UX Engineer',
-		education: 'Gobelins - Digital Design',
-		expertise: ['UI/UX Design', 'Brand Identity', 'User Research'],
-		image: '/team/woman.jpg',
-		description:
-			'Creating beautiful and intuitive user experiences that delight and engage.',
-		linkedin: 'https://linkedin.com/in/melissa-naruto',
-	},
-	{
-		name: 'Mélissa Naruto3',
-		role: 'UI/UX Engineer',
-		education: 'Gobelins - Digital Design',
-		expertise: ['UI/UX Design', 'Brand Identity', 'User Research'],
-		image: '/team/woman.jpg',
-		description:
-			'Creating beautiful and intuitive user experiences that delight and engage.',
-		linkedin: 'https://linkedin.com/in/melissa-naruto',
+			'Dynamise la croissance technologique grâce à des innovations en intelligence artificielle et des intégrations de modèles AI avancés.',
+		linkedin: 'https://www.linkedin.com/in/julien-bergerot-68945b194/',
 	},
 ];
 
@@ -270,8 +254,12 @@ export default function OurTeam() {
 			</motion.section>
 
 			{/* Team Grid with 3D Cards */}
-			<section className="py-20 px-6">
-				<div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+			<section className="py-10 px-6">
+				{' '}
+				{/* Réduit de py-20 à py-10 */}
+				<div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+					{' '}
+					{/* Changé lg:grid-cols-3 à lg:grid-cols-4 et réduit les gaps */}
 					{teamMembers.map((member) => (
 						<Card3D key={member.name} member={member} />
 					))}
