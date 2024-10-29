@@ -9,6 +9,7 @@ const Header = () => {
 
   const navItems = [
     { label: 'Accueil', href: '/' },
+    { label: 'Nos solutions', href: '/solutions' },
     { label: 'Notre équipe', href: '/team' },
     { label: 'Portfolio', href: '/portfolio' },
     { label: 'Nous contacter', href: '/contact' },
@@ -30,7 +31,12 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto flex items-center justify-between h-full px-6">
         <div>
           <Link href="/" className="flex items-center space-x-3 group">
-            <motion.div transition={{ duration: 0.2 }} className="relative">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="relative"
+            >
               <Image
                 src="/logo/brand-logo.png"
                 alt="Finpay Logo"
@@ -55,7 +61,11 @@ const Header = () => {
             const isActive = pathname === item.href;
 
             return (
-              <motion.div key={item.href} transition={{ duration: 0.2 }}>
+              <motion.div
+                key={item.href}
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.2 }}
+              >
                 <Link href={item.href} className="relative group px-2 py-1">
                   <span
                     className={`text-sm font-medium ${
