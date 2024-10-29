@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
 	{
 		name: 'Noé Campo',
 		role: 'Ingénieur Full-Stack GenAI',
-		education: 'EPITECH - Master Software Architecture',
+		education: 'Epitech',
 		expertise: [
 			'Full-Stack Development',
 			'AI Integration',
