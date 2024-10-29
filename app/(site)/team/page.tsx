@@ -221,7 +221,7 @@ export default function OurTeam() {
 				{/* Background Gradient Image */}
 				<div className="absolute inset-0">
 					<Image
-						src="/hero/gradient1.png"
+						src="/public/hero/gradient1.png"
 						alt="Background Gradient"
 						fill
 						className="object-cover opacity-40"
