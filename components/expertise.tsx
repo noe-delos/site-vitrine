@@ -78,7 +78,7 @@ export default function Expertise() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1.2, // Increased animation duration
+        duration: 0.2, // Increased animation duration
         ease: 'easeOut',
       },
     },
@@ -87,7 +87,7 @@ export default function Expertise() {
   return (
     <div className="bg-white w-full py-16">
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center tracking-normal">
           {/* Left Content */}
           <motion.div
             ref={ref as any}
@@ -103,7 +103,7 @@ export default function Expertise() {
             className="space-y-8 max-w-xl"
           >
             <motion.div variants={fadeInUp}>
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className="lg:text-4xl md:text-4xl xl:text-4xl sm:text-4xl xs:text-4xl text-2xl font-bold mb-6">
                 Des interfaces <i className="text-gray-600">uniques</i> et{' '}
                 <SparklesText
                   text="époustouflantes"
@@ -165,17 +165,14 @@ export default function Expertise() {
 
           {/* Right Video Section */}
           <div className="relative h-[600px] w-full rounded-lg">
-            {/* Title image overlay */}
-
-            {/* Video with brightness adjustment */}
-            <div className="relative w-[50rem] h-full brightness-100 rounded-lg shadow-xl">
-              <div className="absolute -top-10 -right-10 z-40 -mt-4 rotate-6">
+            <div className="relative lg:w-[50rem] md:w-[40rem] sm:w-[30rem] w-full h-full brightness-100 rounded-lg shadow-xl">
+              <div className="absolute hidden sm:block sm:-top-10 sm:-right-10 xs:top-0 xs:right-0 top-1/2 right-1/2 z-40 -mt-4 rotate-6">
                 <div className="p-8 bg-white rounded-xl shadow-2xl">
                   <div className="p-6 bg-white rounded-lg shadow-xl drop-shadow-lg">
                     <img
                       src="/logo/brand-logo.png"
                       alt="Title"
-                      className="size-10 object-contain"
+                      className="lg:size-10 md:size-8 size-6 object-contain"
                     />
                   </div>
                 </div>
