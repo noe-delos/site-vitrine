@@ -104,9 +104,9 @@ export default function Expertise() {
           >
             <motion.div variants={fadeInUp}>
               <h2 className="lg:text-4xl md:text-4xl xl:text-4xl sm:text-4xl xs:text-4xl text-2xl font-bold mb-6">
-                Des interfaces <i className="text-gray-600">uniques</i> et{' '}
+                Des interfaces uniques et{' '}
                 <SparklesText
-                  text="époustouflantes"
+                  text="époustouflantes."
                   className="text-black text-5xl mt-2"
                 />
               </h2>

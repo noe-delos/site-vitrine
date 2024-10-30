@@ -352,7 +352,7 @@ export default function BentoGridSection() {
             <h2 className="text-5xl font-bold">
               Vos projets, notre{' '}
               <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
-                expertise
+                expertise.
               </span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl">
