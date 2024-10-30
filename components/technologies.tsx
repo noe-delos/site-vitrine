@@ -14,6 +14,7 @@ import { ReactNode, useEffect, useRef, useState } from 'react';
 
 interface ContentItem {
   title: string;
+  titleImg: string;
   subtitle: string;
   description: ReactNode;
   rightContent: ReactNode;
@@ -27,20 +28,27 @@ const Technologies = () => {
   const content: ContentItem[] = [
     {
       title: 'Bases de données et sécurité',
+      titleImg: '/technologies/scaleway1.png',
       subtitle:
         "Une infrastructure robuste et sécurisée pour vos données d'entreprise, avec des performances optimales et une fiabilité à toute épreuve.",
       rightContent: (
-        <div className="relative w-full h-full">
+        <div className="isolate relative w-full h-full">
           <video
             src="/technologies/supabase.webm"
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover rounded-xl"
+            className="w-full h-full object-cover rounded-xl z-30"
           />
-          <div className="w-16 h-16 rounded-xl absolute z-10 bg-red-500 top-4 right-4" />
-          <div className="w-16 h-16 rounded-xl absolute z-10 bg-blue-500 bottom-4 left-4" />
+          <img
+            src="/technologies/postgres.png"
+            className="size-32 rounded-xl absolute z-40 -top-10 -right-10 shadow-lg shadow-white/20"
+          />{' '}
+          <img
+            src="/technologies/supabase.png"
+            className="size-20 rounded-xl absolute z-40 -bottom-8 -left-8"
+          />
         </div>
       ),
       description: (
@@ -48,69 +56,75 @@ const Technologies = () => {
           <div className="grid grid-cols-2 gap-6">
             <div className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-blue-100">
               <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
-                <Database className="w-5 h-5 text-blue-600" />
+                <Database className="w-5 h-5 text-green-600" />
                 Infrastructure PostgreSQL
               </h3>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-green-500 transition-transform group-hover:translate-x-1" />
                   <span>Portabilité 100% garantie</span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-green-500 transition-transform group-hover:translate-x-1" />
                   <span>Authentification intégrée RLS</span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-green-500 transition-transform group-hover:translate-x-1" />
                   <span>Extensions faciles à intégrer</span>
                 </li>
               </ul>
             </div>
-            <div className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-blue-100">
+            <div className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-green-100">
               <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
-                <Shield className="w-5 h-5 text-blue-600" />
+                <Shield className="w-5 h-5 text-green-600" />
                 Sécurité entreprise
               </h3>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-green-500 transition-transform group-hover:translate-x-1" />
                   <span>Authentification multi-facteurs</span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-green-500 transition-transform group-hover:translate-x-1" />
                   <span>Chiffrement bout en bout</span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 text-green-500 transition-transform group-hover:translate-x-1" />
                   <span>Conformité RGPD</span>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-blue-100">
-            <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
-              <Workflow className="w-5 h-5 text-blue-600" />
+          <div className="p-6 bg-gradient-to-br from-[#131313] to-[#424242] rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-800">
+            <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
+              <Workflow className="w-5 h-5 text-green-400" />
               Fonctionnalités temps réel
             </h3>
             <div className="grid grid-cols-2 gap-6">
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
-                  <span>Synchronisation multi-utilisateurs</span>
+                  <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
+                  <span className="text-gray-300">
+                    Synchronisation multi-utilisateurs
+                  </span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
-                  <span>API REST et GraphQL auto-générées</span>
+                  <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
+                  <span className="text-gray-300">
+                    API REST et GraphQL auto-générées
+                  </span>
                 </li>
               </ul>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
-                  <span>Webhooks personnalisables</span>
+                  <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
+                  <span className="text-gray-300">
+                    Webhooks personnalisables
+                  </span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
-                  <span>Monitoring temps réel</span>
+                  <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
+                  <span className="text-gray-300">Monitoring temps réel</span>
                 </li>
               </ul>
             </div>
@@ -121,6 +135,7 @@ const Technologies = () => {
 
     {
       title: 'Intelligence Artificielle Avancée',
+      titleImg: '/technologies/scaleway2.png',
       subtitle:
         "Des solutions d'IA adaptées à vos besoins, intégrant les dernières avancées en matière de traitement du langage naturel et d'apprentissage automatique.",
       rightContent: (
@@ -222,6 +237,7 @@ const Technologies = () => {
     },
     {
       title: 'Performance Web Optimale',
+      titleImg: '/technologies/scaleway3.png',
       subtitle:
         'Des applications web ultrarapides et optimisées pour offrir la meilleure expérience utilisateur possible sur toutes les plateformes.',
       rightContent: (
@@ -322,6 +338,7 @@ const Technologies = () => {
     },
     {
       title: 'Des sites déployés en une journée',
+      titleImg: '/technologies/scaleway4.png',
       subtitle:
         'Une infrastructure cloud moderne hébergée en France, associant la puissance de Vercel et la conformité de Scaleway pour des déploiements rapides et sécurisés.',
       rightContent: (
@@ -474,9 +491,9 @@ const Technologies = () => {
               {content.map((_, index) => (
                 <div
                   key={index}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`size-2 rounded-full transition-all duration-300 cursor-pointer ${
                     activeSection === index
-                      ? 'bg-blue-600 scale-125'
+                      ? 'bg-black scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   onClick={() => {
@@ -504,9 +521,17 @@ const Technologies = () => {
                   {/* Add substantial padding top/bottom */}
                   <div className="space-y-6">
                     <div className="space-y-4">
-                      <h2 className="text-4xl font-bold text-gray-900">
-                        {item.title}
-                      </h2>
+                      <div className="flex flex-row gap-2 items-center">
+                        <img
+                          src={item.titleImg}
+                          alt="title"
+                          className="size-20"
+                        />
+                        <h2 className="text-4xl font-bold text-gray-900">
+                          {item.title}
+                        </h2>
+                      </div>
+
                       <p className="text-lg text-gray-600 leading-relaxed">
                         {item.subtitle}
                       </p>
@@ -519,12 +544,12 @@ const Technologies = () => {
           </div>
 
           {/* Sticky Right Content */}
-          <div className="col-span-6 sticky top-52 h-[calc(100vh-24rem)] ml-14">
-            <div className="w-full h-full rounded-xl overflow-hidden mt-24 relative">
+          <div className="col-span-6 sticky top-52 h-[calc(100vh-24rem)] ml-14 z-10">
+            <div className="w-full h-full rounded-xl mt-24 z-10">
               {content.map((item, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-opacity duration-500 ${
+                  className={`absolute inset-0 transition-opacity duration-500 z-10 ${
                     activeSection === index ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
