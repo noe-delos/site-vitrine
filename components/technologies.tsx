@@ -95,38 +95,53 @@ const Technologies = () => {
               </ul>
             </div>
           </div>
-          <div className="p-6 bg-gradient-to-br from-[#131313] to-[#424242] rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-800">
-            <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
-              <Workflow className="w-5 h-5 text-green-400" />
-              Fonctionnalités temps réel
-            </h3>
-            <div className="grid grid-cols-2 gap-6">
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
-                  <span className="text-gray-300">
-                    Synchronisation multi-utilisateurs
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
-                  <span className="text-gray-300">
-                    API REST et GraphQL auto-générées
-                  </span>
-                </li>
-              </ul>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
-                  <span className="text-gray-300">
-                    Webhooks personnalisables
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
-                  <span className="text-gray-300">Monitoring temps réel</span>
-                </li>
-              </ul>
+          <div className="relative p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-800 overflow-hidden">
+            {/* Dark overlay + gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#131313] to-[#424242]" />
+
+            {/* Background image */}
+            <div className="absolute inset-0 overflow-hidden -top-12">
+              <img
+                src="/technologies/scaleway5.png"
+                alt="Background"
+                className="size-96 opacity-15 object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10">
+              <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
+                <Workflow className="w-5 h-5 text-green-400" />
+                Fonctionnalités temps réel
+              </h3>
+              <div className="grid grid-cols-2 gap-6">
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3 group">
+                    <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
+                    <span className="text-gray-300">
+                      Synchronisation multi-utilisateurs
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3 group">
+                    <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
+                    <span className="text-gray-300">
+                      API REST et GraphQL auto-générées
+                    </span>
+                  </li>
+                </ul>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3 group">
+                    <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
+                    <span className="text-gray-300">
+                      Webhooks personnalisables
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3 group">
+                    <ArrowRight className="w-4 h-4 text-green-400 transition-transform group-hover:translate-x-1" />
+                    <span className="text-gray-300">Monitoring temps réel</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -134,7 +149,7 @@ const Technologies = () => {
     },
 
     {
-      title: 'Intelligence Artificielle Avancée',
+      title: 'IA (Pas fini à partir de là)',
       titleImg: '/technologies/scaleway2.png',
       subtitle:
         "Des solutions d'IA adaptées à vos besoins, intégrant les dernières avancées en matière de traitement du langage naturel et d'apprentissage automatique.",
