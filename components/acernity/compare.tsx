@@ -236,7 +236,7 @@ export const Compare = ({
         ) : null}
       </AnimatePresence>
       {/* Bottom gradient overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white from-0% via-white/80 via-20% via-white/50 via-40% via-white/20 via-60% to-transparent to-100% z-50 pointer-events-none" />{' '}
+      <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white from-0% via-white/80 via-20% via-white/50 via-40% via-white/20 via-50% to-transparent to-100% z-50 pointer-events-none" />{' '}
     </div>
   );
 };

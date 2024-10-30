@@ -5,7 +5,7 @@ import { Compare } from '@/components/acernity/compare';
 import { GlobeDemo } from '@/components/acernity/globe-demo';
 import { cn } from '@/utils/cn';
 import { motion as m } from 'framer-motion';
-import { BrainIcon, RocketIcon } from 'lucide-react';
+import { RocketIcon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 const useInView = (margin = '0px') => {
@@ -207,7 +207,7 @@ export default function BentoGridSection() {
     },
     {
       id: 1,
-      Icon: BrainIcon,
+      Icon: null,
       name: 'Conception',
       description:
         "Avec une compréhension claire de votre projet, nous passons à la phase de conception. Nous définissons l'architecture de votre SaaS et élaborons les fonctionnalités clés.",
@@ -250,13 +250,12 @@ export default function BentoGridSection() {
               slideMode="hover"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
         </div>
       ),
     },
     {
       id: 3,
-      Icon: RocketIcon,
+      Icon: null,
       name: 'Lancement',
       description:
         'Le grand jour arrive : le lancement de votre SaaS. Nous surveillons les performances, recueillons les retours utilisateurs et optimisons continuellement le produit.',

@@ -29,18 +29,7 @@ const LeftSection: React.FC = () => {
         avec une expertise technique sur mesure et un accompagnement dédié.
       </p>
 
-      <div className="flex items-center space-x-4 max-w-xl">
-        <input
-          type="email"
-          placeholder="Votre email"
-          className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
-        />
-        <button className="bg-white border-[0.5px] border-gray-300 px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium whitespace-nowrap">
-          Envoyer →
-        </button>
-      </div>
-
-      <div className="pt-12 w-full flex flex-col">
+      <div className="pt-16 w-full flex flex-col mt-8">
         <p className="text-sm text-gray-500 mb-6 self-center">
           Ces entreprises nous font confiance
         </p>
