@@ -1,5 +1,6 @@
 'use client';
 
+import { TypingAnimation } from '@/components/acernity/magic-type-effect';
 import {
   ArrowRight,
   Bot,
@@ -13,7 +14,7 @@ import {
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
 interface ContentItem {
-  title: string;
+  title: ReactNode;
   titleImg: string;
   subtitle: string;
   description: ReactNode;
@@ -27,7 +28,14 @@ const Technologies = () => {
 
   const content: ContentItem[] = [
     {
-      title: 'Bases de données et sécurité',
+      title: (
+        <p className="text-4xl font-bold">
+          Données et{' '}
+          <span className="bg-gradient-to-r from-black to-green-500 inline-block text-transparent bg-clip-text">
+            sécurité.
+          </span>
+        </p>
+      ),
       titleImg: '/technologies/scaleway1.png',
       subtitle:
         "Une infrastructure robuste et sécurisée pour vos données d'entreprise, avec des performances optimales et une fiabilité à toute épreuve.",
@@ -149,62 +157,81 @@ const Technologies = () => {
     },
 
     {
-      title: 'IA (Pas fini à partir de là)',
+      title: (
+        <TypingAnimation
+          className="text-4xl font-bold text-black "
+          duration={100}
+          text="IA générative."
+        />
+      ),
       titleImg: '/technologies/scaleway2.png',
       subtitle:
         "Des solutions d'IA adaptées à vos besoins, intégrant les dernières avancées en matière de traitement du langage naturel et d'apprentissage automatique.",
       rightContent: (
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full rounded-lg">
           <iframe
             src="https://player.vimeo.com/video/1015752276?h=2a0d0242ef&autoplay=1&loop=1&autopause=0&controls=false"
-            style={{ width: '100%', height: '100%' }}
+            style={{ width: '100%', height: '100%', borderRadius: 10 }}
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
             className="rounded-xl"
           />
-          <div className="w-16 h-16 rounded-xl absolute z-10 bg-yellow-100 top-4 right-4" />
-          <div className="w-16 h-16 rounded-xl absolute z-10 bg-blue-200 bottom-4 left-4" />
+          <img
+            src="/technologies/openAI.png"
+            className="size-20 rounded-xl absolute z-40 top-14 -right-7 shadow-lg shadow-white/20"
+          />
         </div>
       ),
       description: (
         <div className="space-y-6">
-          <div className="p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-purple-100">
-            <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
-              <Bot className="w-5 h-5 text-purple-600" />
-              Solutions IA intégrées
-            </h3>
-            <div className="grid grid-cols-3 gap-6">
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
-                  <span>Analyse documents</span>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
-                  <span>Génération contenu</span>
-                </li>
-              </ul>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
-                  <span>Chatbots IA</span>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
-                  <span>Extraction données</span>
-                </li>
-              </ul>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
-                  <span>Classification auto</span>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
-                  <span>Analyse sentiment</span>
-                </li>
-              </ul>
+          <div className="relative p-6 bg-gradient-to-br from-purple-900 to-purple-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-purple-100 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden left-60 -top-14">
+              <img
+                src="/technologies/scaleway5.webp"
+                alt="Background"
+                className="w-96 h-96 opacity-15 object-cover"
+              />
+            </div>
+
+            <div className="relative z-10">
+              <h3 className="text-lg font-semibold text-white flex items-center gap-2 mb-4">
+                <Bot className="w-5 h-5 text-purple-500" />
+                Solutions IA intégrées
+              </h3>
+              <div className="grid grid-cols-3 gap-6">
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3 group">
+                    <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
+                    <span>Analyse documents</span>
+                  </li>
+                  <li className="flex items-center gap-3 group">
+                    <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
+                    <span>Génération contenu</span>
+                  </li>
+                </ul>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3 group">
+                    <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
+                    <span>Chatbots IA</span>
+                  </li>
+                  <li className="flex items-center gap-3 group">
+                    <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
+                    <span>Extraction données</span>
+                  </li>
+                </ul>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3 group">
+                    <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
+                    <span>Classification auto</span>
+                  </li>
+                  <li className="flex items-center gap-3 group">
+                    <ArrowRight className="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-1" />
+                    <span>Analyse sentiment</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
+
           <div className="grid grid-cols-2 gap-6">
             <div className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-purple-100">
               <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
@@ -252,15 +279,15 @@ const Technologies = () => {
     },
     {
       title: 'Performance Web Optimale',
-      titleImg: '/technologies/scaleway3.png',
+      titleImg: '/technologies/scaleway4.png',
       subtitle:
         'Des applications web ultrarapides et optimisées pour offrir la meilleure expérience utilisateur possible sur toutes les plateformes.',
       rightContent: (
         <div className="relative w-full h-full">
           <img
-            src="https://naturaily.com/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F172506%2F1292x552%2F7cc19cf257%2Fnextjs-benefits-cover-image.webp&w=3840&q=75"
+            src="/technologies/nextjs.png"
             alt="Next.js Benefits"
-            className="w-full h-full object-cover rounded-xl"
+            className="w-full h-full object-contain rounded-xl"
           />
           <div className="w-16 h-16 rounded-xl absolute z-10 bg-purple-500 top-4 right-4" />
           <div className="w-16 h-16 rounded-xl absolute z-10 bg-black bottom-4 left-4" />
@@ -353,7 +380,7 @@ const Technologies = () => {
     },
     {
       title: 'Des sites déployés en une journée',
-      titleImg: '/technologies/scaleway4.png',
+      titleImg: '/technologies/scaleway3.png',
       subtitle:
         'Une infrastructure cloud moderne hébergée en France, associant la puissance de Vercel et la conformité de Scaleway pour des déploiements rapides et sécurisés.',
       rightContent: (
