@@ -1,6 +1,7 @@
 'use client';
 
 import { TypingAnimation } from '@/components/acernity/magic-type-effect';
+import { WordFadeIn } from '@/components/acernity/word-fade-in';
 import {
   ArrowRight,
   Bot,
@@ -19,6 +20,69 @@ interface ContentItem {
   subtitle: string;
   description: ReactNode;
   rightContent: ReactNode;
+}
+
+const FeatureList = ({ items }: any) => (
+  <div className="space-y-4">
+    {items.map((item: any, index: any) => (
+      <div key={index} className="space-y-1">
+        <div className="flex items-center gap-2">
+          <ArrowRight className="w-4 h-4 text-gray-500" />
+          <span className="font-bold bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 bg-clip-text text-transparent">
+            {item.title}
+          </span>
+        </div>
+        <p className="text-gray-600 text-sm pl-6">{item.description}</p>
+      </div>
+    ))}
+  </div>
+);
+
+function PerformanceAnalyticsCard() {
+  const features = {
+    column1: [
+      {
+        title: 'Chargement instantané',
+        description: 'Performance optimisée avec temps de chargement < 0.5s',
+      },
+    ],
+    column2: [
+      {
+        title: 'Analytics temps réel',
+        description: 'Suivi en direct des métriques clés de performance',
+      },
+    ],
+    column3: [
+      {
+        title: 'Monitoring avancé',
+        description:
+          'Tableaux de bord personnalisables avec alertes intelligentes',
+      },
+    ],
+  };
+
+  return (
+    <div className="p-6 bg-gradient-to-br from-gray-100 via-white to-gray-50 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-200/50">
+      <h3 className="text-2xl font-extrabold flex items-center gap-3 mb-6">
+        <Shield className="w-7 h-7 text-gray-700" />
+        <span className="bg-gradient-to-b from-gray-300 to-black bg-clip-text text-transparent tracking-wide">
+          Performance & Analytics
+        </span>
+      </h3>
+
+      <div className="grid grid-cols-3 gap-6">
+        <div className="p-4 rounded-lg bg-gradient-to-br from-gray-50 to-white">
+          <FeatureList items={features.column1} />
+        </div>
+        <div className="p-4 rounded-lg bg-gradient-to-br from-gray-50 to-white">
+          <FeatureList items={features.column2} />
+        </div>
+        <div className="p-4 rounded-lg bg-gradient-to-br from-gray-50 to-white">
+          <FeatureList items={features.column3} />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 const Technologies = () => {
@@ -278,7 +342,7 @@ const Technologies = () => {
       ),
     },
     {
-      title: 'Performance Web Optimale',
+      title: <WordFadeIn words="Sites ultra rapides et optimisés" />,
       titleImg: '/technologies/scaleway4.png',
       subtitle:
         'Des applications web ultrarapides et optimisées pour offrir la meilleure expérience utilisateur possible sur toutes les plateformes.',
@@ -289,147 +353,152 @@ const Technologies = () => {
             alt="Next.js Benefits"
             className="w-full h-full object-contain rounded-xl"
           />
-          <div className="w-16 h-16 rounded-xl absolute z-10 bg-purple-500 top-4 right-4" />
-          <div className="w-16 h-16 rounded-xl absolute z-10 bg-black bottom-4 left-4" />
         </div>
       ),
       description: (
         <div className="space-y-6">
           <div className="grid grid-cols-2 gap-6">
-            <div className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-emerald-100">
-              <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
-                <Zap className="w-5 h-5 text-emerald-600" />
+            <div className="p-6 overflow-hidden bg-gradient-to-br from-black via-[#393939] to-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-600/50 hover:border-gray-500 relative backdrop-blur-sm">
+              <div className="absolute inset-0 overflow-hidden -top-5 left-5">
+                <img
+                  src="/technologies/next1.png"
+                  alt="Background"
+                  className="size-60 opacity-15 object-cover"
+                />
+              </div>
+
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-600/20 to-gray-900/20 pointer-events-none" />
+              <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4 relative">
+                <Zap className="w-5 h-5 text-gray-300" />
                 Technologies Next.js
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 relative">
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>Génération statique optimisée</span>
+                  <ArrowRight className="w-4 h-4 text-gray-400 transition-transform group-hover:translate-x-1" />
+                  <span className="text-gray-300 group-hover:text-gray-200 transition-colors">
+                    Génération statique optimisée
+                  </span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>Rendu côté serveur performant</span>
+                  <ArrowRight className="w-4 h-4 text-gray-400 transition-transform group-hover:translate-x-1" />
+                  <span className="text-gray-300 group-hover:text-gray-200 transition-colors">
+                    Rendu côté serveur performant
+                  </span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>Mise en cache intelligente</span>
+                  <ArrowRight className="w-4 h-4 text-gray-400 transition-transform group-hover:translate-x-1" />
+                  <span className="text-gray-300 group-hover:text-gray-200 transition-colors">
+                    Mise en cache intelligente
+                  </span>
                 </li>
               </ul>
             </div>
-            <div className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-emerald-100">
-              <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
-                <Workflow className="w-5 h-5 text-emerald-600" />
+            <div className="p-6 bg-gradient-to-br from-black via-[#393939] to-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-600/50 hover:border-gray-500 relative overflow-hidden backdrop-blur-sm">
+              <div className="absolute inset-0 overflow-hidden top-0 left-10">
+                <img
+                  src="/technologies/next2.png"
+                  alt="Background"
+                  className="size-48 opacity-20 object-cover"
+                />
+              </div>
+
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-600/20 to-gray-900/20 pointer-events-none" />
+              <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4 relative">
+                <Workflow className="w-5 h-5 text-gray-300" />
                 Optimisation
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 relative">
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>Images et assets optimisés</span>
+                  <ArrowRight className="w-4 h-4 text-gray-400 transition-transform group-hover:translate-x-1" />
+                  <span className="text-gray-300 group-hover:text-gray-200 transition-colors">
+                    Images et assets optimisés
+                  </span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>SEO automatique</span>
+                  <ArrowRight className="w-4 h-4 text-gray-400 transition-transform group-hover:translate-x-1" />
+                  <span className="text-gray-300 group-hover:text-gray-200 transition-colors">
+                    SEO automatique
+                  </span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>Core Web Vitals optimisés</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-emerald-100">
-            <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
-              <Shield className="w-5 h-5 text-emerald-600" />
-              Performance & Analytics
-            </h3>
-            <div className="grid grid-cols-3 gap-6">
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>Chargement instantané</span>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>Analytics temps réel</span>
-                </li>
-              </ul>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>UX fluide</span>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>Monitoring avancé</span>
-                </li>
-              </ul>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>Performance tracking</span>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-1" />
-                  <span>Rapports détaillés</span>
+                  <ArrowRight className="w-4 h-4 text-gray-400 transition-transform group-hover:translate-x-1" />
+                  <span className="text-gray-300 group-hover:text-gray-200 transition-colors">
+                    Core Web Vitals optimisés
+                  </span>
                 </li>
               </ul>
             </div>
           </div>
+          <PerformanceAnalyticsCard />
         </div>
       ),
     },
     {
-      title: 'Des sites déployés en une journée',
+      title: (
+        <h1 className="text-4xl m-0 p-0 font-bold">
+          Des sites{' '}
+          <span className="bg-gradient-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">
+            déployés
+          </span>{' '}
+          en <span className="border-b-2 border-blue-500 -mb-2">une</span>{' '}
+          journée
+        </h1>
+      ),
       titleImg: '/technologies/scaleway3.png',
       subtitle:
         'Une infrastructure cloud moderne hébergée en France, associant la puissance de Vercel et la conformité de Scaleway pour des déploiements rapides et sécurisés.',
       rightContent: (
         <div className="relative w-full h-full">
           <img
-            src="https://www-uploads.scaleway.com/Generic_Card_2c5c50410e.webp"
+            src="https://www.chainguard.dev/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fl47ir7rfykkn%2F4xY10Dyf6Lb5H8OHHp4sRK%2F38c5437fd5a396cef65225c1a41beaf2%2FDockerhub_1.png&w=3840&q=75"
             alt="Scaleway Cloud"
             className="w-full h-full object-cover rounded-xl"
           />
-          <div className="w-16 h-16 rounded-xl absolute z-10 bg-emerald-500 top-4 right-4" />
-          <div className="w-16 h-16 rounded-xl absolute z-10 bg-blue-500 bottom-4 left-4" />
         </div>
       ),
       description: (
         <div className="space-y-6">
-          <div className="p-6 bg-gradient-to-br from-gray-50 to-slate-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
-              <Cloud className="w-5 h-5 text-gray-600" />
+          <div className="relative p-6 bg-gradient-to-br from-blue-800 to-blue-400 text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-purple-100 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden z-50 -top-5 left-96">
+              <img
+                src="/technologies/scaleway6.png"
+                alt="Background"
+                className="size-[17rem]  z-50 opacity-15 object-cover"
+              />
+            </div>
+            <h3 className="text-lg font-semibold text-white flex items-center gap-2 mb-4">
+              <Cloud className="w-5 h-5 text-white" />
               Infrastructure Cloud
             </h3>
             <div className="grid grid-cols-3 gap-6">
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-gray-500 transition-transform group-hover:translate-x-1" />
-                  <span>Vercel Edge Network</span>
+                  <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
+                  <span className="text-white">Vercel Edge Network</span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-gray-500 transition-transform group-hover:translate-x-1" />
-                  <span>Scaleway Cloud</span>
-                </li>
-              </ul>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-gray-500 transition-transform group-hover:translate-x-1" />
-                  <span>CDN mondial</span>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-gray-500 transition-transform group-hover:translate-x-1" />
-                  <span>SSL automatique</span>
+                  <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
+                  <span className="text-white">Scaleway Cloud</span>
                 </li>
               </ul>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-gray-500 transition-transform group-hover:translate-x-1" />
-                  <span>Serverless</span>
+                  <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
+                  <span className="text-white">CDN mondial</span>
                 </li>
                 <li className="flex items-center gap-3 group">
-                  <ArrowRight className="w-4 h-4 text-gray-500 transition-transform group-hover:translate-x-1" />
-                  <span>Auto-scaling</span>
+                  <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
+                  <span className="text-white">SSL automatique</span>
+                </li>
+              </ul>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 group">
+                  <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
+                  <span className="text-white">Serverless</span>
+                </li>
+                <li className="flex items-center gap-3 group">
+                  <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
+                  <span className="text-white">Auto-scaling</span>
                 </li>
               </ul>
             </div>
@@ -512,7 +581,7 @@ const Technologies = () => {
 
   return (
     <div
-      className="bg-gradient-to-br from-gray-50 to-slate-100 w-full relative min-h-screen py-[20rem]"
+      className="bg-gradient-to-br from-gray-50 to-white w-full relative min-h-screen py-[20rem]"
       ref={containerRef}
     >
       <div className="max-w-[100rem] mx-auto">

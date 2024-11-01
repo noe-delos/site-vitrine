@@ -9,10 +9,8 @@ const Header = () => {
 
   const navItems = [
     { label: 'Accueil', href: '/' },
-    { label: 'Nos solutions', href: '/solutions' },
     { label: 'Notre équipe', href: '/team' },
     { label: 'Portfolio', href: '/portfolio' },
-    { label: 'Nous contacter', href: '/contact' },
   ];
 
   // Style with constant blur effect

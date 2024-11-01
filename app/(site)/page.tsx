@@ -1,4 +1,5 @@
 // src/app/page.tsx
+import ContactUs from '@/components/contact-us';
 import Description from '@/components/description';
 import Expertise from '@/components/expertise';
 import Hero from '@/components/hero';
@@ -11,6 +12,7 @@ export default function HomePage() {
       <Description />
       <Expertise />
       <Technologies />
+      <ContactUs />
     </>
   );
 }
