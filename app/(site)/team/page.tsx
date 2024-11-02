@@ -284,9 +284,9 @@ export default function OurTeam() {
             </div>
 
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Jeune, ambitieux et animé par l'excellence. Nous sommes une équipe
-              d'innovateurs passionnés par la création de solutions SaaS de
-              pointe qui transforment les entreprises.
+              Jeunes, ambitieux et animés par l'excellence. Nous sommes une
+              équipe d'innovateurs passionnés par la création de solutions SaaS
+              de pointe qui transforment les entreprises.
             </p>
           </div>
         </div>
