@@ -1,7 +1,9 @@
 'use client';
 
+import scrollAnimation from '@/assets/lotties/scroll.json';
+import { cn } from '@/utils/cn';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Linkedin } from 'lucide-react';
+import Lottie from 'lottie-react';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 
@@ -13,62 +15,76 @@ interface TeamMember {
   image: string;
   description: string;
   linkedin: string;
+  schools: string[];
 }
 
-interface Value {
-  icon: string;
-  title: string;
-  description: string;
-}
+const ScrollIndicator = () => {
+  const lottieRef = useRef<any>(null);
+
+  return (
+    <div className="fixed bottom-12 left-1/2 transform -translate-x-1/2 z-50 size-8">
+      <Lottie
+        lottieRef={lottieRef}
+        animationData={scrollAnimation}
+        autoplay
+        loop
+      />
+    </div>
+  );
+};
 
 const teamMembers: TeamMember[] = [
   {
     name: 'Noé Campo',
-    role: 'Ingénieur Full-Stack GenAI',
+    role: 'Développeur Full-Stack',
     education: 'Epitech',
-    expertise: [
-      'Full-Stack Development',
-      'AI Integration',
-      'System Architecture',
-    ],
+    expertise: ['Full-Stack Dev', 'Intégration IA'],
     image: '/team/noe.jpg',
     description:
-      'Passionné par la fusion des technologies AI de pointe avec des solutions commerciales pratiques.',
+      "Architecte Full-Stack passionné par l'IA générative. Je transforme les concepts les plus ambitieux en solutions concrètes et innovantes.",
     linkedin: 'https://linkedin.com/in/noe-campo',
+    schools: [
+      'https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png',
+      '/team/cau.png',
+    ],
+  },
+  {
+    name: 'Julien Bergerot',
+    role: 'Ingénieur AI',
+    education: 'École Polytechnique',
+    expertise: ['Ingénieurie IA', 'Backend dev'],
+    image: '/team/julien.jpg',
+    description:
+      "Avec mon expérience en Machine learning et Gen AI je rends l'intelligence artificielle accessible et performante.",
+    linkedin: 'https://www.linkedin.com/in/julien-bergerot-68945b194/',
+    schools: ['/technologies/polytech.png'],
   },
   {
     name: 'Hugo Pradier',
     role: 'Ingénieur DevOps',
     education: 'IIT Madras',
-    expertise: ['DevOps', 'Développement SaaS', 'Architecture Cloud'],
+    expertise: ['DevOps', 'SRE', 'Archi Cloud'],
     image: '/team/hugo.jpg',
     description:
-      'Expert dans le développement d’infrastructures cloud évolutives et l’assurance de pipelines de déploiement fluides.',
+      "As du cloud et de l'infrastructure, je garantis des déploiements fluides et une scalabilité sans faille de nos solutions.",
     linkedin: 'https://linkedin.com/in/hugo-pradier',
+    schools: [
+      'https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png',
+      '/team/madras.png',
+    ],
   },
   {
     name: 'Maxime Cividini',
     role: 'Commercial',
     education: 'Excelia Business School',
-    expertise: ['Business Strategy', 'Relations Clients', 'Gestion des Ventes'],
+    expertise: ['Business Strategy', 'Relations Clients'],
     image: '/team/maxime.jpg',
     description:
-      'Favorise la croissance de l’entreprise grâce à des partenariats stratégiques et à la gestion des relations clients.',
+      'Stratège commercial passionné, je connecte les bonnes solutions aux bons clients. Je crée des partenariats durables et générateurs de valeur.',
     linkedin: 'https://www.linkedin.com/in/maxime-cividini/',
-  },
-  {
-    name: 'Julien Bergerot',
-    role: 'Ingénieur GenAI',
-    education: 'École Polytechnique',
-    expertise: [
-      'Intégration de l’AI',
-      'Développement de modèles AI',
-      'Innovation Technologique',
+    schools: [
+      'https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg',
     ],
-    image: '/team/julien.jpg',
-    description:
-      'Dynamise la croissance technologique grâce à des innovations en intelligence artificielle et des intégrations de modèles AI avancés.',
-    linkedin: 'https://www.linkedin.com/in/julien-bergerot-68945b194/',
   },
 ];
 
@@ -113,58 +129,34 @@ const Card3D: React.FC<Card3DProps> = ({ member }) => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+      className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
     >
       <div
-        className="relative aspect-square mb-6 overflow-hidden rounded-xl transform-gpu"
+        className="relative aspect-square mb-6 overflow-hidden rounded-xl transform-gpu rounded-b-none"
         style={{ transform: 'translateZ(20px)' }}
       >
         <Image
           src={member.image}
           alt={member.name}
           fill
-          className="object-cover object-center group-hover:scale-105 transition duration-300"
+          className="object-cover rounded-b-none object-center group-hover:scale-105 transition duration-300"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
-      <div className="space-y-4" style={{ transform: 'translateZ(30px)' }}>
+      <div className="space-y-4 p-6" style={{ transform: 'translateZ(30px)' }}>
         <div className="flex items-start justify-between">
           <div>
-            <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+            <h3 className="text-xl font-bold text-gray-900 tracking-wide">
+              {member.name}
+            </h3>
             <p className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
               {member.role}
             </p>
           </div>
-          <motion.a
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-600 transition"
-          >
-            <Linkedin className="w-6 h-6" />
-          </motion.a>
         </div>
 
         <div className="space-y-2">
-          <div className="flex items-center text-gray-600 text-sm">
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-              />
-            </svg>
-            {member.education}
-          </div>
           <p className="text-gray-600 text-sm">{member.description}</p>
         </div>
 
@@ -176,6 +168,19 @@ const Card3D: React.FC<Card3DProps> = ({ member }) => {
             >
               {skill}
             </span>
+          ))}
+        </div>
+        <div className="flex pt-10 flex-row gap-2 items-center justify-around">
+          {member.schools.map((school: string) => (
+            <img
+              key={school}
+              src={school}
+              alt="school"
+              className={cn(
+                'w-fit',
+                member.name === 'Julien Bergerot' ? 'h-[2.3rem]' : 'h-[1.6rem]',
+              )}
+            />
           ))}
         </div>
       </div>
@@ -200,27 +205,21 @@ export default function OurTeam() {
       <motion.section
         ref={targetRef}
         style={{ opacity, scale, y }}
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative h-screen flex items-start justify-center overflow-hidden pt-[10rem]"
       >
         {/* Background Gradient Image */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 mb-20 ml-0">
           <img
-            src="/team/gradient.png"
+            src="/team/gradient2.png"
             alt="Background Gradient"
             className="object-cover opacity-40"
           />
         </div>
 
         <div className="relative max-w-7xl mx-auto text-center px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="opacity-100 transform translate-y-0 transition duration-800 flex flex-col items-center">
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-              <span>
-                Une équipe d' (mettre les logos des universités en mode stylé )
-              </span>
+              <span>Une équipe d'</span>
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 experts
               </span>
@@ -229,6 +228,7 @@ export default function OurTeam() {
                 L'excellence à la française
               </span>
             </h1>
+
             <div className="flex items-center justify-center gap-2 mb-8">
               <div className="h-px w-12 bg-gradient-to-r from-blue-600 to-transparent" />
               <span className="text-lg text-gray-500 italic">
@@ -236,23 +236,61 @@ export default function OurTeam() {
               </span>
               <div className="h-px w-12 bg-gradient-to-l from-blue-600 to-transparent" />
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="flex justify-center items-center gap-[1px] mb-8"
-            >
+
+            {/* French Flag */}
+            <div className="flex justify-center items-center gap-[1px] mb-8">
               <div className="w-6 h-4 bg-gradient-to-b from-blue-500/40 to-blue-500/60 rounded-l-sm shadow-sm" />
               <div className="w-6 h-4 bg-gradient-to-b from-gray-100 to-white shadow-sm" />
               <div className="w-6 h-4 bg-gradient-to-b from-red-500/40 to-red-500/60 rounded-r-sm shadow-sm" />
-            </motion.div>
+            </div>
+
+            {/* University Logos Row */}
+            <div className="flex justify-center self-center items-center gap-20 mb-8 w-fit pr-5">
+              {/* Polytechnique Logo Placeholder */}
+              <div className="flex flex-col items-center">
+                <img
+                  onClick={() =>
+                    window.open('https://www.polytechnique.edu/', '_blank')
+                  }
+                  src="/technologies/polytech.png"
+                  alt="École Polytechnique"
+                  className="size-[4rem] w-full cursor-pointer"
+                />
+              </div>
+
+              {/* ESSEC Logo Placeholder */}
+              <div className="flex flex-col items-center ">
+                <img
+                  onClick={() =>
+                    window.open('https://www.essec.edu/fr/', '_blank')
+                  }
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg"
+                  alt="ESSEC Business School"
+                  className="size-[3rem] w-full cursor-pointer"
+                />
+              </div>
+
+              {/* HEC Logo Placeholder */}
+              <div className="flex flex-col items-center">
+                <img
+                  onClick={() =>
+                    window.open('https://www.epitech.eu/', '_blank')
+                  }
+                  src="https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png"
+                  alt="EPITECH"
+                  className="size-[3rem] w-full cursor-pointer"
+                />
+              </div>
+            </div>
+
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Jeune, ambitieux et animé par l'excellence. Nous sommes une équipe
               d'innovateurs passionnés par la création de solutions SaaS de
               pointe qui transforment les entreprises.
             </p>
-          </motion.div>
+          </div>
         </div>
+        <ScrollIndicator />
       </motion.section>
 
       {/* Team Grid with 3D Cards */}
@@ -269,50 +307,84 @@ export default function OurTeam() {
       </section>
 
       {/* Values Section with 3D Cards */}
-      <section className="py-20 px-6 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl font-bold text-center mb-16"
-          >
-            Nos Valeurs Fondamentales
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              {
-                icon: '⚡',
-                title: 'Innovation First',
-                description:
-                  'Nous repoussons les limites en embrassant les nouvelles technologies.',
-              },
-              {
-                icon: '🤝',
-                title: 'Satisfaction Client',
-                description:
-                  'Votre réussite est notre priorité. Nous nous engageons à délivrer des résultats exceptionnels.',
-              },
-              {
-                icon: '✨',
-                title: 'Excellence Française',
-                description:
-                  'Nous maintenons les plus hauts standards de qualité, fidèles à la tradition française.',
-              },
-            ].map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white p-8 rounded-2xl shadow-lg text-center transform-gpu hover:shadow-xl transition-all duration-300"
-              >
-                <div className="text-4xl mb-6">{value.icon}</div>
-                <h3 className="text-xl font-bold mb-4">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </motion.div>
-            ))}
+      <section className="mt-[12rem] py-20 px-6 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Contenu texte à gauche */}
+            <div className="flex-1 space-y-10">
+              <div className="space-y-4">
+                <span className="text-sm uppercase tracking-wider text-gray-500">
+                  Notre expertise
+                </span>
+                <h2 className="text-4xl font-bold text-gray-900">
+                  Solutions de développement sur mesure
+                </h2>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Découvrez nos forfaits adaptés à vos besoins en développement
+                  et maintenance.{' '}
+                  <em className="font-medium">
+                    Notre équipe d'experts vous accompagne à chaque étape de
+                    votre projet digital.
+                  </em>
+                </p>
+              </div>
+
+              <div className="space-y-8">
+                <div className="flex items-start gap-4">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      Expertise technique
+                    </h3>
+                    <span className="text-sm text-gray-500 block mb-2">
+                      Full-stack Development
+                    </span>
+                    <p className="text-gray-600">
+                      Une équipe maîtrisant les dernières technologies pour
+                      concrétiser vos projets avec excellence.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      Agilité & Flexibilité
+                    </h3>
+                    <span className="text-sm text-gray-500 block mb-2">
+                      Méthode Agile
+                    </span>
+                    <p className="text-gray-600">
+                      Une méthodologie éprouvée pour s'adapter à vos besoins et
+                      garantir des livraisons efficientes.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      Support continu
+                    </h3>
+                    <span className="text-sm text-gray-500 block mb-2">
+                      Maintenance & Support
+                    </span>
+                    <p className="text-gray-600">
+                      Un accompagnement personnalisé et un support technique
+                      garantissant la pérennité de vos solutions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Image à droite */}
+            <div className="flex-1">
+              <img
+                src="team/team.jpg"
+                alt="Équipe de développement"
+                className="rounded-2xl shadow-xl w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
