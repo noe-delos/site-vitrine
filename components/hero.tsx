@@ -175,10 +175,10 @@ const MobileImageStack: React.FC = () => {
 const ImageStack: React.FC = () => {
   return (
     <div className="relative w-full h-[600px]">
-      {[0, 1].map((index: number) => (
+      {[0, 1].map((index) => (
         <motion.div
           key={index}
-          className="md:absolute w-full left-0 md:left-15 lg:left-15 xl:left-15 top-15 md:-translate-x-1/2 lg:-translate-x-1/2 xl:-translate-x-1/2 -translate-y-1/2"
+          className="absolute left-15 top-15 -translate-x-1/2 -translate-y-1/2"
           initial={{
             opacity: 0,
             x: -100,
@@ -201,26 +201,24 @@ const ImageStack: React.FC = () => {
                 className="relative size-full border rounded-full"
                 color={['#6BA1FA', '#266CDE', '#0945A7']}
               >
-                <div className="relative size-[20rem] md:w-[700px] md:h-[450px] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
                   <Image
                     src={`/hero/hero${index}.png`}
                     alt="Hero illustration"
                     fill
-                    sizes="700px"
                     className={cn('object-cover')}
                   />
                 </div>{' '}
               </ShineBorder>
             ) : (
-              <div className="relative h-[20rem] w-full md:w-[700px] md:h-[450px] bg-white rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-[700px] h-[450px] bg-white rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
                 <Image
                   src={`/hero/hero${index}.png`}
                   alt="Hero illustration"
                   fill
-                  sizes="700px"
-                  className="object-cover md:object-none"
+                  className={cn('object-cover')}
                 />
               </div>
             )}
@@ -248,7 +246,9 @@ const ImageStack: React.FC = () => {
               <div className="absolute inset-[6px] rounded-lg border border-gradient-to-r from-blue-100/50 via-purple-200/50 to-pink-100/50">
                 {/* Content Container */}
                 <div className="w-full h-full rounded-lg backdrop-blur-[6px] bg-white/10 flex items-center justify-center overflow-hidden">
-                  <motion.div
+                  <motion.img
+                    src="/hero/llms.png"
+                    alt="LLMs Hero"
                     initial={{ opacity: 0, scale: 1.1 }}
                     animate={{ opacity: 1, scale: 1.2 }}
                     whileHover={{ scale: 1.4 }}
@@ -264,16 +264,8 @@ const ImageStack: React.FC = () => {
                         ease: 'easeOut',
                       },
                     }}
-                    className="relative w-full h-full"
-                  >
-                    <Image
-                      src="/hero/llms.png"
-                      alt="LLMs Hero"
-                      fill
-                      sizes="300px"
-                      className="object-cover rounded-lg blur-[1px]"
-                    />
-                  </motion.div>
+                    className="w-full h-full object-cover rounded-lg blur-[1px]"
+                  />
                   {/* Text Overlay */}
                   <motion.div
                     className="absolute inset-0 flex items-center justify-center"
