@@ -1,7 +1,9 @@
 'use client';
 import { RainbowButton } from '@/components/acernity/gradient-btn';
+import { useRouter } from 'next/navigation';
 
 export default function ContactUs() {
+  const router = useRouter();
   return (
     <section className="w-full py-16 px-4 pb-[15rem] bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-4xl mx-auto text-center">
@@ -37,7 +39,7 @@ export default function ContactUs() {
 
           <RainbowButton
             onClick={() => {
-              window.location.href = 'mailto:contact@ks-entreprise.com';
+              router.push('/contact');
             }}
           >
             Contactez-nous

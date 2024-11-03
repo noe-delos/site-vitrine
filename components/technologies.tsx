@@ -634,9 +634,7 @@ const Technologies = () => {
                           alt="title"
                           className="size-20"
                         />
-                        <h2 className="text-4xl font-bold text-gray-900">
-                          {item.title}
-                        </h2>
+                        {item.title}
                       </div>
 
                       <p className="text-lg text-gray-600 leading-relaxed">

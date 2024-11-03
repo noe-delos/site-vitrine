@@ -2,11 +2,11 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Header = () => {
   const pathname = usePathname();
-
+  const router = useRouter();
   const navItems = [
     { label: 'Accueil', href: '/' },
     { label: 'Notre équipe', href: '/team' },
@@ -27,32 +27,31 @@ const Header = () => {
       style={headerStyle}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between h-full px-6">
-        <div>
-          <Link href="/" className="flex items-center space-x-3 group">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="relative"
-            >
-              <Image
-                src="/logo/brand-logo.png"
-                alt="Finpay Logo"
-                width={32}
-                height={32}
-                className="rounded-md"
-              />
-            </motion.div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-xl font-semibold text-gray-900 p-0 m-0">
-                Consulting
-              </span>
-              <span className="text-sm text-gray-600 p-0 m-0 -mt-1">
-                software solutions
-              </span>
-            </div>
-          </Link>
-        </div>
+        <Link href="/" className="flex items-center space-x-3 group">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="relative w-8 h-8"
+          >
+            <Image
+              src="/logo/brand-logo.png"
+              alt="Finpay Logo"
+              fill
+              sizes="32px"
+              priority
+              className=" object-contain"
+            />
+          </motion.div>
+          <div className="flex flex-col leading-tight">
+            <span className="text-xl font-semibold text-gray-900">
+              Consulting
+            </span>
+            <span className="text-sm text-gray-600 -mt-1">
+              software solutions
+            </span>
+          </div>
+        </Link>
 
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => {
@@ -113,28 +112,49 @@ const Header = () => {
 
         <div>
           <motion.button
-            whileHover={{ scale: 1.03 }}
+            className="relative overflow-hidden px-6 py-1.5 rounded-lg group border-2 border-[#7066CB]/30"
             whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-            className="relative inline-flex items-center"
-            onClick={() => {
-              window.open('mailto:contact@ks-entreprise.com');
-            }}
+            onClick={() => router.push('/contact')}
           >
-            {/* Gradient border container */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-md opacity-100 transition-opacity duration-300 group-hover:opacity-90" />
+            {/* Base gradient background that shows on hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out" />
 
-            {/* White background and content */}
-            <div className="relative bg-white rounded-[5px] m-[1px] px-6 py-2 transition-all duration-300 hover:bg-gray-50">
-              <span className="text-gray-900 font-medium whitespace-nowrap">
-                Nous contacter
-              </span>
+            {/* White background that slides away on hover */}
+            <motion.div
+              className="absolute inset-0 bg-white"
+              initial={false}
+              animate={{
+                x: ['0%', '100%'],
+                opacity: [1, 0],
+              }}
+              transition={{
+                duration: 0.5,
+                ease: 'easeInOut',
+              }}
+            />
+
+            {/* Text that changes color */}
+            <span className="relative font-medium text-gray-900 group-hover:text-white transition-colors duration-500">
+              Nous contacter
+            </span>
+
+            {/* Sparkle effect on hover */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                animate={{
+                  x: ['-100%', '100%'],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1.5,
+                  ease: 'linear',
+                }}
+              />
             </div>
 
-            {/* Shine effect */}
-            <div className="absolute inset-0 rounded-md overflow-hidden">
-              <div className="absolute inset-0 translate-x-[-100%] animate-[shine_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform" />
-            </div>
+            {/* Border that changes on hover */}
+            <div className="absolute inset-0 border-2 border-[#7066CB] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500" />
           </motion.button>
         </div>
       </nav>

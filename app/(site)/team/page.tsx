@@ -5,6 +5,7 @@ import { cn } from '@/utils/cn';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Lottie from 'lottie-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 
 interface TeamMember {
@@ -87,6 +88,155 @@ const teamMembers: TeamMember[] = [
     ],
   },
 ];
+
+const AnimatedHeroSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut',
+      },
+    },
+  };
+
+  return (
+    <div className="relative max-w-7xl mx-auto text-center px-6">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="flex flex-col items-center"
+      >
+        <motion.h1
+          variants={itemVariants}
+          className="text-5xl lg:text-7xl font-bold leading-tight mb-6"
+        >
+          <span>Une équipe d'</span>
+          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            experts
+          </span>
+          <motion.span
+            variants={itemVariants}
+            className="text-2xl lg:text-3xl font-medium text-gray-600 mt-4 block"
+          >
+            L'excellence à la française
+          </motion.span>
+        </motion.h1>
+
+        <motion.div
+          variants={itemVariants}
+          className="flex items-center justify-center gap-2 mb-8"
+        >
+          <div className="h-px w-12 bg-gradient-to-r from-blue-600 to-transparent" />
+          <span className="text-lg text-gray-500 italic">
+            French Tech Innovation
+          </span>
+          <div className="h-px w-12 bg-gradient-to-l from-blue-600 to-transparent" />
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-center items-center gap-[1px] mb-8"
+        >
+          <div className="w-6 h-4 bg-gradient-to-b from-blue-500/40 to-blue-500/60 rounded-l-sm shadow-sm" />
+          <div className="w-6 h-4 bg-gradient-to-b from-gray-100 to-white shadow-sm" />
+          <div className="w-6 h-4 bg-gradient-to-b from-red-500/40 to-red-500/60 rounded-r-sm shadow-sm" />
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-center self-center items-center gap-20 mb-8 w-fit pr-5"
+        >
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-center"
+            whileHover={{ scale: 1.05 }}
+          >
+            <Link
+              href="https://www.polytechnique.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/technologies/polytech.png"
+                alt="École Polytechnique"
+                width={64}
+                height={64}
+                className="size-[4rem] w-full cursor-pointer"
+                unoptimized
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-center"
+            whileHover={{ scale: 1.05 }}
+          >
+            <Link
+              href="https://www.essec.edu/fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg"
+                alt="ESSEC Business School"
+                width={48}
+                height={48}
+                className="size-[3rem] w-full cursor-pointer"
+                unoptimized
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-center"
+            whileHover={{ scale: 1.05 }}
+          >
+            <Link
+              href="https://www.epitech.eu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png"
+                alt="EPITECH"
+                width={48}
+                height={48}
+                className="size-[3rem] w-full cursor-pointer"
+                unoptimized
+              />
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        <motion.p
+          variants={itemVariants}
+          className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
+        >
+          Jeunes, ambitieux et animés par l'excellence. Nous sommes une équipe
+          d'innovateurs passionnés par la création de solutions SaaS de pointe
+          qui transforment les entreprises.
+        </motion.p>
+      </motion.div>
+    </div>
+  );
+};
 
 interface Card3DProps {
   member: TeamMember;
@@ -216,80 +366,7 @@ export default function OurTeam() {
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto text-center px-6">
-          <div className="opacity-100 transform translate-y-0 transition duration-800 flex flex-col items-center">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-              <span>Une équipe d'</span>
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                experts
-              </span>
-              <br />
-              <span className="text-2xl lg:text-3xl font-medium text-gray-600 mt-4 block">
-                L'excellence à la française
-              </span>
-            </h1>
-
-            <div className="flex items-center justify-center gap-2 mb-8">
-              <div className="h-px w-12 bg-gradient-to-r from-blue-600 to-transparent" />
-              <span className="text-lg text-gray-500 italic">
-                French Tech Innovation
-              </span>
-              <div className="h-px w-12 bg-gradient-to-l from-blue-600 to-transparent" />
-            </div>
-
-            {/* French Flag */}
-            <div className="flex justify-center items-center gap-[1px] mb-8">
-              <div className="w-6 h-4 bg-gradient-to-b from-blue-500/40 to-blue-500/60 rounded-l-sm shadow-sm" />
-              <div className="w-6 h-4 bg-gradient-to-b from-gray-100 to-white shadow-sm" />
-              <div className="w-6 h-4 bg-gradient-to-b from-red-500/40 to-red-500/60 rounded-r-sm shadow-sm" />
-            </div>
-
-            {/* University Logos Row */}
-            <div className="flex justify-center self-center items-center gap-20 mb-8 w-fit pr-5">
-              {/* Polytechnique Logo Placeholder */}
-              <div className="flex flex-col items-center">
-                <img
-                  onClick={() =>
-                    window.open('https://www.polytechnique.edu/', '_blank')
-                  }
-                  src="/technologies/polytech.png"
-                  alt="École Polytechnique"
-                  className="size-[4rem] w-full cursor-pointer"
-                />
-              </div>
-
-              {/* ESSEC Logo Placeholder */}
-              <div className="flex flex-col items-center ">
-                <img
-                  onClick={() =>
-                    window.open('https://www.essec.edu/fr/', '_blank')
-                  }
-                  src="https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg"
-                  alt="ESSEC Business School"
-                  className="size-[3rem] w-full cursor-pointer"
-                />
-              </div>
-
-              {/* HEC Logo Placeholder */}
-              <div className="flex flex-col items-center">
-                <img
-                  onClick={() =>
-                    window.open('https://www.epitech.eu/', '_blank')
-                  }
-                  src="https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png"
-                  alt="EPITECH"
-                  className="size-[3rem] w-full cursor-pointer"
-                />
-              </div>
-            </div>
-
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Jeunes, ambitieux et animés par l'excellence. Nous sommes une
-              équipe d'innovateurs passionnés par la création de solutions SaaS
-              de pointe qui transforment les entreprises.
-            </p>
-          </div>
-        </div>
+        <AnimatedHeroSection />
         <ScrollIndicator />
       </motion.section>
 
@@ -398,12 +475,12 @@ export default function OurTeam() {
           className="max-w-4xl mx-auto text-center relative"
         >
           <h2 className="text-3xl font-bold mb-6 text-gray-900">
-            Prêt à Innover Ensemble ?
+            Nos solutions
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Transformons vos idées en réalité avec notre expertise française.
-            Notre équipe est prête à vous accompagner dans la réalisation de
-            votre prochain grand projet.
+            Découvrez comment nous transformons les défis technologiques en
+            solutions innovantes. Notre portfolio témoigne de notre savoir-faire
+            en développement, infrastructure et conseil IT.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <motion.button
@@ -421,30 +498,8 @@ export default function OurTeam() {
                   href="/contact-us"
                   className="text-white font-medium whitespace-nowrap"
                 >
-                  Contactez-nous
+                  Portfolio
                 </a>
-              </div>
-
-              {/* Shine effect */}
-              <div className="absolute inset-0 rounded-md overflow-hidden">
-                <div className="absolute inset-0 translate-x-[-100%] animate-[shine_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform" />
-              </div>
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.2 }}
-              className="relative inline-flex items-center"
-            >
-              {/* Gradient border container */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-md opacity-100 transition-opacity duration-300 group-hover:opacity-90" />
-
-              {/* White background and content */}
-              <div className="relative bg-white rounded-[5px] m-[1px] px-6 py-2 transition-all duration-300 hover:bg-gray-50">
-                <span className="text-gray-900 font-medium whitespace-nowrap">
-                  Découvrir nos solutions
-                </span>
               </div>
 
               {/* Shine effect */}

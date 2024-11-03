@@ -50,7 +50,7 @@ const LeftSection: React.FC = () => {
 const ImageStack: React.FC = () => {
   return (
     <div className="relative w-full h-[600px]">
-      {[0, 1].map((index) => (
+      {[0, 1].map((index: number) => (
         <motion.div
           key={index}
           className="absolute left-15 top-15 -translate-x-1/2 -translate-y-1/2"
@@ -82,7 +82,11 @@ const ImageStack: React.FC = () => {
                     src={`/hero/hero${index}.png`}
                     alt="Hero illustration"
                     fill
+                    sizes="700px"
+                    priority={false}
+                    loading={'lazy'}
                     className={cn('object-cover')}
+                    quality={90}
                   />
                 </div>{' '}
               </ShineBorder>
@@ -93,7 +97,11 @@ const ImageStack: React.FC = () => {
                   src={`/hero/hero${index}.png`}
                   alt="Hero illustration"
                   fill
+                  sizes="700px"
+                  priority={index === 0}
+                  loading={index === 0 ? 'eager' : 'lazy'}
                   className={cn('object-cover')}
+                  quality={90}
                 />
               </div>
             )}
@@ -121,9 +129,7 @@ const ImageStack: React.FC = () => {
               <div className="absolute inset-[6px] rounded-lg border border-gradient-to-r from-blue-100/50 via-purple-200/50 to-pink-100/50">
                 {/* Content Container */}
                 <div className="w-full h-full rounded-lg backdrop-blur-[6px] bg-white/10 flex items-center justify-center overflow-hidden">
-                  <motion.img
-                    src="/hero/llms.png"
-                    alt="LLMs Hero"
+                  <motion.div
                     initial={{ opacity: 0, scale: 1.1 }}
                     animate={{ opacity: 1, scale: 1.2 }}
                     whileHover={{ scale: 1.4 }}
@@ -139,8 +145,18 @@ const ImageStack: React.FC = () => {
                         ease: 'easeOut',
                       },
                     }}
-                    className="w-full h-full object-cover rounded-lg blur-[1px]"
-                  />
+                    className="relative w-full h-full"
+                  >
+                    <Image
+                      src="/hero/llms.png"
+                      alt="LLMs Hero"
+                      fill
+                      sizes="300px"
+                      className="object-cover rounded-lg blur-[1px]"
+                      loading="lazy"
+                      quality={85}
+                    />
+                  </motion.div>
                   {/* Text Overlay */}
                   <motion.div
                     className="absolute inset-0 flex items-center justify-center"
@@ -167,7 +183,6 @@ const ImageStack: React.FC = () => {
     </div>
   );
 };
-
 const RightSection: React.FC = () => {
   return (
     <div className="flex-1 flex items-center justify-center">
