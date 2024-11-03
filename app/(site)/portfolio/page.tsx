@@ -1,8 +1,7 @@
 // app/portfolio/page.tsx
 'use client';
 import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink, Github } from 'lucide-react';
-import Image from 'next/image';
+import { ExternalLink, Github } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -25,7 +24,8 @@ const projects: Project[] = [
     title: 'Plateforme E-commerce IA',
     description:
       "Une plateforme e-commerce intelligente utilisant l'IA pour personnaliser l'expérience utilisateur et optimiser les ventes.",
-    image: '/projects/ecommerce.jpg', // Placez vos images dans public/projects/
+    image:
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center', // Placez vos images dans public/projects/
     category: 'E-commerce',
     technologies: ['Next.js', 'Node.js', 'TensorFlow', 'AWS'],
     client: 'MegaShop France',
@@ -35,7 +35,85 @@ const projects: Project[] = [
     title: 'Application de Gestion RH',
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
-    image: '/projects/hrm.jpg',
+    image:
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    category: 'SaaS',
+    technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
+    client: 'Tech Industries',
+  },
+  {
+    id: 3,
+    title: 'Application de Gestion RH',
+    description:
+      'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
+    image:
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    category: 'SaaS',
+    technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
+    client: 'Tech Industries',
+  },
+  {
+    id: 4,
+    title: 'Application de Gestion RH',
+    description:
+      'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
+    image:
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    category: 'SaaS',
+    technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
+    client: 'Tech Industries',
+  },
+  {
+    id: 5,
+    title: 'Application de Gestion RH',
+    description:
+      'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
+    image:
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    category: 'SaaS',
+    technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
+    client: 'Tech Industries',
+  },
+  {
+    id: 6,
+    title: 'Application de Gestion RH',
+    description:
+      'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
+    image:
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    category: 'SaaS',
+    technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
+    client: 'Tech Industries',
+  },
+  {
+    id: 7,
+    title: 'Application de Gestion RH',
+    description:
+      'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
+    image:
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    category: 'SaaS',
+    technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
+    client: 'Tech Industries',
+  },
+  {
+    id: 8,
+    title: 'Application de Gestion RH',
+    description:
+      'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
+    image:
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    category: 'SaaS',
+    technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
+    client: 'Tech Industries',
+  },
+  {
+    id: 9,
+    title: 'Application de Gestion RH',
+    description:
+      'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
+    image:
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
     client: 'Tech Industries',
@@ -76,9 +154,9 @@ const PortfolioPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 pt-24">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-50 pt-24">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 py-20">
+      <section className="max-w-[100rem] mx-auto px-4 py-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -126,69 +204,59 @@ const PortfolioPage = () => {
           {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
-              variants={projectVariants}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-              onHoverStart={() => setHoveredProject(project.id)}
-              onHoverEnd={() => setHoveredProject(null)}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              className="group relative w-[30rem] pb-5 aspect-square rounded-xl overflow-hidden"
             >
-              {/* Image du projet */}
-              <div className="relative h-64 overflow-hidden">
-                <Image
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img
                   src={project.image}
                   alt={project.title}
-                  fill
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Gradient Overlay - Extended higher */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent from-0% via-35% to-65%" />
               </div>
 
-              {/* Contenu */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium text-[#7066CB]">
-                    {project.category}
-                  </span>
-                  <span className="text-sm text-gray-500">
-                    {project.client}
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+              {/* Content Container */}
+              <div className="absolute inset-x-0 bottom-0 p-6 transform translate-y-2 transition-all duration-300 ease-out group-hover:-translate-y-2">
+                {/* Project Title and Description */}
+                <h3 className="text-xl font-bold text-white mb-2 transition-transform duration-300 ease-out group-hover:-translate-y-1">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-gray-200 text-sm mb-3 opacity-90 line-clamp-2 transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                  {project.description}
+                </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 mb-3 transition-transform duration-300 ease-out group-hover:-translate-y-1">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
+                      className="px-2 py-0.5 text-[11px] font-medium rounded-full 
+                bg-gradient-to-r from-purple-500/20 to-blue-500/20 
+                text-white backdrop-blur-sm 
+                border border-white/10
+                transition-all duration-300 ease-out
+                group-hover:bg-gradient-to-r group-hover:from-purple-500/30 group-hover:to-blue-500/30"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Liens */}
-                <div className="flex items-center space-x-4">
-                  <motion.a
-                    href="#"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center space-x-2 text-[#7066CB] hover:text-blue-500"
-                  >
-                    <span>Voir le projet</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.a>
-
+                {/* Links */}
+                <div className="flex items-center space-x-3 transition-transform duration-300 ease-out group-hover:-translate-y-1">
                   {project.github && (
                     <motion.a
                       href={project.github}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
-                      className="text-gray-400 hover:text-gray-600"
+                      className="text-white/70 hover:text-white transition-colors duration-200"
                     >
                       <Github className="w-5 h-5" />
                     </motion.a>
@@ -199,7 +267,7 @@ const PortfolioPage = () => {
                       href={project.link}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
-                      className="text-gray-400 hover:text-gray-600"
+                      className="text-white/70 hover:text-white transition-colors duration-200"
                     >
                       <ExternalLink className="w-5 h-5" />
                     </motion.a>
@@ -212,19 +280,18 @@ const PortfolioPage = () => {
       </section>
 
       {/* Section Statistiques */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-white py-20 flex items-center justify-center">
+        <div className="w-fit flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-44"
           >
             {[
               { number: '50+', label: 'Projets Réalisés' },
-              { number: '30+', label: 'Clients Satisfaits' },
-              { number: '5+', label: "Années d'Expérience" },
+              { number: '20+', label: 'Clients Satisfaits' },
               { number: '100%', label: 'Satisfaction Client' },
             ].map((stat, index) => (
               <div key={index} className="text-center">

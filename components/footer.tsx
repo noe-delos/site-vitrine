@@ -1,248 +1,145 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import {
-	Facebook,
-	Instagram,
-	Linkedin,
-	Mail,
-	MapPin,
-	Phone,
-	Twitter,
-} from 'lucide-react';
 import Link from 'next/link';
 
 const Footer = () => {
-	const fadeInUpVariants = {
-		hidden: { opacity: 0, y: 20 },
-		visible: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 0.6,
-				ease: 'easeOut',
-			},
-		},
-	};
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+      },
+    },
+  };
 
-	const containerVariants = {
-		hidden: { opacity: 0 },
-		visible: {
-			opacity: 1,
-			transition: {
-				staggerChildren: 0.1,
-				delayChildren: 0.1,
-			},
-		},
-	};
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
 
-	return (
-		<motion.footer
-			initial="hidden"
-			whileInView="visible"
-			viewport={{ once: true }}
-			className="bg-gradient-to-br from-gray-50 via-white to-gray-50"
-		>
-			{/* Decorative Top Border */}
-			<div className="h-[0.35px] w-full bg-gradient-to-r from-[#7066CB] via-blue-500 to-blue-400" />
+  return (
+    <motion.footer
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="bg-gradient-to-br from-gray-50 via-white to-gray-50 "
+    >
+      {/* Decorative Top Border */}
+      <div className="h-[0.05rem] w-full bg-gray-200" />
 
-			{/* Main Footer Content */}
-			<div className="max-w-7xl mx-auto px-6 py-16">
-				<motion.div
-					variants={containerVariants}
-					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
-				>
-					{/* Company Info */}
-					<motion.div variants={fadeInUpVariants} className="space-y-6">
-						<Link
-							href="/"
-							className="flex items-center space-x-3 group relative"
-						>
-							<div className="relative">
-								<Image
-									src="/logo/brand-logo.png"
-									alt="Finpay Logo"
-									width={32}
-									height={32}
-									className="rounded-md"
-								/>
-							</div>
-							<div className="flex flex-col leading-tight">
-								<span className="text-xl font-semibold text-gray-900 p-0 m-0">
-									Consulting
-								</span>
-								<span className="text-sm text-gray-600 p-0 m-0 -mt-1">
-									software solutions
-								</span>
-							</div>
-						</Link>
-						<p className="text-gray-600 max-w-sm">
-							Créons ensemble les solutions digitales de demain. Notre expertise
-							en SaaS et en IA au service de votre réussite.
-						</p>
-						<div className="flex space-x-4">
-							{[
-								{ icon: Facebook, href: '#' },
-								{ icon: Twitter, href: '#' },
-								{ icon: Linkedin, href: '#' },
-								{ icon: Instagram, href: '#' },
-							].map((social, index) => (
-								<motion.a
-									key={index}
-									href={social.href}
-									whileHover={{ y: -3, scale: 1.1 }}
-									whileTap={{ scale: 0.95 }}
-									className="text-gray-400 hover:text-[#7066CB] transition-colors"
-								>
-									<social.icon className="h-5 w-5" />
-								</motion.a>
-							))}
-						</div>
-					</motion.div>
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <motion.div
+          variants={containerVariants}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20"
+        >
+          {/* Company Info */}
+          <motion.div variants={fadeInUpVariants} className="space-y-6">
+            <Link
+              href="/"
+              className="flex items-center space-x-3 group relative"
+            >
+              <div className="relative">
+                <Image
+                  src="/logo/brand-logo.png"
+                  alt="KS Enterprise Logo"
+                  width={32}
+                  height={32}
+                  className="rounded-md"
+                />
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="text-xl font-semibold text-gray-900 p-0 m-0">
+                  KS Enterprise
+                </span>
+                <span className="text-sm text-gray-600 p-0 m-0 -mt-1">
+                  software solutions
+                </span>
+              </div>
+            </Link>
+            <p className="text-gray-600 max-w-sm">
+              Créons ensemble les solutions digitales de demain. Notre expertise
+              en SaaS et en IA au service de votre réussite.
+            </p>
+          </motion.div>
 
-					{/* Quick Links */}
-					<motion.div variants={fadeInUpVariants} className="space-y-6">
-						<h3 className="text-lg font-semibold text-gray-900">Services</h3>
-						<motion.ul variants={containerVariants} className="space-y-3">
-							{[
-								'SaaS Development',
-								'AI Integration',
-								'Web Development',
-								'Cloud Solutions',
-								'UI/UX Design',
-							].map((item, index) => (
-								<motion.li
-									key={index}
-									variants={fadeInUpVariants}
-									whileHover={{ x: 5 }}
-								>
-									<Link
-										href="#"
-										className="text-gray-600 hover:text-[#7066CB] transition-colors"
-									>
-										{item}
-									</Link>
-								</motion.li>
-							))}
-						</motion.ul>
-					</motion.div>
+          {/* Pages */}
+          <motion.div variants={fadeInUpVariants} className="space-y-6">
+            <h3 className="text-lg font-semibold text-gray-900">Pages</h3>
+            <motion.ul variants={containerVariants} className="space-y-3">
+              {[
+                { name: 'Menu', path: '/' },
+                { name: 'Équipe', path: '/team' },
+                { name: 'Portfolio', path: '/portfolio' },
+                { name: 'Contact', path: '/contact' },
+              ].map((item, index) => (
+                <motion.li
+                  key={index}
+                  variants={fadeInUpVariants}
+                  whileHover={{ x: 5 }}
+                >
+                  <Link
+                    href={item.path}
+                    className="text-gray-600 hover:text-[#7066CB] transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
 
-					{/* Contact Info */}
-					<motion.div variants={fadeInUpVariants} className="space-y-6">
-						<h3 className="text-lg font-semibold text-gray-900">Contact</h3>
-						<ul className="space-y-4">
-							{[
-								{
-									icon: MapPin,
-									text: 'Paris, France',
-									motion: { x: 5 },
-								},
-								{
-									icon: Phone,
-									text: '+33 1 23 45 67 89',
-									motion: { x: 5 },
-								},
-								{
-									icon: Mail,
-									text: 'contact@finpay.com',
-									motion: { x: 5 },
-								},
-							].map((item, index) => (
-								<motion.li
-									key={index}
-									whileHover={item.motion}
-									className="flex items-center space-x-3 text-gray-600"
-								>
-									<item.icon className="h-5 w-5 text-[#7066CB]" />
-									<span>{item.text}</span>
-								</motion.li>
-							))}
-						</ul>
-					</motion.div>
+          {/* Contact Info */}
+          <motion.div variants={fadeInUpVariants} className="space-y-6">
+            <h3 className="text-lg font-semibold text-gray-900">Contact</h3>
+            <div className="space-y-4 text-gray-600">
+              <p>
+                <a
+                  href="mailto:contact@ks-entreprise.com"
+                  className="hover:text-[#7066CB] transition-colors"
+                >
+                  contact@ks-entreprise.com
+                </a>
+              </p>
+              <p>
+                <a
+                  href="tel:0768566836"
+                  className="hover:text-[#7066CB] transition-colors"
+                >
+                  07 68 56 68 36
+                </a>
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
 
-					{/* Newsletter */}
-					<motion.div variants={fadeInUpVariants} className="space-y-6">
-						<h3 className="text-lg font-semibold text-gray-900">Newsletter</h3>
-						<p className="text-gray-600">
-							Restez informé de nos dernières innovations et actualités.
-						</p>
-						<motion.form
-							onSubmit={(e) => e.preventDefault()}
-							className="space-y-3"
-						>
-							<div className="relative">
-								<input
-									type="email"
-									placeholder="Votre email"
-									className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#7066CB] focus:outline-none text-gray-600 placeholder-gray-400"
-								/>
-								{/* Nouveau style de bouton avec bordure gradient */}
-								<motion.button
-									whileHover={{ scale: 1.03 }}
-									whileTap={{ scale: 0.98 }}
-									className="absolute right-2 top-2"
-								>
-									<div className="relative inline-flex items-center">
-										{/* Gradient border container */}
-										<div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-md opacity-100 transition-opacity duration-300 group-hover:opacity-90" />
-
-										{/* White background and content */}
-										<div className="relative bg-white rounded-[5px] m-[1px] px-4 py-1 transition-all duration-300 hover:bg-gray-50">
-											<span className="text-gray-900 font-medium whitespace-nowrap">
-												OK
-											</span>
-										</div>
-
-										{/* Shine effect */}
-										<div className="absolute inset-0 rounded-md overflow-hidden">
-											<div className="absolute inset-0 translate-x-[-100%] animate-[shine_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform" />
-										</div>
-									</div>
-								</motion.button>
-							</div>
-						</motion.form>
-					</motion.div>
-				</motion.div>
-			</div>
-
-			{/* Bottom Bar */}
-			<motion.div
-				variants={fadeInUpVariants}
-				className="border-t border-gray-200 bg-white"
-			>
-				<div className="max-w-7xl mx-auto px-6 py-6">
-					<div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-						<motion.p
-							variants={fadeInUpVariants}
-							className="text-gray-600 text-sm"
-						>
-							© 2024 Finpay. Tous droits réservés.
-						</motion.p>
-						<motion.div
-							variants={containerVariants}
-							className="flex space-x-6 text-sm"
-						>
-							{[
-								'Mentions légales',
-								'Politique de confidentialité',
-								"Conditions d'utilisation",
-							].map((item, index) => (
-								<motion.a
-									key={index}
-									href="#"
-									variants={fadeInUpVariants}
-									whileHover={{ color: '#7066CB' }}
-									className="text-gray-600 hover:text-[#7066CB] transition-colors"
-								>
-									{item}
-								</motion.a>
-							))}
-						</motion.div>
-					</div>
-				</div>
-			</motion.div>
-		</motion.footer>
-	);
+      {/* Bottom Bar */}
+      <motion.div
+        variants={fadeInUpVariants}
+        className="border-t border-gray-200 bg-white"
+      >
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <motion.p
+            variants={fadeInUpVariants}
+            className="text-gray-600 text-sm text-center"
+          >
+            © 2024 KS Enterprise. Tous droits réservés.
+          </motion.p>
+        </div>
+      </motion.div>
+    </motion.footer>
+  );
 };
 
 export default Footer;

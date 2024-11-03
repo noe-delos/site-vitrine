@@ -83,10 +83,7 @@ const ImageStack: React.FC = () => {
                     alt="Hero illustration"
                     fill
                     sizes="700px"
-                    priority={false}
-                    loading={'lazy'}
                     className={cn('object-cover')}
-                    quality={90}
                   />
                 </div>{' '}
               </ShineBorder>
@@ -98,10 +95,6 @@ const ImageStack: React.FC = () => {
                   alt="Hero illustration"
                   fill
                   sizes="700px"
-                  priority={index === 0}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  className={cn('object-cover')}
-                  quality={90}
                 />
               </div>
             )}
@@ -153,8 +146,6 @@ const ImageStack: React.FC = () => {
                       fill
                       sizes="300px"
                       className="object-cover rounded-lg blur-[1px]"
-                      loading="lazy"
-                      quality={85}
                     />
                   </motion.div>
                   {/* Text Overlay */}
