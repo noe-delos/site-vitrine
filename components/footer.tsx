@@ -55,7 +55,6 @@ const Footer = () => {
                   alt="KS Enterprise Logo"
                   width={32}
                   height={32}
-                  className="rounded-md"
                 />
               </div>
               <div className="flex flex-col leading-tight">
