@@ -203,9 +203,10 @@ const ImageStack: React.FC = () => {
               >
                 <div className="relative size-[20rem] md:w-[700px] md:h-[450px] rounded-2xl overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
-                  <img
+                  <Image
                     src={`/hero/hero${index}.png`}
                     alt="Hero illustration"
+                    fill
                     sizes="700px"
                     className={cn('object-cover')}
                   />
@@ -214,9 +215,10 @@ const ImageStack: React.FC = () => {
             ) : (
               <div className="relative h-[20rem] w-full md:w-[700px] md:h-[450px] bg-white rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
-                <img
+                <Image
                   src={`/hero/hero${index}.png`}
                   alt="Hero illustration"
+                  fill
                   sizes="700px"
                   className="object-cover md:object-none"
                 />

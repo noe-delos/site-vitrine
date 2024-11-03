@@ -4,7 +4,6 @@ import type { CSSObject } from '@mui/material/styles';
 
 import { Children, forwardRef, isValidElement } from 'react';
 
-import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import { useTheme } from '@mui/material/styles';
 
@@ -111,12 +110,11 @@ export function CarouselThumb({
       }}
       {...other}
     >
-      <Box
-        component="img"
+      <img
         alt="img"
         src={src}
         className={carouselClasses.thumbImage}
-        sx={{
+        style={{
           width: 1,
           height: 1,
           objectFit: 'cover',
