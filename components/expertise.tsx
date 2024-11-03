@@ -3,7 +3,7 @@
 import SparklesText from '@/components/acernity/sparkles-text';
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const videos = ['/hero/expertise/video1.mp4', '/hero/expertise/video2.mp4'];
 const videoTiming = [9000, 16000];
@@ -11,7 +11,7 @@ const videoTiming = [9000, 16000];
 const StackBox = ({ icon, bgcolor, color }: any) => {
   return (
     <div
-      className="relative p-[1px] z-10 h-[3rem] w-[11rem] rounded-lg"
+      className="relative z-10 h-[3rem] w-[11rem] flex items-center justify-center rounded-lg"
       style={{
         background: `linear-gradient(${bgcolor}, ${bgcolor}), 
                   linear-gradient(to bottom, ${color}, ${bgcolor})`,
@@ -27,42 +27,14 @@ const StackBox = ({ icon, bgcolor, color }: any) => {
     >
       <Icon
         icon={icon}
-        className="size-7 text-white transition-transform duration-200 hover:scale-110 cursor-pointer"
+        className="mt-1 size-11 text-white transition-transform duration-200 cursor-pointer"
       />
     </div>
   );
 };
 
-const useInView = (margin = '0px') => {
-  const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { rootMargin: margin },
-    );
-
-    const currentElement = elementRef.current;
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
-
-    return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
-      }
-    };
-  }, [margin]);
-
-  return [elementRef, isVisible];
-};
-
 export default function Expertise() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const [ref, isInView] = useInView('0px');
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -78,7 +50,7 @@ export default function Expertise() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.2, // Increased animation duration
+        duration: 0.2,
         ease: 'easeOut',
       },
     },
@@ -90,13 +62,12 @@ export default function Expertise() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center tracking-normal">
           {/* Left Content */}
           <motion.div
-            ref={ref as any}
             initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
+            animate="visible"
             variants={{
               visible: {
                 transition: {
-                  staggerChildren: 0.4, // Increased stagger time between elements
+                  staggerChildren: 0.4,
                 },
               },
             }}
@@ -121,7 +92,7 @@ export default function Expertise() {
             <motion.div variants={fadeInUp} className="space-y-4">
               <div className="flex items-start space-x-3">
                 <StackBox
-                  icon={'noto:headphone'}
+                  icon={'ic:round-headset'}
                   color="#E5E5E5"
                   bgcolor="#F1F1F1"
                 />
@@ -143,7 +114,7 @@ export default function Expertise() {
             <motion.div variants={fadeInUp} className="space-y-4">
               <div className="flex items-start space-x-3">
                 <StackBox
-                  icon={'noto:horse'}
+                  icon={'ph:lightning-fill'}
                   color="#E5E5E5"
                   bgcolor="#F1F1F1"
                 />

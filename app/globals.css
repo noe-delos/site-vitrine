@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --color-1: 0 100% 63%;
-    --color-2: 270 100% 63%;
-    --color-3: 210 100% 63%;
-    --color-4: 195 100% 63%;
-    --color-5: 90 100% 63%;
+    --color-1: 210 100% 63%; /* Azure blue */
+    --color-2: 220 100% 63%; /* Royal blue */
+    --color-3: 200 100% 63%; /* Sky blue */
+    --color-4: 240 100% 63%; /* Deep blue */
+    --color-5: 190 100% 63%; /* Light blue */
     --font-airbnb-cereal: 'AirbnbCereal';
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -17,11 +17,11 @@
     --chart-5: 27 87% 67%;
   }
   .dark {
-    --color-1: 0 100% 63%;
-    --color-2: 270 100% 63%;
-    --color-3: 210 100% 63%;
-    --color-4: 195 100% 63%;
-    --color-5: 90 100% 63%;
+    --color-1: 210 100% 63%; /* Azure blue */
+    --color-2: 220 100% 63%; /* Royal blue */
+    --color-3: 200 100% 63%; /* Sky blue */
+    --color-4: 240 100% 63%; /* Deep blue */
+    --color-5: 190 100% 63%; /* Light blue */
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;

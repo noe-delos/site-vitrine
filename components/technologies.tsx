@@ -239,10 +239,6 @@ const Technologies = () => {
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
             className="rounded-xl"
           />
-          <img
-            src="/technologies/openAI.png"
-            className="size-20 rounded-xl absolute z-40 top-14 -right-7 shadow-lg shadow-white/20"
-          />
         </div>
       ),
       description: (
@@ -347,11 +343,11 @@ const Technologies = () => {
       subtitle:
         'Des applications web ultrarapides et optimisées pour offrir la meilleure expérience utilisateur possible sur toutes les plateformes.',
       rightContent: (
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full rounded-lg">
           <img
-            src="/technologies/nextjs.png"
+            src="https://cdn.dribbble.com/userupload/12246160/file/original-21ce109ee20be8d23fe7400e46a449a4.jpg?resize=1024x768"
             alt="Next.js Benefits"
-            className="w-full h-full object-contain rounded-xl"
+            className="w-full h-full object-cover rounded-xl"
           />
         </div>
       ),
@@ -450,7 +446,7 @@ const Technologies = () => {
       rightContent: (
         <div className="relative w-full h-full">
           <img
-            src="https://www.chainguard.dev/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fl47ir7rfykkn%2F4xY10Dyf6Lb5H8OHHp4sRK%2F38c5437fd5a396cef65225c1a41beaf2%2FDockerhub_1.png&w=3840&q=75"
+            src="https://cdn.dribbble.com/userupload/17341175/file/original-a6085175e674b05fe0bd4fe59f2a553d.png?resize=1024x615"
             alt="Scaleway Cloud"
             className="w-full h-full object-cover rounded-xl"
           />

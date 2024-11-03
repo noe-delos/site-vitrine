@@ -31,3 +31,5 @@ export function RainbowButton({
     </button>
   );
 }
+
+export default RainbowButton;

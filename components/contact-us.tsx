@@ -1,3 +1,4 @@
+'use client';
 import { RainbowButton } from '@/components/acernity/gradient-btn';
 
 export default function ContactUs() {
@@ -5,7 +6,7 @@ export default function ContactUs() {
     <section className="w-full py-16 px-4 pb-[15rem] bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-4">
-          Créons Ensemble Votre Prochain Projet
+          Créons ensemble votre prochain projet.
         </h2>
 
         <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -20,7 +21,7 @@ export default function ContactUs() {
                 Email
               </span>
               <span className="text-gray-700 font-medium">
-                contact@entreprise.fr
+                contact@ks-entreprise.com
               </span>
             </div>
 
@@ -30,15 +31,17 @@ export default function ContactUs() {
               <span className="text-sm uppercase tracking-wider text-gray-400 mb-1">
                 Téléphone
               </span>
-              <span className="text-gray-700 font-medium">01 23 45 67 89</span>
+              <span className="text-gray-700 font-medium">07 68 56 68 36</span>
             </div>
           </div>
 
-          <RainbowButton>Contactez-nous</RainbowButton>
-
-          <p className="text-sm text-gray-500 mt-6">
-            Réponse garantie sous 24 heures ouvrées
-          </p>
+          <RainbowButton
+            onClick={() => {
+              window.location.href = 'mailto:contact@ks-entreprise.com';
+            }}
+          >
+            Contactez-nous
+          </RainbowButton>
         </div>
       </div>
     </section>
