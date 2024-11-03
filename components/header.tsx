@@ -117,17 +117,15 @@ const Header = () => {
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
             className="relative inline-flex items-center"
+            onClick={() => {
+              window.open('mailto:contact@ks-entreprise.com');
+            }}
           >
             {/* Gradient border container */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-md opacity-100 transition-opacity duration-300 group-hover:opacity-90" />
 
             {/* White background and content */}
-            <div
-              onClick={() => {
-                window.open('mailto:contact@ks-entreprise.com');
-              }}
-              className="relative bg-white rounded-[5px] m-[1px] px-6 py-2 transition-all duration-300 hover:bg-gray-50"
-            >
+            <div className="relative bg-white rounded-[5px] m-[1px] px-6 py-2 transition-all duration-300 hover:bg-gray-50">
               <span className="text-gray-900 font-medium whitespace-nowrap">
                 Nous contacter
               </span>
