@@ -7,7 +7,6 @@ import {
   CarouselDotButtons,
   useCarousel,
 } from '@/components/carousel';
-import Image from 'next/image';
 
 // ----------------------------------------------------------------------
 
@@ -18,9 +17,10 @@ type Props = {
     coverUrl: string;
     description: string;
   }[];
+  isHoveringParallax: boolean;
 };
 
-export function CarouselParallax({ data }: Props) {
+export function CarouselParallax({ data, isHoveringParallax }: Props) {
   const [isHovering, setIsHovering] = useState(false);
   const router = useRouter();
 
@@ -34,9 +34,7 @@ export function CarouselParallax({ data }: Props) {
 
   return (
     <div
-      style={{
-        position: 'relative',
-      }}
+      className="relative"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -54,29 +52,17 @@ export function CarouselParallax({ data }: Props) {
           <CarouselItem key={item.id} index={index} item={item} />
         ))}
       </Carousel>
-      <div
-        className="arrow-buttons"
-        style={{
-          opacity: 0,
-          visibility: 'hidden',
-          transition: 'opacity 0.3s ease, visibility 0.3s ease',
-        }}
-      >
-        <CarouselArrowFloatButtons
-          {...carousel.arrows}
-          options={carousel.options}
-        />
-      </div>
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 16,
-          left: 0,
-          right: 0,
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
+      {isHoveringParallax && (
+        <>
+          <div className="arrow-buttons">
+            <CarouselArrowFloatButtons
+              {...carousel.arrows}
+              options={carousel.options}
+            />
+          </div>
+        </>
+      )}{' '}
+      <div className="absolute bottom-1 left-0 right-0 flex justify-center">
         <CarouselDotButtons
           scrollSnaps={carousel.dots.scrollSnaps}
           selectedIndex={carousel.dots.selectedIndex}
@@ -86,6 +72,7 @@ export function CarouselParallax({ data }: Props) {
     </div>
   );
 }
+
 // ----------------------------------------------------------------------
 
 type CarouselItemProps = {
@@ -96,16 +83,12 @@ type CarouselItemProps = {
 function CarouselItem({ item, index }: CarouselItemProps) {
   const router = useRouter();
   return (
-    <div className="relative p-0 max-h-[17rem]">
-      <div className="relative w-full h-full aspect-[4/3] sm:aspect-[16/10]">
-        <Image
-          alt={item.title}
-          src={item.coverUrl}
-          fill
-          priority={index < 2} // Prioritize loading first two images
-          className={`object-cover transition-opacity duration-300`}
-        />
-      </div>
+    <div className="max-h-[30rem]">
+      <img
+        alt={item.title}
+        src={item.coverUrl}
+        className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+      />
     </div>
   );
 }

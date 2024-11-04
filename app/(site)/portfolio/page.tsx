@@ -1,4 +1,5 @@
 'use client';
+import { CarouselParallax } from '@/components/sections/portfolio/carousel';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -9,7 +10,7 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  images: string[];
   category: string;
   technologies: string[];
   link?: string;
@@ -24,8 +25,11 @@ const projects: Project[] = [
     title: 'Plateforme E-commerce IA',
     description:
       "Une plateforme e-commerce intelligente utilisant l'IA pour personnaliser l'expérience utilisateur et optimiser les ventes.",
-    image:
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center', // Placez vos images dans public/projects/
+    images: [
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    ], // Placez vos imagess dans public/projects/
     category: 'E-commerce',
     technologies: ['Next.js', 'Node.js', 'TensorFlow', 'AWS'],
     client: 'MegaShop France',
@@ -35,8 +39,11 @@ const projects: Project[] = [
     title: 'Application de Gestion RH',
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
-    image:
+    images: [
       'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
     client: 'Tech Industries',
@@ -46,8 +53,11 @@ const projects: Project[] = [
     title: 'Application de Gestion RH',
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
-    image:
+    images: [
       'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
     client: 'Tech Industries',
@@ -57,8 +67,11 @@ const projects: Project[] = [
     title: 'Application de Gestion RH',
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
-    image:
+    images: [
       'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
     client: 'Tech Industries',
@@ -68,8 +81,11 @@ const projects: Project[] = [
     title: 'Application de Gestion RH',
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
-    image:
+    images: [
       'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
     client: 'Tech Industries',
@@ -79,8 +95,11 @@ const projects: Project[] = [
     title: 'Application de Gestion RH',
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
-    image:
+    images: [
       'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
     client: 'Tech Industries',
@@ -90,8 +109,11 @@ const projects: Project[] = [
     title: 'Application de Gestion RH',
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
-    image:
+    images: [
       'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
     client: 'Tech Industries',
@@ -101,8 +123,11 @@ const projects: Project[] = [
     title: 'Application de Gestion RH',
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
-    image:
+    images: [
       'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
     client: 'Tech Industries',
@@ -112,8 +137,11 @@ const projects: Project[] = [
     title: 'Application de Gestion RH',
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
-    image:
+    images: [
       'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+    ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
     client: 'Tech Industries',
@@ -124,7 +152,7 @@ const categories = ['Tous', 'E-commerce', 'SaaS', 'IA', 'Mobile'];
 
 const PortfolioPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('Tous');
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+
   const router = useRouter();
   const filteredProjects = projects.filter(
     (project) =>
@@ -202,77 +230,91 @@ const PortfolioPage = () => {
           animate="visible"
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-4 md:px-6"
         >
-          {filteredProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={projectVariants}
-              className="group relative w-full aspect-[4/3] md:aspect-square rounded-xl overflow-hidden"
-            >
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent from-0% via-35% to-65%" />
-              </div>
+          {filteredProjects.map((project) => {
+            const [isHoveringParallax, setIsHovering] = useState(false);
 
-              {/* Content Container - Adjusted padding for mobile */}
-              <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 transform translate-y-2 transition-all duration-300 ease-out group-hover:-translate-y-2">
-                <h3 className="text-lg md:text-xl font-bold text-white mb-2 transition-transform duration-300 ease-out group-hover:-translate-y-1">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-200 text-xs md:text-sm mb-3 opacity-90 line-clamp-2 transition-transform duration-300 ease-out group-hover:-translate-y-1">
-                  {project.description}
-                </p>
-
-                {/* Technologies - Adjusted size for mobile */}
-                <div className="flex flex-wrap gap-1.5 mb-3 transition-transform duration-300 ease-out group-hover:-translate-y-1">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 text-[10px] md:text-[11px] font-medium rounded-full 
-                      bg-gradient-to-r from-purple-500/20 to-blue-500/20 
-                      text-white backdrop-blur-sm 
-                      border border-white/10
-                      transition-all duration-300 ease-out
-                      group-hover:bg-gradient-to-r group-hover:from-purple-500/30 group-hover:to-blue-500/30"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+            return (
+              <motion.div
+                key={project.id}
+                variants={projectVariants}
+                className="group relative w-full aspect-[4/3] md:aspect-square rounded-xl overflow-hidden"
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+              >
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                  <CarouselParallax
+                    isHoveringParallax={isHoveringParallax}
+                    data={project.images.map((img: string, index: number) => ({
+                      id: `project-${index + 1}`,
+                      title: `Project ${index + 1}`,
+                      coverUrl: img,
+                      description: `This is a sample description for Project ${index + 1}. It demonstrates how the carousel item would look with real data.`,
+                    }))}
+                  />
+                  {/* <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+        /> */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent from-0% via-35% to-65%" />
                 </div>
 
-                {/* Links */}
-                <div className="flex items-center space-x-3 transition-transform duration-300 ease-out group-hover:-translate-y-1">
-                  {project.github && (
-                    <motion.a
-                      href={project.github}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-white/70 hover:text-white transition-colors duration-200"
-                    >
-                      <Github className="w-4 h-4 md:w-5 md:h-5" />
-                    </motion.a>
-                  )}
+                {/* Content Container - Adjusted padding for mobile */}
+                <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 transform translate-y-2 transition-all duration-300 ease-out group-hover:-translate-y-2">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2 transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                    {project.title}
+                  </h3>
 
-                  {project.link && (
-                    <motion.a
-                      href={project.link}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-white/70 hover:text-white transition-colors duration-200"
-                    >
-                      <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
-                    </motion.a>
-                  )}
+                  <p className="text-gray-200 text-xs md:text-sm mb-3 opacity-90 line-clamp-2 transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                    {project.description}
+                  </p>
+
+                  {/* Technologies - Adjusted size for mobile */}
+                  <div className="flex flex-wrap gap-1.5 mb-3 transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-0.5 text-[10px] md:text-[11px] font-medium rounded-full 
+              bg-gradient-to-r from-purple-500/20 to-blue-500/20 
+              text-white backdrop-blur-sm 
+              border border-white/10
+              transition-all duration-300 ease-out
+              group-hover:bg-gradient-to-r group-hover:from-purple-500/30 group-hover:to-blue-500/30"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex items-center space-x-3 transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                    {project.github && (
+                      <motion.a
+                        href={project.github}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-white/70 hover:text-white transition-colors duration-200"
+                      >
+                        <Github className="w-4 h-4 md:w-5 md:h-5" />
+                      </motion.a>
+                    )}
+
+                    {project.link && (
+                      <motion.a
+                        href={project.link}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-white/70 hover:text-white transition-colors duration-200"
+                      >
+                        <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </section>
 

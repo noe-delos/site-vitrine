@@ -92,6 +92,7 @@ export function CarouselArrowNumberButtons({
         zIndex: 9,
         borderRadius: 1.25,
         color: 'common.white',
+        bgcolor: 'black',
         ...sx,
       }}
       {...other}
