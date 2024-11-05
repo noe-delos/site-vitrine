@@ -38,25 +38,24 @@ const TabletFeatureList = ({ items }: any) => (
   </div>
 );
 
-function TabletPerformanceAnalyticsCard() {
+function TabletPerformanceAnalyticsCard({ dictionary }: { dictionary: any }) {
   const features = {
     column1: [
       {
-        title: 'Chargement instantané',
-        description: 'Performance optimisée avec temps de chargement < 0.5s',
+        title: dictionary.technologies.performance.instant_loading.title,
+        description: dictionary.technologies.performance.instant_loading.description,
       },
     ],
     column2: [
       {
-        title: 'Analytics temps réel',
-        description: 'Suivi en direct des métriques clés de performance',
+        title: dictionary.technologies.performance.realtime_analytics.title,
+        description: dictionary.technologies.performance.realtime_analytics.description,
       },
     ],
     column3: [
       {
-        title: 'Monitoring avancé',
-        description:
-          'Tableaux de bord personnalisables avec alertes intelligentes',
+        title: dictionary.technologies.performance.advanced_monitoring.title,
+        description: dictionary.technologies.performance.advanced_monitoring.description,
       },
     ],
   };
@@ -67,7 +66,7 @@ function TabletPerformanceAnalyticsCard() {
         <CardTitle className="flex items-center gap-3 text-2xl">
           <Shield className="w-7 h-7 text-gray-700" />
           <span className="bg-gradient-to-b from-gray-300 to-black bg-clip-text text-transparent">
-            Performance & Analytics
+            {dictionary.technologies.performance.title}
           </span>
         </CardTitle>
       </CardHeader>
@@ -88,22 +87,21 @@ function TabletPerformanceAnalyticsCard() {
   );
 }
 
-const TabletTechnologies = () => {
+const TabletTechnologies = ({ dictionary }: { dictionary: any }) => {
   const [activeSection, setActiveSection] = useState(0);
 
   const content = [
     {
       title: (
         <p className="text-2xl md:text-3xl font-bold">
-          Données et{' '}
+          {dictionary.technologies.data.title.part1}{' '}
           <span className="bg-gradient-to-r from-black to-green-500 inline-block text-transparent bg-clip-text">
-            sécurité.
+            {dictionary.technologies.data.title.part2}
           </span>
         </p>
       ),
       titleImg: '/technologies/scaleway1.png',
-      subtitle:
-        "Une infrastructure robuste et sécurisée pour vos données d'entreprise, avec des performances optimales et une fiabilité à toute épreuve.",
+      subtitle: dictionary.technologies.data.subtitle,
       rightContent: (
         <div className="relative w-full h-full">
           <video
@@ -130,47 +128,33 @@ const TabletTechnologies = () => {
             <div className="p-6 bg-white rounded-xl shadow-lg border border-blue-100">
               <h3 className="text-xl font-semibold text-gray-800 flex items-center gap-3 mb-4">
                 <Database className="w-6 h-6 text-green-600" />
-                Infrastructure PostgreSQL
+                {dictionary.technologies.data.infrastructure.title}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-green-500" />
-                  <span className="text-base">Portabilité 100% garantie</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-green-500" />
-                  <span className="text-base">
-                    Authentification intégrée RLS
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-green-500" />
-                  <span className="text-base">
-                    Extensions faciles à intégrer
-                  </span>
-                </li>
+                {dictionary.technologies.data.infrastructure.features.map(
+                  (feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-green-500" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-lg border border-green-100">
               <h3 className="text-xl font-semibold text-gray-800 flex items-center gap-3 mb-4">
                 <Shield className="w-6 h-6 text-green-600" />
-                Sécurité entreprise
+                {dictionary.technologies.data.security.title}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-green-500" />
-                  <span className="text-base">
-                    Authentification multi-facteurs
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-green-500" />
-                  <span className="text-base">Chiffrement bout en bout</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-green-500" />
-                  <span className="text-base">Conformité RGPD</span>
-                </li>
+                {dictionary.technologies.data.security.features.map(
+                  (feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-green-500" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           </div>
@@ -178,32 +162,28 @@ const TabletTechnologies = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900/50 to-transparent pointer-events-none" />
             <h3 className="text-xl font-semibold flex items-center gap-3 mb-4 relative z-10">
               <Workflow className="w-6 h-6 text-green-400" />
-              Fonctionnalités temps réel
+              {dictionary.technologies.data.realtime.title}
             </h3>
             <div className="grid md:grid-cols-2 gap-6 relative z-10">
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-green-400" />
-                  <span className="text-base">
-                    Synchronisation multi-utilisateurs
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-green-400" />
-                  <span className="text-base">
-                    API REST et GraphQL auto-générées
-                  </span>
-                </div>
+                {dictionary.technologies.data.realtime.features
+                  .slice(0, 2)
+                  .map((feature: string, index: number) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-green-400" />
+                      <span className="text-base">{feature}</span>
+                    </div>
+                  ))}
               </div>
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-green-400" />
-                  <span className="text-base">Webhooks personnalisables</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-green-400" />
-                  <span className="text-base">Monitoring temps réel</span>
-                </div>
+                {dictionary.technologies.data.realtime.features
+                  .slice(2)
+                  .map((feature: string, index: number) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-green-400" />
+                      <span className="text-base">{feature}</span>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
@@ -215,12 +195,11 @@ const TabletTechnologies = () => {
         <TypingAnimation
           className="text-2xl md:text-3xl font-bold text-black"
           duration={100}
-          text="IA générative."
+          text={dictionary.technologies.ai.title}
         />
       ),
       titleImg: '/technologies/scaleway2.png',
-      subtitle:
-        "Des solutions d'IA adaptées à vos besoins, intégrant les dernières avancées en matière de traitement du langage naturel et d'apprentissage automatique.",
+      subtitle: dictionary.technologies.ai.subtitle,
       rightContent: (
         <div className="relative w-full h-full rounded-lg">
           <iframe
@@ -237,38 +216,38 @@ const TabletTechnologies = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 to-transparent pointer-events-none" />
             <h3 className="text-xl font-semibold flex items-center gap-3 mb-4 relative z-10">
               <Bot className="w-6 h-6 text-purple-300" />
-              Solutions IA intégrées
+              {dictionary.technologies.ai.solutions.title}
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-300" />
-                  <span className="text-base">Analyse documents</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-300" />
-                  <span className="text-base">Génération contenu</span>
-                </li>
+                {dictionary.technologies.ai.solutions.features
+                  .slice(0, 2)
+                  .map((feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-purple-300" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ))}
               </ul>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-300" />
-                  <span className="text-base">Chatbots IA</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-300" />
-                  <span className="text-base">Extraction données</span>
-                </li>
+                {dictionary.technologies.ai.solutions.features
+                  .slice(2, 4)
+                  .map((feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-purple-300" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ))}
               </ul>
               <ul className="space-y-3 md:col-span-2 lg:col-span-1">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-300" />
-                  <span className="text-base">Classification auto</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-300" />
-                  <span className="text-base">Analyse sentiment</span>
-                </li>
+                {dictionary.technologies.ai.solutions.features
+                  .slice(4)
+                  .map((feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-purple-300" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>
@@ -277,41 +256,33 @@ const TabletTechnologies = () => {
             <div className="p-6 bg-white rounded-xl shadow-lg border border-purple-100">
               <h3 className="text-xl font-semibold text-gray-800 flex items-center gap-3 mb-4">
                 <Zap className="w-6 h-6 text-purple-600" />
-                Infrastructure IA
+                {dictionary.technologies.ai.infrastructure.title}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-500" />
-                  <span className="text-base">Scaling automatique</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-500" />
-                  <span className="text-base">OpenAI & HuggingFace</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-500" />
-                  <span className="text-base">API REST unifiée</span>
-                </li>
+                {dictionary.technologies.ai.infrastructure.features.map(
+                  (feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-purple-500" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-lg border border-purple-100">
               <h3 className="text-xl font-semibold text-gray-800 flex items-center gap-3 mb-4">
                 <Server className="w-6 h-6 text-purple-600" />
-                Performances
+                {dictionary.technologies.ai.performance.title}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-500" />
-                  <span className="text-base">Traitement parallèle</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-500" />
-                  <span className="text-base">Cache intelligent</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-purple-500" />
-                  <span className="text-base">Monitoring avancé</span>
-                </li>
+                {dictionary.technologies.ai.performance.features.map(
+                  (feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-purple-500" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           </div>
@@ -319,10 +290,9 @@ const TabletTechnologies = () => {
       ),
     },
     {
-      title: <WordFadeIn words="Sites ultra rapides et optimisés" />,
+      title: <WordFadeIn words={dictionary.technologies.sites.title} />,
       titleImg: '/technologies/scaleway4.png',
-      subtitle:
-        'Des applications web ultrarapides et optimisées pour offrir la meilleure expérience utilisateur possible sur toutes les plateformes.',
+      subtitle: dictionary.technologies.sites.subtitle,
       rightContent: (
         <div className="w-full aspect-video rounded-xl overflow-hidden">
           <img
@@ -338,65 +308,56 @@ const TabletTechnologies = () => {
             <div className="p-6 bg-gradient-to-br from-black via-gray-800 to-gray-900 rounded-xl text-white">
               <h3 className="text-xl font-semibold flex items-center gap-3 mb-4">
                 <Zap className="w-6 h-6 text-gray-300" />
-                Technologies Next.js
+                {dictionary.technologies.sites.nextjs.title}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-400" />
-                  <span className="text-base">
-                    Génération statique optimisée
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-400" />
-                  <span className="text-base">
-                    Rendu côté serveur performant
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-400" />
-                  <span className="text-base">Mise en cache intelligente</span>
-                </li>
+                {dictionary.technologies.sites.nextjs.features.map(
+                  (feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-gray-400" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
             <div className="p-6 bg-gradient-to-br from-black via-gray-800 to-gray-900 rounded-xl text-white">
               <h3 className="text-xl font-semibold flex items-center gap-3 mb-4">
                 <Workflow className="w-6 h-6 text-gray-300" />
-                Optimisation
+                {dictionary.technologies.sites.optimization.title}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-400" />
-                  <span className="text-base">Images et assets optimisés</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-400" />
-                  <span className="text-base">SEO automatique</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-400" />
-                  <span className="text-base">Core Web Vitals optimisés</span>
-                </li>
+                {dictionary.technologies.sites.optimization.features.map(
+                  (feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-gray-400" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           </div>
-          <TabletPerformanceAnalyticsCard />
+          <TabletPerformanceAnalyticsCard dictionary={dictionary} />
         </div>
       ),
     },
     {
       title: (
         <h1 className="text-2xl md:text-3xl font-bold">
-          Des sites{' '}
+          {dictionary.technologies.deployment.title.part1}{' '}
           <span className="bg-gradient-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">
-            déployés
+            {dictionary.technologies.deployment.title.part2}
           </span>{' '}
-          en <span className="border-b-2 border-blue-500">une</span> journée
+          {dictionary.technologies.deployment.title.part3}{' '}
+          <span className="border-b-2 border-blue-500">
+            {dictionary.technologies.deployment.title.part4}
+          </span>{' '}
+          {dictionary.technologies.deployment.title.part5}
         </h1>
       ),
       titleImg: '/technologies/scaleway3.png',
-      subtitle:
-        'Une infrastructure cloud moderne hébergée en France, associant la puissance de Vercel et la conformité de Scaleway pour des déploiements rapides et sécurisés.',
+      subtitle: dictionary.technologies.deployment.subtitle,
       rightContent: (
         <div className="w-full aspect-video rounded-xl overflow-hidden">
           <img
@@ -412,28 +373,28 @@ const TabletTechnologies = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-transparent pointer-events-none" />
             <h3 className="text-xl font-semibold flex items-center gap-3 mb-4 relative z-10">
               <Cloud className="w-6 h-6 text-white" />
-              Infrastructure Cloud
+              {dictionary.technologies.deployment.cloud.title}
             </h3>
             <div className="grid md:grid-cols-2 gap-6 relative z-10">
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                  <span className="text-base">Vercel Edge Network</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                  <span className="text-base">Scaleway Cloud</span>
-                </li>
+                {dictionary.technologies.deployment.cloud.features
+                  .slice(0, 2)
+                  .map((feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-white" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ))}
               </ul>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                  <span className="text-base">CDN mondial</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                  <span className="text-base">SSL automatique</span>
-                </li>
+                {dictionary.technologies.deployment.cloud.features
+                  .slice(2)
+                  .map((feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-white" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>
@@ -442,41 +403,33 @@ const TabletTechnologies = () => {
             <div className="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
               <h3 className="text-xl font-semibold text-gray-800 flex items-center gap-3 mb-4">
                 <Shield className="w-6 h-6 text-gray-600" />
-                Sécurité & Conformité
+                {dictionary.technologies.deployment.security.title}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-500" />
-                  <span className="text-base">Hébergement français</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-500" />
-                  <span className="text-base">Conformité RGPD</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-500" />
-                  <span className="text-base">Backups quotidiens</span>
-                </li>
+                {dictionary.technologies.deployment.security.features.map(
+                  (feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-gray-500" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-lg border border-gray-200">
               <h3 className="text-xl font-semibold text-gray-800 flex items-center gap-3 mb-4">
                 <Zap className="w-6 h-6 text-gray-600" />
-                CI/CD
+                {dictionary.technologies.deployment.cicd.title}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-500" />
-                  <span className="text-base">Déploiement continu</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-500" />
-                  <span className="text-base">Preview deployments</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-gray-500" />
-                  <span className="text-base">Rollback instantané</span>
-                </li>
+                {dictionary.technologies.deployment.cicd.features.map(
+                  (feature: string, index: number) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <ArrowRight className="w-5 h-5 text-gray-500" />
+                      <span className="text-base">{feature}</span>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           </div>
@@ -498,17 +451,14 @@ const TabletTechnologies = () => {
       <div className="max-w-5xl mx-auto px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">
-            Technologies de Pointe à Votre Service
+            {dictionary.technologies.main_title}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Nous utilisons les dernières technologies pour vous offrir des
-            solutions innovantes et performantes, adaptées à vos besoins
-            spécifiques.
+            {dictionary.technologies.main_description}
           </p>
         </div>
 
         <div className="relative">
-          {/* Navigation dots */}
           <div className="flex justify-center gap-3 mb-12">
             {content.map((_, index) => (
               <button
@@ -521,9 +471,7 @@ const TabletTechnologies = () => {
             ))}
           </div>
 
-          {/* Content slider */}
           <div className="relative px-6 md:px-12">
-            {/* Navigation arrows */}
             <button
               onClick={handlePrev}
               className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-colors"
@@ -537,7 +485,6 @@ const TabletTechnologies = () => {
               <ChevronRight className="w-8 h-8" />
             </button>
 
-            {/* Main content */}
             {content.map((item, index) => (
               <div
                 key={index}
@@ -548,7 +495,6 @@ const TabletTechnologies = () => {
                 }`}
               >
                 <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12">
-                  {/* Left content */}
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
                       <img
@@ -563,13 +509,11 @@ const TabletTechnologies = () => {
                     </p>
                   </div>
 
-                  {/* Right content (media) */}
                   <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
                     {item.rightContent}
                   </div>
                 </div>
 
-                {/* Description content */}
                 <div className="mt-12">{item.description}</div>
               </div>
             ))}

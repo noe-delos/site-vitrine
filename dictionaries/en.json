@@ -48,5 +48,208 @@
         "cta": "Learn more"
       }
     }
+  },
+  "technologies": {
+    "main_title": "Cutting-Edge Technologies at Your Service",
+    "main_description": "We use the latest technologies to offer you innovative and high-performance solutions, adapted to your specific needs.",
+    "performance": {
+      "title": "Performance & Analytics",
+      "instant_loading": {
+        "title": "Instant Loading",
+        "description": "Optimized performance with loading time < 0.5s"
+      },
+      "realtime_analytics": {
+        "title": "Real-time Analytics",
+        "description": "Live tracking of key performance metrics"
+      },
+      "advanced_monitoring": {
+        "title": "Advanced Monitoring",
+        "description": "Customizable dashboards with intelligent alerts"
+      }
+    },
+    "data": {
+      "title": {
+        "part1": "Data and",
+        "part2": "security."
+      },
+      "subtitle": "A robust and secure infrastructure for your enterprise data, with optimal performance and proven reliability.",
+      "infrastructure": {
+        "title": "PostgreSQL Infrastructure",
+        "features": [
+          "100% guaranteed portability",
+          "Integrated RLS authentication",
+          "Easy-to-integrate extensions"
+        ]
+      },
+      "security": {
+        "title": "Enterprise Security",
+        "features": [
+          "Multi-factor authentication",
+          "End-to-end encryption",
+          "GDPR compliance"
+        ]
+      },
+      "realtime": {
+        "title": "Real-time Features",
+        "features": [
+          "Multi-user synchronization",
+          "Auto-generated REST and GraphQL APIs",
+          "Custom webhooks",
+          "Real-time monitoring"
+        ]
+      }
+    },
+    "ai": {
+      "title": "Generative AI.",
+      "subtitle": "AI solutions tailored to your needs, incorporating the latest advances in natural language processing and machine learning.",
+      "solutions": {
+        "title": "Integrated AI Solutions",
+        "features": [
+          "Document analysis",
+          "Content generation",
+          "AI Chatbots",
+          "Data extraction",
+          "Auto classification",
+          "Sentiment analysis"
+        ]
+      },
+      "infrastructure": {
+        "title": "AI Infrastructure",
+        "features": [
+          "Automatic scaling",
+          "OpenAI & HuggingFace",
+          "Unified REST API"
+        ]
+      },
+      "performance": {
+        "title": "Performance",
+        "features": [
+          "Parallel processing",
+          "Smart caching",
+          "Advanced monitoring"
+        ]
+      }
+    },
+    "sites": {
+      "title": "Ultra-fast and optimized websites",
+      "subtitle": "Ultra-fast and optimized web applications to deliver the best possible user experience across all platforms.",
+      "nextjs": {
+        "title": "Next.js Technologies",
+        "features": [
+          "Optimized static generation",
+          "Performant server-side rendering",
+          "Intelligent caching"
+        ]
+      },
+      "optimization": {
+        "title": "Optimization",
+        "features": [
+          "Optimized images and assets",
+          "Automatic SEO",
+          "Optimized Core Web Vitals"
+        ]
+      }
+    },
+    "deployment": {
+      "title": {
+        "part1": "Sites",
+        "part2": "deployed",
+        "part3": "in",
+        "part4": "one",
+        "part5": "day"
+      },
+      "subtitle": "A modern cloud infrastructure hosted in France, combining the power of Vercel and Scaleway compliance for fast and secure deployments.",
+      "cloud": {
+        "title": "Cloud Infrastructure",
+        "features": [
+          "Vercel Edge Network",
+          "Scaleway Cloud",
+          "Global CDN",
+          "Automatic SSL"
+        ]
+      },
+      "security": {
+        "title": "Security & Compliance",
+        "features": ["French hosting", "GDPR compliance", "Daily backups"]
+      },
+      "cicd": {
+        "title": "CI/CD",
+        "features": [
+          "Continuous deployment",
+          "Preview deployments",
+          "Instant rollback"
+        ]
+      }
+    }
+  },
+  "expertise": {
+    "title": {
+      "part1": "Unique and",
+      "part2": "stunning interfaces."
+    },
+    "description": "From fintech to e-commerce and business solutions, we design SaaS interfaces that combine performance and elegance. Our UI/UX expertise allows us to create intuitive and engaging user experiences, adapted to each industry sector.",
+    "permanent_contact": {
+      "title": "Permanent Contact",
+      "description": "We know that every business is unique. That's why our team makes it a point of honor to establish close and transparent collaboration throughout the development of your solution. From initial immersion to launch, we stay aligned with your objectives."
+    },
+    "efficiency": {
+      "title": "Speed and efficiency: our signature",
+      "description": "Our agile methodology, combined with our mastery of the latest front-end technologies, guarantees the delivery of performant and scalable interfaces. Every pixel is designed to offer an exceptional user experience, regardless of your industry sector."
+    },
+    "video_fallback": "Your browser does not support video playback."
+  },
+  "contact": {
+    "title": "Let's create your next project together.",
+    "description": "Do you have a project in mind? Our team of experts is here to turn your ideas into reality.",
+    "contact_info": {
+      "email": {
+        "label": "Email",
+        "value": "contact@ks-entreprise.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "07 68 56 68 36"
+      }
+    },
+    "cta": "Contact us"
+  },
+  "header": {
+    "brand": {
+      "title": "Consulting",
+      "subtitle": "software solutions"
+    },
+    "navigation": {
+      "home": "Home",
+      "team": "Our Team",
+      "portfolio": "Portfolio"
+    },
+    "contact_btn": "Contact us",
+    "mobile_menu": {
+      "title": "Menu"
+    }
+  },
+  "footer": {
+    "brand": {
+      "title": "consulting",
+      "subtitle": "software solutions"
+    },
+    "description": "Let's create tomorrow's digital solutions together. Our expertise in SaaS and AI at the service of your success.",
+    "sections": {
+      "pages": {
+        "title": "Pages",
+        "links": {
+          "home": "Menu",
+          "team": "Team",
+          "portfolio": "Portfolio",
+          "contact": "Contact"
+        }
+      },
+      "contact": {
+        "title": "Contact",
+        "email": "contact@ks-entreprise.com",
+        "phone": "07 68 56 68 36"
+      }
+    },
+    "copyright": "© 2024 KS Enterprise. All rights reserved."
   }
 }

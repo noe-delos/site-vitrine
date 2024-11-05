@@ -1,4 +1,3 @@
-// src/app/page.tsx
 import ContactUs from '@/components/contact-us';
 import Description from '@/components/description';
 import Expertise from '@/components/expertise';
@@ -11,24 +10,30 @@ import {
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
 
-export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
-    const dictionary = await getDictionary(lang);
+type HomePageProps = {
+  params: {
+    lang: Locale;
+  };
+};
+
+export default async function HomePage({ params }: HomePageProps) {
+  const dictionary = await getDictionary(params.lang);
 
   return (
     <>
       <Hero dictionary={dictionary} />
-      <Description dictionary={dictionary}/>
-      <Expertise />
+      <Description dictionary={dictionary} />
+      <Expertise dictionary={dictionary} />
       <div className="md:hidden">
-        <MobileTechnologies />
+        <MobileTechnologies dictionary={dictionary} />
       </div>
       <div className="hidden md:block lg:hidden">
-        <TabletTechnologies />
-      </div>
+        <TabletTechnologies dictionary={dictionary} />
+      </div>  
       <div className="hidden lg:block">
-        <Technologies />
+        <Technologies dictionary={dictionary} />
       </div>
-      <ContactUs />
+      <ContactUs dictionary={dictionary} />
     </>
   );
 }

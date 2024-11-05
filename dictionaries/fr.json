@@ -48,5 +48,212 @@
         "cta": "En savoir plus"
       }
     }
+  },
+  "technologies": {
+    "main_title": "Technologies de Pointe à Votre Service",
+    "main_description": "Nous utilisons les dernières technologies pour vous offrir des solutions innovantes et performantes, adaptées à vos besoins spécifiques.",
+    "performance": {
+      "title": "Performance & Analytics",
+      "instant_loading": {
+        "title": "Chargement instantané",
+        "description": "Performance optimisée avec temps de chargement < 0.5s"
+      },
+      "realtime_analytics": {
+        "title": "Analytics temps réel",
+        "description": "Suivi en direct des métriques clés de performance"
+      },
+      "advanced_monitoring": {
+        "title": "Monitoring avancé",
+        "description": "Tableaux de bord personnalisables avec alertes intelligentes"
+      }
+    },
+    "data": {
+      "title": {
+        "part1": "Données et",
+        "part2": "sécurité."
+      },
+      "subtitle": "Une infrastructure robuste et sécurisée pour vos données d'entreprise, avec des performances optimales et une fiabilité à toute épreuve.",
+      "infrastructure": {
+        "title": "Infrastructure PostgreSQL",
+        "features": [
+          "Portabilité 100% garantie",
+          "Authentification intégrée RLS",
+          "Extensions faciles à intégrer"
+        ]
+      },
+      "security": {
+        "title": "Sécurité entreprise",
+        "features": [
+          "Authentification multi-facteurs",
+          "Chiffrement bout en bout",
+          "Conformité RGPD"
+        ]
+      },
+      "realtime": {
+        "title": "Fonctionnalités temps réel",
+        "features": [
+          "Synchronisation multi-utilisateurs",
+          "API REST et GraphQL auto-générées",
+          "Webhooks personnalisables",
+          "Monitoring temps réel"
+        ]
+      }
+    },
+    "ai": {
+      "title": "IA générative.",
+      "subtitle": "Des solutions d'IA adaptées à vos besoins, intégrant les dernières avancées en matière de traitement du langage naturel et d'apprentissage automatique.",
+      "solutions": {
+        "title": "Solutions IA intégrées",
+        "features": [
+          "Analyse documents",
+          "Génération contenu",
+          "Chatbots IA",
+          "Extraction données",
+          "Classification auto",
+          "Analyse sentiment"
+        ]
+      },
+      "infrastructure": {
+        "title": "Infrastructure IA",
+        "features": [
+          "Scaling automatique",
+          "OpenAI & HuggingFace",
+          "API REST unifiée"
+        ]
+      },
+      "performance": {
+        "title": "Performances",
+        "features": [
+          "Traitement parallèle",
+          "Cache intelligent",
+          "Monitoring avancé"
+        ]
+      }
+    },
+    "sites": {
+      "title": "Sites ultra rapides et optimisés",
+      "subtitle": "Des applications web ultrarapides et optimisées pour offrir la meilleure expérience utilisateur possible sur toutes les plateformes.",
+      "nextjs": {
+        "title": "Technologies Next.js",
+        "features": [
+          "Génération statique optimisée",
+          "Rendu côté serveur performant",
+          "Mise en cache intelligente"
+        ]
+      },
+      "optimization": {
+        "title": "Optimisation",
+        "features": [
+          "Images et assets optimisés",
+          "SEO automatique",
+          "Core Web Vitals optimisés"
+        ]
+      }
+    },
+    "deployment": {
+      "title": {
+        "part1": "Des sites",
+        "part2": "déployés",
+        "part3": "en",
+        "part4": "une",
+        "part5": "journée"
+      },
+      "subtitle": "Une infrastructure cloud moderne hébergée en France, associant la puissance de Vercel et la conformité de Scaleway pour des déploiements rapides et sécurisés.",
+      "cloud": {
+        "title": "Infrastructure Cloud",
+        "features": [
+          "Vercel Edge Network",
+          "Scaleway Cloud",
+          "CDN mondial",
+          "SSL automatique"
+        ]
+      },
+      "security": {
+        "title": "Sécurité & Conformité",
+        "features": [
+          "Hébergement français",
+          "Conformité RGPD",
+          "Backups quotidiens"
+        ]
+      },
+      "cicd": {
+        "title": "CI/CD",
+        "features": [
+          "Déploiement continu",
+          "Preview deployments",
+          "Rollback instantané"
+        ]
+      }
+    }
+  },
+  "expertise": {
+    "title": {
+      "part1": "Des interfaces uniques et",
+      "part2": "époustouflantes."
+    },
+    "description": "De la fintech au e-commerce, en passant par les solutions métier, nous concevons des interfaces SaaS qui allient performance et élégance. Notre expertise en UI/UX nous permet de créer des expériences utilisateur intuitives et engageantes, adaptées à chaque secteur d'activité.",
+    "permanent_contact": {
+      "title": "En contact permanent",
+      "description": "Nous savons que chaque entreprise est unique. C'est pourquoi notre équipe met un point d'honneur à établir une collaboration étroite et transparente tout au long du développement de votre solution. De l'immersion initiale au lancement, nous restons alignés sur vos objectifs."
+    },
+    "efficiency": {
+      "title": "Rapidité et efficacité : notre signature",
+      "description": "Notre méthodologie agile, associée à notre maîtrise des dernières technologies front-end, garantit la livraison d'interfaces performantes et évolutives. Chaque pixel est pensé pour offrir une expérience utilisateur exceptionnelle, quel que soit votre secteur d'activité."
+    },
+    "video_fallback": "Votre navigateur ne prend pas en charge la lecture de vidéos."
+  },
+  "contact": {
+    "title": "Créons ensemble votre prochain projet.",
+    "description": "Vous avez un projet en tête ? Notre équipe d'experts est là pour transformer vos idées en réalité.",
+    "contact_info": {
+      "email": {
+        "label": "Email",
+        "value": "contact@ks-entreprise.com"
+      },
+      "phone": {
+        "label": "Téléphone",
+        "value": "07 68 56 68 36"
+      }
+    },
+    "cta": "Contactez-nous"
+  },
+  "header": {
+    "brand": {
+      "title": "Consulting",
+      "subtitle": "software solutions"
+    },
+    "navigation": {
+      "home": "Accueil",
+      "team": "Notre équipe",
+      "portfolio": "Portfolio"
+    },
+    "contact_btn": "Nous contacter",
+    "mobile_menu": {
+      "title": "Menu"
+    }
+  },
+  "footer": {
+    "brand": {
+      "title": "consulting",
+      "subtitle": "software solutions"
+    },
+    "description": "Créons ensemble les solutions digitales de demain. Notre expertise en SaaS et en IA au service de votre réussite.",
+    "sections": {
+      "pages": {
+        "title": "Pages",
+        "links": {
+          "home": "Menu",
+          "team": "Équipe",
+          "portfolio": "Portfolio",
+          "contact": "Contact"
+        }
+      },
+      "contact": {
+        "title": "Contact",
+        "email": "contact@ks-entreprise.com",
+        "phone": "07 68 56 68 36"
+      }
+    },
+    "copyright": "© 2024 KS Enterprise. Tous droits réservés."
   }
 }

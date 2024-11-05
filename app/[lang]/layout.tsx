@@ -2,6 +2,7 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 import React from 'react';
 
+import { getDictionary } from '@/get-dictionary';
 import { i18n, Locale } from '@/i18n-config';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
@@ -38,14 +39,16 @@ interface LayoutProps {
   params: { lang: Locale };
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, params }) => {
+const Layout: React.FC<LayoutProps> = async ({ children, params }) => {
+  const dictionary = await getDictionary(params.lang);
+
   return (
     <html lang={params.lang}>
       <body className={`${airbnbCereal.variable} font-sans antialiased`}>
         <div className="min-h-screen bg-gray-50">
-          <Header />
+          <Header dictionary={dictionary} />
           <main className="pt-16">{children}</main>
-          <Footer />
+          <Footer dictionary={dictionary} />
         </div>
         <Toaster richColors={true} position="top-center" />
       </body>

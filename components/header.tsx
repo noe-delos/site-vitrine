@@ -6,14 +6,14 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-const Header = () => {
+const Header = ({ dictionary }: { dictionary: any }) => {
   const pathname = usePathname();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = [
-    { label: 'Accueil', href: '/' },
-    { label: 'Notre équipe', href: '/team' },
-    { label: 'Portfolio', href: '/portfolio' },
+    { label: dictionary.header.navigation.home, href: '/' },
+    { label: dictionary.header.navigation.team, href: '/team' },
+    { label: dictionary.header.navigation.portfolio, href: '/portfolio' },
   ];
 
   // Style with constant blur effect
@@ -53,10 +53,10 @@ const Header = () => {
             </motion.div>
             <div className="flex flex-col leading-tight">
               <span className="text-xl font-semibold text-gray-900">
-                Consulting
+                {dictionary.header.brand.title}
               </span>
               <span className="text-sm text-gray-600 -mt-1">
-                software solutions
+                {dictionary.header.brand.subtitle}
               </span>
             </div>
           </Link>
@@ -115,7 +115,6 @@ const Header = () => {
               );
             })}
           </div>
-          {/* <LocaleSwitcher /> */}
 
           {/* Contact Button - Desktop */}
           <div className="hidden md:block">
@@ -140,7 +139,7 @@ const Header = () => {
               />
 
               <span className="relative font-medium text-gray-900 group-hover:text-white transition-colors duration-500">
-                Nous contacter
+                {dictionary.header.contact_btn}
               </span>
 
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -201,7 +200,7 @@ const Header = () => {
               {/* Drawer Header */}
               <div className="flex items-center justify-between p-4 border-b border-gray-100">
                 <span className="text-lg font-semibold text-gray-900">
-                  Menu
+                  {dictionary.header.mobile_menu.title}
                 </span>
                 <button
                   className="p-2 text-gray-600 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-100"
@@ -253,7 +252,7 @@ const Header = () => {
                     closeMenu();
                   }}
                 >
-                  Nous contacter
+                  {dictionary.header.contact_btn}
                 </button>
               </div>
             </motion.div>

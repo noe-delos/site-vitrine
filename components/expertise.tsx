@@ -33,7 +33,7 @@ const StackBox = ({ icon, bgcolor, color }: any) => {
   );
 };
 
-export default function Expertise() {
+export default function Expertise({ dictionary }: { dictionary: any }) {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   useEffect(() => {
@@ -75,18 +75,14 @@ export default function Expertise() {
           >
             <motion.div variants={fadeInUp}>
               <h2 className="lg:text-4xl md:text-4xl xl:text-4xl sm:text-4xl xs:text-4xl text-2xl font-bold mb-6">
-                Des interfaces uniques et{' '}
+                {dictionary.expertise.title.part1}{' '}
                 <SparklesText
-                  text="époustouflantes."
+                  text={dictionary.expertise.title.part2}
                   className="text-black text-5xl mt-2"
                 />
               </h2>
               <p className="text-gray-500 leading-relaxed">
-                De la fintech au e-commerce, en passant par les solutions
-                métier, nous concevons des interfaces SaaS qui allient
-                performance et élégance. Notre expertise en UI/UX nous permet de
-                créer des expériences utilisateur intuitives et engageantes,
-                adaptées à chaque secteur d'activité.
+                {dictionary.expertise.description}
               </p>
             </motion.div>
             <motion.div variants={fadeInUp} className="space-y-4">
@@ -98,14 +94,10 @@ export default function Expertise() {
                 />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    En contact permanent
+                    {dictionary.expertise.permanent_contact.title}
                   </h3>
                   <p className="text-gray-500">
-                    Nous savons que chaque entreprise est unique. C'est pourquoi
-                    notre équipe met un point d'honneur à établir une
-                    collaboration étroite et transparente tout au long du
-                    développement de votre solution. De l'immersion initiale au
-                    lancement, nous restons alignés sur vos objectifs.
+                    {dictionary.expertise.permanent_contact.description}
                   </p>
                 </div>
               </div>
@@ -120,14 +112,10 @@ export default function Expertise() {
                 />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Rapidité et efficacité : notre signature
+                    {dictionary.expertise.efficiency.title}
                   </h3>
                   <p className="text-gray-500">
-                    Notre méthodologie agile, associée à notre maîtrise des
-                    dernières technologies front-end, garantit la livraison
-                    d'interfaces performantes et évolutives. Chaque pixel est
-                    pensé pour offrir une expérience utilisateur exceptionnelle,
-                    quel que soit votre secteur d'activité.
+                    {dictionary.expertise.efficiency.description}
                   </p>
                 </div>
               </div>
@@ -161,7 +149,7 @@ export default function Expertise() {
                 }
               >
                 <source src={videos[currentVideoIndex]} type="video/mp4" />
-                Votre navigateur ne prend pas en charge la lecture de vidéos.
+                {dictionary.expertise.video_fallback}
               </video>
             </div>
           </div>

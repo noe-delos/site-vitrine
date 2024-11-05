@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Footer = () => {
+const Footer = ({ dictionary }: { dictionary: any }) => {
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -27,12 +27,22 @@ const Footer = () => {
     },
   };
 
+  const navItems = [
+    { name: dictionary.footer.sections.pages.links.home, path: '/' },
+    { name: dictionary.footer.sections.pages.links.team, path: '/team' },
+    {
+      name: dictionary.footer.sections.pages.links.portfolio,
+      path: '/portfolio',
+    },
+    { name: dictionary.footer.sections.pages.links.contact, path: '/contact' },
+  ];
+
   return (
     <motion.footer
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="bg-gradient-to-br from-gray-50 via-white to-gray-50 "
+      className="bg-gradient-to-br from-gray-50 via-white to-gray-50"
     >
       {/* Decorative Top Border */}
       <div className="h-[0.05rem] w-full bg-gray-200" />
@@ -59,29 +69,25 @@ const Footer = () => {
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="text-xl font-semibold text-gray-900 p-0 m-0">
-                  KS Enterprise
+                  {dictionary.footer.brand.title}
                 </span>
                 <span className="text-sm text-gray-600 p-0 m-0 -mt-1">
-                  software solutions
+                  {dictionary.footer.brand.subtitle}
                 </span>
               </div>
             </Link>
             <p className="text-gray-600 max-w-sm">
-              Créons ensemble les solutions digitales de demain. Notre expertise
-              en SaaS et en IA au service de votre réussite.
+              {dictionary.footer.description}
             </p>
           </motion.div>
 
           {/* Pages */}
           <motion.div variants={fadeInUpVariants} className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900">Pages</h3>
+            <h3 className="text-lg font-semibold text-gray-900">
+              {dictionary.footer.sections.pages.title}
+            </h3>
             <motion.ul variants={containerVariants} className="space-y-3">
-              {[
-                { name: 'Menu', path: '/' },
-                { name: 'Équipe', path: '/team' },
-                { name: 'Portfolio', path: '/portfolio' },
-                { name: 'Contact', path: '/contact' },
-              ].map((item, index) => (
+              {navItems.map((item, index) => (
                 <motion.li
                   key={index}
                   variants={fadeInUpVariants}
@@ -100,22 +106,24 @@ const Footer = () => {
 
           {/* Contact Info */}
           <motion.div variants={fadeInUpVariants} className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900">Contact</h3>
+            <h3 className="text-lg font-semibold text-gray-900">
+              {dictionary.footer.sections.contact.title}
+            </h3>
             <div className="space-y-4 text-gray-600">
               <p>
                 <a
-                  href="mailto:contact@ks-entreprise.com"
+                  href={`mailto:${dictionary.footer.sections.contact.email}`}
                   className="hover:text-[#7066CB] transition-colors"
                 >
-                  contact@ks-entreprise.com
+                  {dictionary.footer.sections.contact.email}
                 </a>
               </p>
               <p>
                 <a
-                  href="tel:0768566836"
+                  href={`tel:${dictionary.footer.sections.contact.phone.replace(/\s/g, '')}`}
                   className="hover:text-[#7066CB] transition-colors"
                 >
-                  07 68 56 68 36
+                  {dictionary.footer.sections.contact.phone}
                 </a>
               </p>
             </div>
@@ -133,7 +141,7 @@ const Footer = () => {
             variants={fadeInUpVariants}
             className="text-gray-600 text-sm text-center"
           >
-            © 2024 KS Enterprise. Tous droits réservés.
+            {dictionary.footer.copyright}
           </motion.p>
         </div>
       </motion.div>
