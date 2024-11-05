@@ -255,5 +255,96 @@
       }
     },
     "copyright": "© 2024 KS Enterprise. Tous droits réservés."
+  },
+  "team": {
+    "title": {
+      "part1": "Une équipe d'",
+      "part2": "experts"
+    },
+    "subtitle": "L'excellence à la française",
+    "frenchTech": "French Tech Innovation",
+    "description": "Jeunes, ambitieux et animés par l'excellence. Nous sommes une équipe d'innovateurs passionnés par la création de solutions SaaS de pointe qui transforment les entreprises.",
+    "imageAlt": "Équipe de développement"
+  },
+  "expertiseTeam": {
+    "title": "Notre expertise",
+    "solutions": {
+      "title": "Solutions de développement sur mesure",
+      "description": "Découvrez nos forfaits adaptés à vos besoins en développement et maintenance.",
+      "emphasis": "Notre équipe d'experts vous accompagne à chaque étape de votre projet digital."
+    },
+    "technical": {
+      "title": "Expertise technique",
+      "subtitle": "Développement Full-stack",
+      "description": "Une équipe maîtrisant les dernières technologies pour concrétiser vos projets avec excellence."
+    },
+    "agility": {
+      "title": "Agilité & Flexibilité",
+      "subtitle": "Méthode Agile",
+      "description": "Une méthodologie éprouvée pour s'adapter à vos besoins et garantir des livraisons efficientes."
+    },
+    "support": {
+      "title": "Support continu",
+      "subtitle": "Maintenance & Support",
+      "description": "Un accompagnement personnalisé et un support technique garantissant la pérennité de vos solutions."
+    }
+  },
+  "solutions": {
+    "title": "Nos solutions",
+    "description": "Découvrez comment nous transformons les défis technologiques en solutions innovantes. Notre portfolio témoigne de notre savoir-faire en développement, infrastructure et conseil IT."
+  },
+  "portfolio": {
+    "title": "Nos Réalisations",
+    "description": "Découvrez comment nous transformons les idées innovantes en solutions digitales performantes pour nos clients du monde entier.",
+    "categories": {
+      "all": "Tous",
+      "ecommerce": "E-commerce",
+      "saas": "SaaS",
+      "ai": "IA",
+      "mobile": "Mobile"
+    },
+    "stats": {
+      "projects": {
+        "number": "50+",
+        "label": "Projets Réalisés"
+      },
+      "clients": {
+        "number": "20+",
+        "label": "Clients Satisfaits"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "Satisfaction Client"
+      }
+    },
+    "cta": "Portfolio"
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Connectons-nous",
+      "subtitle": "De Paris au reste du monde, nous créons des solutions innovantes pour n'importe qui."
+    },
+    "info": {
+      "title": "Parlons de votre projet",
+      "description": "Que vous soyez une startup ambitieuse ou une entreprise établie, nous sommes là pour transformer vos idées en réalité.",
+      "email": {
+        "label": "Email",
+        "value": "contact@ks-entreprise.com"
+      },
+      "phone": {
+        "label": "Téléphone",
+        "value": "07 68 56 68 36"
+      }
+    },
+    "form": {
+      "fullName": "Nom complet",
+      "company": "Entreprise",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message bien reçu ! Nous vous répondrons au plus vite.",
+      "error": "Une erreur est survenue, veuillez réessayer plus tard."
+    }
   }
 }

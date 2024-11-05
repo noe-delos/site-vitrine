@@ -251,5 +251,96 @@
       }
     },
     "copyright": "© 2024 KS Enterprise. All rights reserved."
+  },
+  "team": {
+    "title": {
+      "part1": "A team of",
+      "part2": "experts"
+    },
+    "subtitle": "French excellence",
+    "frenchTech": "French Tech Innovation",
+    "description": "Young, ambitious, and driven by excellence. We are a team of innovators passionate about creating cutting-edge SaaS solutions that transform businesses.",
+    "imageAlt": "Development team"
+  },
+  "expertiseTeam": {
+    "title": "Our expertise",
+    "solutions": {
+      "title": "Custom development solutions",
+      "description": "Discover our packages tailored to your development and maintenance needs.",
+      "emphasis": "Our team of experts accompanies you at every step of your digital project."
+    },
+    "technical": {
+      "title": "Technical expertise",
+      "subtitle": "Full-stack Development",
+      "description": "A team mastering the latest technologies to bring your projects to life with excellence."
+    },
+    "agility": {
+      "title": "Agility & Flexibility",
+      "subtitle": "Agile Method",
+      "description": "A proven methodology to adapt to your needs and ensure efficient deliveries."
+    },
+    "support": {
+      "title": "Continuous support",
+      "subtitle": "Maintenance & Support",
+      "description": "Personalized guidance and technical support ensuring the sustainability of your solutions."
+    }
+  },
+  "solutions": {
+    "title": "Our solutions",
+    "description": "Discover how we transform technological challenges into innovative solutions. Our portfolio showcases our expertise in development, infrastructure, and IT consulting."
+  },
+  "portfolio": {
+    "cta": "Portfolio",
+    "title": "Our Achievements",
+    "description": "Discover how we transform innovative ideas into high-performing digital solutions for our clients worldwide.",
+    "categories": {
+      "all": "All",
+      "ecommerce": "E-commerce",
+      "saas": "SaaS",
+      "ai": "AI",
+      "mobile": "Mobile"
+    },
+    "stats": {
+      "projects": {
+        "number": "50+",
+        "label": "Projects Completed"
+      },
+      "clients": {
+        "number": "20+",
+        "label": "Satisfied Clients"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "Client Satisfaction"
+      }
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Let's Connect",
+      "subtitle": "From Paris to the rest of the world, we create innovative solutions for anyone."
+    },
+    "info": {
+      "title": "Let's talk about your project",
+      "description": "Whether you're an ambitious startup or an established company, we're here to turn your ideas into reality.",
+      "email": {
+        "label": "Email",
+        "value": "contact@ks-entreprise.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "07 68 56 68 36"
+      }
+    },
+    "form": {
+      "fullName": "Full Name",
+      "company": "Company",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message received! We'll get back to you soon.",
+      "error": "An error occurred, please try again later."
+    }
   }
 }

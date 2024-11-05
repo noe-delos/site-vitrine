@@ -8,15 +8,8 @@ import {
   default as TabletTechnologies,
 } from '@/components/technologies-mobile';
 import { getDictionary } from '@/get-dictionary';
-import { Locale } from '@/i18n-config';
 
-type HomePageProps = {
-  params: {
-    lang: Locale;
-  };
-};
-
-export default async function HomePage({ params }: HomePageProps) {
+export default async function HomePage({ params }: any) {
   const dictionary = await getDictionary(params.lang);
 
   return (
@@ -29,7 +22,7 @@ export default async function HomePage({ params }: HomePageProps) {
       </div>
       <div className="hidden md:block lg:hidden">
         <TabletTechnologies dictionary={dictionary} />
-      </div>  
+      </div>
       <div className="hidden lg:block">
         <Technologies dictionary={dictionary} />
       </div>
