@@ -8,30 +8,29 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
-const LeftSection: React.FC = () => {
+const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
     <div className="flex-1 space-y-6 lg:space-y-8 px-4 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0">
       <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-        <span>Votre </span>
+        <span>{dictionary.hero.title.part1} </span>
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
-          idée.
+          {dictionary.hero.title.part2}.
         </span>
         <br />
-        Votre solution{' '}
+        {dictionary.hero.title.part3}{' '}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
-          Saas.
+          {dictionary.hero.title.part4}.
         </span>
         <br />
       </h1>
 
       <p className="text-base lg:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
-        De la conception à la réalisation, nous donnons vie à votre application
-        avec une expertise technique sur mesure et un accompagnement dédié.
+        {dictionary.hero.description}
       </p>
 
       <div className="pt-8 lg:pt-16 w-full flex flex-col mt-4 lg:mt-8">
         <p className="text-sm text-gray-500 mb-4 lg:mb-6 self-center">
-          Ces entreprises nous font confiance
+          {dictionary.hero.trust}
         </p>
         <Press
           images={[
@@ -47,7 +46,7 @@ const LeftSection: React.FC = () => {
   );
 };
 
-const MobileImageStack: React.FC = () => {
+const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
     <div className="relative w-full">
       <div className="flex flex-col gap-4">
@@ -103,7 +102,6 @@ const MobileImageStack: React.FC = () => {
         ))}
       </div>
 
-      {/* Decorative Element */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -115,7 +113,6 @@ const MobileImageStack: React.FC = () => {
         className="relative w-full mt-4"
       >
         <div className="relative h-[150px] w-full rounded-xl overflow-hidden group">
-          {/* Outer Border */}
           <div className="absolute inset-0 rounded-xl border border-blue-100">
             <div className="absolute inset-[1px] rounded-lg bg-white/5 backdrop-blur-[4px]">
               <div className="absolute inset-[6px] rounded-lg border border-gradient-to-r from-blue-100/50 via-purple-200/50 to-pink-100/50">
@@ -154,11 +151,11 @@ const MobileImageStack: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
                       <span className="relative z-10">
-                        intégrez l'
+                        {dictionary.hero.ai.part1}
                         <span className="bg-gradient-to-r font-extrabold from-purple-600 to-blue-500 bg-clip-text text-transparent">
-                          IA
+                          {dictionary.hero.ai.part2}
                         </span>
-                        .
+                        {dictionary.hero.ai.part3}
                       </span>
                     </motion.span>
                   </motion.div>
@@ -172,7 +169,7 @@ const MobileImageStack: React.FC = () => {
   );
 };
 
-const ImageStack: React.FC = () => {
+const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
     <div className="relative w-full h-[600px]">
       {[0, 1].map((index) => (
@@ -202,18 +199,18 @@ const ImageStack: React.FC = () => {
                 color={['#6BA1FA', '#266CDE', '#0945A7']}
               >
                 <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
-                  <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
+                  <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
                   <Image
                     src={`/hero/hero${index}.png`}
                     alt="Hero illustration"
                     fill
                     className={cn('object-cover')}
                   />
-                </div>{' '}
+                </div>
               </ShineBorder>
             ) : (
               <div className="relative w-[700px] h-[450px] bg-white rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />{' '}
+                <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
                 <Image
                   src={`/hero/hero${index}.png`}
                   alt="Hero illustration"
@@ -226,7 +223,6 @@ const ImageStack: React.FC = () => {
         </motion.div>
       ))}
 
-      {/* Decorative Element */}
       <div className="absolute bottom-10 lg:right-0 md:right-0 translate-y-1/4 lg:translate-x-1/4 md:lg:translate-x-1/4">
         <motion.div
           initial={{ x: 1000 }}
@@ -238,13 +234,9 @@ const ImageStack: React.FC = () => {
           }}
           className="relative w-[300px] h-[200px] rounded-xl overflow-hidden group"
         >
-          {/* Outer Border */}
           <div className="absolute inset-0 rounded-xl border border-blue-100">
-            {/* Semi-transparent space between borders */}
             <div className="absolute inset-[1px] rounded-lg bg-white/5 backdrop-blur-[4px]">
-              {/* Inner Border with Gradient */}
               <div className="absolute inset-[6px] rounded-lg border border-gradient-to-r from-blue-100/50 via-purple-200/50 to-pink-100/50">
-                {/* Content Container */}
                 <div className="w-full h-full rounded-lg backdrop-blur-[6px] bg-white/10 flex items-center justify-center overflow-hidden">
                   <motion.img
                     src="/hero/llms.png"
@@ -266,7 +258,6 @@ const ImageStack: React.FC = () => {
                     }}
                     className="w-full h-full object-cover rounded-lg blur-[1px]"
                   />
-                  {/* Text Overlay */}
                   <motion.div
                     className="absolute inset-0 flex items-center justify-center"
                     transition={{ delay: 1.4, duration: 0.5 }}
@@ -275,11 +266,11 @@ const ImageStack: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
                       <span className="relative z-10">
-                        intégrez l'
+                        {dictionary.hero.ai.part1}
                         <span className="bg-gradient-to-r font-extrabold from-purple-600 to-blue-500 bg-clip-text text-transparent">
-                          IA
+                          {dictionary.hero.ai.part2}
                         </span>
-                        .
+                        {dictionary.hero.ai.part3}
                       </span>
                     </motion.span>
                   </motion.div>
@@ -293,26 +284,26 @@ const ImageStack: React.FC = () => {
   );
 };
 
-const RightSection: React.FC = () => {
+const RightSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
     <div className="flex-1 flex items-center justify-center lg:justify-start">
       <div className="block lg:hidden w-full px-4">
-        <MobileImageStack />
+        <MobileImageStack dictionary={dictionary} />
       </div>
       <div className="hidden lg:flex-1 lg:flex items-center justify-center lg:justify-start">
-        <ImageStack />
+        <ImageStack dictionary={dictionary} />
       </div>
     </div>
   );
 };
 
-const Hero: React.FC = () => {
+const Hero: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
     <section className="min-h-[90vh] flex items-center px-4 sm:px-6 relative overflow-hidden">
       <div className="max-w-[85rem] w-full mx-auto lg:mx-0 lg:ml-32 z-50">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 xs:mt-10">
-          <LeftSection />
-          <RightSection />
+          <LeftSection dictionary={dictionary} />
+          <RightSection dictionary={dictionary} />
         </div>
       </div>
       <div className="absolute z-0 top-15 -right-32 hidden lg:block">

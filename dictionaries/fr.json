@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "title": {
+      "part1": "Votre",
+      "part2": "idée",
+      "part3": "Votre solution",
+      "part4": "Saas"
+    },
+    "description": "De la conception à la réalisation, nous donnons vie à votre application avec une expertise technique sur mesure et un accompagnement dédié.",
+    "trust": "Ces entreprises nous font confiance",
+    "ai": {
+      "part1": "intégrez l'",
+      "part2": "IA",
+      "part3": "."
+    }
+  },
+  "bento": {
+    "approach": "Notre approche",
+    "title": {
+      "part1": "Vos projets, notre",
+      "part2": "expertise."
+    },
+    "description": "Notre expertise technique s'aligne précisément avec vos objectifs business. Nous développons des solutions SaaS performantes et évolutives, guidées par vos besoins spécifiques et les exigences du marché.",
+    "features": {
+      "immersion": {
+        "name": "Immersion",
+        "description": "Avant de toucher une ligne de code, nous plongeons dans votre monde. Cette première étape consiste à comprendre en profondeur votre vision, votre marché et vos objectifs.",
+        "cta": "En savoir plus"
+      },
+      "conception": {
+        "name": "Conception",
+        "description": "Avec une compréhension claire de votre projet, nous passons à la phase de conception. Nous définissons l'architecture de votre SaaS et élaborons les fonctionnalités clés.",
+        "cta": "En savoir plus"
+      },
+      "development": {
+        "name": "Développement",
+        "description": "Notre équipe de développement, guidée par les principes agiles, construit votre produit. Nous travaillons en sprints courts, permettant des ajustements rapides et une transparence totale.",
+        "cta": "En savoir plus"
+      },
+      "launch": {
+        "name": "Lancement",
+        "description": "Le grand jour arrive : le lancement de votre SaaS. Nous surveillons les performances, recueillons les retours utilisateurs et optimisons continuellement le produit.",
+        "cta": "En savoir plus"
+      },
+      "monitoring": {
+        "name": "Monitoring",
+        "description": "Surveillez en temps réel vos ressources cloud et applications. Visualisez la performance, l'utilisation et les coûts pour optimiser votre infrastructure.",
+        "cta": "En savoir plus"
+      }
+    }
+  }
+}

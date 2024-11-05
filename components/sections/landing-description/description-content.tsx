@@ -8,6 +8,44 @@ import { motion as m } from 'framer-motion';
 import { RocketIcon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
+interface Dictionary {
+  bento: {
+    approach: string;
+    title: {
+      part1: string;
+      part2: string;
+    };
+    description: string;
+    features: {
+      immersion: {
+        name: string;
+        description: string;
+        cta: string;
+      };
+      conception: {
+        name: string;
+        description: string;
+        cta: string;
+      };
+      development: {
+        name: string;
+        description: string;
+        cta: string;
+      };
+      launch: {
+        name: string;
+        description: string;
+        cta: string;
+      };
+      monitoring: {
+        name: string;
+        description: string;
+        cta: string;
+      };
+    };
+  };
+}
+
 const useInView = (margin = '0px') => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef(null);
@@ -39,7 +77,6 @@ const SpaceBackground = () => {
   const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    // Generate random stars
     const generateStars = () => {
       const newStars = [];
       for (let i = 0; i < 200; i++) {
@@ -190,29 +227,31 @@ const FloatingIconsBackground = () => {
   );
 };
 
-export default function BentoGridSection() {
+export default function BentoGridSection({
+  dictionary,
+}: {
+  dictionary: Dictionary;
+}) {
   const [containerRef, isVisible] = useInView('-100px');
 
   const features = [
     {
       id: 0,
       Icon: null,
-      name: 'Immersion',
-      description:
-        'Avant de toucher une ligne de code, nous plongeons dans votre monde. Cette première étape consiste à comprendre en profondeur votre vision, votre marché et vos objectifs.',
+      name: dictionary.bento.features.immersion.name,
+      description: dictionary.bento.features.immersion.description,
       href: '#immersion',
-      cta: 'En savoir plus',
+      cta: dictionary.bento.features.immersion.cta,
       className: 'col-span-2 lg:col-span-1',
       background: <FloatingIconsBackground />,
     },
     {
       id: 1,
       Icon: null,
-      name: 'Conception',
-      description:
-        "Avec une compréhension claire de votre projet, nous passons à la phase de conception. Nous définissons l'architecture de votre SaaS et élaborons les fonctionnalités clés.",
+      name: dictionary.bento.features.conception.name,
+      description: dictionary.bento.features.conception.description,
       href: '#conception',
-      cta: 'En savoir plus',
+      cta: dictionary.bento.features.conception.cta,
       className: 'col-span-3 lg:col-span-3',
       background: (
         <div className="absolute inset-0 overflow-hidden">
@@ -232,11 +271,10 @@ export default function BentoGridSection() {
     {
       id: 2,
       Icon: null,
-      name: 'Développement',
-      description:
-        'Notre équipe de développement, guidée par les principes agiles, construit votre produit. Nous travaillons en sprints courts, permettant des ajustements rapides et une transparence totale.',
+      name: dictionary.bento.features.development.name,
+      description: dictionary.bento.features.development.description,
       href: '#developpement',
-      cta: 'En savoir plus',
+      cta: dictionary.bento.features.development.cta,
       className: 'col-span-3 lg:col-span-2 border-none',
       background: (
         <div className="absolute inset-0 overflow-hidden">
@@ -256,17 +294,15 @@ export default function BentoGridSection() {
     {
       id: 3,
       Icon: null,
-      name: 'Lancement',
-      description:
-        'Le grand jour arrive : le lancement de votre SaaS. Nous surveillons les performances, recueillons les retours utilisateurs et optimisons continuellement le produit.',
+      name: dictionary.bento.features.launch.name,
+      description: dictionary.bento.features.launch.description,
       href: '#lancement',
-      cta: 'En savoir plus',
+      cta: dictionary.bento.features.launch.cta,
       className: 'col-span-3 lg:col-span-1 border-none text-white',
       textClassName: 'text-white',
       background: (
         <div ref={containerRef as any} className="min-h-screen relative z-0">
-          {' '}
-          <div className="absolute  pointer-events-none z-50 h-full border-white transform-gpu flex-col gap-1 p-4 sm:p-6">
+          <div className="absolute pointer-events-none z-50 h-full border-white transform-gpu flex-col gap-1 p-4 sm:p-6">
             <div className="flex-1 h-28" />
             <RocketIcon
               className={cn(
@@ -278,16 +314,14 @@ export default function BentoGridSection() {
                 'text-lg sm:text-xl border-white font-semibold text-white',
               )}
             >
-              Lancement
+              {dictionary.bento.features.launch.name}
             </h3>
             <p
               className={cn(
                 'max-w-lg text-sm sm:text-base text-white border-white',
               )}
             >
-              Le grand jour arrive : le lancement de votre SaaS. Nous
-              surveillons les performances, recueillons les retours utilisateurs
-              et optimisons continuellement le produit.
+              {dictionary.bento.features.launch.description}
             </p>
           </div>
           {isVisible && (
@@ -309,11 +343,10 @@ export default function BentoGridSection() {
     {
       id: 4,
       Icon: null,
-      name: 'Monitoring',
-      description:
-        "Surveillez en temps réel vos ressources cloud et applications. Visualisez la performance, l'utilisation et les coûts pour optimiser votre infrastructure.",
+      name: dictionary.bento.features.monitoring.name,
+      description: dictionary.bento.features.monitoring.description,
       href: '#monitoring',
-      cta: 'En savoir plus',
+      cta: dictionary.bento.features.monitoring.cta,
       className: 'col-span-3 lg:col-span-1 border-none',
       background: (
         <div className="absolute inset-0 overflow-hidden h-2/3">
@@ -332,6 +365,7 @@ export default function BentoGridSection() {
       ),
     },
   ];
+
   return (
     <div className="relative bg-white overflow-hidden pb-56">
       {/* Image gradient background */}
@@ -347,26 +381,23 @@ export default function BentoGridSection() {
         <div className="max-w-3xl mb-16 space-y-4">
           <div className="flex flex-col gap-6">
             <p className="text-sm uppercase tracking-wider text-gray-500">
-              Notre approche
+              {dictionary.bento.approach}
             </p>
             <h2 className="text-5xl font-bold">
-              Vos projets, notre{' '}
+              {dictionary.bento.title.part1}{' '}
               <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
-                expertise.
+                {dictionary.bento.title.part2}
               </span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl">
-              Notre expertise technique s'aligne précisément avec vos objectifs
-              business. Nous développons des solutions SaaS performantes et
-              évolutives, guidées par vos besoins spécifiques et les exigences
-              du marché.
+              {dictionary.bento.description}
             </p>
           </div>
         </div>
 
         <div className="relative max-w-7xl mx-auto">
           <BentoGrid className="mb-4">
-            {features.map((feature, idx) => (
+            {features.map((feature) => (
               <BentoCard
                 key={feature.id}
                 {...feature}

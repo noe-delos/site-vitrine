@@ -115,6 +115,7 @@ const Header = () => {
               );
             })}
           </div>
+          {/* <LocaleSwitcher /> */}
 
           {/* Contact Button - Desktop */}
           <div className="hidden md:block">

@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "title": {
+      "part1": "Your",
+      "part2": "idea",
+      "part3": "Your",
+      "part4": "Saas solution"
+    },
+    "description": "From design to implementation, we bring your application to life with customized technical expertise and dedicated support.",
+    "trust": "These companies trust us",
+    "ai": {
+      "part1": "integrate",
+      "part2": "AI",
+      "part3": "."
+    }
+  },
+  "bento": {
+    "approach": "Our approach",
+    "title": {
+      "part1": "Your projects, our",
+      "part2": "expertise."
+    },
+    "description": "Our technical expertise aligns precisely with your business objectives. We develop performant and scalable SaaS solutions, guided by your specific needs and market requirements.",
+    "features": {
+      "immersion": {
+        "name": "Immersion",
+        "description": "Before writing a single line of code, we dive into your world. This first step consists of deeply understanding your vision, market, and objectives.",
+        "cta": "Learn more"
+      },
+      "conception": {
+        "name": "Design",
+        "description": "With a clear understanding of your project, we move to the design phase. We define your SaaS architecture and develop key features.",
+        "cta": "Learn more"
+      },
+      "development": {
+        "name": "Development",
+        "description": "Our development team, guided by agile principles, builds your product. We work in short sprints, allowing for quick adjustments and total transparency.",
+        "cta": "Learn more"
+      },
+      "launch": {
+        "name": "Launch",
+        "description": "The big day arrives: your SaaS launch. We monitor performance, gather user feedback, and continuously optimize the product.",
+        "cta": "Learn more"
+      },
+      "monitoring": {
+        "name": "Monitoring",
+        "description": "Monitor your cloud resources and applications in real-time. Visualize performance, usage, and costs to optimize your infrastructure.",
+        "cta": "Learn more"
+      }
+    }
+  }
+}
