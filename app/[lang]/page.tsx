@@ -7,6 +7,7 @@ import {
   default as MobileTechnologies,
   default as TabletTechnologies,
 } from '@/components/technologies-mobile';
+import WhyUsPage from '@/components/why-us';
 import { getDictionary } from '@/get-dictionary';
 
 export default async function HomePage({ params }: any) {
@@ -16,6 +17,7 @@ export default async function HomePage({ params }: any) {
     <>
       <Hero dictionary={dictionary} />
       <Description dictionary={dictionary} />
+      <WhyUsPage dictionary={dictionary} />
       <Expertise dictionary={dictionary} />
       <div className="md:hidden">
         <MobileTechnologies dictionary={dictionary} />

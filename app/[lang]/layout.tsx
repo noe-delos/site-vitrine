@@ -46,7 +46,7 @@ const Layout: React.FC<LayoutProps> = async ({ children, params }) => {
     <html lang={params.lang}>
       <body className={`${airbnbCereal.variable} font-sans antialiased`}>
         <div className="min-h-screen bg-gray-50">
-          <Header dictionary={dictionary} />
+          <Header dictionary={dictionary} lang={params.lang} />
           <main className="pt-16">{children}</main>
           <Footer dictionary={dictionary} />
         </div>

@@ -43,19 +43,22 @@ function TabletPerformanceAnalyticsCard({ dictionary }: { dictionary: any }) {
     column1: [
       {
         title: dictionary.technologies.performance.instant_loading.title,
-        description: dictionary.technologies.performance.instant_loading.description,
+        description:
+          dictionary.technologies.performance.instant_loading.description,
       },
     ],
     column2: [
       {
         title: dictionary.technologies.performance.realtime_analytics.title,
-        description: dictionary.technologies.performance.realtime_analytics.description,
+        description:
+          dictionary.technologies.performance.realtime_analytics.description,
       },
     ],
     column3: [
       {
         title: dictionary.technologies.performance.advanced_monitoring.title,
-        description: dictionary.technologies.performance.advanced_monitoring.description,
+        description:
+          dictionary.technologies.performance.advanced_monitoring.description,
       },
     ],
   };

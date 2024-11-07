@@ -6,14 +6,19 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-const Header = ({ dictionary }: { dictionary: any }) => {
+const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
   const pathname = usePathname();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Updated navItems to include language prefix
   const navItems = [
-    { label: dictionary.header.navigation.home, href: '/' },
-    { label: dictionary.header.navigation.team, href: '/team' },
-    { label: dictionary.header.navigation.portfolio, href: '/portfolio' },
+    { label: dictionary.header.navigation.home, href: `/${lang}` },
+    { label: dictionary.header.navigation.team, href: `/${lang}/team` },
+    {
+      label: dictionary.header.navigation.portfolio,
+      href: `/${lang}/portfolio`,
+    },
   ];
 
   // Style with constant blur effect
@@ -28,6 +33,14 @@ const Header = ({ dictionary }: { dictionary: any }) => {
     setIsMenuOpen(false);
   };
 
+  // Helper function to check if a path is active
+  const isActivePath = (href: string) => {
+    // Remove trailing slashes for comparison
+    const normalizedPathname = pathname.replace(/\/$/, '');
+    const normalizedHref = href.replace(/\/$/, '');
+    return normalizedPathname === normalizedHref;
+  };
+
   return (
     <>
       <header
@@ -35,7 +48,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
         style={headerStyle}
       >
         <nav className="max-w-7xl mx-auto flex items-center justify-between h-full px-6">
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link href={`/${lang}`} className="flex items-center space-x-3 group">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -64,7 +77,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive = isActivePath(item.href);
 
               return (
                 <motion.div
@@ -121,7 +134,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
             <motion.button
               className="relative overflow-hidden px-6 py-1.5 rounded-lg group border-2 border-[#7066CB]/30"
               whileTap={{ scale: 0.98 }}
-              onClick={() => router.push('/contact')}
+              onClick={() => router.push(`/${lang}/contact`)}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out" />
 
@@ -213,7 +226,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
               {/* Navigation Items */}
               <div className="flex flex-col py-4">
                 {navItems.map((item) => {
-                  const isActive = pathname === item.href;
+                  const isActive = isActivePath(item.href);
 
                   return (
                     <Link
@@ -248,7 +261,7 @@ const Header = ({ dictionary }: { dictionary: any }) => {
                 <button
                   className="w-full bg-[#7066CB] text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-colors hover:bg-[#7066CB]/90 active:scale-[0.98]"
                   onClick={() => {
-                    router.push('/contact');
+                    router.push(`/${lang}/contact`);
                     closeMenu();
                   }}
                 >

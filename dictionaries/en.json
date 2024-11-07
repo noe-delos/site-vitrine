@@ -6,7 +6,7 @@
       "part3": "Your",
       "part4": "Saas solution"
     },
-    "description": "From design to implementation, we bring your application to life with customized technical expertise and dedicated support.",
+    "description": "From design to implementation, we bring your project to life with a strong technical expertise and dedicated support.",
     "trust": "These companies trust us",
     "ai": {
       "part1": "integrate",
@@ -342,5 +342,33 @@
       "success": "Message received! We'll get back to you soon.",
       "error": "An error occurred, please try again later."
     }
+  },
+  "whyUs": {
+    "leftImageAlt": "Left feature",
+    "rightImageAlt": "Right feature",
+    "tagline": "We sell quality",
+    "title": "Why choose us?",
+    "heroText": "We are not your typical development agency.",
+    "heroSubtext": "With dual expertise in software development and artificial intelligence, our agency designs the best market solutions for your business.",
+    "features": {
+      "expertise": {
+        "title": "Recognized Expertise",
+        "description": "Our team consists of experts graduated from the best French engineering schools."
+      },
+      "ai": {
+        "title": "AI Mastery",
+        "description": "Our AI expertise allows us to optimize costs and timelines while ensuring superior quality."
+      },
+      "innovation": {
+        "title": "Continuous Innovation",
+        "description": "We integrate the latest technological advances to ensure sustainable and scalable solutions."
+      },
+      "support": {
+        "title": "Support",
+        "description": "Tailored follow-up and complete transparency throughout your project."
+      }
+    },
+    "testimonial": "We worked with KS for the development of our Spliit website and web app. Their support was comprehensive with strong technical expertise and a product-oriented approach.",
+    "spliiitLinkAriaLabel": "Navigate to Spliiit homepage"
   }
 }

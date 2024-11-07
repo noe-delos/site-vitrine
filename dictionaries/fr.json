@@ -6,7 +6,7 @@
       "part3": "Votre solution",
       "part4": "Saas"
     },
-    "description": "De la conception à la réalisation, nous donnons vie à votre application avec une expertise technique sur mesure et un accompagnement dédié.",
+    "description": "De la conception à la réalisation, nous donnons vie à votre projet grâce à une expertise technique sur mesure et un accompagnement dédié.",
     "trust": "Ces entreprises nous font confiance",
     "ai": {
       "part1": "intégrez l'",
@@ -50,7 +50,7 @@
     }
   },
   "technologies": {
-    "main_title": "Technologies de Pointe à Votre Service",
+    "main_title": "Des technologies nouvelle génération.",
     "main_description": "Nous utilisons les dernières technologies pour vous offrir des solutions innovantes et performantes, adaptées à vos besoins spécifiques.",
     "performance": {
       "title": "Performance & Analytics",
@@ -346,5 +346,33 @@
       "success": "Message bien reçu ! Nous vous répondrons au plus vite.",
       "error": "Une erreur est survenue, veuillez réessayer plus tard."
     }
+  },
+  "whyUs": {
+    "leftImageAlt": "Fonctionnalité de gauche",
+    "rightImageAlt": "Fonctionnalité de droite",
+    "tagline": "Nous vendons la qualité",
+    "title": "Pourquoi nous choisir ?",
+    "heroText": "Nous ne sommes pas votre agence de développement classique.",
+    "heroSubtext": "Fort d'une double expertise en développement logiciel et intelligence artificielle, notre agence conçoit les meilleures solutions du marché pour votre business.",
+    "features": {
+      "expertise": {
+        "title": "Expertise reconnue",
+        "description": "Notre équipe est composée d'experts diplômés des meilleures écoles françaises d'ingénieurs."
+      },
+      "ai": {
+        "title": "Maîtrise de l'IA",
+        "description": "Notre expertise en IA nous permet d'optimiser les coûts et délais tout en garantissant une qualité supérieure."
+      },
+      "innovation": {
+        "title": "Innovation continue",
+        "description": "Nous intégrons les dernières avancées technologiques pour garantir des solutions pérennes et évolutives."
+      },
+      "support": {
+        "title": "Accompagnement",
+        "description": "Un suivi sur mesure et une transparence totale tout au long de votre projet."
+      }
+    },
+    "testimonial": "Nous avons fait appel à KS dans le cadre du développement de notre site Spliit et de notre web app. Leur accompagnement était complet avec une forte expertise technique et une approche produit.",
+    "spliiitLinkAriaLabel": "Naviguer vers la page d'accueil de Spliiit"
   }
 }

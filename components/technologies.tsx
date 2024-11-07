@@ -115,12 +115,8 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
             className="w-full h-full object-cover rounded-xl z-30"
           />
           <img
-            src="/technologies/postgres.png"
-            className="size-32 rounded-xl absolute z-40 -top-10 -right-10 shadow-lg shadow-white/20"
-          />
-          <img
             src="/technologies/supabase.png"
-            className="size-20 rounded-xl absolute z-40 -bottom-8 -left-8"
+            className="size-20 rounded-xl absolute z-40 -top-10 -right-10"
           />
         </div>
       ),
@@ -529,11 +525,11 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 
   return (
     <div
-      className="bg-gradient-to-br from-gray-50 to-white w-full relative min-h-screen py-[20rem]"
+      className="bg-gradient-to-br from-gray-50 to-white w-full relative min-h-screen py-[13rem]"
       ref={containerRef}
     >
       <div className="max-w-[100rem] mx-auto">
-        <div className="text-center mb-24">
+        <div className="text-center mb-[12rem]">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             {dictionary.technologies.main_title}
           </h1>
@@ -548,7 +544,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
               {content.map((_, index) => (
                 <div
                   key={index}
-                  className={`size-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`size-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                     activeSection === index
                       ? 'bg-black scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
