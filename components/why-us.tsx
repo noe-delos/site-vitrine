@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 
 const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
   return (
-    <div className="min-h-screen bg-white text-gray-900 py-16 px-4 md:px-8">
+    <div className="min-h-screen bg-white text-gray-900 py-2 px-4 md:px-8">
       <div className="max-w-7xl mx-auto relative">
         {/* Left image - absolute positioned */}
         <div className="hidden lg:block absolute left-[2rem] top-32">
@@ -28,10 +28,10 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
         <div className="max-w-xl mx-auto relative">
           {/* Top section with logo and title */}
           <div className="flex items-center gap-2 mb-3">
-            <Icon
-              icon="tabler:diamond-filled"
-              className="size-4 text-blue-200"
-            />
+              <Icon
+                icon="tabler:diamond-filled"
+                className="size-4 text-blue-200"
+              />
             <span className="text-gray-600 text-xs">
               {dictionary.whyUs.tagline}
             </span>

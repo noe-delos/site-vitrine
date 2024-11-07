@@ -5,7 +5,6 @@ import { Compare } from '@/components/acernity/compare';
 import { GlobeDemo } from '@/components/acernity/globe-demo';
 import { cn } from '@/utils/cn';
 import { motion as m } from 'framer-motion';
-import { RocketIcon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 interface Dictionary {
@@ -304,7 +303,7 @@ export default function BentoGridSection({
         <div ref={containerRef as any} className="min-h-screen relative z-0">
           <div className="absolute pointer-events-none z-50 h-full border-white transform-gpu flex-col gap-1 p-4 sm:p-6">
             <div className="flex-1 h-28" />
-            <RocketIcon
+            <div
               className={cn(
                 'h-10 w-10 sm:h-12 text-white sm:w-12 pb-2 origin-left transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75',
               )}

@@ -184,10 +184,17 @@
   },
   "expertise": {
     "title": {
-      "part1": "Unique and",
-      "part2": "stunning interfaces."
+      "part1": "Interfaces that make the",
+      "part2": "difference."
     },
-    "description": "From fintech to e-commerce and business solutions, we design SaaS interfaces that combine performance and elegance. Our UI/UX expertise allows us to create intuitive and engaging user experiences, adapted to each industry sector.",
+    "keyFeatures": {
+      "ft1": "User-centered Design",
+      "ft2": "Ultra-fast Interfaces",
+      "ft3": "UX Optimization",
+      "ft4": "Strategic Conversion"
+    },
+    "description": "From first glance to last interaction, we create SaaS interfaces that captivate and convert.",
+    "description2": "Our UI/UX expertise transforms complexity into elegance, offering your users a smooth and memorable experience, regardless of y,our industry.",
     "permanent_contact": {
       "title": "Permanent Contact",
       "description": "We know that every business is unique. That's why our team makes it a point of honor to establish close and transparent collaboration throughout the development of your solution. From initial immersion to launch, we stay aligned with your objectives."
@@ -286,7 +293,7 @@
     }
   },
   "solutions": {
-    "title": "Our solutions",
+    "title": "Applications we delivered",
     "description": "Discover how we transform technological challenges into innovative solutions. Our portfolio showcases our expertise in development, infrastructure, and IT consulting."
   },
   "portfolio": {

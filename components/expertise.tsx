@@ -8,27 +8,37 @@ import { useEffect, useState } from 'react';
 const videos = ['/hero/expertise/video1.mp4', '/hero/expertise/video2.mp4'];
 const videoTiming = [9000, 16000];
 
-const StackBox = ({ icon, bgcolor, color }: any) => {
+const FeatureGrid = ({ dictionary }: { dictionary: any }) => {
+  const features = [
+    {
+      title: dictionary.expertise.keyFeatures.ft1,
+      icon: 'tabler:user-filled',
+    },
+    {
+      title: dictionary.expertise.keyFeatures.ft2,
+      icon: 'ant-design:thunderbolt-filled',
+    },
+    {
+      title: dictionary.expertise.keyFeatures.ft3,
+      icon: 'mdi:ruler',
+    },
+    {
+      title: dictionary.expertise.keyFeatures.ft4,
+      icon: 'si:target-fill',
+    },
+  ];
+
   return (
-    <div
-      className="relative z-10 h-[3rem] w-[11rem] flex items-center justify-center rounded-lg"
-      style={{
-        background: `linear-gradient(${bgcolor}, ${bgcolor}), 
-                  linear-gradient(to bottom, ${color}, ${bgcolor})`,
-        border: 'double 2px transparent',
-        borderRadius: 7,
-        backgroundOrigin: 'border-box',
-        backgroundClip: 'padding-box, border-box',
-        padding: 0,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Icon
-        icon={icon}
-        className="mt-1 size-11 text-white transition-transform duration-200 cursor-pointer"
-      />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-1 max-w-md">
+      {features.map((feature, index) => (
+        <div
+          key={index}
+          className=" gap-2 p-2 flex flex-row items-center justify-start"
+        >
+          <Icon icon={feature.icon} className="size-4 text-black" />
+          <span className="text-gray-800 text-sm">{feature.title}</span>
+        </div>
+      ))}
     </div>
   );
 };
@@ -74,52 +84,23 @@ export default function Expertise({ dictionary }: { dictionary: any }) {
             className="space-y-8 max-w-xl"
           >
             <motion.div variants={fadeInUp}>
-              <h2 className="lg:text-4xl md:text-4xl xl:text-4xl sm:text-4xl xs:text-4xl text-2xl font-bold mb-6">
+              <h2 className="lg:text-4xl md:text-4xl xl:text-5xl sm:text-4xl xs:text-4xl text-2xl font-bold mb-6">
                 {dictionary.expertise.title.part1}{' '}
                 <SparklesText
                   text={dictionary.expertise.title.part2}
                   className="text-black text-5xl mt-2"
                 />
               </h2>
-              <p className="text-gray-500 leading-relaxed">
-                {dictionary.expertise.description}
+              <p className="leading-relaxed">
+                <span className="text-gray-700 ">
+                  {dictionary.expertise.description}
+                </span>{' '}
+                <span className="text-gray-400">
+                  {dictionary.expertise.description2}
+                </span>
               </p>
             </motion.div>
-            <motion.div variants={fadeInUp} className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <StackBox
-                  icon={'ic:round-headset'}
-                  color="#E5E5E5"
-                  bgcolor="#F1F1F1"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {dictionary.expertise.permanent_contact.title}
-                  </h3>
-                  <p className="text-gray-500">
-                    {dictionary.expertise.permanent_contact.description}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-            <div className="border-b border-gray-200"></div>
-            <motion.div variants={fadeInUp} className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <StackBox
-                  icon={'ph:lightning-fill'}
-                  color="#E5E5E5"
-                  bgcolor="#F1F1F1"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {dictionary.expertise.efficiency.title}
-                  </h3>
-                  <p className="text-gray-500">
-                    {dictionary.expertise.efficiency.description}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+            <FeatureGrid dictionary={dictionary} />
           </motion.div>
 
           {/* Right Video Section */}
