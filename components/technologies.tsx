@@ -1,7 +1,9 @@
 'use client';
 
+import { FlipWords } from '@/components/acernity/flip-words';
 import { TypingAnimation } from '@/components/acernity/magic-type-effect';
 import { WordFadeIn } from '@/components/acernity/word-fade-in';
+import { Icon } from '@iconify/react';
 import {
   ArrowRight,
   Bot,
@@ -529,13 +531,32 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
       ref={containerRef}
     >
       <div className="max-w-[100rem] mx-auto">
-        <div className="text-center mb-[12rem]">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            {dictionary.technologies.main_title}
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {dictionary.technologies.main_description}
-          </p>
+        <div className="flex flex-col items-center justify-center mb-[12rem] w-full px-4">
+          <div className="w-full max-w-4xl">
+            <div className="flex flex-row gap-2 items-center">
+              <Icon
+                icon="heroicons:squares-plus-16-solid"
+                className="size-4 text-black"
+              />
+              <p>{dictionary.technologies.secret}</p>
+            </div>
+            <div className="flex flex-row gap-1 items-center mb-5 p-4 pl-0">
+              <h1 className="text-5xl font-bold text-gray-900">
+                {dictionary.technologies.main_title_2}
+              </h1>
+              <FlipWords
+                words={[
+                  dictionary.technologies.word1,
+                  dictionary.technologies.word2,
+                  dictionary.technologies.word3,
+                ]}
+                className="text-5xl font-bold text-gray-900"
+              />
+            </div>
+            <p className="text-xl text-gray-600">
+              {dictionary.technologies.main_description}
+            </p>
+          </div>
         </div>
         <div className="grid grid-cols-12 gap-8">
           {/* Progress Indicator */}

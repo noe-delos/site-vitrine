@@ -4,9 +4,10 @@
       "part1": "Your",
       "part2": "idea",
       "part3": "Your",
-      "part4": "Saas solution"
+      "part4": "AI Saas",
+      "part5": " solution"
     },
-    "description": "From design to implementation, we bring your project to life with a strong technical expertise and dedicated support.",
+    "description": "From design to implementation, we bring your IT project to life with a strong technical expertise and dedicated support.",
     "trust": "These companies trust us",
     "ai": {
       "part1": "integrate",
@@ -51,6 +52,11 @@
   },
   "technologies": {
     "main_title": "Cutting-Edge Technologies at Your Service",
+    "main_title_2": "From",
+    "word1": "next-generation technologies.",
+    "word2": "high-performance methods.",
+    "word3": "innovative solutions.",
+    "secret": "Our strength",
     "main_description": "We use the latest technologies to offer you innovative and high-performance solutions, adapted to your specific needs.",
     "performance": {
       "title": "Performance & Analytics",

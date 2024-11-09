@@ -17,9 +17,9 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
           {dictionary.hero.title.part2}.
         </span>
         <br />
-        {dictionary.hero.title.part3}{' '}
+        {dictionary.hero.title.part3} {dictionary.hero.title.part4}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
-          {dictionary.hero.title.part4}.
+          {dictionary.hero.title.part5}.
         </span>
         <br />
       </h1>

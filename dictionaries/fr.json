@@ -4,9 +4,10 @@
       "part1": "Votre",
       "part2": "idée",
       "part3": "Votre solution",
-      "part4": "Saas"
+      "part4": "Saas",
+      "part5": " IA"
     },
-    "description": "De la conception à la réalisation, nous donnons vie à votre projet grâce à une expertise technique sur mesure et un accompagnement dédié.",
+    "description": "De la conception à la réalisation, nous donnons vie à votre projet informatique grâce à une expertise technique sur mesure et un accompagnement dédié.",
     "trust": "Ces entreprises nous font confiance",
     "ai": {
       "part1": "intégrez l'",
@@ -50,7 +51,12 @@
     }
   },
   "technologies": {
-    "main_title": "Des technologies nouvelle génération.",
+    "main_title": "Des",
+    "main_title_2": "Des",
+    "word1": "technologies nouvelle génération.",
+    "word2": "méthodes performantes.",
+    "word3": "solutions innovantes.",
+    "secret": "Notre force",
     "main_description": "Nous utilisons les dernières technologies pour vous offrir des solutions innovantes et performantes, adaptées à vos besoins spécifiques.",
     "performance": {
       "title": "Performance & Analytics",

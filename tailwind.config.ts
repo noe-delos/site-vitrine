@@ -16,6 +16,7 @@ const config: Config = {
         'color-5': 'hsl(var(--color-5))',
       },
       animation: {
+        gradient: 'gradient 8s linear infinite',
         rainbow: 'rainbow var(--speed, 2s) infinite linear',
         shine: 'shine var(--duration) infinite linear',
         'spin-slow-30': 'spin 30s linear infinite',
@@ -24,6 +25,11 @@ const config: Config = {
         'marquee-infinite': 'marquee 25s linear infinite',
       },
       keyframes: {
+        gradient: {
+          to: {
+            backgroundPosition: 'var(--bg-size) 0',
+          },
+        },
         rainbow: {
           '0%': { 'background-position': '0%' },
           '100%': { 'background-position': '200%' },
