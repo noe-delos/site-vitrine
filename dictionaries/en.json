@@ -52,12 +52,13 @@
   },
   "technologies": {
     "main_title": "Cutting-Edge Technologies at Your Service",
-    "main_title_2": "From",
+    "main_title_2": "Using",
     "word1": "next-generation technologies.",
     "word2": "high-performance methods.",
     "word3": "innovative solutions.",
     "secret": "Our strength",
-    "main_description": "We use the latest technologies to offer you innovative and high-performance solutions, adapted to your specific needs.",
+    "main_description": "Experience the best technology to grow your business! Our powerful solutions solve your challenges and help you stay ahead of competition.",
+    "main_description2": "We create custom tools that fit your needs perfectly, making your business more successful every day.",
     "performance": {
       "title": "Performance & Analytics",
       "instant_loading": {

@@ -553,8 +553,13 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                 className="text-5xl font-bold text-gray-900"
               />
             </div>
-            <p className="text-xl text-gray-600">
-              {dictionary.technologies.main_description}
+            <p className="leading-relaxed text-xl">
+              <span className="text-gray-700 ">
+                {dictionary.technologies.main_description}
+              </span>{' '}
+              <span className="text-gray-400">
+                {dictionary.technologies.main_description2}
+              </span>
             </p>
           </div>
         </div>
