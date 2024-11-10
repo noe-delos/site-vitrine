@@ -79,7 +79,17 @@
         "part1": "Données et",
         "part2": "sécurité."
       },
-      "subtitle": "Une infrastructure robuste et sécurisée pour vos données d'entreprise, avec des performances optimales et une fiabilité à toute épreuve.",
+      "subtitle": "Protection maximale de vos données d'entreprise grâce à une infrastructure cloud hautement sécurisée de nouvelle génération.",
+      "subtitle2": "Performance, confidentialité et fonctionnalités IA garanties.",
+
+      "Azure": {
+        "title": "Azure",
+        "description": "Nous ne prennons pas l'IA et les données à la légère. Nous déployons les modèles (GPT, Mistral, Llama,..) sur Azure afin d'assurer la sécurité et la confidentialité des données."
+      },
+      "Supabase": {
+        "title": "Supabase",
+        "description": "Nous avons adopté Supabase en tant que service de base de donnée pour des intégrations professionnelles et une sécurité avancée. Ce service nous permet d'avoir une rapidité d'éxécution doublée."
+      },
       "infrastructure": {
         "title": "Infrastructure PostgreSQL",
         "features": [
@@ -97,18 +107,20 @@
         ]
       },
       "realtime": {
-        "title": "Fonctionnalités temps réel",
+        "title": "Exemples d'intégrations",
         "features": [
-          "Synchronisation multi-utilisateurs",
-          "API REST et GraphQL auto-générées",
-          "Webhooks personnalisables",
-          "Monitoring temps réel"
+          "Connexions multi-facteurs.",
+          "Cryptage mot des passe en Bcrypt.",
+          "Mode Realtime (interractions en temps réel).",
+          "Système de Mailing intégré.",
+          "Terrabytes de stockage."
         ]
       }
     },
     "ai": {
       "title": "IA générative.",
-      "subtitle": "Des solutions d'IA adaptées à vos besoins, intégrant les dernières avancées en matière de traitement du langage naturel et d'apprentissage automatique.",
+      "subtitle": "Transformez votre entreprise avec des solutions d'IA générative sur mesure.",
+      "subtitle2": "De la création de contenu à l'analyse prédictive, nos systèmes s'appuient sur les modèles de langage les plus avancés pour automatiser vos tâches complexes.",
       "solutions": {
         "title": "Solutions IA intégrées",
         "features": [
@@ -120,12 +132,33 @@
           "Analyse sentiment"
         ]
       },
+      "LLmApis": {
+        "title": "APIs d'LLM",
+        "description": "Utiliser les APIs des différents modèles de langage pour produire des systèmes robustes n'est pour nous plus qu'une habitude."
+      },
+      "advancedFeatures": {
+        "title": "Fonctionnalités avancées",
+        "description": "En 2024, l'IA générative va au-delà des chatbots en offrant des fonctionnalités intégrées qui révolutionnent tous les secteurs, allant de l'analyse de documents complexes à l'automatisation de tâches. Voici quelques exemples ci-dessous :"
+      },
       "infrastructure": {
-        "title": "Infrastructure IA",
+        "title": "Dernières innovations",
         "features": [
-          "Scaling automatique",
-          "OpenAI & HuggingFace",
-          "API REST unifiée"
+          "OCR (extraction sur images)",
+          "Text to Speech (synthèse vocale)",
+          "Analyse de documents RAG",
+          "Transcription vocale",
+          "Language naturel web",
+          "Génération de documents",
+          "Éditeur de texte intelligent"
+        ],
+        "icons": [
+          "ri:image-circle-ai-fill",
+          "ri:speak-ai-fill",
+          "ri:ai-generate",
+          "ri:voice-ai-fill",
+          "streamline:ai-network-spark-solid",
+          "mingcute:pencil-2-ai-fill",
+          "mingcute:textbox-ai-fill"
         ]
       },
       "performance": {
