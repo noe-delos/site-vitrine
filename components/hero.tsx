@@ -171,7 +171,7 @@ const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 
 const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
-    <div className="relative w-full h-[600px]">
+    <div className="relative w-full h-screen max-h-[600px]">
       {[0, 1].map((index) => (
         <motion.div
           key={index}
@@ -197,7 +197,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
               className="relative size-full border rounded-full"
               color={['#6BA1FA', '#266CDE', '#0945A7']}
             >
-              <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-[45vw] h-[30vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
                 <Image
                   src={`/hero/hero${index}.png`}
@@ -208,7 +208,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
               </div>
             </ShineBorder>
           ) : (
-            <div className="relative w-[700px] h-[450px] bg-white rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-[45vw] h-[30vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] bg-white rounded-2xl overflow-hidden shadow-2xl">
               <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
               <Image
                 src={`/hero/hero${index}.png`}
@@ -230,7 +230,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
             delay: 0.9,
             ease: [0.25, 0.1, 0.25, 1],
           }}
-          className="relative w-[300px] h-[200px] rounded-xl overflow-hidden group"
+          className="relative w-[20vw] h-[13vw] max-w-[300px] max-h-[200px] min-w-[200px] min-h-[133px] rounded-xl overflow-hidden group"
         >
           <div className="absolute inset-0 rounded-xl border border-blue-100">
             <div className="absolute inset-[1px] rounded-lg bg-white/5 backdrop-blur-[4px]">
@@ -260,7 +260,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
                     className="absolute inset-0 flex items-center justify-center"
                     transition={{ delay: 1.4, duration: 0.5 }}
                   >
-                    <motion.span className="px-8 py-4 text-3xl font-bold rounded-lg text-gray-800 relative">
+                    <motion.span className="px-4 py-2 text-[1.5vw] min-text-[16px] max-text-[24px] font-bold rounded-lg text-gray-800 relative">
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
                       <span className="relative z-10">

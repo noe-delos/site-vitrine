@@ -3,10 +3,11 @@
 import { FlipWords } from '@/components/acernity/flip-words';
 import { TypingAnimation } from '@/components/acernity/magic-type-effect';
 import { WordFadeIn } from '@/components/acernity/word-fade-in';
+import { cn } from '@/utils/cn';
 import { Icon } from '@iconify/react';
 import { ArrowRight, ChevronRight, Shield } from 'lucide-react';
+import Image from 'next/image';
 import { ReactNode, useEffect, useRef, useState } from 'react';
-
 interface ContentItem {
   title: ReactNode;
   titleImg: string;
@@ -508,7 +509,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
       rightContent: (
         <div className="relative w-full h-full">
           <img
-            src="https://cdn.dribbble.com/userupload/17341175/file/original-a6085175e674b05fe0bd4fe59f2a553d.png?resize=1024x615"
+            src="/fr/technologies/cloud/background.png"
             alt="Scaleway Cloud"
             className="w-full h-full object-cover rounded-xl"
           />
@@ -569,38 +570,68 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
             </div>
             <div className="relative z-10">
               <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
-                {dictionary.technologies.ai.infrastructure.title}
+                {dictionary.technologies.deployment.tools.title}
               </h3>
-              <div className="grid grid-cols-3 gap-6">
-                <ul className="space-y-3">
-                  {dictionary.technologies.deployment.cloud.features
+              <div className="grid grid-cols-3 gap-6 pt-2">
+                <ul className="space-y-6">
+                  {dictionary.technologies.deployment.tools.features
                     .slice(0, 2)
                     .map((feature: string, index: number) => (
-                      <li key={index} className="flex items-center gap-3 group">
-                        <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
-                        <span className="text-white">{feature}</span>
+                      <li key={index}>
+                        <Image
+                          alt={`Feature ${index + 1}`}
+                          src={feature}
+                          width={100}
+                          height={100}
+                          className={cn(
+                            'object-contain h-5 w-auto',
+                            index === 1 && 'h-6',
+                          )}
+                          quality={100}
+                          priority
+                        />
                       </li>
                     ))}
                 </ul>
-                <ul className="space-y-3">
-                  {dictionary.technologies.deployment.cloud.features
-                    .slice(2)
+                <ul className="space-y-6">
+                  {dictionary.technologies.deployment.tools.features
+                    .slice(2, 4)
                     .map((feature: string, index: number) => (
-                      <li key={index} className="flex items-center gap-3 group">
-                        <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
-                        <span className="text-white">{feature}</span>
+                      <li key={index}>
+                        <Image
+                          alt={`Feature ${index + 1}`}
+                          src={feature}
+                          width={100}
+                          height={100}
+                          className={cn(
+                            'object-contain h-5 w-auto',
+                            index === 0 && 'h-7',
+                          )}
+                          quality={100}
+                          priority
+                        />
                       </li>
                     ))}
                 </ul>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3 group">
-                    <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
-                    <span className="text-white">Serverless</span>
-                  </li>
-                  <li className="flex items-center gap-3 group">
-                    <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
-                    <span className="text-white">Auto-scaling</span>
-                  </li>
+                <ul className="space-y-6">
+                  {dictionary.technologies.deployment.tools.features
+                    .slice(4)
+                    .map((feature: string, index: number) => (
+                      <li key={index}>
+                        <Image
+                          alt={`Feature ${index + 1}`}
+                          src={feature}
+                          width={100}
+                          height={100}
+                          className={cn(
+                            'object-contain h-5 w-auto',
+                            index === 1 && 'h-6',
+                          )}
+                          quality={100}
+                          priority
+                        />
+                      </li>
+                    ))}
                 </ul>
               </div>
             </div>

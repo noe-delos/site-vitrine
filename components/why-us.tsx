@@ -27,15 +27,6 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
         {/* Main content in center column */}
         <div className="max-w-3xl mx-auto relative">
           {/* Top section with logo and title */}
-          <div className="flex items-center gap-2 mb-3">
-            <Icon
-              icon="tabler:diamond-filled"
-              className="size-4 text-blue-200"
-            />
-            <span className="text-gray-600 text-xs">
-              {dictionary.whyUs.tagline}
-            </span>
-          </div>
 
           {/* Hero section */}
           <div className="mb-12">

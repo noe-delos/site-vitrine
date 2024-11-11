@@ -51,14 +51,14 @@
     }
   },
   "technologies": {
-    "main_title": "Cutting-Edge Technologies at Your Service",
+    "main_title": "Cutting-Edge",
     "main_title_2": "Using",
     "word1": "next-generation technologies.",
     "word2": "high-performance methods.",
     "word3": "innovative solutions.",
     "secret": "Our strength",
     "main_description": "Experience the best technology to grow your business! Our powerful solutions solve your challenges and help you stay ahead of competition.",
-    "main_description2": "We create custom tools that fit your needs perfectly, making your business more successful every day.",
+    "main_description2": "By combining cutting-edge technologies with deep expertise, we create customized solutions that will revolutionize your business and give you a decisive edge in the market.",
     "performance": {
       "title": "Performance & Analytics",
       "instant_loading": {
@@ -79,7 +79,16 @@
         "part1": "Data and",
         "part2": "security."
       },
-      "subtitle": "A robust and secure infrastructure for your enterprise data, with optimal performance and proven reliability.",
+      "subtitle": "Maximum protection for your enterprise data with next-generation highly secure cloud infrastructure.",
+      "subtitle2": "Performance, privacy, and AI capabilities guaranteed.",
+      "Azure": {
+        "title": "Azure",
+        "description": "We take AI and data seriously. We deploy models (GPT, Mistral, Llama, etc.) on Azure to ensure data security and privacy."
+      },
+      "Supabase": {
+        "title": "Supabase",
+        "description": "We've adopted Supabase as our database service for professional integrations and advanced security. This service allows us to achieve doubled execution speed."
+      },
       "infrastructure": {
         "title": "PostgreSQL Infrastructure",
         "features": [
@@ -97,18 +106,20 @@
         ]
       },
       "realtime": {
-        "title": "Real-time Features",
+        "title": "Integration Examples",
         "features": [
-          "Multi-user synchronization",
-          "Auto-generated REST and GraphQL APIs",
-          "Custom webhooks",
-          "Real-time monitoring"
+          "Multi-factor connections",
+          "Bcrypt password encryption",
+          "Realtime mode (live interactions)",
+          "Integrated mailing system",
+          "Terabytes of storage"
         ]
       }
     },
     "ai": {
       "title": "Generative AI.",
-      "subtitle": "AI solutions tailored to your needs, incorporating the latest advances in natural language processing and machine learning.",
+      "subtitle": "Transform your business with custom generative AI solutions.",
+      "subtitle2": "From content creation to predictive analysis, our systems leverage the most advanced language models to automate your complex tasks.",
       "solutions": {
         "title": "Integrated AI Solutions",
         "features": [
@@ -120,12 +131,33 @@
           "Sentiment analysis"
         ]
       },
+      "LLmApis": {
+        "title": "LLM APIs",
+        "description": "Using APIs from various market language models to produce robust systems has become second nature to us."
+      },
+      "advancedFeatures": {
+        "title": "Advanced Features",
+        "description": "In 2024, generative AI goes beyond chatbots by offering integrated features that revolutionize all sectors, from complex document analysis to task automation. Here are some examples below:"
+      },
       "infrastructure": {
-        "title": "AI Infrastructure",
+        "title": "Latest Innovations",
         "features": [
-          "Automatic scaling",
-          "OpenAI & HuggingFace",
-          "Unified REST API"
+          "OCR (image extraction)",
+          "Text to Speech",
+          "RAG document analysis",
+          "Voice transcription",
+          "Natural language web",
+          "Document generation",
+          "Smart text editor"
+        ],
+        "icons": [
+          "ri:image-circle-ai-fill",
+          "ri:speak-ai-fill",
+          "ri:ai-generate",
+          "ri:voice-ai-fill",
+          "streamline:ai-network-spark-solid",
+          "mingcute:pencil-2-ai-fill",
+          "mingcute:textbox-ai-fill"
         ]
       },
       "performance": {
@@ -138,22 +170,50 @@
       }
     },
     "sites": {
-      "title": "Ultra-fast and optimized websites",
-      "subtitle": "Ultra-fast and optimized web applications to deliver the best possible user experience across all platforms.",
-      "nextjs": {
-        "title": "Next.js Technologies",
-        "features": [
-          "Optimized static generation",
-          "Performant server-side rendering",
-          "Intelligent caching"
-        ]
+      "title": "Don't keep your users waiting",
+      "subtitle": "Today's modern technologies revolutionize the web experience by eliminating latency.",
+      "subtitle2": "These next-generation frameworks prepare all content upfront, offering navigation as responsive as a native application. The result? A premium user experience that naturally builds user loyalty.",
+      "perf": {
+        "title": "Optimal Performance",
+        "description": "Our applications anticipate your users' actions through intelligent systems. Everything is prepared in advance for instant navigation."
       },
-      "optimization": {
-        "title": "Optimization",
+      "experience": {
+        "title": "Frictionless Experience",
+        "description": "Gone are visible loading times and jerky interfaces. Your application's content is intelligently orchestrated in the backend, then delivered optimally to your users."
+      },
+      "infrastructure": {
+        "title": "Concrete Benefits:",
         "features": [
-          "Optimized images and assets",
-          "Automatic SEO",
-          "Optimized Core Web Vitals"
+          {
+            "gain1": "Smart Loading",
+            "gain2": "Performance",
+            "explanation": "Exceptional display speed"
+          },
+          {
+            "gain1": "Action Anticipation",
+            "gain2": "Instantaneity",
+            "explanation": "Zero wait time between pages"
+          },
+          {
+            "gain1": "Backend Preparation",
+            "gain2": "Reliability",
+            "explanation": "Content always available and structured"
+          },
+          {
+            "gain1": "Intuitive Navigation",
+            "gain2": "Fluidity",
+            "explanation": "Transitions worthy of a native app"
+          },
+          {
+            "gain1": "Instant Feedback",
+            "gain2": "Reactivity",
+            "explanation": "Every user action is immediately visible"
+          },
+          {
+            "gain1": "Premium UX",
+            "gain2": "Impact",
+            "explanation": "An experience that enhances your brand"
+          }
         ]
       }
     },
@@ -165,7 +225,16 @@
         "part4": "one",
         "part5": "day"
       },
-      "subtitle": "A modern cloud infrastructure hosted in France, combining the power of Vercel and Scaleway compliance for fast and secure deployments.",
+      "subtitle": "From design to deployment, we get your site online in just hours.",
+      "subtitle2": "Our mastery of cloud platforms and automation processes enables fast and secure production deployment, giving you the agility to seize every opportunity.",
+      "infrastructure": {
+        "title": "Scaled to Your Ambitions",
+        "description": "We configure the cloud infrastructure to automatically scale with your audience. From 100 to 1 million visitors, your site remains performant and responsive. No risk of downtime or slowdown, even during traffic spikes."
+      },
+      "updates": {
+        "title": "Updates Without Interruption",
+        "description": "We implement continuous deployment solutions for smooth evolution. Each improvement is tested and deployed automatically, without impact on your users. Your site stays available 24/7, even during updates."
+      },
       "cloud": {
         "title": "Cloud Infrastructure",
         "features": [
@@ -178,6 +247,17 @@
       "security": {
         "title": "Security & Compliance",
         "features": ["French hosting", "GDPR compliance", "Daily backups"]
+      },
+      "tools": {
+        "title": "Our Service Selection",
+        "features": [
+          "/fr/technologies/cloud/vercel.png",
+          "/fr/technologies/cloud/docker.png",
+          "/fr/technologies/cloud/aws.png",
+          "/fr/technologies/cloud/google.png",
+          "/fr/technologies/cloud/scaleway.png",
+          "/fr/technologies/cloud/kube.png"
+        ]
       },
       "cicd": {
         "title": "CI/CD",
@@ -194,16 +274,16 @@
       "part1": "Interfaces that make the",
       "part2": "difference."
     },
+    "description": "From first glance to last interaction, we create SaaS interfaces that captivate and convert.",
+    "description2": "Our UI/UX expertise transforms complexity into elegance, offering your users a smooth and memorable experience, regardless of your industry.",
     "keyFeatures": {
       "ft1": "User-centered Design",
       "ft2": "Ultra-fast Interfaces",
       "ft3": "UX Optimization",
       "ft4": "Strategic Conversion"
     },
-    "description": "From first glance to last interaction, we create SaaS interfaces that captivate and convert.",
-    "description2": "Our UI/UX expertise transforms complexity into elegance, offering your users a smooth and memorable experience, regardless of y,our industry.",
     "permanent_contact": {
-      "title": "Permanent Contact",
+      "title": "In Constant Contact",
       "description": "We know that every business is unique. That's why our team makes it a point of honor to establish close and transparent collaboration throughout the development of your solution. From initial immersion to launch, we stay aligned with your objectives."
     },
     "efficiency": {
@@ -300,11 +380,10 @@
     }
   },
   "solutions": {
-    "title": "Applications we delivered",
+    "title": "Our Achievements",
     "description": "Discover how we transform technological challenges into innovative solutions. Our portfolio showcases our expertise in development, infrastructure, and IT consulting."
   },
   "portfolio": {
-    "cta": "Portfolio",
     "title": "Our Achievements",
     "description": "Discover how we transform innovative ideas into high-performing digital solutions for our clients worldwide.",
     "categories": {
@@ -327,7 +406,8 @@
         "number": "100%",
         "label": "Client Satisfaction"
       }
-    }
+    },
+    "cta": "Portfolio"
   },
   "contactPage": {
     "hero": {
@@ -360,7 +440,7 @@
   "whyUs": {
     "leftImageAlt": "Left feature",
     "rightImageAlt": "Right feature",
-    "tagline": "We sell quality",
+    "tagline": "Our recipe",
     "title": "Why choose us?",
     "heroText": "We are not your typical development agency.",
     "heroSubtext": "With dual expertise in software development and artificial intelligence, our agency designs the best market solutions for your business.",

@@ -172,7 +172,7 @@
     },
     "sites": {
       "title": "Ne faites pas attendre vos utilisateurs",
-      "subtitle": "Les technologies modernes comme Remix et Next.js révolutionnent l'expérience web en éliminant toute latence.",
+      "subtitle": "Les technologies modernes d'aujourd'hui révolutionnent l'expérience web en éliminant toute latence.",
       "subtitle2": "Ces frameworks nouvelle génération préparent l'intégralité du contenu en amont, offrant une navigation aussi réactive qu'une application native. Le résultat ? Une expérience utilisateur premium qui fidélise naturellement vos utilisateurs.",
       "perf": {
         "title": "Une performance optimale",
@@ -251,6 +251,17 @@
           "Hébergement français",
           "Conformité RGPD",
           "Backups quotidiens"
+        ]
+      },
+      "tools": {
+        "title": "Notre sélection de services",
+        "features": [
+          "/fr/technologies/cloud/vercel.png",
+          "/fr/technologies/cloud/docker.png",
+          "/fr/technologies/cloud/aws.png",
+          "/fr/technologies/cloud/google.png",
+          "/fr/technologies/cloud/scaleway.png",
+          "/fr/technologies/cloud/kube.png"
         ]
       },
       "cicd": {
@@ -374,7 +385,7 @@
     }
   },
   "solutions": {
-    "title": "Quelques de nos applications",
+    "title": "Nos Réalisations",
     "description": "Découvrez comment nous transformons les défis technologiques en solutions innovantes. Notre portfolio témoigne de notre savoir-faire en développement, infrastructure et conseil IT."
   },
   "portfolio": {
