@@ -311,14 +311,16 @@ const TabletTechnologies = ({ dictionary }: { dictionary: any }) => {
             <div className="p-6 bg-gradient-to-br from-black via-gray-800 to-gray-900 rounded-xl text-white">
               <h3 className="text-xl font-semibold flex items-center gap-3 mb-4">
                 <Zap className="w-6 h-6 text-gray-300" />
-                {dictionary.technologies.sites.nextjs.title}
+                {dictionary.technologies.sites.perf.title}
               </h3>
               <ul className="space-y-3">
-                {dictionary.technologies.sites.nextjs.features.map(
-                  (feature: string, index: number) => (
+                {dictionary.technologies.sites.infrastructure.features.map(
+                  (feature: any, index: number) => (
                     <li key={index} className="flex items-center gap-3">
                       <ArrowRight className="w-5 h-5 text-gray-400" />
-                      <span className="text-base">{feature}</span>
+                      <span className="text-base">
+                        {feature.gain1 as string}
+                      </span>
                     </li>
                   ),
                 )}
@@ -327,14 +329,14 @@ const TabletTechnologies = ({ dictionary }: { dictionary: any }) => {
             <div className="p-6 bg-gradient-to-br from-black via-gray-800 to-gray-900 rounded-xl text-white">
               <h3 className="text-xl font-semibold flex items-center gap-3 mb-4">
                 <Workflow className="w-6 h-6 text-gray-300" />
-                {dictionary.technologies.sites.optimization.title}
+                {dictionary.technologies.sites.experience.title}
               </h3>
               <ul className="space-y-3">
-                {dictionary.technologies.sites.optimization.features.map(
-                  (feature: string, index: number) => (
+                {dictionary.technologies.sites.infrastructure.features.map(
+                  (feature: any, index: number) => (
                     <li key={index} className="flex items-center gap-3">
                       <ArrowRight className="w-5 h-5 text-gray-400" />
-                      <span className="text-base">{feature}</span>
+                      <span className="text-base">{feature.gain2}</span>
                     </li>
                   ),
                 )}

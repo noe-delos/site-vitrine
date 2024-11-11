@@ -1,6 +1,5 @@
 'use client';
 
-import SparklesText from '@/components/acernity/sparkles-text';
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -84,13 +83,12 @@ export default function Expertise({ dictionary }: { dictionary: any }) {
             className="space-y-8 max-w-xl"
           >
             <motion.div variants={fadeInUp}>
-              <h2 className="lg:text-4xl md:text-4xl xl:text-5xl sm:text-4xl xs:text-4xl text-2xl font-bold mb-6">
+              <div className="lg:text-4xl md:text-4xl flex flex-col xl:text-5xl sm:text-4xl xs:text-4xl text-2xl font-bold mb-6">
                 {dictionary.expertise.title.part1}{' '}
-                <SparklesText
-                  text={dictionary.expertise.title.part2}
-                  className="text-black text-5xl mt-2"
-                />
-              </h2>
+                <span className="bg-gradient-to-r mt-2 from-blue-500 to-violet-300 bg-clip-text text-transparent">
+                  {dictionary.expertise.title.part2}
+                </span>
+              </div>
               <p className="leading-relaxed">
                 <span className="text-gray-700 ">
                   {dictionary.expertise.description}
@@ -106,18 +104,15 @@ export default function Expertise({ dictionary }: { dictionary: any }) {
           {/* Right Video Section */}
           <div className="relative h-[600px] w-full rounded-lg">
             <div className="relative lg:w-[50rem] md:w-[40rem] sm:w-[30rem] w-full h-full brightness-100 rounded-lg shadow-xl">
-              <div className="absolute hidden sm:block sm:-top-10 sm:-right-10 xs:top-0 xs:right-0 top-1/2 right-1/2 z-40 -mt-4 rotate-6">
-                <div className="p-8 bg-white rounded-xl shadow-2xl">
-                  <div className="p-6 bg-white rounded-lg shadow-xl drop-shadow-lg">
-                    <img
-                      src="/logo/brand-logo.png"
-                      alt="Title"
-                      className="lg:size-10 md:size-8 size-6 object-contain"
-                    />
-                  </div>
+              <div className="absolute hidden lg:block -top-10 -right-7 z-40 -mt-0 rotate-6">
+                <div className="p-6 bg-white rounded-lg shadow-xl drop-shadow-lg">
+                  <img
+                    src="/logo/brand-logo.png"
+                    alt="Title"
+                    className="lg:size-10 md:size-8 size-6 object-contain"
+                  />
                 </div>
               </div>
-
               <video
                 key={currentVideoIndex}
                 className="w-full h-full object-cover scale-100 overflow-hidden rounded-lg"

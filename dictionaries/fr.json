@@ -134,7 +134,7 @@
       },
       "LLmApis": {
         "title": "APIs d'LLM",
-        "description": "Utiliser les APIs des différents modèles de langage pour produire des systèmes robustes n'est pour nous plus qu'une habitude."
+        "description": "Utiliser les APIs des différents modèles de langage du marché pour produire des systèmes robustes n'est pour nous plus qu'une habitude."
       },
       "advancedFeatures": {
         "title": "Fonctionnalités avancées",
@@ -171,22 +171,50 @@
       }
     },
     "sites": {
-      "title": "Sites ultra rapides et optimisés",
-      "subtitle": "Des applications web ultrarapides et optimisées pour offrir la meilleure expérience utilisateur possible sur toutes les plateformes.",
-      "nextjs": {
-        "title": "Technologies Next.js",
-        "features": [
-          "Génération statique optimisée",
-          "Rendu côté serveur performant",
-          "Mise en cache intelligente"
-        ]
+      "title": "Ne faites pas attendre vos utilisateurs",
+      "subtitle": "Les technologies modernes comme Remix et Next.js révolutionnent l'expérience web en éliminant toute latence.",
+      "subtitle2": "Ces frameworks nouvelle génération préparent l'intégralité du contenu en amont, offrant une navigation aussi réactive qu'une application native. Le résultat ? Une expérience utilisateur premium qui fidélise naturellement vos utilisateurs.",
+      "perf": {
+        "title": "Une performance optimale",
+        "description": "Nos applications anticipent les actions de vos utilisateurs grâce à des systèmes intelligents. Tout est préparé en amont pour une navigation instantanée."
       },
-      "optimization": {
-        "title": "Optimisation",
+      "experience": {
+        "title": "Une expérience sans friction",
+        "description": "Fini les temps de chargement visibles et les interfaces qui saccadent. Le contenu de votre application est orchestré intelligemment en backend, puis délivré de manière optimale à vos utilisateurs."
+      },
+      "infrastructure": {
+        "title": "Gains concrets :",
         "features": [
-          "Images et assets optimisés",
-          "SEO automatique",
-          "Core Web Vitals optimisés"
+          {
+            "gain1": "Chargement Intelligent",
+            "gain2": "Performance",
+            "explanation": "Une rapidité d'affichage exceptionnelle"
+          },
+          {
+            "gain1": "Anticipation des Actions",
+            "gain2": "Instantanéité",
+            "explanation": "Zero temps d'attente entre les pages"
+          },
+          {
+            "gain1": "Préparation Backend",
+            "gain2": "Fiabilité",
+            "explanation": "Un contenu toujours disponible et structuré"
+          },
+          {
+            "gain1": "Navigation Intuitive",
+            "gain2": "Fluidité",
+            "explanation": "Des transitions dignes d'une app native"
+          },
+          {
+            "gain1": "Feedback Instantané",
+            "gain2": "Réactivité",
+            "explanation": "Chaque action utilisateur est immédiatement visible"
+          },
+          {
+            "gain1": "UX Premium",
+            "gain2": "Impact",
+            "explanation": "Une expérience qui valorise votre marque"
+          }
         ]
       }
     },
@@ -198,7 +226,16 @@
         "part4": "une",
         "part5": "journée"
       },
-      "subtitle": "Une infrastructure cloud moderne hébergée en France, associant la puissance de Vercel et la conformité de Scaleway pour des déploiements rapides et sécurisés.",
+      "subtitle": "De la conception au déploiement, nous mettons votre site en ligne en quelques heures.",
+      "subtitle2": "Notre maîtrise des plateformes cloud et nos processus d'automatisation permettent une mise en production rapide et sécurisée, vous donnant l'agilité nécessaire pour saisir chaque opportunité.",
+      "infrastructure": {
+        "title": "À l'échelle de vos ambitions",
+        "description": "Nous configurons l'infrastructure cloud pour qu'elle évolue automatiquement avec votre audience. De 100 à 1 million de visiteurs, votre site reste performant et réactif. Aucun risque de panne ou de ralentissement, même lors des pics de trafic."
+      },
+      "updates": {
+        "title": "Mises à Jour Sans Interruption",
+        "description": "Nous mettons en place des solutions de déploiement continu pour une évolution sereine. Chaque amélioration est testée et mise en ligne automatiquement, sans impact pour vos utilisateurs. Votre site reste disponible 24/7, même pendant les mises à jour."
+      },
       "cloud": {
         "title": "Infrastructure Cloud",
         "features": [
@@ -272,7 +309,7 @@
     "navigation": {
       "home": "Accueil",
       "team": "Notre équipe",
-      "portfolio": "Portfolio"
+      "portfolio": "Réalisations"
     },
     "contact_btn": "Nous contacter",
     "mobile_menu": {
@@ -397,7 +434,7 @@
   "whyUs": {
     "leftImageAlt": "Fonctionnalité de gauche",
     "rightImageAlt": "Fonctionnalité de droite",
-    "tagline": "Nous vendons la qualité",
+    "tagline": "Notre recette",
     "title": "Pourquoi nous choisir ?",
     "heroText": "Nous ne sommes pas votre agence de développement classique.",
     "heroSubtext": "Fort d'une double expertise en développement logiciel et intelligence artificielle, notre agence conçoit les meilleures solutions du marché pour votre business.",

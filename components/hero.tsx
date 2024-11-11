@@ -192,24 +192,12 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
             ease: [0.25, 0.1, 0.25, 1],
           }}
         >
-          <FollowerPointerCard>
-            {index === 1 ? (
-              <ShineBorder
-                className="relative size-full border rounded-full"
-                color={['#6BA1FA', '#266CDE', '#0945A7']}
-              >
-                <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
-                  <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
-                  <Image
-                    src={`/hero/hero${index}.png`}
-                    alt="Hero illustration"
-                    fill
-                    className={cn('object-cover')}
-                  />
-                </div>
-              </ShineBorder>
-            ) : (
-              <div className="relative w-[700px] h-[450px] bg-white rounded-2xl overflow-hidden shadow-2xl">
+          {index === 1 ? (
+            <ShineBorder
+              className="relative size-full border rounded-full"
+              color={['#6BA1FA', '#266CDE', '#0945A7']}
+            >
+              <div className="relative w-[700px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
                 <Image
                   src={`/hero/hero${index}.png`}
@@ -218,8 +206,18 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
                   className={cn('object-cover')}
                 />
               </div>
-            )}
-          </FollowerPointerCard>
+            </ShineBorder>
+          ) : (
+            <div className="relative w-[700px] h-[450px] bg-white rounded-2xl overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
+              <Image
+                src={`/hero/hero${index}.png`}
+                alt="Hero illustration"
+                fill
+                className={cn('object-cover')}
+              />
+            </div>
+          )}
         </motion.div>
       ))}
 

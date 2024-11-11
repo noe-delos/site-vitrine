@@ -40,7 +40,7 @@ export function WordFadeIn({
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       className={cn(
-        'font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm ',
+        'font-display text-center text-3xl font-bold tracking-[-0.02em] text-black drop-shadow-sm ',
         className,
       )}
     >
