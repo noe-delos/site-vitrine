@@ -164,7 +164,7 @@ const AnimatedHeroSection = ({
           </span>
           <motion.span
             variants={itemVariants}
-            className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-600 mt-4 block"
+            className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-400 mt-4 block"
           >
             {dictionary.team.subtitle}
           </motion.span>
@@ -274,7 +274,7 @@ interface Card3DProps {
   dictionary: any;
 }
 
-const Card3D: React.FC<Card3DProps> = ({ member, dictionary }) => {
+const Card3D: React.FC<Card3DProps> = ({ member }) => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -311,66 +311,71 @@ const Card3D: React.FC<Card3DProps> = ({ member, dictionary }) => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+      className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
     >
-      <div
-        className="relative aspect-square mb-6 overflow-hidden rounded-xl transform-gpu rounded-b-none"
-        style={{ transform: 'translateZ(20px)' }}
-      >
-        <Image
-          src={member.image}
-          alt={member.name}
-          fill
-          className="object-cover rounded-b-none object-center group-hover:scale-105 transition duration-300"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
+      <div className="flex flex-col h-full">
+        <div
+          className="relative aspect-square overflow-hidden transform-gpu"
+          style={{ transform: 'translateZ(20px)' }}
+        >
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            className="object-cover object-center group-hover:scale-105 transition duration-300"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
 
-      <div
-        className="space-y-4 p-4 md:p-6"
-        style={{ transform: 'translateZ(30px)' }}
-      >
-        <div className="flex items-start justify-between">
-          <div>
-            <h3 className="text-lg md:text-xl font-bold text-gray-900 tracking-wide">
-              {member.name}
-            </h3>
-            <p className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
-              {member.role}
-            </p>
+        <div
+          className="flex flex-col flex-1"
+          style={{ transform: 'translateZ(30px)' }}
+        >
+          <div className="flex-1 space-y-4 p-4 md:p-6">
+            <div className="flex items-start justify-between">
+              <div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 tracking-wide">
+                  {member.name}
+                </h3>
+                <p className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
+                  {member.role}
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-gray-600 text-sm md:text-base">
+                {member.description}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {member.expertise.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 text-xs md:text-sm bg-gray-100 text-gray-700 rounded-full"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="space-y-2">
-          <p className="text-gray-600 text-sm md:text-base">
-            {member.description}
-          </p>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          {member.expertise.map((skill: string) => (
-            <span
-              key={skill}
-              className="px-3 py-1 text-xs md:text-sm bg-gray-100 text-gray-700 rounded-full"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-        <div className="flex pt-6 md:pt-10 flex-row gap-2 items-center justify-around">
-          {member.schools.map((school: string) => (
-            <img
-              key={school}
-              src={school}
-              alt="school"
-              className={cn(
-                'w-fit',
-                member.name === 'Julien Bergerot'
-                  ? 'h-[2rem] md:h-[2.3rem]'
-                  : 'h-[1.4rem] md:h-[1.6rem]',
-              )}
-            />
-          ))}
+          <div className="h-16 flex flex-row gap-2 items-center justify-around px-5">
+            {member.schools.map((school) => (
+              <img
+                key={school}
+                src={school}
+                alt="school"
+                className={cn(
+                  'w-fit',
+                  member.name === 'Julien Bergerot'
+                    ? 'h-[2rem] md:h-[2.3rem]'
+                    : 'h-[1.4rem] md:h-[1.6rem]',
+                )}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
