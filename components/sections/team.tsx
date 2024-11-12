@@ -56,20 +56,20 @@ const getTeamMembers = (lang: string): TeamMember[] => [
     ],
   },
   {
-    name: 'Julien Bergerot',
+    name: 'Antoine Giordan',
     role: lang === 'fr' ? 'Ingénieur AI' : 'AI Engineer',
     education: 'École Polytechnique',
     expertise: [
       lang === 'fr' ? 'Ingénieurie IA' : 'AI Engineering',
       'Backend dev',
     ],
-    image: '/team/julien.jpg',
+    image: '/en/team/gray.jpg', //'/team/julien.jpg',
     description:
       lang === 'fr'
         ? "Avec mon expérience en Machine learning et Gen AI je rends l'intelligence artificielle accessible et performante."
         : 'With my experience in Machine Learning and Gen AI, I make artificial intelligence accessible and performant.',
     linkedin: 'https://www.linkedin.com/in/julien-bergerot-68945b194/',
-    schools: ['/technologies/polytech.png'],
+    schools: [], //['/technologies/polytech.png'],
   },
   {
     name: 'Hugo Pradier',
@@ -92,14 +92,14 @@ const getTeamMembers = (lang: string): TeamMember[] => [
     ],
   },
   {
-    name: 'Maxime Cividini',
+    name: 'Nicolas Henaux',
     role: lang === 'fr' ? 'Commercial' : 'Sales Representative',
     education: 'Excelia Business School',
     expertise: [
       lang === 'fr' ? 'Business Strategy' : 'Business Strategy',
       lang === 'fr' ? 'Relations Clients' : 'Client Relations',
     ],
-    image: '/team/maxime.jpg',
+    image: '/en/team/nicolas.png',
     description:
       lang === 'fr'
         ? 'Stratège commercial passionné, je connecte les bonnes solutions aux bons clients. Je crée des partenariats durables et générateurs de valeur.'

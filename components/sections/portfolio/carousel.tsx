@@ -4,7 +4,6 @@ import { useState } from 'react';
 import {
   Carousel,
   CarouselArrowFloatButtons,
-  CarouselDotButtons,
   useCarousel,
 } from '@/components/carousel';
 
@@ -62,13 +61,6 @@ export function CarouselParallax({ data, isHoveringParallax }: Props) {
           </div>
         </>
       )}{' '}
-      <div className="absolute bottom-1 left-0 right-0 flex justify-center">
-        <CarouselDotButtons
-          scrollSnaps={carousel.dots.scrollSnaps}
-          selectedIndex={carousel.dots.selectedIndex}
-          onClickDot={carousel.dots.onClickDot}
-        />
-      </div>
     </div>
   );
 }
@@ -83,7 +75,7 @@ type CarouselItemProps = {
 function CarouselItem({ item, index }: CarouselItemProps) {
   const router = useRouter();
   return (
-    <div className="max-h-[30rem]">
+    <div className="h-full">
       <img
         alt={item.title}
         src={item.coverUrl}

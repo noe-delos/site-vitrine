@@ -26,9 +26,11 @@ const projects: Project[] = [
     description:
       "Une plateforme e-commerce intelligente utilisant l'IA pour personnaliser l'expérience utilisateur et optimiser les ventes.",
     images: [
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/15936352/file/original-6735a5397fc20689b40ee862aedc00f7.png?resize=1024x768',
+      'https://cdn.dribbble.com/userupload/15936354/file/original-cd4985cc181ed97fddc18586e0837d5b.png?resize=752x564&vertical=center',
+      'https://cdn.dribbble.com/userupload/15936355/file/original-d8e4714ccc4cb22cca7af92d4ab8072f.png?resize=752x564&vertical=center',
+      'https://cdn.dribbble.com/userupload/15936356/file/original-dbc7937a669133756a070da5a9140588.png?resize=752x564&vertical=center',
+      'https://cdn.dribbble.com/userupload/15936357/file/original-843125335eaacde7674cb2fdf58b399b.png?resize=752x564&vertical=center',
     ],
     category: 'E-commerce',
     technologies: ['Next.js', 'Node.js', 'TensorFlow', 'AWS'],
@@ -40,9 +42,10 @@ const projects: Project[] = [
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
     images: [
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      'https://cdn.dribbble.com/userupload/16456639/file/original-c546487ca7c0db644eb31e232b622a65.png?resize=1024x768&vertical=center',
+      'https://cdn.dribbble.com/userupload/16456635/file/original-ee40a6583461952672dfd077af313b1b.png?resize=1024x768&vertical=center',
+      'https://cdn.dribbble.com/userupload/16456636/file/original-e15009c26e41002ac75798c569af4f84.png?resize=1024x768&vertical=center',
+      'https://cdn.dribbble.com/userupload/16456638/file/original-b0b76f923424cb609e90d749352c9178.png?resize=1024x768&vertical=center',
     ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
@@ -54,9 +57,11 @@ const projects: Project[] = [
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
     images: [
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      '/en/portfolio/img1.png',
+      '/en/portfolio/img2.png',
+      'https://cdn.dribbble.com/userupload/15496723/file/original-fdc21ff55fa19b2761bd752d66b0bb58.png?resize=1024x768',
+      'https://cdn.dribbble.com/userupload/15496724/file/original-73db664eaedb9c9c76f78c7300aa6657.png?resize=1024x768&vertical=center',
+      '/en/portfolio/img3.png',
     ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
@@ -68,9 +73,10 @@ const projects: Project[] = [
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
     images: [
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      '/en/portfolio/img4.png',
+      '/en/portfolio/img5.png',
+      '/en/portfolio/img6.png',
+      '/en/portfolio/img7.png',
     ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
@@ -82,9 +88,10 @@ const projects: Project[] = [
     description:
       'Solution complète de gestion des ressources humaines avec tableaux de bord analytiques et automatisation des processus.',
     images: [
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
-      'https://cdn.dribbble.com/userupload/16162208/file/original-abc4f790faa8fa9ee5226593b437a95c.png?resize=752x2938&vertical=center',
+      '/en/portfolio/img11.png',
+      '/en/portfolio/img8.png',
+      '/en/portfolio/img9.png',
+      '/en/portfolio/img10.png',
     ],
     category: 'SaaS',
     technologies: ['React', 'Python', 'PostgreSQL', 'Docker'],
@@ -212,36 +219,12 @@ const PortfolioPage = ({ dictionary }: PortfolioPageProps) => {
           </p>
         </motion.div>
 
-        {/* Filters */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="overflow-x-auto flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-3 mb-8 md:mb-16 pb-4 md:pb-0 px-4 md:px-0"
-        >
-          <div className="flex gap-3 md:flex-wrap md:justify-center min-w-fit">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`whitespace-nowrap px-4 md:px-6 py-2 rounded-full transition-all duration-300 text-sm md:text-base ${
-                  selectedCategory === category
-                    ? 'bg-gradient-to-r from-[#7066CB] to-blue-500 text-white shadow-lg'
-                    : 'bg-white text-gray-600 hover:bg-gray-100'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Projects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-4 md:px-6"
+          className="grid mt-20 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 px-4 md:px-6"
         >
           {filteredProjects.map((project) => {
             const [isHoveringParallax, setIsHovering] = useState(false);
@@ -250,7 +233,7 @@ const PortfolioPage = ({ dictionary }: PortfolioPageProps) => {
               <motion.div
                 key={project.id}
                 variants={projectVariants}
-                className="group relative w-full aspect-[4/3] md:aspect-square rounded-xl overflow-hidden"
+                className="group relative w-full aspect-[4/3] rounded-xl overflow-hidden"
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
               >
@@ -267,7 +250,14 @@ const PortfolioPage = ({ dictionary }: PortfolioPageProps) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent from-0% via-35% to-65%" />
                 </div>
 
-                <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 transform translate-y-2 transition-all duration-300 ease-out group-hover:-translate-y-2">
+                <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 transform translate-y-2 transition-all duration-300 ease-out group-hover:-translate-y-2 ">
+                  <div className="absolute right-5 bottom-5">
+                    <img
+                      alt="sign"
+                      src="/en/portfolio/sign.png"
+                      className="object-contain w-fit h-9 opacity-70"
+                    />
+                  </div>
                   <h3 className="text-lg md:text-xl font-bold text-white mb-2 transition-transform duration-300 ease-out group-hover:-translate-y-1">
                     {project.title}
                   </h3>
