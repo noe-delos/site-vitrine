@@ -469,5 +469,31 @@
     },
     "testimonial": "Nous avons fait appel à KS dans le cadre du développement de notre site Spliit et de notre web app. Leur accompagnement était complet avec une forte expertise technique et une approche produit.",
     "spliiitLinkAriaLabel": "Naviguer vers la page d'accueil de Spliiit"
+  },
+  "portfolioHero": {
+    "category": "Nos réalisations",
+    "categoryDetail": "Portfolio de projets",
+    "title": "Nos réalisations",
+    "subtitle": "De la conception à la réalisation, nous donnons vie à vos projets numériques avec excellence et créativité.",
+    "description": {
+      "highlight": "Une expertise technique reconnue et une approche centrée sur vos besoins.",
+      "secondary": "Notre équipe s'engage à transformer vos idées en solutions innovantes et performantes."
+    },
+    "stats": {
+      "context": "Notre expertise en chiffres qui parlent d'eux-mêmes",
+      "projects": {
+        "number": "40+",
+        "label": "Projets réalisés"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "Satisfaction client"
+      }
+    },
+    "testimonial": {
+      "quote": "Une équipe exceptionnelle qui a su transformer notre vision en réalité, dépassant toutes nos attentes.",
+      "author": "Marie Dubois",
+      "role": "Directrice Marketing, TechVision"
+    }
   }
 }

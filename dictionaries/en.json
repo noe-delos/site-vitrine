@@ -464,5 +464,31 @@
     },
     "testimonial": "We worked with KS for the development of our Spliit website and web app. Their support was comprehensive with strong technical expertise and a product-oriented approach.",
     "spliiitLinkAriaLabel": "Navigate to Spliiit homepage"
+  },
+  "portfolioHero": {
+    "category": "Our Work",
+    "categoryDetail": "Featured Projects",
+    "title": "Our creations",
+    "subtitle": "From concept to completion, we bring your digital ventures to life with precision and innovation.",
+    "description": {
+      "highlight": "Leveraging cutting-edge technology and deep industry expertise to deliver exceptional results.",
+      "secondary": "Our dedicated team turns ambitious visions into powerful, market-ready solutions that drive real business value."
+    },
+    "stats": {
+      "context": "Track record of excellence",
+      "projects": {
+        "number": "40+",
+        "label": "Successful Projects"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "Client Satisfaction"
+      }
+    },
+    "testimonial": {
+      "quote": "Their team didn't just meet our expectations - they redefined what we thought was possible. The results speak for themselves.",
+      "author": "Sarah Mitchell",
+      "role": "Head of Digital, TechVision"
+    }
   }
 }

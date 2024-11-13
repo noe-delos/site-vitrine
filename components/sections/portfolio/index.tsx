@@ -1,5 +1,6 @@
 'use client';
 import { CarouselParallax } from '@/components/sections/portfolio/carousel';
+import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -157,6 +158,111 @@ const projects: Project[] = [
 
 const categories = ['Tous', 'E-commerce', 'SaaS', 'IA', 'Mobile'];
 
+const StatItem = ({ number, label }: any) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.6 }}
+    className="flex flex-col space-y-1"
+  >
+    <div className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-gray-700 to-gray-400 bg-clip-text text-transparent">
+      {number}
+    </div>
+    <div className="text-sm text-gray-500">{label}</div>
+  </motion.div>
+);
+
+const PortfolioHero = ({ dictionary }: any) => {
+  const t = dictionary.portfolioHero;
+
+  return (
+    <div className="size-full">
+      <div className="max-w-7xl mx-auto px-4 py-16 md:py-1">
+        <div className="flex flex-col space-y-16">
+          {/* Top Section - Main Content */}
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-4 text-center max-w-3xl mx-auto"
+          >
+            <div className="space-y-2 pb-5">
+              <div className="flex items-center justify-center space-x-2 text-gray-500">
+                <Icon
+                  icon="ic:baseline-web-stories"
+                  className="size-3 text-gray-400"
+                />
+                <span className="text-xs">{t.categoryDetail}</span>
+              </div>
+
+              <h1 className="text-5xl md:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                {t.title}
+              </h1>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-14"
+            >
+              <p className="text-lg max-w-2xl mx-auto">
+                <span className="text-gray-900">{t.description.highlight}</span>{' '}
+                <span className="text-gray-400">{t.description.secondary}</span>
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* Bottom Section - Stats and Quote */}
+          <div className="flex flex-col md:flex-row items-center max-w-7xl gap-20 md:gap-32 self-center space-y-8 md:space-y-0 lg:ml-20">
+            {/* Stats Container */}
+            <div className="w-full md:w-auto">
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="text-gray-600 text-xs text-center max-w-[250px] mx-auto mb-6"
+              >
+                {t.stats.context}
+              </motion.p>
+              <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-12">
+                <StatItem
+                  number={t.stats.projects.number}
+                  label={t.stats.projects.label}
+                />
+                <StatItem
+                  number={t.stats.satisfaction.number}
+                  label={t.stats.satisfaction.label}
+                />
+              </div>
+            </div>
+
+            {/* Quote Container */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="flex items-start"
+            >
+              <div className="px-6 md:w-[400px] border-l-[3px] border-gray-200">
+                <blockquote className="text-lg text-black">
+                  "{t.testimonial.quote}"
+                </blockquote>
+                <div className="mt-4">
+                  <p className="text-gray-900 font-medium">
+                    {t.testimonial.author}
+                  </p>
+                  <p className="text-gray-600 text-sm">{t.testimonial.role}</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 interface PortfolioPageProps {
   dictionary: {
     solutions: {
@@ -205,26 +311,14 @@ const PortfolioPage = ({ dictionary }: PortfolioPageProps) => {
     <div className="min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-50 pt-16 md:pt-24">
       {/* Hero Section */}
       <section className="max-w-[100rem] mx-auto px-4 py-6 md:py-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto px-4 md:px-0"
-        >
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6">
-            {dictionary.solutions.title}
-          </h1>
-          <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-12">
-            {dictionary.solutions.description}
-          </p>
-        </motion.div>
+        <PortfolioHero dictionary={dictionary} />
 
         {/* Projects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid mt-20 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 px-4 md:px-6"
+          className="grid mt-20 lg:mt-[10rem] grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 px-4 md:px-6"
         >
           {filteredProjects.map((project) => {
             const [isHoveringParallax, setIsHovering] = useState(false);
@@ -310,34 +404,6 @@ const PortfolioPage = ({ dictionary }: PortfolioPageProps) => {
             );
           })}
         </motion.div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="bg-white py-12 md:py-20">
-        <div className="w-full px-4 md:px-0">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-44 max-w-4xl mx-auto"
-          >
-            {[
-              { number: '50+', label: 'Projets Réalisés' },
-              { number: '20+', label: 'Clients Satisfaits' },
-              { number: '100%', label: 'Satisfaction Client' },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-[#7066CB] mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm md:text-base text-gray-600">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
       </section>
 
       {/* CTA Section */}
