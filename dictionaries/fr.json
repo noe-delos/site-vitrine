@@ -163,11 +163,7 @@
       },
       "performance": {
         "title": "Performances",
-        "features": [
-          "Traitement parallèle",
-          "Cache intelligent",
-          "Monitoring avancé"
-        ]
+        "features": ["Traitement parallèle", "Cache intelligent", "Monitoring avancé"]
       }
     },
     "sites": {
@@ -238,20 +234,11 @@
       },
       "cloud": {
         "title": "Infrastructure Cloud",
-        "features": [
-          "Vercel Edge Network",
-          "Scaleway Cloud",
-          "CDN mondial",
-          "SSL automatique"
-        ]
+        "features": ["Vercel Edge Network", "Scaleway Cloud", "CDN mondial", "SSL automatique"]
       },
       "security": {
         "title": "Sécurité & Conformité",
-        "features": [
-          "Hébergement français",
-          "Conformité RGPD",
-          "Backups quotidiens"
-        ]
+        "features": ["Hébergement français", "Conformité RGPD", "Backups quotidiens"]
       },
       "tools": {
         "title": "Notre sélection de services",
@@ -266,11 +253,7 @@
       },
       "cicd": {
         "title": "CI/CD",
-        "features": [
-          "Déploiement continu",
-          "Preview deployments",
-          "Rollback instantané"
-        ]
+        "features": ["Déploiement continu", "Preview deployments", "Rollback instantané"]
       }
     }
   },
@@ -472,7 +455,7 @@
   },
   "portfolioHero": {
     "category": "Nos réalisations",
-    "categoryDetail": "Portfolio de projets",
+    "categoryDetail": "Gallerie de projets",
     "title": "Nos réalisations",
     "subtitle": "De la conception à la réalisation, nous donnons vie à vos projets numériques avec excellence et créativité.",
     "description": {
