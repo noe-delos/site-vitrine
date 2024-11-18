@@ -1,10 +1,8 @@
 'use client';
 
-import scrollAnimation from '@/assets/lotties/scroll.json';
 import { Locale } from '@/i18n-config';
 import { cn } from '@/utils/cn';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import Lottie from 'lottie-react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
@@ -20,30 +18,12 @@ interface TeamMember {
   schools: string[];
 }
 
-const ScrollIndicator = () => {
-  const lottieRef = useRef<any>(null);
-
-  return (
-    <div className="fixed bottom-12 left-1/2 transform -translate-x-1/2 z-50 size-8">
-      <Lottie
-        lottieRef={lottieRef}
-        animationData={scrollAnimation}
-        autoplay
-        loop
-      />
-    </div>
-  );
-};
-
 const getTeamMembers = (lang: string): TeamMember[] => [
   {
     name: 'Noé Campo',
     role: lang === 'fr' ? 'Développeur Full-Stack' : 'Full-Stack Developer',
     education: 'Epitech',
-    expertise: [
-      'Full-Stack Dev',
-      lang === 'fr' ? 'Intégration IA' : 'AI Integration',
-    ],
+    expertise: ['Full-Stack Dev', lang === 'fr' ? 'Intégration IA' : 'AI Integration'],
     image: '/team/noe.jpg',
     description:
       lang === 'fr'
@@ -59,27 +39,20 @@ const getTeamMembers = (lang: string): TeamMember[] => [
     name: 'Antoine Giordan',
     role: lang === 'fr' ? 'Ingénieur AI' : 'AI Engineer',
     education: 'École Polytechnique',
-    expertise: [
-      lang === 'fr' ? 'Ingénieurie IA' : 'AI Engineering',
-      'Backend dev',
-    ],
-    image: '/en/team/gray.jpg', //'/team/julien.jpg',
+    expertise: [lang === 'fr' ? 'Ingénieurie IA' : 'AI Engineering', 'Backend dev'],
+    image: '/en/team/gray.jpg',
     description:
       lang === 'fr'
         ? "Avec mon expérience en Machine learning et Gen AI je rends l'intelligence artificielle accessible et performante."
         : 'With my experience in Machine Learning and Gen AI, I make artificial intelligence accessible and performant.',
     linkedin: 'https://www.linkedin.com/in/julien-bergerot-68945b194/',
-    schools: [], //['/technologies/polytech.png'],
+    schools: [],
   },
   {
     name: 'Hugo Pradier',
     role: lang === 'fr' ? 'Ingénieur DevOps' : 'DevOps Engineer',
     education: 'IIT Madras',
-    expertise: [
-      'DevOps',
-      'SRE',
-      lang === 'fr' ? 'Archi Cloud' : 'Cloud Architecture',
-    ],
+    expertise: ['DevOps', 'SRE', lang === 'fr' ? 'Archi Cloud' : 'Cloud Architecture'],
     image: '/team/hugo.jpg',
     description:
       lang === 'fr'
@@ -105,19 +78,11 @@ const getTeamMembers = (lang: string): TeamMember[] => [
         ? 'Stratège commercial passionné, je connecte les bonnes solutions aux bons clients. Je crée des partenariats durables et générateurs de valeur.'
         : 'Passionate business strategist, I connect the right solutions to the right clients. I create lasting partnerships that generate value.',
     linkedin: 'https://www.linkedin.com/in/maxime-cividini/',
-    schools: [
-      'https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg',
-    ],
+    schools: ['https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg'],
   },
 ];
 
-const AnimatedHeroSection = ({
-  dictionary,
-  lang,
-}: {
-  dictionary: any;
-  lang: string;
-}) => {
+const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -141,23 +106,36 @@ const AnimatedHeroSection = ({
     },
   };
 
+  const squareVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+  };
+
   return (
-    <div className="relative max-w-7xl mx-auto text-center px-4 md:px-8">
+    <div className="relative max-w-[90rem] px-4 md:px-8 flex flex-col md:flex-row items-start justify-between">
+      {/* Left Content */}
       <motion.div
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="flex flex-col items-center"
+        className="flex flex-col items-start md:w-1/2"
       >
         <motion.h1
           variants={itemVariants}
-          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6"
+          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-left"
         >
           <span>{dictionary.team.title.part1}</span>
           <span
             className={cn(
               'bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent',
-              lang === 'en' && 'ml-4',
+              lang === 'en' && 'ml-4'
             )}
           >
             {dictionary.team.title.part2}
@@ -170,10 +148,7 @@ const AnimatedHeroSection = ({
           </motion.span>
         </motion.h1>
 
-        <motion.div
-          variants={itemVariants}
-          className="flex items-center justify-center gap-2 mb-8"
-        >
+        <motion.div variants={itemVariants} className="flex items-center gap-2 mb-8">
           <div className="h-px w-12 bg-gradient-to-r from-blue-600 to-transparent" />
           <span className="text-base md:text-lg text-gray-500 italic">
             {dictionary.team.frenchTech}
@@ -181,10 +156,7 @@ const AnimatedHeroSection = ({
           <div className="h-px w-12 bg-gradient-to-l from-blue-600 to-transparent" />
         </motion.div>
 
-        <motion.div
-          variants={itemVariants}
-          className="flex justify-center items-center gap-[1px] mb-8"
-        >
+        <motion.div variants={itemVariants} className="flex gap-[1px] mb-8">
           <div className="w-6 h-4 bg-gradient-to-b from-blue-500/40 to-blue-500/60 rounded-l-sm shadow-sm" />
           <div className="w-6 h-4 bg-gradient-to-b from-gray-100 to-white shadow-sm" />
           <div className="w-6 h-4 bg-gradient-to-b from-red-500/40 to-red-500/60 rounded-r-sm shadow-sm" />
@@ -192,24 +164,20 @@ const AnimatedHeroSection = ({
 
         <motion.div
           variants={itemVariants}
-          className="flex justify-center self-center items-center gap-8 md:gap-12 lg:gap-20 mb-8 w-fit px-4 md:px-0"
+          className="flex justify-center items-center gap-8 md:gap-12 lg:gap-20 mb-8"
         >
           <motion.div
             variants={itemVariants}
             className="flex flex-col items-center"
             whileHover={{ scale: 1.05 }}
           >
-            <Link
-              href="https://www.polytechnique.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://www.polytechnique.edu/" target="_blank" rel="noopener noreferrer">
               <Image
                 src="/technologies/polytech.png"
                 alt="École Polytechnique"
                 width={64}
                 height={64}
-                className="size-12 object-contain md:size-16 lg:size-[8rem] w-full cursor-pointer"
+                className="size-12 object-contain md:size-16 lg:size-[6rem] w-full cursor-pointer"
                 unoptimized
               />
             </Link>
@@ -220,17 +188,13 @@ const AnimatedHeroSection = ({
             className="flex flex-col items-center"
             whileHover={{ scale: 1.05 }}
           >
-            <Link
-              href="https://www.essec.edu/fr/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://www.essec.edu/fr/" target="_blank" rel="noopener noreferrer">
               <Image
                 src="https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg"
                 alt="ESSEC Business School"
                 width={48}
                 height={48}
-                className="size-10 object-contain md:size-12 lg:size-[7rem] w-full cursor-pointer"
+                className="size-10 object-contain md:size-12 lg:size-[5rem] w-full cursor-pointer"
                 unoptimized
               />
             </Link>
@@ -241,17 +205,13 @@ const AnimatedHeroSection = ({
             className="flex flex-col items-center"
             whileHover={{ scale: 1.05 }}
           >
-            <Link
-              href="https://www.epitech.eu/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://www.epitech.eu/" target="_blank" rel="noopener noreferrer">
               <Image
                 src="https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png"
                 alt="EPITECH"
                 width={48}
                 height={48}
-                className="size-10 object-contain md:size-12 lg:size-[8rem] w-full cursor-pointer"
+                className="size-10 object-contain md:size-12 lg:size-[6rem] w-full cursor-pointer"
                 unoptimized
               />
             </Link>
@@ -260,15 +220,71 @@ const AnimatedHeroSection = ({
 
         <motion.p
           variants={itemVariants}
-          className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4 md:px-8"
+          className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl text-left"
         >
           {dictionary.team.description}
         </motion.p>
       </motion.div>
+
+      {/* Right Content - Animated Squares */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="hidden md:flex lg:ml-[10rem] xl:ml-[10rem] flex-col gap-8 md:w-1/2 mt-12 md:mt-0"
+      >
+        <div className="flex gap-8">
+          <motion.div
+            variants={squareVariants}
+            className="relative size-72 rounded-xl overflow-hidden"
+          >
+            <Image src="/team/noe.jpg" alt="Noé Campo" fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+            <div className="absolute bottom-6 left-6 text-white">
+              <h3 className="text-xl font-bold">Noé Campo</h3>
+              <p className="text-sm text-gray-300">Full-Stack Developer</p>
+            </div>
+          </motion.div>
+          <motion.div
+            variants={squareVariants}
+            className="relative size-72 rounded-xl overflow-hidden"
+          >
+            <Image src="/team/hugo.jpg" alt="Antoine Giordan" fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+            <div className="absolute bottom-6 left-6 text-white">
+              <h3 className="text-xl font-bold">Antoine Giordan</h3>
+              <p className="text-sm text-gray-300">AI Engineer</p>
+            </div>
+          </motion.div>
+        </div>
+        <div className="flex gap-8 ml-16">
+          <motion.div
+            variants={squareVariants}
+            className="relative size-72 rounded-xl overflow-hidden"
+          >
+            <Image src="/team/hugo.jpg" alt="Hugo Pradier" fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+            <div className="absolute bottom-6 left-6 text-white">
+              <h3 className="text-xl font-bold">Hugo Pradier</h3>
+              <p className="text-sm text-gray-300">DevOps Engineer</p>
+            </div>
+          </motion.div>
+          <motion.div
+            variants={squareVariants}
+            className="relative size-72 rounded-xl overflow-hidden"
+          >
+            <Image src="/en/team/nicolas.png" alt="Nicolas Henaux" fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+            <div className="absolute bottom-6 left-6 text-white">
+              <h3 className="text-xl font-bold">Nicolas Henaux</h3>
+              <p className="text-sm text-gray-300">Sales Representative</p>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 };
-
 interface Card3DProps {
   member: TeamMember;
   dictionary: any;
@@ -308,9 +324,6 @@ const Card3D: React.FC<Card3DProps> = ({ member }) => {
         transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
         transformStyle: 'preserve-3d',
       }}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
       className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
     >
       <div className="flex flex-col h-full">
@@ -327,10 +340,7 @@ const Card3D: React.FC<Card3DProps> = ({ member }) => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
-        <div
-          className="flex flex-col flex-1"
-          style={{ transform: 'translateZ(30px)' }}
-        >
+        <div className="flex flex-col flex-1" style={{ transform: 'translateZ(30px)' }}>
           <div className="flex-1 space-y-4 p-4 md:p-6">
             <div className="flex items-start justify-between">
               <div>
@@ -344,9 +354,7 @@ const Card3D: React.FC<Card3DProps> = ({ member }) => {
             </div>
 
             <div className="space-y-2">
-              <p className="text-gray-600 text-sm md:text-base">
-                {member.description}
-              </p>
+              <p className="text-gray-600 text-sm md:text-base">{member.description}</p>
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -371,7 +379,7 @@ const Card3D: React.FC<Card3DProps> = ({ member }) => {
                   'w-fit',
                   member.name === 'Julien Bergerot'
                     ? 'h-[2rem] md:h-[2.3rem]'
-                    : 'h-[1.4rem] md:h-[1.6rem]',
+                    : 'h-[1.4rem] md:h-[1.6rem]'
                 )}
               />
             ))}
@@ -382,44 +390,18 @@ const Card3D: React.FC<Card3DProps> = ({ member }) => {
   );
 };
 
-export default async function OurTeam({
-  dictionary,
-  lang,
-}: {
-  dictionary: any;
-  lang: Locale;
-}) {
+export default function OurTeam({ dictionary, lang }: { dictionary: any; lang: Locale }) {
   const teamMembers = getTeamMembers(lang);
-  console.log('fzerjfizeo', teamMembers);
-
   const targetRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
-  const y = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <motion.section
+      <section
         ref={targetRef}
-        style={{ opacity, scale, y }}
-        className="relative h-screen flex items-start justify-center overflow-hidden pt-24 md:pt-32 lg:pt-[10rem]"
+        className="relative min-h-screen flex items-start justify-center pt-24 md:pt-32 lg:pt-[7rem]"
       >
-        <div className="absolute inset-0 mb-20 ml-0">
-          <img
-            src="/team/gradient2.png"
-            alt="Background Gradient"
-            className="object-cover opacity-40"
-          />
-        </div>
-
         <AnimatedHeroSection dictionary={dictionary} lang={lang} />
-        <ScrollIndicator />
-      </motion.section>
+      </section>
 
       <section className="py-8 md:py-12 px-4 md:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
@@ -442,9 +424,7 @@ export default async function OurTeam({
                 </h2>
                 <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                   {dictionary.expertiseTeam.solutions.description}{' '}
-                  <em className="font-medium">
-                    {dictionary.expertiseTeam.solutions.emphasis}
-                  </em>
+                  <em className="font-medium">{dictionary.expertiseTeam.solutions.emphasis}</em>
                 </p>
               </div>
 
