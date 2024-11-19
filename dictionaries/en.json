@@ -99,11 +99,7 @@
       },
       "security": {
         "title": "Enterprise Security",
-        "features": [
-          "Multi-factor authentication",
-          "End-to-end encryption",
-          "GDPR compliance"
-        ]
+        "features": ["Multi-factor authentication", "End-to-end encryption", "GDPR compliance"]
       },
       "realtime": {
         "title": "Integration Examples",
@@ -162,11 +158,7 @@
       },
       "performance": {
         "title": "Performance",
-        "features": [
-          "Parallel processing",
-          "Smart caching",
-          "Advanced monitoring"
-        ]
+        "features": ["Parallel processing", "Smart caching", "Advanced monitoring"]
       }
     },
     "sites": {
@@ -237,12 +229,7 @@
       },
       "cloud": {
         "title": "Cloud Infrastructure",
-        "features": [
-          "Vercel Edge Network",
-          "Scaleway Cloud",
-          "Global CDN",
-          "Automatic SSL"
-        ]
+        "features": ["Vercel Edge Network", "Scaleway Cloud", "Global CDN", "Automatic SSL"]
       },
       "security": {
         "title": "Security & Compliance",
@@ -261,11 +248,7 @@
       },
       "cicd": {
         "title": "CI/CD",
-        "features": [
-          "Continuous deployment",
-          "Preview deployments",
-          "Instant rollback"
-        ]
+        "features": ["Continuous deployment", "Preview deployments", "Instant rollback"]
       }
     }
   },
@@ -347,6 +330,8 @@
     "copyright": "© 2024 KS Enterprise. All rights reserved."
   },
   "team": {
+    "member": "Meet the Team",
+    "memberDescription": "Get to know the passionate people who bring our projects to life and make the magic happen every day.",
     "title": {
       "part1": "A team of",
       "part2": "experts"

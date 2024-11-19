@@ -29,9 +29,7 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
       </p>
 
       <div className="pt-8 lg:pt-16 w-full flex flex-col mt-4 lg:mt-8">
-        <p className="text-sm text-gray-500 mb-4 lg:mb-6 self-center">
-          {dictionary.hero.trust}
-        </p>
+        <p className="text-sm text-gray-500 mb-4 lg:mb-6 self-center">{dictionary.hero.trust}</p>
         <Press
           images={[
             '/socials/logo0.png',
@@ -197,7 +195,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
               className="relative size-full border rounded-full"
               color={['#6BA1FA', '#266CDE', '#0945A7']}
             >
-              <div className="relative w-[45vw] h-[30vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-[35vw] h-[28vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
                 <Image
                   src={`/hero/hero${index}.png`}
@@ -208,7 +206,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
               </div>
             </ShineBorder>
           ) : (
-            <div className="relative w-[45vw] h-[30vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] bg-white rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-[40vw] h-[28vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] bg-white rounded-2xl overflow-hidden shadow-2xl">
               <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
               <Image
                 src={`/hero/hero${index}.png`}
@@ -224,13 +222,13 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
       <div className="absolute bottom-10 lg:right-0 md:right-0 translate-y-1/4 lg:translate-x-1/4 md:lg:translate-x-1/4">
         <motion.div
           initial={{ x: 1000 }}
-          animate={{ x: 180 }}
+          animate={{ x: 120 }}
           transition={{
             duration: 0.5,
             delay: 0.9,
             ease: [0.25, 0.1, 0.25, 1],
           }}
-          className="relative w-[20vw] h-[13vw] max-w-[300px] max-h-[200px] min-w-[200px] min-h-[133px] rounded-xl overflow-hidden group"
+          className="relative w-[15vw] h-[13vw] max-w-[300px] max-h-[200px] min-w-[200px] min-h-[133px] rounded-xl overflow-hidden group"
         >
           <div className="absolute inset-0 rounded-xl border border-blue-100">
             <div className="absolute inset-[1px] rounded-lg bg-white/5 backdrop-blur-[4px]">

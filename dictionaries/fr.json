@@ -335,13 +335,15 @@
     "copyright": "© 2024 KS Enterprise. Tous droits réservés."
   },
   "team": {
+    "member": "Notre équipe.",
+    "memberDescription": "Derrière chaque projet réussi, il y a des personnes engagées. Découvrez les visages et les talents qui font notre force au quotidien.",
     "title": {
       "part1": "Une équipe d'",
       "part2": "experts"
     },
     "subtitle": "L'excellence à la française",
     "frenchTech": "French Tech Innovation",
-    "description": "Jeunes, ambitieux et animés par l'excellence. Nous sommes une équipe d'innovateurs passionnés par la création de solutions SaaS de pointe qui transforment les entreprises.",
+    "description": "Jeunes, ambitieux et animés par l'excellence. Nous sommes une petite équipe d'innovateurs passionnés par la création de solutions SaaS de pointe qui transforment les entreprises.",
     "imageAlt": "Équipe de développement"
   },
   "expertiseTeam": {

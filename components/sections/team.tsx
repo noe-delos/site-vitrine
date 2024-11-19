@@ -40,7 +40,7 @@ const getTeamMembers = (lang: string): TeamMember[] => [
     role: lang === 'fr' ? 'Ingénieur AI' : 'AI Engineer',
     education: 'École Polytechnique',
     expertise: [lang === 'fr' ? 'Ingénieurie IA' : 'AI Engineering', 'Backend dev'],
-    image: '/en/team/gray.jpg',
+    image: '/team/hugo.jpg',
     description:
       lang === 'fr'
         ? "Avec mon expérience en Machine learning et Gen AI je rends l'intelligence artificielle accessible et performante."
@@ -78,6 +78,19 @@ const getTeamMembers = (lang: string): TeamMember[] => [
         ? 'Stratège commercial passionné, je connecte les bonnes solutions aux bons clients. Je crée des partenariats durables et générateurs de valeur.'
         : 'Passionate business strategist, I connect the right solutions to the right clients. I create lasting partnerships that generate value.',
     linkedin: 'https://www.linkedin.com/in/maxime-cividini/',
+    schools: ['https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg'],
+  },
+  {
+    name: 'Sarah Chen',
+    education: '',
+    role: lang === 'fr' ? 'Designer UX/UI' : 'UX/UI Designer',
+    expertise: ['UX Design', 'UI Design', lang === 'fr' ? 'Design System' : 'Design Systems'],
+    image: '/api/placeholder/400/400',
+    linkedin: '',
+    description:
+      lang === 'fr'
+        ? "Designer expérimentée spécialisée dans la création d'expériences utilisateur intuitives et esthétiques. J'allie créativité et données pour concevoir des interfaces qui enchantent."
+        : 'Experienced designer specializing in creating intuitive and aesthetic user experiences. I combine creativity and data to design delightful interfaces.',
     schools: ['https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg'],
   },
 ];
@@ -125,103 +138,84 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="flex flex-col items-start md:w-1/2"
+        className="flex flex-col items-start w-full max-w-3xl mx-auto px-4"
       >
-        <motion.h1
-          variants={itemVariants}
-          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-left"
-        >
+        <motion.h1 variants={itemVariants} className="text-4xl md:text-7xl font-bold mb-6">
           <span>{dictionary.team.title.part1}</span>
           <span
             className={cn(
               'bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent',
-              lang === 'en' && 'ml-4'
+              lang === 'en' && 'ml-3'
             )}
           >
             {dictionary.team.title.part2}
           </span>
-          <motion.span
-            variants={itemVariants}
-            className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-400 mt-4 block"
-          >
+          <span className="text-lg md:text-xl font-normal text-gray-400 mt-3 block">
             {dictionary.team.subtitle}
-          </motion.span>
+          </span>
         </motion.h1>
 
-        <motion.div variants={itemVariants} className="flex items-center gap-2 mb-8">
-          <div className="h-px w-12 bg-gradient-to-r from-blue-600 to-transparent" />
-          <span className="text-base md:text-lg text-gray-500 italic">
-            {dictionary.team.frenchTech}
-          </span>
-          <div className="h-px w-12 bg-gradient-to-l from-blue-600 to-transparent" />
-        </motion.div>
+        <div className="flex flex-col w-full items-center mt-8">
+          <motion.div variants={itemVariants} className="flex items-center gap-2 mb-6">
+            <div className="h-px w-10 bg-gradient-to-r from-blue-600 to-transparent" />
+            <span className="text-base md:text-lg text-gray-500 italic">
+              {dictionary.team.frenchTech}
+            </span>
+            <div className="h-px w-10 bg-gradient-to-l from-blue-600 to-transparent" />
+          </motion.div>
 
-        <motion.div variants={itemVariants} className="flex gap-[1px] mb-8">
-          <div className="w-6 h-4 bg-gradient-to-b from-blue-500/40 to-blue-500/60 rounded-l-sm shadow-sm" />
-          <div className="w-6 h-4 bg-gradient-to-b from-gray-100 to-white shadow-sm" />
-          <div className="w-6 h-4 bg-gradient-to-b from-red-500/40 to-red-500/60 rounded-r-sm shadow-sm" />
-        </motion.div>
+          <motion.div variants={itemVariants} className="flex gap-[1px] mb-8">
+            <div className="w-5 h-4 bg-gradient-to-b from-blue-500/40 to-blue-500/60 rounded-l-sm" />
+            <div className="w-5 h-4 bg-gradient-to-b from-gray-100 to-white" />
+            <div className="w-5 h-4 bg-gradient-to-b from-red-500/40 to-red-500/60 rounded-r-sm" />
+          </motion.div>
+        </div>
 
         <motion.div
           variants={itemVariants}
-          className="flex justify-center items-center gap-8 md:gap-12 lg:gap-20 mb-8"
+          className="grid grid-cols-3 gap-8 md:gap-16 w-full mb-8"
         >
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col items-center"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Link href="https://www.polytechnique.edu/" target="_blank" rel="noopener noreferrer">
-              <Image
-                src="/technologies/polytech.png"
-                alt="École Polytechnique"
-                width={64}
-                height={64}
-                className="size-12 object-contain md:size-16 lg:size-[6rem] w-full cursor-pointer"
-                unoptimized
-              />
-            </Link>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col items-center"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Link href="https://www.essec.edu/fr/" target="_blank" rel="noopener noreferrer">
-              <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg"
-                alt="ESSEC Business School"
-                width={48}
-                height={48}
-                className="size-10 object-contain md:size-12 lg:size-[5rem] w-full cursor-pointer"
-                unoptimized
-              />
-            </Link>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col items-center"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Link href="https://www.epitech.eu/" target="_blank" rel="noopener noreferrer">
-              <Image
-                src="https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png"
-                alt="EPITECH"
-                width={48}
-                height={48}
-                className="size-10 object-contain md:size-12 lg:size-[6rem] w-full cursor-pointer"
-                unoptimized
-              />
-            </Link>
-          </motion.div>
+          {[
+            {
+              href: 'https://www.polytechnique.edu/',
+              src: '/technologies/polytech.png',
+              alt: 'École Polytechnique',
+              size: 'size-12 md:size-16 lg:size-20',
+            },
+            {
+              href: 'https://www.essec.edu/fr/',
+              src: 'https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg',
+              alt: 'ESSEC Business School',
+              size: 'size-10 md:size-14 lg:size-16',
+            },
+            {
+              href: 'https://www.epitech.eu/',
+              src: 'https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png',
+              alt: 'EPITECH',
+              size: 'size-10 md:size-14 lg:size-16',
+            },
+          ].map((school) => (
+            <motion.div
+              key={school.alt}
+              variants={itemVariants}
+              className="flex justify-center"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Link href={school.href} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={school.src}
+                  alt={school.alt}
+                  width={80}
+                  height={80}
+                  className={`${school.size} object-contain w-full cursor-pointer`}
+                  unoptimized
+                />
+              </Link>
+            </motion.div>
+          ))}
         </motion.div>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl text-left"
-        >
+        <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-600 text-left">
           {dictionary.team.description}
         </motion.p>
       </motion.div>
@@ -231,7 +225,7 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="hidden md:flex lg:ml-[10rem] xl:ml-[10rem] flex-col gap-8 md:w-1/2 mt-12 md:mt-0"
+        className="hidden md:flex lg:ml-[10rem] xl:ml-[10rem] flex-col gap-8 md:w-1/2 mt-8 md:mt-0"
       >
         <div className="flex gap-8">
           <motion.div
@@ -239,8 +233,8 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
             className="relative size-72 rounded-xl overflow-hidden"
           >
             <Image src="/team/noe.jpg" alt="Noé Campo" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-            <div className="absolute bottom-6 left-6 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            <div className="absolute bottom-4 left-6 text-white">
               <h3 className="text-xl font-bold">Noé Campo</h3>
               <p className="text-sm text-gray-300">Full-Stack Developer</p>
             </div>
@@ -250,8 +244,8 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
             className="relative size-72 rounded-xl overflow-hidden"
           >
             <Image src="/team/hugo.jpg" alt="Antoine Giordan" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-            <div className="absolute bottom-6 left-6 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            <div className="absolute bottom-4 left-6 text-white">
               <h3 className="text-xl font-bold">Antoine Giordan</h3>
               <p className="text-sm text-gray-300">AI Engineer</p>
             </div>
@@ -263,8 +257,8 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
             className="relative size-72 rounded-xl overflow-hidden"
           >
             <Image src="/team/hugo.jpg" alt="Hugo Pradier" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-            <div className="absolute bottom-6 left-6 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            <div className="absolute bottom-4 left-6 text-white">
               <h3 className="text-xl font-bold">Hugo Pradier</h3>
               <p className="text-sm text-gray-300">DevOps Engineer</p>
             </div>
@@ -274,8 +268,8 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
             className="relative size-72 rounded-xl overflow-hidden"
           >
             <Image src="/en/team/nicolas.png" alt="Nicolas Henaux" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-            <div className="absolute bottom-6 left-6 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            <div className="absolute bottom-4 left-6 text-white">
               <h3 className="text-xl font-bold">Nicolas Henaux</h3>
               <p className="text-sm text-gray-300">Sales Representative</p>
             </div>
@@ -290,14 +284,14 @@ interface Card3DProps {
   dictionary: any;
 }
 
-const Card3D: React.FC<Card3DProps> = ({ member }) => {
+const Card3D = ({ member, index }: any) => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: any) => {
     if (!cardRef.current) return;
 
-    const card = cardRef.current;
+    const card: any = cardRef.current;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -305,8 +299,8 @@ const Card3D: React.FC<Card3DProps> = ({ member }) => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = -((y - centerY) / centerY) * 10;
-    const rotateY = ((x - centerX) / centerX) * 10;
+    const rotateX = -((y - centerY) / centerY) * 5;
+    const rotateY = ((x - centerX) / centerX) * 5;
 
     setRotation({ x: rotateX, y: rotateY });
   };
@@ -320,69 +314,63 @@ const Card3D: React.FC<Card3DProps> = ({ member }) => {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
       style={{
         transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
         transformStyle: 'preserve-3d',
       }}
-      className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+      className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
     >
-      <div className="flex flex-col h-full">
-        <div
-          className="relative aspect-square overflow-hidden transform-gpu"
-          style={{ transform: 'translateZ(20px)' }}
-        >
+      <div className="flex flex-col md:flex-row h-full">
+        <div className="relative w-full md:w-56 h-52 md:h-auto shrink-0">
           <Image
             src={member.image}
             alt={member.name}
             fill
-            className="object-cover object-center group-hover:scale-105 transition duration-300"
+            className={cn(
+              'object-cover object-center group-hover:scale-105 transition duration-300',
+              member.name === 'Noé Campo' && 'scale-110'
+            )}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
-        <div className="flex flex-col flex-1" style={{ transform: 'translateZ(30px)' }}>
-          <div className="flex-1 space-y-4 p-4 md:p-6">
-            <div className="flex items-start justify-between">
-              <div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 tracking-wide">
-                  {member.name}
-                </h3>
-                <p className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
-                  {member.role}
-                </p>
-              </div>
+        <div className="flex-1 p-6 md:p-8" style={{ transform: 'translateZ(30px)' }}>
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 tracking-wide">{member.name}</h3>
+              <p className="text-base bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium mt-0.5">
+                {member.role}
+              </p>
             </div>
 
-            <div className="space-y-2">
-              <p className="text-gray-600 text-sm md:text-base">{member.description}</p>
-            </div>
+            <p className="text-gray-600 text-sm leading-relaxed">{member.description}</p>
 
-            <div className="flex flex-wrap gap-2">
-              {member.expertise.map((skill) => (
+            <div className="flex flex-wrap gap-1.5">
+              {member.expertise.map((skill: any) => (
                 <span
                   key={skill}
-                  className="px-3 py-1 text-xs md:text-sm bg-gray-100 text-gray-700 rounded-full"
+                  className="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full font-medium"
                 >
                   {skill}
                 </span>
               ))}
             </div>
-          </div>
 
-          <div className="h-16 flex flex-row gap-2 items-center justify-around px-5">
-            {member.schools.map((school) => (
-              <img
-                key={school}
-                src={school}
-                alt="school"
-                className={cn(
-                  'w-fit',
-                  member.name === 'Julien Bergerot'
-                    ? 'h-[2rem] md:h-[2.3rem]'
-                    : 'h-[1.4rem] md:h-[1.6rem]'
-                )}
-              />
-            ))}
+            <div className="flex items-center gap-4 pt-1">
+              {member.schools.map((school: any) => (
+                <img
+                  key={school}
+                  src={school}
+                  alt="school"
+                  className={cn(
+                    'w-auto',
+                    member.name === 'Julien Bergerot' ? 'h-7 md:h-8' : 'h-6 md:h-7'
+                  )}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -394,20 +382,40 @@ export default function OurTeam({ dictionary, lang }: { dictionary: any; lang: L
   const teamMembers = getTeamMembers(lang);
   const targetRef = useRef<HTMLDivElement>(null);
 
+  const leftColumnMembers = teamMembers.filter((_, index) => index % 2 === 0);
+  const rightColumnMembers = teamMembers.filter((_, index) => index % 2 === 1);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <section
         ref={targetRef}
-        className="relative min-h-screen flex items-start justify-center pt-24 md:pt-32 lg:pt-[7rem]"
+        className="relative min-h-screen flex items-start justify-center pt-24 md:pt-32 lg:pt-[6rem]"
       >
         <AnimatedHeroSection dictionary={dictionary} lang={lang} />
       </section>
+      <section className="py-16 md:py-24 px-4 md:px-8 bg-gray-50">
+        <div className="max-w-[90rem] mx-auto">
+          {/* Title and Description Section */}
+          <div className="w-full flex flex-col items-end text-end mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{dictionary.team.member}</h2>
+            <p className="text-lg text-gray-600 max-w-2xl">{dictionary.team.memberDescription}</p>
+          </div>
 
-      <section className="py-8 md:py-12 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-          {teamMembers.map((member) => (
-            <Card3D key={member.name} member={member} dictionary={dictionary} />
-          ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* Left Column */}
+            <div className="space-y-8">
+              {leftColumnMembers.map((member, index) => (
+                <Card3D key={member.name} member={member} index={index} />
+              ))}
+            </div>
+
+            {/* Right Column - with top margin */}
+            <div className="space-y-8 lg:mt-24">
+              {rightColumnMembers.map((member, index) => (
+                <Card3D key={member.name} member={member} index={index} />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -428,7 +436,7 @@ export default function OurTeam({ dictionary, lang }: { dictionary: any; lang: L
                 </p>
               </div>
 
-              <div className="space-y-6 md:space-y-8">
+              <div className="space-y-6 md:space-y-8 pr-[10rem]">
                 <div className="flex items-start gap-4">
                   <div>
                     <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-1">
