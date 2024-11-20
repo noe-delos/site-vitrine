@@ -37,22 +37,19 @@ function PerformanceAnalyticsCard({ dictionary }: { dictionary: any }) {
     column1: [
       {
         title: dictionary.technologies.performance.instant_loading.title,
-        description:
-          dictionary.technologies.performance.instant_loading.description,
+        description: dictionary.technologies.performance.instant_loading.description,
       },
     ],
     column2: [
       {
         title: dictionary.technologies.performance.realtime_analytics.title,
-        description:
-          dictionary.technologies.performance.realtime_analytics.description,
+        description: dictionary.technologies.performance.realtime_analytics.description,
       },
     ],
     column3: [
       {
         title: dictionary.technologies.performance.advanced_monitoring.title,
-        description:
-          dictionary.technologies.performance.advanced_monitoring.description,
+        description: dictionary.technologies.performance.advanced_monitoring.description,
       },
     ],
   };
@@ -122,9 +119,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
               <div className="mb-12">
                 <p className="text-lg text-black">
                   {dictionary.technologies.data.subtitle}{' '}
-                  <span className="text-gray-400">
-                    {dictionary.technologies.data.subtitle2}
-                  </span>
+                  <span className="text-gray-400">{dictionary.technologies.data.subtitle2}</span>
                 </p>
               </div>
 
@@ -155,9 +150,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                       />
                     </h3>
                   </div>
-                  <p className="text-gray-400">
-                    {dictionary.technologies.data.Azure.description}
-                  </p>
+                  <p className="text-gray-400">{dictionary.technologies.data.Azure.description}</p>
                 </div>
               </div>
             </div>
@@ -175,10 +168,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 
             <div className="relative z-10">
               <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
-                <Icon
-                  icon="material-symbols:star"
-                  className="size-6 text-green-400"
-                />
+                <Icon icon="material-symbols:star" className="size-6 text-green-400" />
                 {dictionary.technologies.data.realtime.title}
               </h3>
               <div className="grid grid-cols-2 gap-6">
@@ -187,26 +177,14 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                     .slice(0, 2)
                     .map((feature: string, index: number) => (
                       <>
-                        <li
-                          key={index}
-                          className="flex items-center gap-3 group"
-                        >
-                          <Icon
-                            icon="radix-icons:dot-filled"
-                            className="size-6 text-green-400"
-                          />
+                        <li key={index} className="flex items-center gap-3 group">
+                          <Icon icon="radix-icons:dot-filled" className="size-6 text-green-400" />
                           <span className="text-gray-300">{feature}</span>
                         </li>
                         {index === 0 && (
                           <div className="flex flex-row gap-4 items-center ml-10">
-                            <Icon
-                              icon="flat-color-icons:google"
-                              className="size-5"
-                            />
-                            <Icon
-                              icon="logos:microsoft-icon"
-                              className="size-4"
-                            />
+                            <Icon icon="flat-color-icons:google" className="size-5" />
+                            <Icon icon="logos:microsoft-icon" className="size-4" />
                             <Icon icon="logos:meta-icon" className="size-6" />
                           </div>
                         )}
@@ -218,10 +196,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                     .slice(2)
                     .map((feature: string, index: number) => (
                       <li key={index} className="flex items-center gap-3 group">
-                        <Icon
-                          icon="radix-icons:dot-filled"
-                          className="size-6 text-green-400"
-                        />
+                        <Icon icon="radix-icons:dot-filled" className="size-6 text-green-400" />
                         <span className="text-gray-300">{feature}</span>
                       </li>
                     ))}
@@ -260,9 +235,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
               <div className="mb-12">
                 <p className="text-lg text-purple-900">
                   {dictionary.technologies.ai.subtitle}{' '}
-                  <span className="text-gray-400">
-                    {dictionary.technologies.ai.subtitle2}
-                  </span>
+                  <span className="text-gray-400">{dictionary.technologies.ai.subtitle2}</span>
                 </p>
               </div>
 
@@ -289,9 +262,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                       {dictionary.technologies.ai.LLmApis.title}
                     </h3>
                   </div>
-                  <p className="text-gray-400">
-                    {dictionary.technologies.ai.LLmApis.description}
-                  </p>
+                  <p className="text-gray-400">{dictionary.technologies.ai.LLmApis.description}</p>
                 </div>
 
                 {/* Feature 2 */}
@@ -326,16 +297,9 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                     .slice(0, 4)
                     .map((feature: string, index: number) => (
                       <>
-                        <li
-                          key={index}
-                          className="flex items-center gap-3 group"
-                        >
+                        <li key={index} className="flex items-center gap-3 group">
                           <Icon
-                            icon={
-                              dictionary.technologies.ai.infrastructure.icons[
-                                index
-                              ]
-                            }
+                            icon={dictionary.technologies.ai.infrastructure.icons[index]}
                             className="size-5 text-white"
                           />
                           <span className="text-gray-300">{feature}</span>
@@ -349,11 +313,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                     .map((feature: string, index: number) => (
                       <li key={index} className="flex items-center gap-3 group">
                         <Icon
-                          icon={
-                            dictionary.technologies.ai.infrastructure.icons[
-                              index + 4
-                            ]
-                          }
+                          icon={dictionary.technologies.ai.infrastructure.icons[index + 4]}
                           className="size-5 text-white"
                         />
                         <span className="text-gray-300">{feature}</span>
@@ -387,9 +347,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
               <div className="mb-12">
                 <p className="text-lg text-gray-900">
                   {dictionary.technologies.sites.subtitle}{' '}
-                  <span className="text-gray-400">
-                    {dictionary.technologies.sites.subtitle2}
-                  </span>
+                  <span className="text-gray-400">{dictionary.technologies.sites.subtitle2}</span>
                 </p>
               </div>
 
@@ -402,9 +360,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                       {dictionary.technologies.sites.perf.title}
                     </h3>
                   </div>
-                  <p className="text-gray-400">
-                    {dictionary.technologies.sites.perf.description}
-                  </p>
+                  <p className="text-gray-400">{dictionary.technologies.sites.perf.description}</p>
                 </div>
 
                 {/* Feature 2 */}
@@ -438,7 +394,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                   {dictionary.technologies.sites.infrastructure.title}
                 </h3>
 
-                <div className="grid grid-cols-2 gap-6 relative">
+                <div className="grid grid-cols-2 gap-6 relative pb-10">
                   {/* Vertical separator */}
                   <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-500" />
 
@@ -448,17 +404,11 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                       .map((feature: any, index: number) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center gap-2">
-                            <span className="font-medium text-sm text-white">
-                              {feature.gain1}
-                            </span>
+                            <span className="font-medium text-sm text-white">{feature.gain1}</span>
                             <ChevronRight className="h-4 w-4 text-gray-400" />
-                            <span className="font-medium text-white">
-                              {feature.gain2}
-                            </span>
+                            <span className="font-medium text-white">{feature.gain2}</span>
                           </div>
-                          <p className="text-gray-300 italic text-sm ml-4">
-                            {feature.explanation}
-                          </p>
+                          <p className="text-gray-300 italic text-sm ml-4">{feature.explanation}</p>
                         </div>
                       ))}
                   </div>
@@ -469,17 +419,11 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                       .map((feature: any, index: number) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center gap-2">
-                            <span className="font-medium text-white">
-                              {feature.gain1}
-                            </span>
+                            <span className="font-medium text-white">{feature.gain1}</span>
                             <ChevronRight className="h-4 w-4 text-gray-400" />
-                            <span className="font-medium text-white">
-                              {feature.gain2}
-                            </span>
+                            <span className="font-medium text-white">{feature.gain2}</span>
                           </div>
-                          <p className="text-gray-300 italic text-sm ml-4">
-                            {feature.explanation}
-                          </p>
+                          <p className="text-gray-300 italic text-sm ml-4">{feature.explanation}</p>
                         </div>
                       ))}
                   </div>
@@ -539,10 +483,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                     </h3>
                   </div>
                   <p className="text-gray-400">
-                    {
-                      dictionary.technologies.deployment.infrastructure
-                        .description
-                    }
+                    {dictionary.technologies.deployment.infrastructure.description}
                   </p>
                 </div>
 
@@ -583,10 +524,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                           src={feature}
                           width={100}
                           height={100}
-                          className={cn(
-                            'object-contain h-5 w-auto',
-                            index === 1 && 'h-6',
-                          )}
+                          className={cn('object-contain h-5 w-auto', index === 1 && 'h-6')}
                           quality={100}
                           priority
                         />
@@ -603,10 +541,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                           src={feature}
                           width={100}
                           height={100}
-                          className={cn(
-                            'object-contain h-5 w-auto',
-                            index === 0 && 'h-7',
-                          )}
+                          className={cn('object-contain h-5 w-auto', index === 0 && 'h-7')}
                           quality={100}
                           priority
                         />
@@ -623,10 +558,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                           src={feature}
                           width={100}
                           height={100}
-                          className={cn(
-                            'object-contain h-5 w-auto',
-                            index === 1 && 'h-6',
-                          )}
+                          className={cn('object-contain h-5 w-auto', index === 1 && 'h-6')}
                           quality={100}
                           priority
                         />
@@ -737,10 +669,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
         const { top, bottom } = element.getBoundingClientRect();
         const elementPosition = window.scrollY + top;
 
-        if (
-          scrollPosition >= elementPosition &&
-          scrollPosition <= window.scrollY + bottom
-        ) {
+        if (scrollPosition >= elementPosition && scrollPosition <= window.scrollY + bottom) {
           setActiveSection(index);
         }
       });
@@ -761,14 +690,11 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
         <div className="flex flex-col items-center justify-center mb-[12rem] w-full px-4">
           <div className="w-full max-w-4xl">
             <div className="flex flex-row gap-2 items-center">
-              <Icon
-                icon="heroicons:squares-plus-16-solid"
-                className="size-4 text-black"
-              />
+              <Icon icon="heroicons:squares-plus-16-solid" className="size-4 text-black" />
               <p>{dictionary.technologies.secret}</p>
             </div>
-            <div className="flex flex-row gap-1 items-center mb-5 p-4 pl-0">
-              <h1 className="text-5xl font-bold text-gray-900">
+            <div className="flex flex-row gap-1 items-center mb-5 p-4 pl-0 w-fit">
+              <h1 className="text-5xl font-bold text-gray-900 pr-3">
                 {dictionary.technologies.main_title_2}
               </h1>
               <FlipWords
@@ -781,12 +707,8 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
               />
             </div>
             <p className="leading-relaxed text-xl">
-              <span className="text-gray-700 ">
-                {dictionary.technologies.main_description}
-              </span>{' '}
-              <span className="text-gray-400">
-                {dictionary.technologies.main_description2}
-              </span>
+              <span className="text-gray-700 ">{dictionary.technologies.main_description}</span>{' '}
+              <span className="text-gray-400">{dictionary.technologies.main_description2}</span>
             </p>
           </div>
         </div>
@@ -798,9 +720,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                 <div
                   key={index}
                   className={`size-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    activeSection === index
-                      ? 'bg-black scale-125'
-                      : 'bg-gray-300 hover:bg-gray-400'
+                    activeSection === index ? 'bg-black scale-125' : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   onClick={() => {
                     const element = sectionRefs.current[index];
@@ -826,17 +746,11 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                   <div className="space-y-6">
                     <div className="space-y-4">
                       <div className="flex flex-row gap-2 items-center">
-                        <img
-                          src={item.titleImg}
-                          alt="title"
-                          className="size-16"
-                        />
+                        <img src={item.titleImg} alt="title" className="size-16" />
                         {item.title}
                       </div>
 
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        {item.subtitle}
-                      </p>
+                      <p className="text-lg text-gray-600 leading-relaxed">{item.subtitle}</p>
                     </div>
                     <div className="text-gray-600">{item.description}</div>
                   </div>

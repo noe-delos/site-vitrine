@@ -36,11 +36,11 @@ const getTeamMembers = (lang: string): TeamMember[] => [
     ],
   },
   {
-    name: 'Antoine Giordan',
+    name: 'Julien Bergerot',
     role: lang === 'fr' ? 'Ingénieur AI' : 'AI Engineer',
     education: 'École Polytechnique',
     expertise: [lang === 'fr' ? 'Ingénieurie IA' : 'AI Engineering', 'Backend dev'],
-    image: '/team/hugo.jpg',
+    image: '/team/julien.jpg',
     description:
       lang === 'fr'
         ? "Avec mon expérience en Machine learning et Gen AI je rends l'intelligence artificielle accessible et performante."
@@ -78,19 +78,6 @@ const getTeamMembers = (lang: string): TeamMember[] => [
         ? 'Stratège commercial passionné, je connecte les bonnes solutions aux bons clients. Je crée des partenariats durables et générateurs de valeur.'
         : 'Passionate business strategist, I connect the right solutions to the right clients. I create lasting partnerships that generate value.',
     linkedin: 'https://www.linkedin.com/in/maxime-cividini/',
-    schools: ['https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg'],
-  },
-  {
-    name: 'Sarah Chen',
-    education: '',
-    role: lang === 'fr' ? 'Designer UX/UI' : 'UX/UI Designer',
-    expertise: ['UX Design', 'UI Design', lang === 'fr' ? 'Design System' : 'Design Systems'],
-    image: '/api/placeholder/400/400',
-    linkedin: '',
-    description:
-      lang === 'fr'
-        ? "Designer expérimentée spécialisée dans la création d'expériences utilisateur intuitives et esthétiques. J'allie créativité et données pour concevoir des interfaces qui enchantent."
-        : 'Experienced designer specializing in creating intuitive and aesthetic user experiences. I combine creativity and data to design delightful interfaces.',
     schools: ['https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg'],
   },
 ];
@@ -140,7 +127,14 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
         variants={containerVariants}
         className="flex flex-col items-start w-full max-w-3xl mx-auto px-4"
       >
-        <motion.h1 variants={itemVariants} className="text-4xl md:text-7xl font-bold mb-6">
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl md:text-7xl font-bold mb-6 text-center"
+        >
+          {' '}
+          <span className="text-lg md:text-sm font-normal text-gray-400 mt-3 block pb-5">
+            {dictionary.team.subtitle},
+          </span>
           <span>{dictionary.team.title.part1}</span>
           <span
             className={cn(
@@ -149,9 +143,6 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
             )}
           >
             {dictionary.team.title.part2}
-          </span>
-          <span className="text-lg md:text-xl font-normal text-gray-400 mt-3 block">
-            {dictionary.team.subtitle}
           </span>
         </motion.h1>
 
@@ -229,10 +220,17 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
       >
         <div className="flex gap-8">
           <motion.div
-            variants={squareVariants}
+            variants={itemVariants}
             className="relative size-72 rounded-xl overflow-hidden"
           >
-            <Image src="/team/noe.jpg" alt="Noé Campo" fill className="object-cover" />
+            <Image
+              src="/team/noe.jpg"
+              alt="Noé Campo"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 288px"
+              loading="lazy"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-6 text-white">
               <h3 className="text-xl font-bold">Noé Campo</h3>
@@ -240,23 +238,37 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
             </div>
           </motion.div>
           <motion.div
-            variants={squareVariants}
+            variants={itemVariants}
             className="relative size-72 rounded-xl overflow-hidden"
           >
-            <Image src="/team/hugo.jpg" alt="Antoine Giordan" fill className="object-cover" />
+            <Image
+              src="/team/julien.jpg"
+              alt="Julien Bergerot"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 288px"
+              loading="lazy"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-6 text-white">
-              <h3 className="text-xl font-bold">Antoine Giordan</h3>
+              <h3 className="text-xl font-bold">Julien Bergerot</h3>
               <p className="text-sm text-gray-300">AI Engineer</p>
             </div>
           </motion.div>
         </div>
         <div className="flex gap-8 ml-16">
           <motion.div
-            variants={squareVariants}
+            variants={itemVariants}
             className="relative size-72 rounded-xl overflow-hidden"
           >
-            <Image src="/team/hugo.jpg" alt="Hugo Pradier" fill className="object-cover" />
+            <Image
+              src="/team/hugo.jpg"
+              alt="Hugo Pradier"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 288px"
+              loading="lazy"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-6 text-white">
               <h3 className="text-xl font-bold">Hugo Pradier</h3>
@@ -264,10 +276,17 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
             </div>
           </motion.div>
           <motion.div
-            variants={squareVariants}
+            variants={itemVariants}
             className="relative size-72 rounded-xl overflow-hidden"
           >
-            <Image src="/en/team/nicolas.png" alt="Nicolas Henaux" fill className="object-cover" />
+            <Image
+              src="/en/team/nicolas.png"
+              alt="Nicolas Henaux"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 288px"
+              loading="lazy"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-6 text-white">
               <h3 className="text-xl font-bold">Nicolas Henaux</h3>

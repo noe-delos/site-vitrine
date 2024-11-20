@@ -30,65 +30,67 @@ export const FlipWords = ({
   }, [isAnimating, duration, startAnimation]);
 
   return (
-    <AnimatePresence
-      onExitComplete={() => {
-        setIsAnimating(false);
-      }}
-    >
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 10,
+    <div className="relative inline-block">
+      <AnimatePresence
+        onExitComplete={() => {
+          setIsAnimating(false);
         }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          type: 'spring',
-          stiffness: 100,
-          damping: 10,
-        }}
-        exit={{
-          opacity: 0,
-          y: -40,
-          x: 40,
-          filter: 'blur(8px)',
-          scale: 2,
-          position: 'absolute',
-        }}
-        className={cn(
-          'z-10 inline-block relative text-left text-neutral-900 px-2',
-          className,
-        )}
-        key={currentSentence}
       >
-        <motion.span
-          initial={{ opacity: 0, filter: 'blur(8px)' }}
-          animate={{ opacity: 1, filter: 'blur(0px)' }}
-          transition={{
-            duration: 0.5,
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 10,
           }}
-          className="inline-block whitespace-nowrap"
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            type: 'spring',
+            stiffness: 100,
+            damping: 10,
+          }}
+          exit={{
+            opacity: 0,
+            y: -40,
+            x: 40,
+            filter: 'blur(8px)',
+            scale: 2,
+            position: 'absolute',
+          }}
+          className={cn('inline-block text-left text-neutral-900', className)}
+          key={currentSentence}
         >
-          {currentSentence.split('').map((char, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{
-                delay: index * 0.03,
-                duration: 0.2,
-              }}
-              className={cn('inline-block', {
-                'mr-[0.0.8em]': char === ' ',
-              })}
-            >
-              {char === ' ' ? '\u00A0' : char}
-            </motion.span>
-          ))}
-        </motion.span>
-      </motion.div>
-    </AnimatePresence>
+          <motion.span
+            initial={{ opacity: 0, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, filter: 'blur(0px)' }}
+            transition={{
+              duration: 0.5,
+            }}
+            className="inline-block whitespace-nowrap"
+          >
+            {currentSentence.split('').map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{
+                  delay: index * 0.03,
+                  duration: 0.2,
+                }}
+                className="inline-block"
+                style={{
+                  marginRight: char === ' ' ? '0.2em' : '0',
+                }}
+              >
+                {char === ' ' ? '\u00A0' : char}
+              </motion.span>
+            ))}
+          </motion.span>
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 };
+
+export default FlipWords;

@@ -165,7 +165,7 @@ const StatItem = ({ number, label }: any) => (
     transition={{ duration: 0.5, delay: 0.6 }}
     className="flex flex-col space-y-1"
   >
-    <div className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-gray-700 to-gray-400 bg-clip-text text-transparent">
+    <div className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-gray-800 to-gray-500 bg-clip-text text-transparent">
       {number}
     </div>
     <div className="text-sm text-gray-500">{label}</div>
@@ -188,10 +188,7 @@ const PortfolioHero = ({ dictionary }: any) => {
           >
             <div className="space-y-2 pb-5">
               <div className="flex items-center justify-center space-x-2 text-gray-500">
-                <Icon
-                  icon="ic:baseline-web-stories"
-                  className="size-3 text-gray-400"
-                />
+                <Icon icon="ic:baseline-web-stories" className="size-3 text-gray-400" />
                 <span className="text-xs">{t.categoryDetail}</span>
               </div>
 
@@ -226,14 +223,8 @@ const PortfolioHero = ({ dictionary }: any) => {
                 {t.stats.context}
               </motion.p>
               <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-12">
-                <StatItem
-                  number={t.stats.projects.number}
-                  label={t.stats.projects.label}
-                />
-                <StatItem
-                  number={t.stats.satisfaction.number}
-                  label={t.stats.satisfaction.label}
-                />
+                <StatItem number={t.stats.projects.number} label={t.stats.projects.label} />
+                <StatItem number={t.stats.satisfaction.number} label={t.stats.satisfaction.label} />
               </div>
             </div>
 
@@ -245,14 +236,17 @@ const PortfolioHero = ({ dictionary }: any) => {
               className="flex items-start"
             >
               <div className="px-6 md:w-[400px] border-l-[3px] border-gray-200">
-                <blockquote className="text-lg text-black">
-                  "{t.testimonial.quote}"
-                </blockquote>
-                <div className="mt-4">
-                  <p className="text-gray-900 font-medium">
-                    {t.testimonial.author}
-                  </p>
-                  <p className="text-gray-600 text-sm">{t.testimonial.role}</p>
+                <blockquote className="text-md text-black">“{t.testimonial.quote}”</blockquote>
+                <div className="mt-4 flex flex-row items-center gap-4">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Logo_FDJ.svg/2560px-Logo_FDJ.svg.png"
+                    alt="FDJ"
+                    className="w-[6rem] h-fit object-contain"
+                  />
+                  <div className="flex flex-col items-start">
+                    <p className="text-gray-900 font-medium">{t.testimonial.author}</p>
+                    <p className="text-gray-600 text-sm">{t.testimonial.role}</p>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -282,8 +276,7 @@ const PortfolioPage = ({ dictionary }: PortfolioPageProps) => {
   const router = useRouter();
 
   const filteredProjects = projects.filter(
-    (project) =>
-      selectedCategory === 'Tous' || project.category === selectedCategory,
+    (project) => selectedCategory === 'Tous' || project.category === selectedCategory
   );
 
   const containerVariants = {
@@ -408,28 +401,35 @@ const PortfolioPage = ({ dictionary }: PortfolioPageProps) => {
 
       {/* CTA Section */}
       <section className="py-12 md:py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-xl md:rounded-2xl p-6 md:p-12 text-white"
+            className="bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-xl md:rounded-2xl p-6 md:p-12 text-white relative overflow-hidden"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">
-              {dictionary.contact.title}
-            </h2>
-            <p className="text-base md:text-lg mb-6 md:mb-8 opacity-90">
-              {dictionary.contact.description}
-            </p>
-            <motion.button
-              onClick={() => router.push('/contact')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block bg-white text-[#7066CB] px-6 md:px-8 py-2.5 md:py-3 rounded-md font-medium hover:bg-opacity-90 transition-all text-sm md:text-base"
-            >
-              {dictionary.contact.cta}
-            </motion.button>
+            <img
+              className="absolute -right-2 -top-4 md:right-5 md:-top-3 w-[16rem] md:w-[18rem] h-auto z-10 opacity-5"
+              src="/en/logo/brand-logo-white.png"
+              alt="KSlogo"
+            />
+            <div className="relative z-20">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">
+                {dictionary.contact.title}
+              </h2>
+              <p className="text-base md:text-lg mb-6 md:mb-8 opacity-90">
+                {dictionary.contact.description}
+              </p>
+              <motion.button
+                onClick={() => router.push('/contact')}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block bg-white text-[#7066CB] px-6 md:px-8 py-2.5 md:py-3 rounded-md font-medium hover:bg-opacity-90 transition-all text-sm md:text-base"
+              >
+                {dictionary.contact.cta}
+              </motion.button>
+            </div>
           </motion.div>
         </div>
       </section>

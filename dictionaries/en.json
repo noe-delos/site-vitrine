@@ -174,7 +174,7 @@
         "description": "Gone are visible loading times and jerky interfaces. Your application's content is intelligently orchestrated in the backend, then delivered optimally to your users."
       },
       "infrastructure": {
-        "title": "Concrete Benefits:",
+        "title": "Concrete Benefits",
         "features": [
           {
             "gain1": "Smart Loading",
@@ -462,7 +462,7 @@
     "stats": {
       "context": "Track record of excellence",
       "projects": {
-        "number": "40+",
+        "number": "30+",
         "label": "Successful Projects"
       },
       "satisfaction": {
@@ -472,8 +472,8 @@
     },
     "testimonial": {
       "quote": "Their team didn't just meet our expectations - they redefined what we thought was possible. The results speak for themselves.",
-      "author": "Sarah Mitchell",
-      "role": "Head of Digital, TechVision"
+      "author": "Florian de Milleville",
+      "role": "Project manager, FDJ group"
     }
   }
 }

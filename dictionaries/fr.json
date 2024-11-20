@@ -179,7 +179,7 @@
         "description": "Fini les temps de chargement visibles et les interfaces qui saccadent. Le contenu de votre application est orchestré intelligemment en backend, puis délivré de manière optimale à vos utilisateurs."
       },
       "infrastructure": {
-        "title": "Gains concrets :",
+        "title": "Gains concrets",
         "features": [
           {
             "gain1": "Chargement Intelligent",
@@ -305,7 +305,7 @@
       "team": "Notre équipe",
       "portfolio": "Réalisations"
     },
-    "contact_btn": "Nous contacter",
+    "contact_btn": "Contact",
     "mobile_menu": {
       "title": "Menu"
     }
@@ -467,7 +467,7 @@
     "stats": {
       "context": "Notre expertise en chiffres qui parlent d'eux-mêmes",
       "projects": {
-        "number": "40+",
+        "number": "30+",
         "label": "Projets réalisés"
       },
       "satisfaction": {
@@ -476,9 +476,9 @@
       }
     },
     "testimonial": {
-      "quote": "Une équipe exceptionnelle qui a su transformer notre vision en réalité, dépassant toutes nos attentes.",
-      "author": "Marie Dubois",
-      "role": "Directrice Marketing, TechVision"
+      "quote": "Une équipe professionnelle qui a su comprendre notre cas d'usage et y répondre efficacement, avec un excellent suivi tout au long du projet.",
+      "author": "Florian de Milleville",
+      "role": "Chef de projet, FDJ group"
     }
   }
 }
