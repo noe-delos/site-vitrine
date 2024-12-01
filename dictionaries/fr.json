@@ -296,9 +296,10 @@
     "cta": "Contactez-nous"
   },
   "header": {
+    "rdv": "Prendre RDV",
     "brand": {
       "title": "Consulting",
-      "subtitle": "software solutions"
+      "subtitle": "IT solutions"
     },
     "navigation": {
       "home": "Accueil",
@@ -313,7 +314,7 @@
   "footer": {
     "brand": {
       "title": "consulting",
-      "subtitle": "software solutions"
+      "subtitle": "IT solutions"
     },
     "description": "Créons ensemble les solutions digitales de demain. Notre expertise en SaaS et en IA au service de votre réussite.",
     "sections": {

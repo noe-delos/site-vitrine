@@ -86,6 +86,125 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
   const content: ContentItem[] = [
     {
       title: (
+        <TypingAnimation
+          className="text-4xl font-bold text-black"
+          duration={100}
+          text={dictionary.technologies.ai.title}
+        />
+      ),
+      titleImg: '/technologies/scaleway2.png',
+      subtitle: '',
+      rightContent: (
+        <div className="relative w-full h-full rounded-lg">
+          <iframe
+            src="https://player.vimeo.com/video/1015752276?h=2a0d0242ef&autoplay=1&muted=1&loop=1&controls=false"
+            style={{ width: '100%', height: '100%', borderRadius: 10 }}
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+            className="rounded-xl"
+          />
+        </div>
+      ),
+      description: (
+        <div className="space-y-0">
+          <div className="my-0 py-0 grid grid-cols-1 gap-6">
+            <div className="w-full relative">
+              {/* Hero section */}
+              <div className="mb-12">
+                <p className="text-lg text-purple-900">
+                  {dictionary.technologies.ai.subtitle}{' '}
+                  <span className="text-gray-400">{dictionary.technologies.ai.subtitle2}</span>
+                </p>
+              </div>
+
+              {/* Features grid */}
+              <div className="grid grid-cols-2 gap-x-8 gap-y-10 mb-16">
+                {/* Feature 1 */}
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="relative flex items-center gap-0">
+                      <Icon
+                        icon="ri:gemini-fill"
+                        className="relative p-1 size-8 text-white bg-blue-500 rounded-full"
+                      />
+                      <Icon
+                        icon="ri:claude-fill"
+                        className="relative -ml-3 p-1 size-8 text-white bg-[#E4805F] rounded-full"
+                      />
+                      <Icon
+                        icon="simple-icons:openai"
+                        className="relative -ml-3 p-1 size-8 text-white bg-[#48AA83] rounded-full"
+                      />
+                    </div>
+                    <h3 className="font-medium text-xl text-black ml-1">
+                      {dictionary.technologies.ai.LLmApis.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-400">{dictionary.technologies.ai.LLmApis.description}</p>
+                </div>
+
+                {/* Feature 2 */}
+                <div>
+                  <div className="flex items-center gap-2 mb-2 relative">
+                    <h3 className="font-medium text-xl text-black relative">
+                      {dictionary.technologies.ai.advancedFeatures.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-400">
+                    {dictionary.technologies.ai.advancedFeatures.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="relative p-6 bg-gradient-to-br from-purple-900 to-purple-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-purple-100 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden left-60 -top-14">
+              <img
+                src="/technologies/scaleway5.webp"
+                alt="Background"
+                className="w-96 h-96 opacity-10 object-cover"
+              />
+            </div>
+            <div className="relative z-10">
+              <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
+                {dictionary.technologies.ai.infrastructure.title}
+              </h3>
+              <div className="grid grid-cols-2 gap-6">
+                <ul className="space-y-3">
+                  {dictionary.technologies.ai.infrastructure.features
+                    .slice(0, 4)
+                    .map((feature: string, index: number) => (
+                      <>
+                        <li key={index} className="flex items-center gap-3 group">
+                          <Icon
+                            icon={dictionary.technologies.ai.infrastructure.icons[index]}
+                            className="size-5 text-white"
+                          />
+                          <span className="text-gray-300">{feature}</span>
+                        </li>
+                      </>
+                    ))}
+                </ul>
+                <ul className="space-y-3">
+                  {dictionary.technologies.ai.infrastructure.features
+                    .slice(4)
+                    .map((feature: string, index: number) => (
+                      <li key={index} className="flex items-center gap-3 group">
+                        <Icon
+                          icon={dictionary.technologies.ai.infrastructure.icons[index + 4]}
+                          className="size-5 text-white"
+                        />
+                        <span className="text-gray-300">{feature}</span>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: (
         <p className="text-4xl font-bold">
           {dictionary.technologies.data.title.part1}{' '}
           <span className="bg-gradient-to-r from-black to-green-500 inline-block text-transparent bg-clip-text">
@@ -197,125 +316,6 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                     .map((feature: string, index: number) => (
                       <li key={index} className="flex items-center gap-3 group">
                         <Icon icon="radix-icons:dot-filled" className="size-6 text-green-400" />
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: (
-        <TypingAnimation
-          className="text-4xl font-bold text-black"
-          duration={100}
-          text={dictionary.technologies.ai.title}
-        />
-      ),
-      titleImg: '/technologies/scaleway2.png',
-      subtitle: '',
-      rightContent: (
-        <div className="relative w-full h-full rounded-lg">
-          <iframe
-            src="https://player.vimeo.com/video/1015752276?h=2a0d0242ef&autoplay=1&muted=1&loop=1&controls=false"
-            style={{ width: '100%', height: '100%', borderRadius: 10 }}
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-            className="rounded-xl"
-          />
-        </div>
-      ),
-      description: (
-        <div className="space-y-0">
-          <div className="my-0 py-0 grid grid-cols-1 gap-6">
-            <div className="w-full relative">
-              {/* Hero section */}
-              <div className="mb-12">
-                <p className="text-lg text-purple-900">
-                  {dictionary.technologies.ai.subtitle}{' '}
-                  <span className="text-gray-400">{dictionary.technologies.ai.subtitle2}</span>
-                </p>
-              </div>
-
-              {/* Features grid */}
-              <div className="grid grid-cols-2 gap-x-8 gap-y-10 mb-16">
-                {/* Feature 1 */}
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="relative flex items-center gap-0">
-                      <Icon
-                        icon="ri:gemini-fill"
-                        className="relative p-1 size-8 text-white bg-blue-500 rounded-full"
-                      />
-                      <Icon
-                        icon="ri:claude-fill"
-                        className="relative -ml-3 p-1 size-8 text-white bg-[#E4805F] rounded-full"
-                      />
-                      <Icon
-                        icon="simple-icons:openai"
-                        className="relative -ml-3 p-1 size-8 text-white bg-[#48AA83] rounded-full"
-                      />
-                    </div>
-                    <h3 className="font-medium text-xl text-black ml-1">
-                      {dictionary.technologies.ai.LLmApis.title}
-                    </h3>
-                  </div>
-                  <p className="text-gray-400">{dictionary.technologies.ai.LLmApis.description}</p>
-                </div>
-
-                {/* Feature 2 */}
-                <div>
-                  <div className="flex items-center gap-2 mb-2 relative">
-                    <h3 className="font-medium text-xl text-black relative">
-                      {dictionary.technologies.ai.advancedFeatures.title}
-                    </h3>
-                  </div>
-                  <p className="text-gray-400">
-                    {dictionary.technologies.ai.advancedFeatures.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="relative p-6 bg-gradient-to-br from-purple-900 to-purple-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-purple-100 overflow-hidden">
-            <div className="absolute inset-0 overflow-hidden left-60 -top-14">
-              <img
-                src="/technologies/scaleway5.webp"
-                alt="Background"
-                className="w-96 h-96 opacity-10 object-cover"
-              />
-            </div>
-            <div className="relative z-10">
-              <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
-                {dictionary.technologies.ai.infrastructure.title}
-              </h3>
-              <div className="grid grid-cols-2 gap-6">
-                <ul className="space-y-3">
-                  {dictionary.technologies.ai.infrastructure.features
-                    .slice(0, 4)
-                    .map((feature: string, index: number) => (
-                      <>
-                        <li key={index} className="flex items-center gap-3 group">
-                          <Icon
-                            icon={dictionary.technologies.ai.infrastructure.icons[index]}
-                            className="size-5 text-white"
-                          />
-                          <span className="text-gray-300">{feature}</span>
-                        </li>
-                      </>
-                    ))}
-                </ul>
-                <ul className="space-y-3">
-                  {dictionary.technologies.ai.infrastructure.features
-                    .slice(4)
-                    .map((feature: string, index: number) => (
-                      <li key={index} className="flex items-center gap-3 group">
-                        <Icon
-                          icon={dictionary.technologies.ai.infrastructure.icons[index + 4]}
-                          className="size-5 text-white"
-                        />
                         <span className="text-gray-300">{feature}</span>
                       </li>
                     ))}

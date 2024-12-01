@@ -291,9 +291,10 @@
     "cta": "Contact us"
   },
   "header": {
+    "rdv": "Book a call",
     "brand": {
       "title": "Consulting",
-      "subtitle": "software solutions"
+      "subtitle": "IT solutions"
     },
     "navigation": {
       "home": "Home",
@@ -308,7 +309,7 @@
   "footer": {
     "brand": {
       "title": "consulting",
-      "subtitle": "software solutions"
+      "subtitle": "IT solutions"
     },
     "description": "Let's create tomorrow's digital solutions together. Our expertise in SaaS and AI at the service of your success.",
     "sections": {

@@ -14,6 +14,7 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
   // Updated navItems to include language prefix
   const navItems = [
     { label: dictionary.header.navigation.home, href: `/${lang}` },
+    { label: 'Services', href: `/${lang}/services` },
     { label: dictionary.header.navigation.team, href: `/${lang}/team` },
     {
       label: dictionary.header.navigation.portfolio,
@@ -163,15 +164,46 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
               <div className="absolute inset-0 border-2 border-[#7066CB] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500" />
             </motion.button>
 
-            <button
-              className="relative overflow-hidden px-4 py-1.5 flex flex-row items-center gap-2 rounded-lg group text-white bg-[#0869FA] hover:bg-[#2e7df3]"
+            <motion.button
+              className="relative overflow-hidden px-6 py-1.5 rounded-lg group border-2 border-[#7066CB]/30"
+              whileTap={{ scale: 0.98 }}
               onClick={() => (window.location.href = 'https://calendly.com/contact-ks-entreprise')}
             >
-              <img src="/en/logo/calendly.png" alt="Calendly logo" className="size-4" />
-              <span className="relative font-medium text-white transition-colors duration-500">
-                Calendly
+              <div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out" />
+
+              <motion.div
+                className="absolute inset-0 bg-white"
+                initial={false}
+                animate={{
+                  x: ['0%', '100%'],
+                  opacity: [1, 0],
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: 'easeInOut',
+                }}
+              />
+
+              <span className="relative font-medium text-gray-900 group-hover:text-white transition-colors duration-500">
+                {dictionary.header.rdv}
               </span>
-            </button>
+
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  animate={{
+                    x: ['-100%', '100%'],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 1.5,
+                    ease: 'linear',
+                  }}
+                />
+              </div>
+
+              <div className="absolute inset-0 border-2 border-[#7066CB] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500" />
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}

@@ -7,7 +7,7 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
     <div className="min-h-screen bg-white text-gray-900 py-2 px-4 md:px-8">
       <div className="max-w-[90rem] mx-auto relative">
         {/* Left image - absolute positioned */}
-        <div className="hidden lg:block absolute left-[1rem] top-32">
+        <div className="hidden lg:block absolute left-[1rem] top-64">
           <img
             src="/en/logo/openai.png"
             alt={dictionary.whyUs.leftImageAlt}
@@ -16,7 +16,7 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
         </div>
 
         {/* Right image - absolute positioned */}
-        <div className="hidden lg:block absolute right-3 top-32">
+        <div className="hidden lg:block absolute right-3 top-0">
           <img
             src="/en/logo/transparent-logo.png"
             alt={dictionary.whyUs.rightImageAlt}
@@ -35,9 +35,7 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
             </h1>
             <p className="text-lg">
               {dictionary.whyUs.heroText}{' '}
-              <span className="text-gray-400">
-                {dictionary.whyUs.heroSubtext}
-              </span>
+              <span className="text-gray-400">{dictionary.whyUs.heroSubtext}</span>
             </p>
           </div>
 
@@ -51,25 +49,16 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
                   {dictionary.whyUs.features.expertise.title}
                 </h3>
               </div>
-              <p className="text-gray-400">
-                {dictionary.whyUs.features.expertise.description}
-              </p>
+              <p className="text-gray-400">{dictionary.whyUs.features.expertise.description}</p>
             </div>
 
             {/* Feature 2 */}
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Icon
-                  icon="healthicons:artificial-intelligence"
-                  className="size-6"
-                />
-                <h3 className="font-medium text-gray-900">
-                  {dictionary.whyUs.features.ai.title}
-                </h3>
+                <Icon icon="healthicons:artificial-intelligence" className="size-6" />
+                <h3 className="font-medium text-gray-900">{dictionary.whyUs.features.ai.title}</h3>
               </div>
-              <p className="text-gray-400">
-                {dictionary.whyUs.features.ai.description}
-              </p>
+              <p className="text-gray-400">{dictionary.whyUs.features.ai.description}</p>
             </div>
 
             {/* Feature 3 */}
@@ -80,25 +69,18 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
                   {dictionary.whyUs.features.innovation.title}
                 </h3>
               </div>
-              <p className="text-gray-400">
-                {dictionary.whyUs.features.innovation.description}
-              </p>
+              <p className="text-gray-400">{dictionary.whyUs.features.innovation.description}</p>
             </div>
 
             {/* Feature 4 */}
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Icon
-                  icon="fluent:people-community-16-filled"
-                  className="size-5"
-                />
+                <Icon icon="fluent:people-community-16-filled" className="size-5" />
                 <h3 className="font-medium text-gray-900">
                   {dictionary.whyUs.features.support.title}
                 </h3>
               </div>
-              <p className="text-gray-400">
-                {dictionary.whyUs.features.support.description}
-              </p>
+              <p className="text-gray-400">{dictionary.whyUs.features.support.description}</p>
             </div>
           </div>
 
@@ -109,9 +91,7 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
             </p>
             <div
               className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
-              onClick={() =>
-                window.open('https://www.spliiit.com/en', '_blank')
-              }
+              onClick={() => window.open('https://www.spliiit.com/en', '_blank')}
               role="link"
               aria-label={dictionary.whyUs.spliiitLinkAriaLabel}
             >

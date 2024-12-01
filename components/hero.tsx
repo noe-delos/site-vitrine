@@ -11,17 +11,32 @@ import React from 'react';
 const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
     <div className="flex-1 space-y-6 lg:space-y-8 px-4 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0">
-      <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-        <span>{dictionary.hero.title.part1} </span>
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
-          {dictionary.hero.title.part2}.
-        </span>
-        <br />
-        {dictionary.hero.title.part3} {dictionary.hero.title.part4}
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
-          {dictionary.hero.title.part5}.
-        </span>
-        <br />
+      <h1 className="text-5xl  sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight flex flex-col h-fit">
+        <div className="flex flex-row ">
+          <span>{dictionary.hero.title.part1} </span>
+          <span className="bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500 flex items-center">
+            {dictionary.hero.title.part2}
+          </span>
+          <img
+            src="/fr/hero/aiStar.png"
+            alt=""
+            className="size-4 ml-1 mb-2 self-end bottom-0 object-contain"
+          />
+        </div>
+        <div>
+          {dictionary.hero.title.part3}
+          <div className="flex flex-row">
+            {dictionary.hero.title.part4}
+            <span className="ml-4 bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+              {dictionary.hero.title.part5}
+            </span>
+            <img
+              src="/fr/hero/aiStar.png"
+              alt=""
+              className="size-4 ml-1 mb-2 self-end bottom-0 object-contain"
+            />
+          </div>
+        </div>
       </h1>
 
       <p className="text-base lg:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
@@ -198,7 +213,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
               <div className="relative w-[35vw] h-[28vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
                 <Image
-                  src={`/hero/hero${index}.png`}
+                  src={`/fr/hero/hero${index}.png`}
                   alt="Hero illustration"
                   fill
                   className={cn('object-cover')}
@@ -209,7 +224,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
             <div className="relative w-[40vw] h-[28vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] bg-white rounded-2xl overflow-hidden shadow-2xl">
               <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
               <Image
-                src={`/hero/hero${index}.png`}
+                src={`/en/hero/hero${index}.png`}
                 alt="Hero illustration"
                 fill
                 className={cn('object-cover')}

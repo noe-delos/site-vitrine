@@ -138,7 +138,7 @@ const AnimatedHeroSection = ({ dictionary, lang }: { dictionary: any; lang: stri
           <span>{dictionary.team.title.part1}</span>
           <span
             className={cn(
-              'bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent',
+              'bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent',
               lang === 'en' && 'ml-3'
             )}
           >

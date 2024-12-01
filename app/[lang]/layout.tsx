@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react';
+
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import React from 'react';
@@ -45,6 +47,7 @@ const Layout: React.FC<LayoutProps> = async ({ children, params }) => {
   return (
     <html lang={params.lang}>
       <body className={`${airbnbCereal.variable} font-sans antialiased`}>
+        <Analytics />
         <div className="min-h-screen bg-gray-50">
           <Header dictionary={dictionary} lang={params.lang} />
           <main className="pt-16">{children}</main>
