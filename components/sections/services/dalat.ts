@@ -1,100 +1,121 @@
 export function getServiceData(dictionnary: any) {
-  const serviceData1 = {
-    label: 'Mobile App',
-    title: 'Powerful Features for Your Mobile Experience',
-    description:
-      'Access your courses anytime, anywhere with our feature-rich mobile application. Learn at your own pace with offline access and interactive content.',
-    features: [
-      { icon: 'material-symbols:offline-pin', text: 'Offline Access' },
-      { icon: 'material-symbols:quiz', text: 'Interactive Quizzes' },
-      { icon: 'material-symbols:download', text: 'Course Downloads' },
-      { icon: 'material-symbols:notifications', text: 'Push Notifications' },
-      { icon: 'material-symbols:track-changes', text: 'Progress Tracking' },
-      { icon: 'material-symbols:message', text: 'In-App Messaging' },
-    ],
-    imageSrc: '/fr/aisaas.png',
-  };
+	const serviceData1 = {
+		label: 'Mobile App',
+		title: 'Fonctionnalités Puissantes pour Commercialiser votre IA',
+		description:
+			"Transformez votre modèle d'IA en produit SaaS professionnel grâce à notre plateforme complète et personnalisable.",
+		features: [
+			{
+				icon: 'material-symbols:offline-pin',
+				text: 'Interface Client Personnalisée',
+			},
+			{
+				icon: 'material-symbols:quiz',
+				text: 'Gestion des Utilisateurs & Rôles',
+			},
+			{ icon: 'material-symbols:download', text: 'Tableau de Bord Analytics' },
+			{ icon: 'material-symbols:notifications', text: 'API Sécurisée' },
+			{
+				icon: 'material-symbols:track-changes',
+				text: 'Système de Paiement Intégré',
+			},
+			{ icon: 'material-symbols:message', text: 'Support Technique Dédié' },
+		],
+		imageSrc: '/fr/aisaas.png',
+	};
 
-  const serviceData2 = {
-    label: 'Learning Platform',
-    title: 'Enhanced Learning Experience',
-    description:
-      'Dive into an immersive learning environment with our comprehensive platform. Engage with interactive content and track your progress effortlessly.',
-    features: [
-      { icon: 'material-symbols:school', text: 'Expert-Led Courses' },
-      { icon: 'material-symbols:grade', text: 'Certificate Programs' },
-      { icon: 'material-symbols:group', text: 'Community Learning' },
-      { icon: 'material-symbols:schedule', text: 'Flexible Schedule' },
-      { icon: 'material-symbols:analytics', text: 'Detailed Analytics' },
-      { icon: 'material-symbols:support', text: '24/7 Support' },
-    ],
-    imageSrc: '/fr/aisystems.png',
-  };
+	const serviceData2 = {
+		label: 'Learning Platform',
+		title: 'Architecture Technique Robuste',
+		description:
+			"Bénéficiez d'une infrastructure technique complète et évolutive pour déployer votre modèle d'IA en toute sérénité. Notre architecture cloud native garantit performance, sécurité et fiabilité.",
+		features: [
+			{ icon: 'material-symbols:school', text: 'Architecture Cloud Native' },
+			{
+				icon: 'material-symbols:grade',
+				text: 'Équilibrage de Charge Automatique',
+			},
+			{ icon: 'material-symbols:group', text: 'Monitoring en Temps Réel' },
+			{ icon: 'material-symbols:schedule', text: 'Sécurité Enterprise-Grade' },
+			{ icon: 'material-symbols:analytics', text: 'Scalabilité Dynamique' },
+			{ icon: 'material-symbols:support', text: 'Support Technique 24/7' },
+		],
+		imageSrc: '/fr/aisystems.png',
+	};
 
-  return [serviceData1, serviceData2];
+	return [serviceData1, serviceData2];
 }
 
 export function getStepData(dictionnary: any) {
-  const steps = [
-    {
-      number: '01.',
-      title: 'Analyse initiale',
-      description:
-        'Compréhension de vos processus métiers actuels et identification des vrais points de douleur',
-    },
-    {
-      number: '02.',
-      title: 'Co-construction',
-      description: 'Élaboration collaborative des solutions',
-    },
-    {
-      number: '03.',
-      title: 'Conception sur mesure',
-      description: 'Développement personnalisé selon vos besoins',
-    },
-    {
-      number: '04.',
-      title: 'Déploiement',
-      description: 'Mise en production et support continu.',
-    },
-    {
-      number: '05.',
-      title: 'Accompagnement',
-      description: 'Support continu et optimisation',
-    },
-  ];
+	const steps = [
+		{
+			number: '01.',
+			title: 'Analyse initiale',
+			description:
+				'Compréhension de vos processus métiers actuels et identification des vrais points de douleur',
+		},
+		{
+			number: '02.',
+			title: 'Co-construction',
+			description:
+				"Définition collaborative des fonctionnalités essentielles et de l'expérience utilisateur pour maximiser la valeur de votre IA",
+		},
+		{
+			number: '03.',
+			title: 'Conception sur mesure',
+			description:
+				"Développement d'une interface utilisateur intuitive et d'une architecture technique robuste adaptée à votre modèle d'IA",
+		},
+		{
+			number: '04.',
+			title: 'Déploiement',
+			description:
+				'Mise en production sécurisée de votre solution avec tests approfondis et monitoring en temps réel',
+		},
+		{
+			number: '05.',
+			title: 'Accompagnement',
+			description:
+				'Support technique continu et optimisation des performances pour assurer la croissance de votre solution',
+		},
+	];
 
-  return steps;
+	return steps;
 }
 
 export function getFAQData(dictionnary: any) {
-  const faqData = [
-    {
-      question: "Qu'est ce qui différencie Stema Partners de ses concurrents ?",
-      answer:
-        "Notre approche unique combinent expertise métier et intelligence artificielle nous permet d'offrir des solutions sur mesure avec un ROI garanti.",
-    },
-    {
-      question: 'Quels sont les outils IA que vous déployez chez vos clients ?',
-      answer:
-        "Nous utilisons une variété d'outils d'IA adaptés aux besoins spécifiques de chaque client, incluant des solutions de traitement du langage naturel, d'analyse prédictive et d'automatisation intelligente.",
-    },
-    {
-      question: "L'IA présente t'elle des risques pour les entreprises ?",
-      answer:
-        "Comme toute technologie, l'IA présente des risques qui doivent être gérés. Nous accompagnons nos clients dans l'identification et la mitigation de ces risques tout en maximisant les bénéfices.",
-    },
-    {
-      question: 'Comment garantissons-nous un ROI avec la méthode STEMA ?',
-      answer:
-        "Notre méthodologie de co-construction comprenant une phase d'analyse approfondie et de mesure continue des résultats, permettant d'ajuster notre approche pour garantir un retour sur investissement optimal.",
-    },
-    {
-      question: 'Comment adaptons-nous nos solutions aux spécificités de chaque entreprise ?',
-      answer:
-        'Nous réalisons une analyse détaillée des processus et besoins spécifiques de chaque entreprise pour proposer des solutions personnalisées et parfaitement adaptées.',
-    },
-  ];
+	const faqData = [
+		{
+			question:
+				"Quels avantages offre notre approche de développement SAAS pour l'IA ?",
+			answer:
+				"Notre approche unique combine expertise technique et vision business. Contrairement aux agences web classiques, nous sommes spécialisés dans la transformation de modèles d'IA en produits commerciaux. Notre plateforme SaaS accélère considérablement le développement tout en garantissant qualité et évolutivité. Vous gagnez 6 à 12 mois de développement et pouvez vous concentrer sur votre expertise IA pendant que nous gérons toute l'infrastructure technique. Notre solution inclut tout le nécessaire : interface utilisateur, gestion des accès, paiements, sécurité et monitoring.",
+		},
+		{
+			question:
+				"Comment intégrons-nous votre modèle d'IA dans une solution commerciale complète ?",
+			answer:
+				"Notre processus d'intégration est conçu pour être simple et efficace. Nous commençons par analyser les spécifications techniques de votre modèle d'IA et vos besoins business. Ensuite, nous développons une API sécurisée pour communiquer avec votre modèle, créons une interface utilisateur intuitive, et mettons en place toute l'infrastructure nécessaire (authentification, paiements, analytics). Notre architecture modulaire permet d'intégrer tout type de modèle d'IA tout en garantissant performances et scalabilité. Le déploiement est progressif avec des phases de test pour assurer une transition en douceur.",
+		},
+		{
+			question:
+				'Quelles garanties techniques et sécurité offrons-nous pour votre solution ?',
+			answer:
+				'La sécurité et la fiabilité sont au cœur de notre approche. Notre infrastructure est construite sur des standards enterprise-grade : chiffrement de bout en bout, authentification multi-facteurs, monitoring 24/7, sauvegardes automatiques, et conformité RGPD. Nous effectuons des audits de sécurité réguliers et suivons les meilleures pratiques du secteur. Notre architecture cloud native assure une disponibilité optimale et peut gérer des pics de charge importants. De plus, nous fournissons des tableaux de bord détaillés pour suivre les performances et la sécurité en temps réel.',
+		},
+		{
+			question:
+				"En combien de temps votre modèle d'IA peut-il être mis sur le marché ?",
+			answer:
+				"Notre approche standardisée et notre plateforme éprouvée nous permettent d'être très efficaces. Pour une solution standard, le délai typique est de 8 à 12 semaines entre le début du projet et la mise en production. Ce délai se décompose en : 2 semaines d'analyse et spécifications, 4-6 semaines de développement, 2 semaines de tests et optimisation, et 1-2 semaines de déploiement progressif. Pour des projets plus complexes, nous définissons un planning précis lors de la phase d'analyse. Notre objectif est toujours de vous faire gagner plusieurs mois par rapport à un développement traditionnel.",
+		},
+		{
+			question:
+				"Comment personnalisons-nous l'interface et l'expérience utilisateur pour vos clients ?",
+			answer:
+				"La personnalisation est essentielle pour le succès commercial de votre solution. Notre processus de design commence par une analyse approfondie de vos utilisateurs finaux et de leurs besoins. Nous créons des interfaces sur mesure qui reflètent votre marque et optimisent l'utilisation de votre IA. Nos interfaces sont responsives (mobile et desktop) et peuvent s'adapter à différents contextes d'utilisation. Nous incluons des fonctionnalités avancées comme la personnalisation des rapports, les tableaux de bord configurables, et différents niveaux d'accès selon les profils utilisateurs. Chaque élément est testé pour garantir une expérience utilisateur optimale.",
+		},
+	];
 
-  return faqData;
+	return faqData;
 }
