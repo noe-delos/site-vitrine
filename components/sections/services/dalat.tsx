@@ -16,17 +16,17 @@ export function getServiceData(dictionary: any) {
       },
       {
         icon: 'material-symbols:lock',
-        color: 'text-[#000000]',
+        color: 'text-[#000001]',
         text: dictionary.services.sections.saas.features[1].text,
       },
       {
         icon: 'mdi:twitter',
         text: dictionary.services.sections.saas.features[2].text,
-        color: 'text-[#00B6FF]',
+        color: 'text-[#00C3F8]',
       },
       {
         icon: 'duo-icons:dashboard',
-        color: 'text-[#E68E00]',
+        color: 'text-[#F88B00]',
         text: dictionary.services.sections.saas.features[3].text,
       },
       {
@@ -35,7 +35,7 @@ export function getServiceData(dictionary: any) {
       },
       {
         icon: 'oui:stats',
-        color: 'text-[#000000]',
+        color: 'text-[#000001]',
         text: dictionary.services.sections.saas.features[5].text,
       },
     ],
