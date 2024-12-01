@@ -25,8 +25,6 @@ export function getServiceData(dictionnary: any) {
       { icon: 'material-symbols:grade', text: 'Certificate Programs' },
       { icon: 'material-symbols:group', text: 'Community Learning' },
       { icon: 'material-symbols:schedule', text: 'Flexible Schedule' },
-      { icon: 'material-symbols:analytics', text: 'Detailed Analytics' },
-      { icon: 'material-symbols:support', text: '24/7 Support' },
     ],
     imageSrc: '/fr/aisystems.png',
   };
