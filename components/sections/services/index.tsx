@@ -10,9 +10,12 @@ interface ServicesSectionProps {
   label: string;
   title: string;
   description: string;
+  description2?: React.ReactNode;
   features: Array<{
     icon: string;
+    color?: string;
     text: string;
+    link?: string;
   }>;
   imageSrc: string;
 }
@@ -22,17 +25,10 @@ interface FAQItem {
   answer: string;
 }
 
-const HeroSection = () => {
+const HeroSection = ({ dictionary }: { dictionary: any }) => {
   const [expandedSection, setExpandedSection] = React.useState<'grapho' | 'vectra' | null>(
     'grapho'
   );
-
-  const stats = [
-    { value: '150k+', label: 'Active Users' },
-    { value: '4.9', label: 'Rating out of 5' },
-    { value: '99k+', label: 'Positive Reviews' },
-    { value: '85k+', label: 'Users Satisfied' },
-  ];
 
   return (
     <div className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-indigo-50 to-white">
@@ -51,9 +47,9 @@ const HeroSection = () => {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md"
             >
-              <Icon icon="material-symbols:rocket-launch" className="text-indigo-600" />
+              <Icon icon="mdi:magic" className="text-indigo-600" />
               <span className="text-sm font-medium text-gray-600">
-                Solutions d'Intelligence Artificielle
+                {dictionary.services.hero.tagline}
               </span>
             </motion.div>
 
@@ -63,7 +59,18 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl lg:text-6xl font-bold leading-tight"
             >
-              Transformez votre <span className="text-indigo-600">entreprise</span> avec l'IA
+              {dictionary.services.hero.title.part1}{' '}
+              <div className="flex flex-row gap-2 mt-1">
+                <span className="bg-clip-text pr-2 text-transparent pb-2 bg-gradient-to-r from-[#7066CB] to-blue-500">
+                  {dictionary.services.hero.title.part2}
+                </span>
+                {dictionary.services.hero.title.part3}
+                <img
+                  src="/fr/hero/aiStar.png"
+                  alt=""
+                  className="size-4 mb-4 self-end bottom-0 object-contain"
+                />
+              </div>
             </motion.h1>
 
             <div className="h-[10rem] mt-4">
@@ -82,17 +89,18 @@ const HeroSection = () => {
                       expandedSection === 'grapho' ? 'bg-indigo-600' : 'bg-gray-200'
                     }`}
                   />
-                  <h2 className="text-2xl font-medium">Grapho AI</h2>
+                  <h2 className="text-xl font-medium">
+                    {dictionary.services.hero.sections.saas.title}
+                  </h2>
                   <AnimatePresence>
                     {expandedSection === 'grapho' && (
                       <motion.p
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="text-gray-500 mt-2"
+                        className="text-gray-400 text-sm mt-2"
                       >
-                        That's Why We Leverage AI to Create Impactful, Lasting Experiences that
-                        Engage, and Transform Every Interaction.
+                        {dictionary.services.hero.sections.saas.description}
                       </motion.p>
                     )}
                   </AnimatePresence>
@@ -114,16 +122,18 @@ const HeroSection = () => {
                       expandedSection === 'vectra' ? 'bg-indigo-600' : 'bg-gray-200'
                     }`}
                   />
-                  <h2 className="text-2xl font-medium">VectraOps</h2>
+                  <h2 className="text-2xl font-medium">
+                    {dictionary.services.hero.sections.custom.title}
+                  </h2>
                   <AnimatePresence>
                     {expandedSection === 'vectra' && (
                       <motion.p
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="text-gray-500 mt-2"
+                        className="text-gray-400 text-sm mt-2"
                       >
-                        34% increase in online sales.
+                        {dictionary.services.hero.sections.custom.description}
                       </motion.p>
                     )}
                   </AnimatePresence>
@@ -137,14 +147,14 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              {stats.map((stat, index) => (
+              {dictionary.services.hero.stats.map((stat: any, index: number) => (
                 <div key={index} className="text-center">
                   <div className="text-3xl font-bold mb-1">{stat.value}</div>
                   <div className="text-gray-500 text-sm">{stat.label}</div>
                 </div>
               ))}
               <div
-                className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-gray-200 to-transparent"
+                className="absolute left-[46%] top-0 h-full w-px bg-gradient-to-b from-transparent via-gray-400 to-transparent"
                 style={{ transform: 'translateX(-50%)' }}
               />
             </motion.div>
@@ -170,6 +180,7 @@ const HeroSection = () => {
     </div>
   );
 };
+
 const FAQSection = ({ dictionary }: { dictionary: any }) => {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
@@ -192,7 +203,7 @@ const FAQSection = ({ dictionary }: { dictionary: any }) => {
                 <span>FAQ</span>
               </div>
               <h2 className="text-[2.5rem] leading-[1.1] font-semibold">
-                Vos questions
+                Questions
                 <br />
                 fréquentes
               </h2>
@@ -277,17 +288,16 @@ const ProgressSection = ({ dictionary }: { dictionary: any }) => {
       <div className="mb-12">
         <div className="inline-flex items-center gap-2 bg-indigo-50 px-3 py-1 rounded-full">
           <Icon icon="material-symbols:magic-button" className="text-indigo-600" />
-          <span className="text-sm font-medium text-indigo-600">Notre méthode</span>
+          <span className="text-sm font-medium text-indigo-600">{dictionary.bento.approach}</span>
         </div>
-        <h2 className="text-4xl font-bold mt-4 mb-2">60% métier, 40% IA</h2>
-        <p className="text-lg text-gray-600">
-          Cinq étapes pour un ROI garanti : analyse, co-construction, conception sur mesure,
-          déploiement, et accompagnement.
-        </p>
+        <h2 className="text-4xl font-bold mt-4 mb-2">
+          {dictionary.bento.title.part1} {dictionary.bento.title.part2}
+        </h2>
+        <p className="text-lg text-gray-600">{dictionary.bento.description}</p>
       </div>
 
-      <div key={key} className="grid grid-cols-5 gap-6">
-        {steps.map((step, index) => (
+      <div key={key} className="grid grid-cols-5 gap-6 h-[10rem]">
+        {steps.map((step: any, index: any) => (
           <div key={index} className="flex flex-col space-y-4">
             <div className="h-1 bg-gray-100 rounded-full overflow-hidden relative">
               {activeStep === index && (
@@ -334,6 +344,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
   label,
   title,
   description,
+  description2,
   features,
   imageSrc,
 }) => {
@@ -344,23 +355,74 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
     <div className="w-full max-w-7xl mx-auto px-4 py-20">
       <div className="flex flex-col lg:flex-row items-center gap-12">
         <div className={`w-full lg:w-1/2 ${contentOrder}`}>
-          <div className="space-y-6">
+          <div className="space-y-10">
             <span className="text-sm font-medium text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
               {label}
             </span>
 
-            <h2 className="text-4xl font-bold text-gray-900">{title}</h2>
+            <h2 className="text-4xl tracking-wide font-bold text-gray-900">{title}</h2>
 
-            <p className="text-lg text-gray-600">{description}</p>
+            <p className="text-lg text-gray-500">{description}</p>
 
+            {description2 && description2}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <Icon icon={feature.icon} className="w-6 h-6 text-indigo-600 flex-shrink-0" />
-                  <span className="text-gray-700">{feature.text}</span>
+                <div
+                  key={index}
+                  className={`flex items-start gap-3 ${feature.link ? 'cursor-pointer' : ''}`}
+                  onClick={() => {
+                    if (feature.link) window.location.href = feature.link;
+                  }}
+                >
+                  <Icon
+                    icon={feature.icon}
+                    className={'size-5 text-indigo-600 flex-shrink-0 ' + feature.color}
+                  />
+                  <span className="text-gray-600 tracking-wide">{feature.text}</span>
                 </div>
               ))}
             </div>
+
+            <br className="pb-5" />
+            {!imageOnLeft && (
+              <div className="flex items-center justify-center gap-5">
+                <div className="w-12 h-12 rounded-full bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)] flex items-center justify-center">
+                  <img
+                    src="https://seeklogo.com/images/M/mistral-ai-icon-logo-B3319DCA6B-seeklogo.com.png"
+                    alt="Circle 1"
+                    className="size-6 opacity-45 object-contain"
+                  />
+                </div>
+                <div className="w-16 h-16 rounded-full bg-white shadow-[0_0_20px_rgba(0,0,0,0.12)] flex items-center justify-center">
+                  <img
+                    src="/fr/services/meta.png"
+                    alt="Circle 2"
+                    className="w-fit h-6 opacity-85 object-contain"
+                  />
+                </div>
+                <div className="w-20 h-20 rounded-full bg-white shadow-[0_0_25px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                  <img
+                    src="https:static-00.iconduck.com/assets.00/openai-icon-2021x2048-4rpe5x7n.png"
+                    alt="Circle 3"
+                    className="size-10 object-contain"
+                  />
+                </div>
+                <div className="w-16 h-16 rounded-full bg-white shadow-[0_0_20px_rgba(0,0,0,0.12)] flex items-center justify-center">
+                  <img
+                    src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png"
+                    alt="Circle 4"
+                    className="size-8 opacity-85 object-contain"
+                  />
+                </div>
+                <div className="w-12 h-12 rounded-full bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)] flex items-center justify-center">
+                  <img
+                    src="/fr/services/claude.png"
+                    alt="Circle 5"
+                    className="size-6 opacity-60 object-contain"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -379,7 +441,7 @@ export default function ServicesPage({ dictionary }: { dictionary: any }) {
 
   return (
     <div className="min-h-screen bg-white space-y-20 pb-[20rem]">
-      <HeroSection />
+      <HeroSection dictionary={dictionary} />
       <ServicesSection imageOnLeft={true} {...serviceData1} />
       <ServicesSection imageOnLeft={false} {...serviceData2} />
       <ProgressSection dictionary={dictionary} />

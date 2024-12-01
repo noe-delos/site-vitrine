@@ -481,5 +481,158 @@
       "author": "Florian de Milleville",
       "role": "Chef de projet, FDJ group"
     }
+  },
+  "services": {
+    "hero": {
+      "tagline": "Nos enjeux",
+      "title": {
+        "part1": "Concrétisez vos",
+        "part2": "projets",
+        "part3": "avec l'IA"
+      },
+      "sections": {
+        "saas": {
+          "title": "Logiciels Saas IA",
+          "description": "Nous vous proposons des solutions Saas entièrement prêtes à l'emploi contenant toutes les fonctionnalités nécessaires pour répondre à vos besoins."
+        },
+        "custom": {
+          "title": "Solutions sur mesure",
+          "description": "Pour les besoins plus spécifiques nous vous accompagnons dans vos réflexions et développements."
+        }
+      },
+      "stats": [
+        {
+          "value": "30+",
+          "label": "Projets réalisés"
+        },
+        {
+          "value": "5",
+          "label": "Experts certifiés"
+        },
+        {
+          "value": "100%",
+          "label": "Satisfaction client"
+        },
+        {
+          "value": "5+",
+          "label": "Années d'expérience"
+        }
+      ]
+    },
+    "sections": {
+      "saas": {
+        "label": "Solutions SaaS",
+        "title": "Logiciels Saas prêts à l'emploi",
+        "description": "Notre expertise cross technologies nous permet de développer des solutions Saas (Software as a Service) robustes et performantes en un temps record.",
+        "subtitle": "Confiez-nous la réalisation de votre plateforme et consacrez-vous pleinement à votre cœur de métier. Voici quelques exemples d'intégrations que nous proposons :",
+        "features": [
+          {
+            "text": "Système de paiement sécurisés",
+            "link": "https://stripe.com/"
+          },
+          {
+            "text": "Gestion d'utilisateurs et SSO"
+          },
+          {
+            "text": "Intégration d'APIs et SDK diverses"
+          },
+          {
+            "text": "Dashboards et interfaces diverses"
+          },
+          {
+            "text": "Fonctionnalités Realtime (Édition de documents ou chats)"
+          },
+          {
+            "text": "Monitoring de traffic et performance"
+          }
+        ]
+      },
+      "ai": {
+        "label": "Expertise IA",
+        "title": "Solutions IA sur mesure",
+        "description": "Pour les besoins les plus spécifiques ou qui concernent des cas d'usage métier, nous vous proposons des solutions à base d'IA générative pour répondre à vos besoins.",
+        "subtitle": "Notre expérience avec les derniers modèles IA tels que GPT, Claude ou Gemini nous permet de vous donner accès facilement à des technologies très avancées décrites ci-dessous :",
+        "features": [
+          {
+            "text": "OCR (extraction sur images)"
+          },
+          {
+            "text": "Text to Speech"
+          },
+          {
+            "text": "Transcription vocale"
+          },
+          {
+            "text": "Analyse de documents RAG"
+          },
+          {
+            "text": "Language naturel web"
+          },
+          {
+            "text": "Génération de documents"
+          },
+          {
+            "text": "Éditeur de texte intelligent"
+          }
+        ]
+      }
+    },
+    "progress": {
+      "label": "Notre méthode",
+      "title": "Notre Approche pour un projet à succès",
+      "description": "Cinq étapes pour un développement agile : analyse, co-construction, conception sur mesure, déploiement, et accompagnement.",
+      "steps": [
+        {
+          "number": "01.",
+          "title": "Analyse initiale",
+          "description": "Compréhension de vos processus métiers actuels et identification des vrais points de douleur"
+        },
+        {
+          "number": "02.",
+          "title": "Co-construction",
+          "description": "Définition collaborative des fonctionnalités essentielles et de l'expérience utilisateur pour maximiser la valeur de votre IA"
+        },
+        {
+          "number": "03.",
+          "title": "Conception sur mesure",
+          "description": "Développement d'une interface utilisateur intuitive et d'une architecture technique robuste adaptée à votre modèle d'IA"
+        },
+        {
+          "number": "04.",
+          "title": "Déploiement",
+          "description": "Mise en production sécurisée de votre solution avec tests approfondis et monitoring en temps réel"
+        },
+        {
+          "number": "05.",
+          "title": "Accompagnement",
+          "description": "Support technique continu et optimisation des performances pour assurer la croissance de votre solution"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": [
+        {
+          "question": "Quels avantages offre notre approche de développement SAAS pour l'IA ?",
+          "answer": "Notre approche unique combine expertise technique et vision business. Contrairement aux agences web classiques, nous sommes spécialisés dans la transformation de modèles d'IA en produits commerciaux. Notre plateforme SaaS accélère considérablement le développement tout en garantissant qualité et évolutivité."
+        },
+        {
+          "question": "Comment intégrons-nous votre modèle d'IA dans une solution commerciale complète ?",
+          "answer": "Notre processus d'intégration est conçu pour être simple et efficace. Nous commençons par analyser les spécifications techniques de votre modèle d'IA et vos besoins business. Ensuite, nous développons une API sécurisée pour communiquer avec votre modèle."
+        },
+        {
+          "question": "Quelles garanties techniques et sécurité offrons-nous pour votre solution ?",
+          "answer": "La sécurité et la fiabilité sont au cœur de notre approche. Notre infrastructure est construite sur des standards enterprise-grade : chiffrement de bout en bout, authentification multi-facteurs, monitoring 24/7, sauvegardes automatiques, et conformité RGPD."
+        },
+        {
+          "question": "En combien de temps votre modèle d'IA peut-il être mis sur le marché ?",
+          "answer": "Notre approche standardisée et notre plateforme éprouvée nous permettent d'être très efficaces. Pour une solution standard, le délai typique est de 8 à 12 semaines entre le début du projet et la mise en production."
+        },
+        {
+          "question": "Comment personnalisons-nous l'interface et l'expérience utilisateur pour vos clients ?",
+          "answer": "La personnalisation est essentielle pour le succès commercial de votre solution. Notre processus de design commence par une analyse approfondie de vos utilisateurs finaux et de leurs besoins."
+        }
+      ]
+    }
   }
 }

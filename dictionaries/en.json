@@ -476,5 +476,158 @@
       "author": "Florian de Milleville",
       "role": "Project manager, FDJ group"
     }
+  },
+  "services": {
+    "hero": {
+      "tagline": "Our Mission",
+      "title": {
+        "part1": "Elevate your",
+        "part2": "projects",
+        "part3": "with AI"
+      },
+      "sections": {
+        "saas": {
+          "title": "AI SaaS Solutions",
+          "description": "We offer fully-equipped SaaS solutions with all the essential features you need to succeed, ready to deploy right out of the box."
+        },
+        "custom": {
+          "title": "Custom Solutions",
+          "description": "For specialized needs, we provide comprehensive guidance and development support tailored to your specific requirements."
+        }
+      },
+      "stats": [
+        {
+          "value": "30+",
+          "label": "Projects Completed"
+        },
+        {
+          "value": "5",
+          "label": "Certified Experts"
+        },
+        {
+          "value": "100%",
+          "label": "Client Satisfaction"
+        },
+        {
+          "value": "5+",
+          "label": "Years of Experience"
+        }
+      ]
+    },
+    "sections": {
+      "saas": {
+        "label": "SaaS Solutions",
+        "title": "Ready-to-Use SaaS Software",
+        "description": "Our cross-technology expertise enables us to develop robust and high-performance SaaS (Software as a Service) solutions in record time.",
+        "subtitle": "Let us handle your platform development while you focus on your core business. Here are some of the integrations we offer:",
+        "features": [
+          {
+            "text": "Secure Payment Systems",
+            "link": "https://stripe.com/"
+          },
+          {
+            "text": "User Management & SSO"
+          },
+          {
+            "text": "Various API & SDK Integrations"
+          },
+          {
+            "text": "Custom Dashboards & Interfaces"
+          },
+          {
+            "text": "Realtime Features (Document Editing & Chat)"
+          },
+          {
+            "text": "Traffic & Performance Monitoring"
+          }
+        ]
+      },
+      "ai": {
+        "label": "AI Expertise",
+        "title": "Custom AI Solutions",
+        "description": "For specific business use cases and specialized needs, we offer generative AI-based solutions tailored to your requirements.",
+        "subtitle": "Our experience with the latest AI models like GPT, Claude, and Gemini allows us to provide easy access to advanced technologies, including:",
+        "features": [
+          {
+            "text": "OCR (Image Text Extraction)"
+          },
+          {
+            "text": "Text to Speech Conversion"
+          },
+          {
+            "text": "Voice Transcription"
+          },
+          {
+            "text": "RAG Document Analysis"
+          },
+          {
+            "text": "Natural Language Web Interface"
+          },
+          {
+            "text": "Document Generation"
+          },
+          {
+            "text": "Intelligent Text Editor"
+          }
+        ]
+      }
+    },
+    "progress": {
+      "label": "Our Method",
+      "title": "Our Approach to Project Success",
+      "description": "Five steps to agile development: analysis, co-creation, custom design, deployment, and ongoing support.",
+      "steps": [
+        {
+          "number": "01.",
+          "title": "Initial Analysis",
+          "description": "Understanding your current business processes and identifying key pain points"
+        },
+        {
+          "number": "02.",
+          "title": "Co-Creation",
+          "description": "Collaboratively defining essential features and user experience to maximize your AI solution's value"
+        },
+        {
+          "number": "03.",
+          "title": "Custom Design",
+          "description": "Developing an intuitive user interface and robust technical architecture tailored to your AI model"
+        },
+        {
+          "number": "04.",
+          "title": "Deployment",
+          "description": "Secure production launch with comprehensive testing and real-time monitoring"
+        },
+        {
+          "number": "05.",
+          "title": "Ongoing Support",
+          "description": "Continuous technical support and performance optimization to ensure your solution's growth"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "What advantages does our SaaS development approach offer for AI?",
+          "answer": "Our unique approach combines technical expertise with business vision. Unlike traditional web agencies, we specialize in transforming AI models into commercial products. Our SaaS platform significantly accelerates development while ensuring quality and scalability."
+        },
+        {
+          "question": "How do we integrate your AI model into a complete commercial solution?",
+          "answer": "Our integration process is designed to be straightforward and efficient. We begin by analyzing your AI model's technical specifications and business requirements, then develop a secure API for model communication."
+        },
+        {
+          "question": "What technical guarantees and security do we offer for your solution?",
+          "answer": "Security and reliability are core to our approach. Our infrastructure is built on enterprise-grade standards: end-to-end encryption, multi-factor authentication, 24/7 monitoring, automatic backups, and GDPR compliance."
+        },
+        {
+          "question": "How quickly can your AI model be brought to market?",
+          "answer": "Our standardized approach and proven platform enable us to work efficiently. For a standard solution, the typical timeline is 8-12 weeks from project start to production launch."
+        },
+        {
+          "question": "How do we customize the interface and user experience for your clients?",
+          "answer": "Customization is crucial for your solution's commercial success. Our design process begins with a thorough analysis of your end users and their needs."
+        }
+      ]
+    }
   }
 }

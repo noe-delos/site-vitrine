@@ -46,7 +46,7 @@ const getTeamMembers = (lang: string): TeamMember[] => [
         ? "Avec mon expérience en Machine learning et Gen AI je rends l'intelligence artificielle accessible et performante."
         : 'With my experience in Machine Learning and Gen AI, I make artificial intelligence accessible and performant.',
     linkedin: 'https://www.linkedin.com/in/julien-bergerot-68945b194/',
-    schools: [],
+    schools: ['/technologies/polytech.png'],
   },
   {
     name: 'Hugo Pradier',
