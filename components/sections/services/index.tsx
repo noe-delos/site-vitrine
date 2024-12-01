@@ -153,10 +153,6 @@ const HeroSection = ({ dictionary }: { dictionary: any }) => {
                   <div className="text-gray-500 text-sm">{stat.label}</div>
                 </div>
               ))}
-              <div
-                className="absolute left-[46%] top-0 h-full w-px bg-gradient-to-b from-transparent via-gray-400 to-transparent"
-                style={{ transform: 'translateX(-50%)' }}
-              />
             </motion.div>
           </div>
 
