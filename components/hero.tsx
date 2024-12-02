@@ -47,10 +47,10 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
         <p className="text-sm text-gray-500 mb-4 lg:mb-6 self-center">{dictionary.hero.trust}</p>
         <Press
           images={[
-            '/socials/logo0.png',
-            '/socials/logo1.png',
-            '/socials/logo2.png',
-            '/socials/logo3.png',
+            '/fr/socials/logo0.png',
+            '/fr/socials/logo1.png',
+            '/fr/socials/logo2.png',
+            '/fr/socials/logo3.png',
           ]}
           title=""
         />
