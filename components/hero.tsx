@@ -2,6 +2,7 @@
 
 import { ShineBorder } from '@/components/acernity/border';
 import { FollowerPointerCard } from '@/components/acernity/following-pointer';
+import { MarqueeDemo } from '@/components/reviews';
 import Press from '@/components/socials';
 import { cn } from '@/utils/cn';
 import { motion } from 'framer-motion';
@@ -45,15 +46,16 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 
       <div className="pt-8 lg:pt-16 w-full flex flex-col mt-4 lg:mt-8">
         <p className="text-sm text-gray-500 mb-4 lg:mb-6 self-center">{dictionary.hero.trust}</p>
-        <Press
+        <MarqueeDemo />
+        {/* <Press
           images={[
             '/socials/logo0.png',
-            '/socials/logo1.png',
-            '/socials/logo2.png',
+            '/socials/logo4.png',
+            '/socials/logo5.png',
             '/socials/logo3.png',
           ]}
           title=""
-        />
+        /> */}
       </div>
     </div>
   );

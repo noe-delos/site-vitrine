@@ -398,7 +398,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
                 </div>
                 <div className="w-20 h-20 rounded-full bg-white shadow-[0_0_25px_rgba(0,0,0,0.15)] flex items-center justify-center">
                   <img
-                    src="https:static-00.iconduck.com/assets.00/openai-icon-2021x2048-4rpe5x7n.png"
+                    src="/fr/services/chatgpt.png"
                     alt="Circle 3"
                     className="size-10 object-contain"
                   />

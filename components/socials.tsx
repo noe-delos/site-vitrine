@@ -11,9 +11,7 @@ const Press: React.FC<PressProps> = ({ images, title = 'FEATURED IN' }) => {
     <section id="press" className="relative w-full overflow-hidden">
       <div className="py-4 lg:py-0">
         <div className="container mx-auto px-4 md:px-8">
-          <h3 className="text-center text-xs sm:text-sm font-semibold text-gray-500">
-            {title}
-          </h3>
+          <h3 className="text-center text-xs sm:text-sm font-semibold text-gray-500">{title}</h3>
 
           <div className="relative mt-4 lg:mt-6">
             <div className="flex overflow-hidden relative w-full">
@@ -26,7 +24,7 @@ const Press: React.FC<PressProps> = ({ images, title = 'FEATURED IN' }) => {
                       className={cn(
                         'h-6 sm:h-7 lg:h-8 w-auto object-contain',
                         idx === 0 && 'h-4 sm:h-5 lg:h-6',
-                        idx === 2 && 'mb-1 sm:mb-1.5 lg:mb-2',
+                        idx === 2 && 'mb-1 sm:mb-1.5 lg:mb-2'
                       )}
                       alt={`Logo ${idx + 1}`}
                     />
@@ -43,7 +41,7 @@ const Press: React.FC<PressProps> = ({ images, title = 'FEATURED IN' }) => {
                       className={cn(
                         'h-6 sm:h-7 lg:h-8 w-auto object-contain',
                         idx === 0 && 'h-4 sm:h-5 lg:h-6',
-                        idx === 2 && 'mb-1 sm:mb-1.5 lg:mb-2',
+                        idx === 2 && 'mb-1 sm:mb-1.5 lg:mb-2'
                       )}
                       alt={`Logo ${idx + 1}`}
                     />
