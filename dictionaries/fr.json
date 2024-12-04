@@ -167,7 +167,7 @@
       }
     },
     "sites": {
-      "title": "Ne faites pas attendre vos utilisateurs",
+      "title": "Ne faites pas attendre vos utilisateurs.",
       "subtitle": "Les technologies modernes d'aujourd'hui révolutionnent l'expérience web en éliminant toute latence.",
       "subtitle2": "Ces frameworks nouvelle génération préparent l'intégralité du contenu en amont, offrant une navigation aussi réactive qu'une application native. Le résultat ? Une expérience utilisateur premium qui fidélise naturellement vos utilisateurs.",
       "perf": {
@@ -633,6 +633,43 @@
           "answer": "La personnalisation est essentielle pour le succès commercial de votre solution. Notre processus de design commence par une analyse approfondie de vos utilisateurs finaux et de leurs besoins."
         }
       ]
+    }
+  },
+  "aiCarousel": {
+    "title": "L'IA à votre service",
+    "description": "Explorez les possibilités infinies de l'Intelligence Artificielle.",
+    "subdescription": "De l'analyse documentaire à la vision par ordinateur, découvrez comment nos solutions d'IA peuvent transformer vos processus métier, augmenter votre productivité et créer de nouvelles opportunités pour votre entreprise.",
+    "cards": {
+      "documentIntelligence": {
+        "category": "Intelligence Documentaire",
+        "title": "Dialoguez avec vos Documents",
+        "description": "Posez des questions en langage naturel à votre base documentaire et obtenez des réponses précises instantanément."
+      },
+      "chatbots": {
+        "category": "Bots vocaux intelligents",
+        "title": "Agents Conversationnels",
+        "description": "Automatisez votre service client avec des assistants vocaux IA qui comprennent et répondent en langage naturel."
+      },
+      "computerVision": {
+        "category": "Vision par Ordinateur",
+        "title": "L'OCR Nouvelle Génération",
+        "description": "Extrayez automatiquement les données de vos documents, factures et formulaires avec une précision inégalée."
+      },
+      "audioTranscription": {
+        "category": "Transcription Audio",
+        "title": "Speech to Text en Temps Réel",
+        "description": "Transformez automatiquement vos réunions et contenus audio en texte exploitable avec identification des intervenants."
+      },
+      "webIntelligence": {
+        "category": "Web Intelligence",
+        "title": "L'Internet Enrichi par l'IA",
+        "description": "Recherchez et analysez le web en temps réel avec un assistant IA personnalisé."
+      },
+      "translation": {
+        "category": "Traduction Automatique",
+        "title": "Brisez les Barrières Linguistiques",
+        "description": "Communiquez dans plus de 95 langues avec une traduction contextuelle et culturellement adaptée."
+      }
     }
   }
 }

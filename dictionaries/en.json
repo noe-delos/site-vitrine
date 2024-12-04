@@ -629,5 +629,42 @@
         }
       ]
     }
+  },
+  "aiCarousel": {
+    "title": "AI at Your Service",
+    "description": "Unlock the Full Potential of Artificial Intelligence",
+    "subdescription": "From document analysis to computer vision, discover how our AI solutions can streamline your business processes, boost productivity, and create new opportunities for your company.",
+    "cards": {
+      "documentIntelligence": {
+        "category": "Document Intelligence",
+        "title": "Chat with Your Documents",
+        "description": "Ask questions in plain English and get instant, accurate answers from your document database."
+      },
+      "chatbots": {
+        "category": "Conversational AI",
+        "title": "Smart Voice Assistants",
+        "description": "Transform your customer service with AI-powered voice assistants that understand and respond naturally."
+      },
+      "computerVision": {
+        "category": "Computer Vision",
+        "title": "Next-Gen OCR",
+        "description": "Extract data from your documents, invoices, and forms with unmatched accuracy and speed."
+      },
+      "audioTranscription": {
+        "category": "Audio Transcription",
+        "title": "Real-Time Speech to Text",
+        "description": "Automatically convert meetings and audio content into searchable text with speaker identification."
+      },
+      "webIntelligence": {
+        "category": "Web Intelligence",
+        "title": "AI-Enhanced Web Experience",
+        "description": "Search and analyze the web in real-time with your personalized AI assistant."
+      },
+      "translation": {
+        "category": "Automated Translation",
+        "title": "Break Language Barriers",
+        "description": "Communicate across 95+ languages with context-aware, culturally appropriate translations."
+      }
+    }
   }
 }

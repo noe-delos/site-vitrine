@@ -2,6 +2,7 @@ import ContactUs from '@/components/contact-us';
 import Description from '@/components/description';
 import Expertise from '@/components/expertise';
 import Hero from '@/components/hero';
+import { AppleCardsCarouselDemo } from '@/components/sections/hero/carousel';
 import Technologies from '@/components/technologies';
 import {
   default as MobileTechnologies,
@@ -18,6 +19,7 @@ export default async function HomePage({ params }: any) {
       <Hero dictionary={dictionary} />
       <Description dictionary={dictionary} />
       <WhyUsPage dictionary={dictionary} />
+      <AppleCardsCarouselDemo dictionary={dictionary} />
       <Expertise dictionary={dictionary} />
       <div className="md:hidden">
         <MobileTechnologies dictionary={dictionary} />
