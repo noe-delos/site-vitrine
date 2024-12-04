@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Toaster } from 'sonner';
 import '../globals.css';
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 const airbnbCereal = localFont({
   src: [
     {
@@ -48,6 +48,7 @@ const Layout: React.FC<LayoutProps> = async ({ children, params }) => {
     <html lang={params.lang}>
       <body className={`${airbnbCereal.variable} font-sans antialiased`}>
         <Analytics />
+        <SpeedInsights />
         <div className="min-h-screen bg-gray-50">
           <Header dictionary={dictionary} lang={params.lang} />
           <main className="pt-16">{children}</main>
