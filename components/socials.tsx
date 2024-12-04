@@ -24,7 +24,7 @@ const Press: React.FC<PressProps> = ({ images, title = 'FEATURED IN' }) => {
                         height: 'auto',
                         maxHeight: '100%',
                         width: 'auto',
-                        maxWidth: '100px',
+                        maxWidth: idx === 2 ? '160px' : '100px',
                       }}
                       alt={`Logo ${idx + 1}`}
                     />
@@ -42,7 +42,7 @@ const Press: React.FC<PressProps> = ({ images, title = 'FEATURED IN' }) => {
                         height: 'auto',
                         maxHeight: '100%',
                         width: 'auto',
-                        maxWidth: '100px',
+                        maxWidth: idx === 2 ? '160px' : '100px',
                       }}
                       alt={`Logo ${idx + 1}`}
                     />

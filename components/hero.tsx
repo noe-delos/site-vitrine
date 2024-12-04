@@ -10,41 +10,43 @@ import React from 'react';
 
 const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
-    <div className="flex-1 space-y-6 lg:space-y-8 px-4 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0">
-      <h1 className="text-5xl  sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight flex flex-col h-fit">
-        <div className="flex flex-row ">
-          <span>{dictionary.hero.title.part1} </span>
-          <span className="bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500 flex items-center">
+    <div className="flex-1 space-y-8 px-6 sm:px-8 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0">
+      <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight flex flex-col h-fit">
+        <div className="flex flex-row justify-center lg:justify-start flex-wrap">
+          <span>{dictionary.hero.title.part1}</span>
+          <span className="bg-clip-text mx-2 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500 flex items-center">
             {dictionary.hero.title.part2}
           </span>
           <img
             src="/fr/hero/aiStar.png"
             alt=""
-            className="size-4 ml-1 mb-2 self-end bottom-0 object-contain"
+            className="size-4 ml-1 mb-2 self-end bottom-0 object-contain hidden lg:block"
           />
         </div>
-        <div>
+        <div className="mt-2 lg:mt-0">
           {dictionary.hero.title.part3}
-          <div className="flex flex-row">
+          <div className="flex flex-row justify-center lg:justify-start flex-wrap mt-2">
             {dictionary.hero.title.part4}
-            <span className="ml-4 bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+            <span className="bg-clip-text mx-2 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
               {dictionary.hero.title.part5}
             </span>
             <img
               src="/fr/hero/aiStar.png"
               alt=""
-              className="size-4 ml-1 mb-2 self-end bottom-0 object-contain"
+              className="size-4 ml-1 mb-2 self-end bottom-0 object-contain hidden lg:block"
             />
           </div>
         </div>
       </h1>
 
-      <p className="text-base lg:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
+      <p className="text-sm px-20 sm:text-xl lg:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 sm:px-12 lg:px-0">
         {dictionary.hero.description}
       </p>
 
-      <div className="pt-8 lg:pt-16 w-full flex flex-col mt-4 lg:mt-8">
-        <p className="text-sm text-gray-500 mb-4 lg:mb-6 self-center">{dictionary.hero.trust}</p>
+      <div className="pt-10 lg:pt-16 w-full flex flex-col">
+        <p className="text-base sm:text-lg text-gray-500 mb-6 lg:mb-6 self-center">
+          {dictionary.hero.trust}
+        </p>
         <Press
           images={[
             '/fr/socials/logo0.png',
@@ -58,7 +60,6 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
     </div>
   );
 };
-
 const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
     <div className="relative w-full">
@@ -310,9 +311,9 @@ const RightSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 
 const Hero: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
-    <section className="min-h-[90vh] flex items-center px-4 sm:px-6 relative overflow-hidden">
-      <div className="max-w-[85rem] w-full mx-auto lg:mx-0 lg:ml-32 z-50">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 xs:mt-10">
+    <section className="min-h-[90vh] flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
+      <div className="max-w-[85rem] w-full mx-auto z-50">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 xs:mt-10">
           <LeftSection dictionary={dictionary} />
           <RightSection dictionary={dictionary} />
         </div>

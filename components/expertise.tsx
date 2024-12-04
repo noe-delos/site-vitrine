@@ -30,10 +30,7 @@ const FeatureGrid = ({ dictionary }: { dictionary: any }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-1 max-w-md">
       {features.map((feature, index) => (
-        <div
-          key={index}
-          className=" gap-2 p-2 flex flex-row items-center justify-start"
-        >
+        <div key={index} className=" gap-2 p-2 flex flex-row items-center justify-start">
           <Icon icon={feature.icon} className="size-4 text-black" />
           <span className="text-gray-800 text-sm">{feature.title}</span>
         </div>
@@ -66,7 +63,7 @@ export default function Expertise({ dictionary }: { dictionary: any }) {
   };
 
   return (
-    <div className="bg-white w-full py-16">
+    <div className="bg-white w-full py-16 overflow-x-hidden">
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center tracking-normal">
           {/* Left Content */}
@@ -90,12 +87,8 @@ export default function Expertise({ dictionary }: { dictionary: any }) {
                 </span>
               </div>
               <p className="leading-relaxed">
-                <span className="text-gray-700 ">
-                  {dictionary.expertise.description}
-                </span>{' '}
-                <span className="text-gray-400">
-                  {dictionary.expertise.description2}
-                </span>
+                <span className="text-gray-700 ">{dictionary.expertise.description}</span>{' '}
+                <span className="text-gray-400">{dictionary.expertise.description2}</span>
               </p>
             </motion.div>
             <FeatureGrid dictionary={dictionary} />
@@ -118,11 +111,7 @@ export default function Expertise({ dictionary }: { dictionary: any }) {
                 className="w-full h-full object-cover scale-100 overflow-hidden rounded-lg"
                 autoPlay
                 muted
-                onEnded={() =>
-                  setCurrentVideoIndex(
-                    (prevIndex) => (prevIndex + 1) % videos.length,
-                  )
-                }
+                onEnded={() => setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length)}
               >
                 <source src={videos[currentVideoIndex]} type="video/mp4" />
                 {dictionary.expertise.video_fallback}
