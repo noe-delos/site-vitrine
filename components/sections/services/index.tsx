@@ -3,6 +3,7 @@
 import { getFAQData, getServiceData, getStepData } from '@/components/sections/services/dalat';
 import { Icon } from '@iconify/react';
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import React from 'react';
 
 interface ServicesSectionProps {
@@ -31,13 +32,7 @@ const HeroSection = ({ dictionary }: { dictionary: any }) => {
   );
 
   return (
-    <div className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-indigo-50 to-white">
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]" />
-        <div className="absolute right-0 top-0 w-[40rem] h-[40rem] bg-indigo-100 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute left-0 bottom-0 w-[30rem] h-[30rem] bg-blue-100 rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2" />
-      </div>
-
+    <div className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-indigo-300 to-white">
       <div className="relative w-full max-w-7xl mx-auto px-4 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="space-y-12">
@@ -160,15 +155,51 @@ const HeroSection = ({ dictionary }: { dictionary: any }) => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="relative lg:ml-12"
+            className="relative lg:ml-12 hidden md:block"
           >
-            <div className="relative w-[90%] aspect-square">
-              <div className="absolute inset-0 z-0 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-2xl transform rotate-3 opacity-10" />
-              <img
-                src="/fr/ceciestuntest.png"
-                alt="AI Solutions"
-                className="relative w-full h-full z-10 object-contain rounded-2xl"
-              />
+            {/* Main image container */}
+            <div className="relative w-[35rem] h-[30rem]">
+              {/* Stats card with blur effect */}
+              <div className="absolute -top-[4rem] flex flex-row items-center -right-16 size-30 bg-white/10 backdrop-blur-sm rounded-2xl z-20 border-2 border-white/30 p-4 px-6 justify-center">
+                <p className="text-white text-4xl font-bold mt-2">120K</p>
+                <span className="text-2xl mb-2 ml-0.5 text-white">*</span>
+                {/* <div className="w-[60%] h-1 rounded-full bg-white my-3" /> */}
+                {/* <p
+                  className="text-white text-lg font-bold text-center"
+                  style={{
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.1), 0 0 10px rgba(255,255,255,0.5)',
+                  }}
+                >
+                  Lines of code <br /> written
+                </p> */}
+              </div>
+
+              {/* Main image */}
+              <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                <Image
+                  src="/en/services/mockups-service.png"
+                  alt="Service Mockups"
+                  fill
+                  className="object-cover opacity-100"
+                  priority
+                />
+              </div>
+
+              {/* AI Innovation badge */}
+              <div className="absolute -bottom-6 -left-6 rounded-2xl p-1 shadow-lg z-20">
+                <div className="relative size-24 rounded-xl overflow-hidden">
+                  <Image
+                    src="/fr/services/purple-bg.avif"
+                    alt="AI Background"
+                    fill
+                    className="object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                    <p className="text-3xl font-bold">AI</p>
+                    <p className="text-sm font-bold">Innovation</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -176,29 +207,27 @@ const HeroSection = ({ dictionary }: { dictionary: any }) => {
     </div>
   );
 };
-
 const FAQSection = ({ dictionary }: { dictionary: any }) => {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
-
   const faqData: FAQItem[] = getFAQData(dictionary);
 
   return (
-    <div className="relative w-full py-[9rem] pb-5 overflow-hidden">
+    <div className="relative w-full py-12 md:py-[9rem] pb-5 overflow-hidden">
       <img
         src="/en/blob.png"
         alt="hero"
-        className="absolute top-10 left-[10%] w-fit h-[40rem] object-cover opacity-10 rotate-180"
+        className="absolute top-10 left-[10%] w-fit h-[40rem] object-cover opacity-10 rotate-180 hidden md:block"
       />
 
       <div className="relative w-full max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-12 gap-8">
-          <div className="col-span-3">
-            <div className="">
-              <div className="flex items-center gap-2 text-indigo-600 text-sm font-medium mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+          <div className="col-span-1 md:col-span-3 mb-8 md:mb-0">
+            <div className="text-center md:text-left">
+              <div className="flex items-center gap-2 text-indigo-600 text-sm font-medium mb-4 justify-center md:justify-start">
                 <Icon icon="material-symbols:quiz" className="text-base" />
                 <span>FAQ</span>
               </div>
-              <h2 className="text-[2.5rem] leading-[1.1] font-semibold">
+              <h2 className="text-3xl md:text-[2.5rem] leading-tight md:leading-[1.1] font-semibold">
                 Questions
                 <br />
                 fréquentes
@@ -206,20 +235,28 @@ const FAQSection = ({ dictionary }: { dictionary: any }) => {
             </div>
           </div>
 
-          <div className="col-span-9">
-            <div className="space-y-10">
+          <div className="col-span-1 md:col-span-9">
+            <div className="space-y-4 md:space-y-10">
               {faqData.map((faq, index) => (
-                <div className="bg-white rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_20px_-2px_rgba(0,0,0,0.1),0_8px_24px_-4px_rgba(0,0,0,0.06)] transition-shadow duration-200 overflow-hidden">
+                <div
+                  key={index}
+                  className="bg-white rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_20px_-2px_rgba(0,0,0,0.1),0_8px_24px_-4px_rgba(0,0,0,0.06)] transition-shadow duration-200 overflow-hidden"
+                >
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full px-6 py-4 flex justify-between items-center text-left"
+                    className="w-full px-4 md:px-6 py-3 md:py-4 flex justify-between items-center text-left"
                   >
-                    <span className="font-normal text-gray-900">{faq.question}</span>
+                    <span className="font-normal text-gray-900 text-sm md:text-base">
+                      {faq.question}
+                    </span>
                     <motion.div
                       animate={{ rotate: openIndex === index ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <Icon icon="material-symbols:expand-more" className="w-6 h-6 text-gray-500" />
+                      <Icon
+                        icon="material-symbols:expand-more"
+                        className="w-5 h-5 md:w-6 md:h-6 text-gray-500 flex-shrink-0"
+                      />
                     </motion.div>
                   </button>
 
@@ -231,7 +268,9 @@ const FAQSection = ({ dictionary }: { dictionary: any }) => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <div className="px-6 pb-4 text-gray-400 text-sm">{faq.answer}</div>
+                        <div className="px-4 md:px-6 pb-3 md:pb-4 text-gray-400 text-xs md:text-sm">
+                          {faq.answer}
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -247,7 +286,6 @@ const FAQSection = ({ dictionary }: { dictionary: any }) => {
 
 const ProgressSection = ({ dictionary }: { dictionary: any }) => {
   const steps = getStepData(dictionary);
-
   const [activeStep, setActiveStep] = React.useState(0);
   const [key, setKey] = React.useState(0);
 
@@ -280,19 +318,19 @@ const ProgressSection = ({ dictionary }: { dictionary: any }) => {
   }, [resetProgress]);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-20">
-      <div className="mb-12">
+    <div className="w-full max-w-7xl mx-auto px-4 py-8 md:py-20">
+      <div className="mb-8 md:mb-12">
         <div className="inline-flex items-center gap-2 bg-indigo-50 px-3 py-1 rounded-full">
           <Icon icon="material-symbols:magic-button" className="text-indigo-600" />
           <span className="text-sm font-medium text-indigo-600">{dictionary.bento.approach}</span>
         </div>
-        <h2 className="text-4xl font-bold mt-4 mb-2">
+        <h2 className="text-2xl md:text-4xl font-bold mt-4 mb-2">
           {dictionary.bento.title.part1} {dictionary.bento.title.part2}
         </h2>
-        <p className="text-lg text-gray-600">{dictionary.bento.description}</p>
+        <p className="text-base md:text-lg text-gray-600">{dictionary.bento.description}</p>
       </div>
 
-      <div key={key} className="grid grid-cols-5 gap-6 h-[10rem]">
+      <div key={key} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
         {steps.map((step: any, index: any) => (
           <div key={index} className="flex flex-col space-y-4">
             <div className="h-1 bg-gray-100 rounded-full overflow-hidden relative">
@@ -312,8 +350,10 @@ const ProgressSection = ({ dictionary }: { dictionary: any }) => {
               )}
             </div>
             <div className="text-left">
-              <div className="text-lg font-medium text-gray-400 mb-2">{step.number}</div>
-              <h3 className="font-semibold mb-1">{step.title}</h3>
+              <div className="text-base md:text-lg font-medium text-gray-400 mb-2">
+                {step.number}
+              </div>
+              <h3 className="text-sm md:text-base font-semibold mb-1">{step.title}</h3>
               <AnimatePresence mode="wait">
                 {activeStep === index && (
                   <motion.p
@@ -321,7 +361,7 @@ const ProgressSection = ({ dictionary }: { dictionary: any }) => {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.2 }}
-                    className="text-sm text-gray-600 overflow-hidden"
+                    className="text-xs md:text-sm text-gray-600 overflow-hidden"
                   >
                     {step.description}
                   </motion.p>
@@ -334,7 +374,6 @@ const ProgressSection = ({ dictionary }: { dictionary: any }) => {
     </div>
   );
 };
-
 const ServicesSection: React.FC<ServicesSectionProps> = ({
   imageOnLeft = true,
   label,

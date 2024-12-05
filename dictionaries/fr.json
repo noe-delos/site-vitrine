@@ -1,5 +1,7 @@
 {
   "hero": {
+    "contactUs": "Nous contacter",
+    "ourServices": "Nos services",
     "title": {
       "part1": "Votre",
       "part2": "idée",

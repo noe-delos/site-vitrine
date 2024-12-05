@@ -49,7 +49,7 @@ const Layout: React.FC<LayoutProps> = async ({ children, params }) => {
       <body className={`${airbnbCereal.variable} font-sans antialiased overflow-x-hidden`}>
         <Analytics />
         <SpeedInsights />
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen">
           <Header dictionary={dictionary} lang={params.lang} />
           <main className="pt-16">{children}</main>
           <Footer dictionary={dictionary} />

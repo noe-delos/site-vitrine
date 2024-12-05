@@ -4,8 +4,12 @@ import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-const videos = ['/hero/expertise/video1.mp4', '/hero/expertise/video2.mp4'];
-const videoTiming = [9000, 16000];
+const videos = [
+  '/hero/expertise/video1.mp4',
+  '/hero/expertise/video4.mp4',
+  '/hero/expertise/video3.mp4',
+];
+const videoTiming = [9000, 15000, 6000];
 
 const FeatureGrid = ({ dictionary }: { dictionary: any }) => {
   const features = [

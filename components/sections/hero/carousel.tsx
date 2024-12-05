@@ -14,7 +14,6 @@ export function AppleCardsCarouselDemo({ dictionary }: { dictionary: any }) {
       title: dictionary.aiCarousel.cards.chatbots.title,
       src: '/en/carousel/img5.png',
       description: dictionary.aiCarousel.cards.chatbots.description,
-      className: 'top-[22%]',
     },
     {
       category: dictionary.aiCarousel.cards.computerVision.category,
@@ -39,6 +38,7 @@ export function AppleCardsCarouselDemo({ dictionary }: { dictionary: any }) {
       title: dictionary.aiCarousel.cards.translation.title,
       src: '/fr/carousel/img4.png',
       description: dictionary.aiCarousel.cards.translation.description,
+      className: 'lg:h-[80%]',
     },
   ];
 

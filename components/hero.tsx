@@ -2,10 +2,12 @@
 
 import { ShineBorder } from '@/components/acernity/border';
 import { FollowerPointerCard } from '@/components/acernity/following-pointer';
+import { Button } from '@/components/shadcn/button';
 import Press from '@/components/socials';
 import { cn } from '@/utils/cn';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
@@ -14,7 +16,7 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
       <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight flex flex-col h-fit">
         <div className="flex flex-row justify-center lg:justify-start flex-wrap">
           <span>{dictionary.hero.title.part1}</span>
-          <span className="bg-clip-text mx-2 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500 flex items-center">
+          <span className="bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500 flex items-center">
             {dictionary.hero.title.part2}
           </span>
           <img
@@ -23,19 +25,16 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
             className="size-4 ml-1 mb-2 self-end bottom-0 object-contain hidden lg:block"
           />
         </div>
-        <div className="mt-2 lg:mt-0">
+        <div className="mt-2 lg:mt-0 flex flex-row justify-center lg:justify-start flex-wrap">
           {dictionary.hero.title.part3}
-          <div className="flex flex-row justify-center lg:justify-start flex-wrap mt-2">
-            {dictionary.hero.title.part4}
-            <span className="bg-clip-text mx-2 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
-              {dictionary.hero.title.part5}
-            </span>
-            <img
-              src="/fr/hero/aiStar.png"
-              alt=""
-              className="size-4 ml-1 mb-2 self-end bottom-0 object-contain hidden lg:block"
-            />
-          </div>
+          <span className="bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+            {dictionary.hero.title.part5}
+          </span>
+          <img
+            src="/fr/hero/aiStar.png"
+            alt=""
+            className="size-4 ml-1 mb-2 self-end bottom-0 object-contain hidden lg:block"
+          />
         </div>
       </h1>
 
@@ -222,10 +221,10 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
               </div>
             </ShineBorder>
           ) : (
-            <div className="relative w-[40vw] h-[28vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] bg-white rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-[45vw] h-[40vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] bg-white rounded-2xl overflow-hidden shadow-2xl">
               <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
               <Image
-                src={`/en/hero/hero${index}.png`}
+                src={`/fr/hero/hero${index}.png`}
                 alt="Hero illustration"
                 fill
                 className={cn('object-cover')}
@@ -297,10 +296,24 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 };
 
 const RightSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
+  const router = useRouter();
   return (
     <div className="flex-1 flex items-center justify-center lg:justify-start">
-      <div className="block lg:hidden w-full px-4">
-        <MobileImageStack dictionary={dictionary} />
+      <div className="lg:hidden w-full px-4 flex flex-col gap-4 mt-20">
+        <Button
+          onClick={() => router.push('/services')}
+          variant="default"
+          className="w-full mx-auto py-6 px-10 text-xl text-white bg-gradient-to-r opacity-70 from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600"
+        >
+          {dictionary.hero.ourServices}
+        </Button>
+        <Button
+          onClick={() => router.push('/contact')}
+          variant="outline"
+          className="w-full mx-auto py-6 px-10 text-xl text-black bg-white border-[1px] border-zinc-700 hover:bg-gray-50"
+        >
+          {dictionary.hero.contactUs}
+        </Button>
       </div>
       <div className="hidden lg:flex-1 lg:flex items-center justify-center lg:justify-start">
         <ImageStack dictionary={dictionary} />

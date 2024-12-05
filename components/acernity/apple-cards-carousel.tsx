@@ -150,12 +150,16 @@ export const Card = ({ card }: CardProps) => {
         src={card.src}
         alt={card.title}
         width={500}
-        height={100}
+        height={500}
         quality={100}
-        className={
-          'object-cover w-fit h-[32rem] top-[25%] ml-10 absolute z-10 inset-0 transition duration-300 group-hover:scale-105 ' +
+        className={cn(
+          'absolute inset-0 z-10 transition duration-300 group-hover:scale-105',
+          'w-full h-full object-cover left-[15%] top-[40%]',
+          'sm:w-[90%] sm:h-[85%] sm:top-[15%]',
+          'md:w-[80%] md:h-[75%] md:top-[25%]',
+          'lg:w-[100%] lg:h-[75%]',
           card.className
-        }
+        )}
       />
     </div>
   );
