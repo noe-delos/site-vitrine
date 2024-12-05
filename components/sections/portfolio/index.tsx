@@ -222,7 +222,7 @@ const PortfolioHero = ({ dictionary }: any) => {
               >
                 {t.stats.context}
               </motion.p>
-              <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-12">
+              <div className="flex flex-col items-center text-center md:flex-row space-y-8 md:space-y-0 md:space-x-12">
                 <StatItem number={t.stats.projects.number} label={t.stats.projects.label} />
                 <StatItem number={t.stats.satisfaction.number} label={t.stats.satisfaction.label} />
               </div>
