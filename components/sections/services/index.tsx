@@ -36,23 +36,36 @@ const HeroSection = ({ dictionary }: { dictionary: any }) => {
       <div className="relative w-full max-w-7xl mx-auto px-4 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="space-y-12">
+            <div className="w-full md:hidden flex flex-row items-center justify-center gap-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md"
+              >
+                <Icon icon="mdi:magic" className="text-indigo-600" />
+                <span className="text-sm font-medium text-gray-600">
+                  {dictionary.services.hero.tagline}
+                </span>
+              </motion.div>
+            </div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md"
+              className=" hidden md:inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md"
             >
               <Icon icon="mdi:magic" className="text-indigo-600" />
               <span className="text-sm font-medium text-gray-600">
                 {dictionary.services.hero.tagline}
               </span>
             </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-5xl lg:text-6xl font-bold leading-tight"
+              className="text-5xl lg:text-6xl font-bold leading-tight md:block hidden"
             >
               {dictionary.services.hero.title.part1}{' '}
               <div className="flex flex-row gap-2 mt-1">
@@ -65,6 +78,34 @@ const HeroSection = ({ dictionary }: { dictionary: any }) => {
                   alt=""
                   className="size-4 mb-4 self-end bottom-0 object-contain"
                 />
+              </div>
+            </motion.h1>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-5xl lg:text-6xl font-bold text-center leading-tight md:hidden block"
+            >
+              {dictionary.services.hero.titleMobile.part1}{' '}
+              <div className=" flex-row gap-2 mt-1">
+                <span className="bg-clip-text text-center pr-4 text-transparent pb-2 bg-gradient-to-r from-[#7066CB] to-blue-500">
+                  {dictionary.services.hero.titleMobile.part2}
+                </span>
+                {dictionary.services.hero.titleMobile.part3}
+                <br />
+                <span className="flex flex-row items-center justify-center text-center">
+                  {dictionary.services.hero.titleMobile.part4}
+                  <span className="pl-4 text-center">
+                    {' '}
+                    {dictionary.services.hero.titleMobile.part5}
+                  </span>
+                  <img
+                    src="/fr/hero/aiStar.png"
+                    alt=""
+                    className="size-4 mb-4 ml-2 self-end bottom-0 object-contain"
+                  />
+                </span>
               </div>
             </motion.h1>
 

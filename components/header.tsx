@@ -88,7 +88,11 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
               className="relative w-8 h-8"
             >
               <Image
-                src={isServicesPage ? '/fr/logo/brand-logo-white.png' : '/logo/brand-logo.png'}
+                src={
+                  isServicesPage && !hasScrolled
+                    ? '/fr/logo/brand-logo-white.png'
+                    : '/logo/brand-logo.png'
+                }
                 alt="Finpay Logo"
                 fill
                 sizes="32px"

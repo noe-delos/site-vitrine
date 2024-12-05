@@ -487,6 +487,13 @@
         "part2": "projects",
         "part3": "with AI"
       },
+      "titleMobile": {
+        "part1": "Elevate",
+        "part2": "your",
+        "part3": "projects",
+        "part4": "with",
+        "part5": "AI"
+      },
       "sections": {
         "saas": {
           "title": "AI SaaS Solutions",

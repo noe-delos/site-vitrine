@@ -492,6 +492,13 @@
         "part2": "projets",
         "part3": "avec l'IA"
       },
+      "titleMobile": {
+        "part1": "Concrétisez",
+        "part2": "vos",
+        "part3": "projets",
+        "part4": "avec",
+        "part5": "l'IA"
+      },
       "sections": {
         "saas": {
           "title": "Logiciels Saas IA",
