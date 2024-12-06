@@ -12,7 +12,7 @@ export default async function HomePage({ params }: any) {
   const dictionary = await getDictionary(params.lang);
 
   return (
-    <>
+    <div className="bg-gray-50">
       <Hero dictionary={dictionary} />
       <Description dictionary={dictionary} />
       <WhyUsPage dictionary={dictionary} />
@@ -28,6 +28,6 @@ export default async function HomePage({ params }: any) {
         <Technologies dictionary={dictionary} />
       </div>
       <ContactUs dictionary={dictionary} />
-    </>
+    </div>
   );
 }
