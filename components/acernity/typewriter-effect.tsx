@@ -1,35 +1,39 @@
 'use client';
 
-import { cn } from '@/utils/cn';
+import { useEffect } from 'react';
+
 import { motion, stagger, useAnimate, useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { cn } from '@/utils/cn';
+
+
+/* eslint-disable @typescript-eslint/no-floating-promises */
 
 export const TypewriterEffect = ({
   words,
   className,
-  cursorClassName,
+  duration,
+  onComplete,
 }: {
   words: {
     text: string;
     className?: string;
   }[];
+  duration?: number;
   className?: string;
   cursorClassName?: string;
+  onComplete?: (value: boolean) => void;
 }) => {
-  // split text inside of words into array of characters
-  const wordsArray = words.map((word) => {
-    return {
-      ...word,
-      text: word.text.split(''),
-    };
-  });
+  const wordsArray = words.map((word) => ({
+    ...word,
+    text: word.text.split(''),
+  }));
 
   const [scope, animate] = useAnimate();
-  const isInView = useInView(scope, { once: false });
+  const isInView = useInView(scope);
 
   useEffect(() => {
     if (isInView) {
-      animate(
+      const animationPromise = animate(
         'span',
         {
           display: 'inline-block',
@@ -37,64 +41,47 @@ export const TypewriterEffect = ({
           width: 'fit-content',
         },
         {
-          duration: 0.3,
-          delay: stagger(0.1),
+          duration: duration ?? 0.03,
+          delay: stagger(duration ?? 0.03),
           ease: 'easeInOut',
-        },
+        }
       );
-    } else {
-      animate(
-        'span',
-        {
-          display: 'none',
-          opacity: 0,
-        },
-        {
-          duration: 0.1,
-        },
-      );
+
+      animationPromise.then(() => {
+        if (onComplete) {
+          onComplete(true);
+        }
+      });
     }
-  }, [isInView]);
+  }, [isInView, animate, onComplete]);
 
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope} className="inline">
-        {wordsArray.map((word, idx) => {
-          return (
-            <div key={`word-${idx}`} className="inline-block">
-              {word.text.map((char, index) => (
-                <motion.span
-                  initial={{}}
-                  key={`char-${index}`}
-                  className={cn(`text-black opacity-0 hidden`, word.className)}
-                >
-                  {char}
-                </motion.span>
-              ))}
-              &nbsp;
-            </div>
-          );
-        })}
-      </motion.div>
-    );
-  };
-
-  return (
-    <div
-      className={cn(
-        'text-base sm:text-xl md:text-3xl lg:text-4xl font-bold text-center',
-        className,
-      )}
-    >
-      {renderWords()}
-    </div>
+  const renderWords = () => (
+    <motion.div ref={scope} className="inline">
+      {wordsArray.map((word, idx) => (
+        <div key={`word-${idx}`} className="inline-block">
+          {word.text.map((char, index) => (
+            <motion.span
+              initial={{}}
+              key={`char-${index}`}
+              className={cn(`hidden opacity-0`, word.className)}
+            >
+              {char}
+            </motion.span>
+          ))}
+          &nbsp;
+        </div>
+      ))}
+    </motion.div>
   );
+
+  return <div className={cn('text-base', className)}>{renderWords()}</div>;
 };
 
 export const TypewriterEffectSmooth = ({
   words,
   className,
   cursorClassName,
+  onComplete,
 }: {
   words: {
     text: string;
@@ -102,95 +89,65 @@ export const TypewriterEffectSmooth = ({
   }[];
   className?: string;
   cursorClassName?: string;
+  onComplete?: (value: boolean) => void;
 }) => {
-  // split text inside of words into array of characters
-  const wordsArray = words.map((word) => {
-    return {
-      ...word,
-      text: word.text.split(''),
-    };
-  });
+  const wordsArray = words.map((word) => ({
+    ...word,
+    text: word.text.split(''),
+  }));
 
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: false });
-  const [scope, animate] = useAnimate();
-
-  useEffect(() => {
-    if (isInView) {
-      // Reset the animation state
-      animate(scope.current, { width: '0%' });
-
-      // Start the typing animation
-      animate(
-        scope.current,
-        { width: 'fit-content' },
-        {
-          duration: 2,
-          delay: 0.2,
-        },
-      );
-    }
-  }, [isInView]);
-
-  const renderWords = () => {
-    return (
-      <div>
-        {wordsArray.map((word, idx) => {
-          return (
-            <div key={`word-${idx}`} className="inline-block">
-              {word.text.map((char, index) => (
-                <span
-                  key={`char-${index}`}
-                  className={cn(`text-black`, word.className)}
-                >
-                  {char}
-                </span>
-              ))}
-              &nbsp;
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
+  const renderWords = () => (
+    <div>
+      {wordsArray.map((word, idx) => (
+        <div key={`word-${idx}`} className="inline-block">
+          {word.text.map((char, index) => (
+            <span
+              key={`char-${index}`}
+              className={cn(`text-black dark:text-white`, word.className)}
+            >
+              {char}
+            </span>
+          ))}
+          &nbsp;
+        </div>
+      ))}
+    </div>
+  );
 
   return (
-    <div ref={containerRef} className={cn('flex space-x-1 my-6', className)}>
+    <div className={cn('my-6 flex space-x-1', className)}>
       <motion.div
-        ref={scope}
         className="overflow-hidden pb-2"
-        initial={{
-          width: '0%',
+        initial={{ width: '0%' }}
+        whileInView={{ width: 'fit-content' }}
+        transition={{
+          duration: 0.3,
+          ease: 'linear',
+          delay: 0.1,
+        }}
+        onAnimationComplete={() => {
+          if (onComplete) {
+            onComplete(true);
+          }
         }}
       >
         <div
-          className="text-xs sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
-          style={{
-            whiteSpace: 'nowrap',
-          }}
+          className="lg:text:3xl text-xs font-bold sm:text-base md:text-xl xl:text-5xl"
+          style={{ whiteSpace: 'nowrap' }}
         >
-          {renderWords()}
-        </div>
+          {renderWords()}{' '}
+        </div>{' '}
       </motion.div>
       <motion.span
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
-          duration: 0.5,
+          duration: 0.15,
           repeat: Infinity,
           repeatType: 'reverse',
         }}
-        className={cn(
-          'block rounded-sm w-[4px] h-4 sm:h-6 xl:h-12 bg-blue-500',
-          cursorClassName,
-        )}
+        className={cn('block h-4 w-[4px] rounded-sm bg-blue-500 sm:h-6 xl:h-12', cursorClassName)}
       ></motion.span>
     </div>
   );
 };
-
-export default TypewriterEffectSmooth;

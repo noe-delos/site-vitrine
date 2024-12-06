@@ -1,5 +1,7 @@
 'use client';
 
+import { TypewriterEffect } from '@/components/acernity/typewriter-effect';
+import { cn } from '@/utils/cn';
 import { Icon } from '@iconify/react';
 import { useChat } from 'ai/react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -21,10 +23,12 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
   const [imageMapping, setImageMapping] = useState<ImageMapping>({});
   const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
   const [copiedMessageId, setCopiedMessageId] = useState<string | null>(null);
+  const [selectedPrompt, setSelectedPrompt] = useState<null | { text: string }>(null);
+  const [isTyping, setIsTyping] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const { messages, input, handleInputChange, handleSubmit, isLoading, reload } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, isLoading, reload, append } = useChat({
     api: '/api/chat',
   });
 
@@ -126,7 +130,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
     setImageUrls([]);
 
     try {
-      await handleSubmit(e, {
+      handleSubmit(e, {
         data: currentImageUrls.length ? { imageUrls: currentImageUrls } : undefined,
       });
     } catch (error) {
@@ -146,6 +150,22 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
     }
   };
 
+  const handlePromptClick = (prompt: any) => {
+    setSelectedPrompt({ text: prompt });
+    setIsTyping(true);
+  };
+
+  const handleTypewriterComplete = () => {
+    if (selectedPrompt?.text) {
+      append(
+        { role: 'user', content: selectedPrompt.text },
+        { data: { text: selectedPrompt.text } }
+      );
+      setIsTyping(false);
+      setSelectedPrompt(null);
+    }
+  };
+
   const renderMessage = (message: any) => {
     const associatedImages =
       Object.entries(imageMapping).find(([tempId]) => {
@@ -160,7 +180,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
         className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'} mb-4`}
       >
         {message.role === 'assistant' && (
-          <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center mr-2 flex-shrink-0">
+          <div className="w-8 h-8 rounded-full mt-2 bg-black flex items-center justify-center mr-2 flex-shrink-0">
             <img src="/fr/logo/brand-logo-white.png" alt="AI Avatar" className="w-5 h-5" />
           </div>
         )}
@@ -211,7 +231,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
   };
 
   const renderImagePreviews = () => (
-    <div className="flex gap-7 mt-4">
+    <div className="flex gap-7 mt-0 pb-5 pl-5">
       {imageUrls.map((url, index) => (
         <div key={index} className="relative group">
           <img
@@ -230,6 +250,27 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
       ))}
     </div>
   );
+
+  const prompts = [
+    {
+      icon: 'fa6-solid:handshake',
+      text: 'Qui sommes nous ?',
+      prompt: "Qui est l'entreprise KS consulting ?",
+      color: '',
+    },
+    {
+      icon: 'ant-design:fire-filled',
+      text: 'Notre expertise',
+      prompt: 'Dans quel domaine est KS consulting expert ?',
+      color: 'text-black',
+    },
+    {
+      icon: 'mingcute:sparkles-fill',
+      text: "La puissance de l'IA",
+      prompt: "Que pouvons nous faire avec l'IA ?",
+      color: 'text-black',
+    },
+  ];
 
   return !mounted ? (
     <></>
@@ -261,21 +302,37 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center justify-center h-full px-4"
           >
-            <h1 className="text-4xl font-bold mb-8">Welcome to KS Chat</h1>
-            <p className="text-center text-gray-600 mb-8">
-              Start a conversation by sending a message or -sharing up to 5 images. Our AI assistant
-              is ready to help you with any questions or tasks.
+            <h1 className="text-4xl font-bold mb-8 flex flex-row gap-2 items-center">
+              Welcome to{' '}
+              <img src="/en/logo/logo-circle.png" alt="circle logo" className="size-16" /> GPT
+            </h1>
+            <p className="text-center text-zinc-300 mb-8 max-w-lg">
+              Start a conversation by sending a message or sharing up to 5 images.
             </p>
-            <div className="w-full max-w-2xl">
+            <div className="w-full max-w-3xl">
+              {imageUrls.length > 0 && renderImagePreviews()}
               <form onSubmit={handleFormSubmit} className="relative">
-                <input
-                  value={input}
-                  onChange={handleInputChange}
-                  onPaste={handleImagePaste}
-                  placeholder="Type your message..."
-                  className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none pr-24"
-                  disabled={isLoading}
-                />
+                {isTyping && selectedPrompt?.text ? (
+                  <div className="w-full px-6 rounded-full bg-gray-100">
+                    <TypewriterEffect
+                      words={selectedPrompt.text
+                        .split(' ')
+                        .map((word) => ({ text: word, classname: '' }))}
+                      duration={0.04}
+                      className={cn('h-full py-3 border-none')}
+                      onComplete={handleTypewriterComplete}
+                    />
+                  </div>
+                ) : (
+                  <input
+                    value={input}
+                    onChange={handleInputChange}
+                    onPaste={handleImagePaste}
+                    placeholder="Type your message..."
+                    className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none pr-24"
+                    disabled={isLoading}
+                  />
+                )}
                 <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
                   <input
                     type="file"
@@ -311,7 +368,20 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
                   </button>
                 </div>
               </form>
-              {imageUrls.length > 0 && renderImagePreviews()}
+              <div className="flex gap-3 mt-6 w-full justify-center">
+                {prompts.map((prompt) => (
+                  <motion.button
+                    key={prompt.text}
+                    onClick={() => handlePromptClick(prompt.prompt)}
+                    className="flex items-center gap-2 px-6 py-2 bg-zinc-100 rounded-xl shadow-sm hover:bg-zinc-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                    disabled={imageUrls.length > 0}
+                  >
+                    <Icon icon={prompt.icon} className={`size-5 ${prompt.color}`} />
+                    <span className="ml-1 font-extralight text-zinc-600">{prompt.text}</span>
+                  </motion.button>
+                ))}
+              </div>
             </div>
           </motion.div>
         ) : (
@@ -356,14 +426,25 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
                 )}
 
                 <div className="relative">
-                  <input
-                    value={input}
-                    onChange={handleInputChange}
-                    onPaste={handleImagePaste}
-                    placeholder="Type your message..."
-                    className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none pr-24"
-                    disabled={isLoading}
-                  />
+                  {isTyping && selectedPrompt?.text ? (
+                    <div className="w-full py-3 px-6 rounded-full bg-gray-100">
+                      <TypewriterEffect
+                        words={[{ text: selectedPrompt.text, className: '' }]}
+                        duration={0.04}
+                        className={cn('h-12 min-h-[48px] border-none')}
+                        onComplete={handleTypewriterComplete}
+                      />
+                    </div>
+                  ) : (
+                    <input
+                      value={input}
+                      onChange={handleInputChange}
+                      onPaste={handleImagePaste}
+                      placeholder="Type your message..."
+                      className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none pr-24"
+                      disabled={isLoading}
+                    />
+                  )}
 
                   <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
                     <input
