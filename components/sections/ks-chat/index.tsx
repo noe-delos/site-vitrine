@@ -201,7 +201,7 @@ export default function Chat() {
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col items-center justify-center flex-grow px-4"
         >
-          <h1 className="text-4xl font-bold mb-8">Welcome to AI Chat</h1>
+          <h1 className="text-4xl font-bold mb-8">Welcome to KS Chat</h1>
           <p className="text-center text-gray-600 mb-8">
             Start a conversation by sending a message or sharing up to 5 images. Our AI assistant is
             ready to help you with any questions or tasks.
