@@ -11,7 +11,7 @@ interface ImageMapping {
 
 const MAX_IMAGES = 5;
 
-export default function Chat() {
+export default function KsChat({ dictionary }: { dictionary: any }) {
   const [imageUrls, setImageUrls] = useState<string[]>([]);
   const [isUploading, setIsUploading] = useState(false);
   const [imageMapping, setImageMapping] = useState<ImageMapping>({});
