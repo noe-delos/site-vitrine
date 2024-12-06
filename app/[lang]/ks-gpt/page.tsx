@@ -1,14 +1,8 @@
 import KsChat from '@/components/sections/ks-chat';
 import { getDictionary } from '@/get-dictionary';
 
-interface PageProps {
-  params: {
-    lang: string;
-  };
-}
-
-export default async function Page({ params: { lang } }: PageProps) {
-  const dictionary = await getDictionary(lang as any);
+export default async function Page({ params }: any) {
+  const dictionary = await getDictionary(params.lang);
 
   return <KsChat dictionary={dictionary} />;
 }
