@@ -51,7 +51,7 @@ const Layout: React.FC<LayoutProps> = async ({ children, params }) => {
         <SpeedInsights />
         <div className="min-h-screen">
           <Header dictionary={dictionary} lang={params.lang} />
-          <main className="pt-16">{children}</main>
+          <main>{children}</main>
           <Footer dictionary={dictionary} />
         </div>
         <Toaster richColors={true} position="top-center" />

@@ -1,4 +1,5 @@
 'use client';
+
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
@@ -12,7 +13,6 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  if (pathname.includes('ks-gpt')) return <></>;
   const isServicesPage = pathname.includes('services');
 
   useEffect(() => {
@@ -77,6 +77,8 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
     }
     return 'text-gray-600 hover:text-gray-900';
   };
+
+  if (pathname.includes('ks-gpt')) return <></>;
 
   return (
     <>
