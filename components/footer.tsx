@@ -2,8 +2,13 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Footer = ({ dictionary }: { dictionary: any }) => {
+  const pathname = usePathname();
+
+  if (pathname.includes('ks-gpt')) return <></>;
+
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -55,17 +60,9 @@ const Footer = ({ dictionary }: { dictionary: any }) => {
         >
           {/* Company Info */}
           <motion.div variants={fadeInUpVariants} className="space-y-6">
-            <Link
-              href="/"
-              className="flex items-center space-x-3 group relative"
-            >
+            <Link href="/" className="flex items-center space-x-3 group relative">
               <div className="relative">
-                <Image
-                  src="/logo/brand-logo.png"
-                  alt="KS Enterprise Logo"
-                  width={32}
-                  height={32}
-                />
+                <Image src="/logo/brand-logo.png" alt="KS Enterprise Logo" width={32} height={32} />
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="text-xl font-semibold text-gray-900 p-0 m-0">
@@ -76,9 +73,7 @@ const Footer = ({ dictionary }: { dictionary: any }) => {
                 </span>
               </div>
             </Link>
-            <p className="text-gray-600 max-w-sm">
-              {dictionary.footer.description}
-            </p>
+            <p className="text-gray-600 max-w-sm">{dictionary.footer.description}</p>
           </motion.div>
 
           {/* Pages */}
@@ -88,11 +83,7 @@ const Footer = ({ dictionary }: { dictionary: any }) => {
             </h3>
             <motion.ul variants={containerVariants} className="space-y-3">
               {navItems.map((item, index) => (
-                <motion.li
-                  key={index}
-                  variants={fadeInUpVariants}
-                  whileHover={{ x: 5 }}
-                >
+                <motion.li key={index} variants={fadeInUpVariants} whileHover={{ x: 5 }}>
                   <Link
                     href={item.path}
                     className="text-gray-600 hover:text-[#7066CB] transition-colors"
@@ -132,15 +123,9 @@ const Footer = ({ dictionary }: { dictionary: any }) => {
       </div>
 
       {/* Bottom Bar */}
-      <motion.div
-        variants={fadeInUpVariants}
-        className="border-t border-gray-200 bg-white"
-      >
+      <motion.div variants={fadeInUpVariants} className="border-t border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-6">
-          <motion.p
-            variants={fadeInUpVariants}
-            className="text-gray-600 text-sm text-center"
-          >
+          <motion.p variants={fadeInUpVariants} className="text-gray-600 text-sm text-center">
             {dictionary.footer.copyright}
           </motion.p>
         </div>

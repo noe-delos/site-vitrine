@@ -12,7 +12,7 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  // Check if current page is services
+  if (pathname.includes('ks-gpt')) return <></>;
   const isServicesPage = pathname.includes('services');
 
   useEffect(() => {
@@ -27,6 +27,12 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
   const navItems = [
     { label: dictionary.header.navigation.home, href: `/${lang}` },
     { label: 'Services', href: `/${lang}/services` },
+    {
+      label: 'ksGPT',
+      href: `/${lang}/ks-gpt`,
+      isSpecial: true,
+      hasSparkle: true,
+    },
     { label: dictionary.header.navigation.team, href: `/${lang}/team` },
     {
       label: dictionary.header.navigation.portfolio,
@@ -62,11 +68,14 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
   };
 
   // Dynamic text color based on services page and scroll position
-  const getTextColor = (isActive: boolean) => {
+  const getTextColor = (isActive: boolean, isSpecial?: boolean) => {
     if (isServicesPage && !hasScrolled) {
-      return 'text-white';
+      return 'text-white hover:text-white/90';
     }
-    return isActive ? 'text-[#7066CB]' : 'text-gray-600 hover:text-gray-900';
+    if (isSpecial) {
+      return 'bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent hover:opacity-90';
+    }
+    return 'text-gray-600 hover:text-gray-900';
   };
 
   return (
@@ -121,44 +130,32 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
 
               return (
                 <motion.div key={item.href} whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                  <Link href={item.href} className="relative group px-2 py-1">
-                    <span
-                      className={`text-sm font-medium ${getTextColor(isActive)} transition-colors duration-200`}
-                    >
-                      {item.label}
-                    </span>
-
-                    <motion.span
-                      className={`absolute bottom-0 left-0 w-full h-0.5 ${
-                        isServicesPage && !hasScrolled ? 'bg-white' : 'bg-[#7066CB]'
-                      } rounded-full`}
-                      initial={false}
-                      animate={{
-                        width: isActive ? '100%' : '0%',
-                        opacity: isActive ? 1 : 0,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                        ease: 'easeInOut',
-                      }}
-                    />
-
-                    <motion.span
-                      className={`absolute bottom-0 left-0 h-0.5 ${
-                        isServicesPage && !hasScrolled ? 'bg-white/30' : 'bg-gray-200'
-                      } rounded-full`}
-                      initial={{ width: '0%' }}
-                      whileHover={{
-                        width: !isActive ? '100%' : '0%',
-                        transition: { duration: 0.3 },
-                      }}
-                    />
-
-                    <motion.span
-                      className="absolute inset-0 -z-10 rounded-lg opacity-0 bg-white/10"
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.2 }}
-                    />
+                  <Link
+                    href={item.href}
+                    className={`relative group px-2 py-1 ${
+                      isActive
+                        ? `underline underline-offset-4 ${
+                            isServicesPage && !hasScrolled
+                              ? 'decoration-white'
+                              : 'decoration-gray-600'
+                          }`
+                        : ''
+                    }`}
+                  >
+                    <div className="flex items-center">
+                      <span
+                        className={`text-sm font-medium ${getTextColor(isActive, item.isSpecial)} transition-colors duration-200`}
+                      >
+                        {item.label}
+                      </span>
+                      {item.hasSparkle && (
+                        <img
+                          src="/fr/hero/aiStar.png"
+                          alt=""
+                          className="size-3 ml-1 mb-1.5 self-end bottom-0 object-contain hidden lg:block"
+                        />
+                      )}
+                    </div>
                   </Link>
                 </motion.div>
               );
@@ -347,23 +344,23 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
                       href={item.href}
                       onClick={closeMenu}
                       className={`px-6 py-3 text-sm font-medium transition-colors duration-200 relative ${
-                        isActive
-                          ? 'text-[#7066CB] bg-[#7066CB]/5'
+                        isActive ? 'bg-gray-50 underline underline-offset-4' : ''
+                      } ${
+                        item.isSpecial
+                          ? 'bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                       }`}
                     >
-                      {item.label}
-                      {isActive && (
-                        <motion.div
-                          className="absolute left-0 top-0 bottom-0 w-1 bg-[#7066CB] rounded-r"
-                          layoutId="activeNavIndicator"
-                          transition={{
-                            type: 'spring',
-                            stiffness: 300,
-                            damping: 30,
-                          }}
-                        />
-                      )}
+                      <div className="flex items-center">
+                        {item.label}
+                        {item.hasSparkle && (
+                          <img
+                            src="/fr/hero/aiStar.png"
+                            alt=""
+                            className="size-3 ml-1 mb-1.5 self-end object-contain"
+                          />
+                        )}
+                      </div>
                     </Link>
                   );
                 })}
