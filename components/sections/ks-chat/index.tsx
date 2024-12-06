@@ -1,8 +1,9 @@
 'use client';
 
+import { Icon } from '@iconify/react';
 import { useChat } from 'ai/react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Check, Copy, ImagePlus, Loader2, RefreshCw, Send, X } from 'lucide-react';
+import { Check, Copy, Loader2, RefreshCw, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
@@ -210,9 +211,9 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
   };
 
   const renderImagePreviews = () => (
-    <div className="flex gap-2 mt-4">
+    <div className="flex gap-7 mt-4">
       {imageUrls.map((url, index) => (
-        <div key={index} className="relative">
+        <div key={index} className="relative group">
           <img
             src={url}
             alt={`Preview ${index + 1}`}
@@ -221,9 +222,9 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
           <button
             type="button"
             onClick={() => removeImage(index)}
-            className="absolute -top-2 -right-2 bg-black text-white rounded-full p-1"
+            className="absolute -top-2 -right-2 bg-black text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
           >
-            <X className="w-4 h-4" />
+            <X className="size-3" />
           </button>
         </div>
       ))}
@@ -262,7 +263,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
           >
             <h1 className="text-4xl font-bold mb-8">Welcome to KS Chat</h1>
             <p className="text-center text-gray-600 mb-8">
-              Start a conversation by sending a message or sharing up to 5 images. Our AI assistant
+              Start a conversation by sending a message or -sharing up to 5 images. Our AI assistant
               is ready to help you with any questions or tasks.
             </p>
             <div className="w-full max-w-2xl">
@@ -292,25 +293,20 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
                     disabled={isLoading || isUploading || imageUrls.length >= MAX_IMAGES}
                   >
                     {isUploading ? (
-                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <Loader2 className="w-5 h-5 animate-spin text-black" />
                     ) : (
-                      <ImagePlus className="w-5 h-5 text-gray-600" />
-                    )}
-                    {imageUrls.length > 0 && (
-                      <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                        {imageUrls.length}
-                      </span>
+                      <Icon icon="mynaui:image-solid" className="size-6 text-zinc-600" />
                     )}
                   </button>
                   <button
                     type="submit"
                     disabled={isLoading || (!input && imageUrls.length === 0)}
-                    className="p-2 hover:bg-gray-200 rounded-full transition-colors disabled:opacity-50"
+                    className="p-2 hover:bg-gray-200 rounded-full pr-3 transition-colors disabled:bg-transparent disabled:cursor-default disabled:opacity-50"
                   >
                     {isLoading ? (
                       <Loader2 className="w-5 h-5 animate-spin" />
                     ) : (
-                      <Send className="w-5 h-5 text-blue-500" />
+                      <Icon icon="mynaui:send-solid" className="size-6 text-zinc-600" />
                     )}
                   </button>
                 </div>
@@ -388,7 +384,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
                       {isUploading ? (
                         <Loader2 className="w-5 h-5 animate-spin" />
                       ) : (
-                        <ImagePlus className="w-5 h-5 text-gray-600" />
+                        <Icon icon="mynaui:image-solid" className="size-6 text-zinc-600" />
                       )}
                       {imageUrls.length > 0 && (
                         <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
@@ -405,7 +401,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
                       {isLoading ? (
                         <Loader2 className="w-5 h-5 animate-spin" />
                       ) : (
-                        <Send className="w-5 h-5 text-blue-500" />
+                        <Icon icon="mynaui:send-solid" className="size-6 text-zinc-700" />
                       )}
                     </button>
                   </div>
