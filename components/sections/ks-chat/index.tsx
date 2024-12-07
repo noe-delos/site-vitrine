@@ -187,7 +187,9 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
             <img src="/fr/logo/brand-logo-white.png" alt="AI Avatar" className="w-5 h-5" />
           </div>
         )}
-        <div className="flex flex-col max-w-[70%] no-scrollbar">
+        <div
+          className={`flex flex-col  mmax-w-[70%] ${message.role === 'user' ? '' : 'w-full'} no-scrollbar`}
+        >
           {message.role === 'user' && associatedImages.length > 0 && (
             <div className="grid grid-cols-2 gap-2 mb-2">
               {associatedImages.map((url, index) => (
