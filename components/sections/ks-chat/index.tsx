@@ -8,6 +8,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Check, Copy, Loader2, RefreshCw, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 
 interface ImageMapping {
   [messageId: string]: string[];
@@ -177,14 +180,14 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
         key={message.id}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'} mb-4`}
+        className={`flex no-scrollbar ${message.role === 'user' ? 'justify-end' : 'justify-start'} mb-4`}
       >
         {message.role === 'assistant' && (
           <div className="w-8 h-8 rounded-full mt-2 bg-black flex items-center justify-center mr-2 flex-shrink-0">
             <img src="/fr/logo/brand-logo-white.png" alt="AI Avatar" className="w-5 h-5" />
           </div>
         )}
-        <div className="flex flex-col max-w-[70%]">
+        <div className="flex flex-col max-w-[70%] no-scrollbar">
           {message.role === 'user' && associatedImages.length > 0 && (
             <div className="grid grid-cols-2 gap-2 mb-2">
               {associatedImages.map((url, index) => (
@@ -203,7 +206,14 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
               message.role === 'user' ? 'bg-gray-100' : 'bg-white'
             }`}
           >
-            <p className="whitespace-pre-wrap">{message.content}</p>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm, [remarkMath]]}
+              className={cn(
+                'prose prose-sm w-full max-w-none break-words prose-p:leading-relaxed prose-pre:p-0'
+              )}
+            >
+              {message.content}
+            </ReactMarkdown>
             {message.role === 'assistant' && (
               <div className="flex gap-2 mt-2 text-gray-400">
                 <button
@@ -294,7 +304,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
         </svg>
       </button>
       <div
-        className={`relative max-w-4xl mx-auto ${messages.length === 0 ? 'h-screen overflow-hidden' : 'h-screen'}`}
+        className={`relative no-scrollbar max-w-4xl mx-auto ${messages.length === 0 ? 'h-screen overflow-hidden' : 'h-screen'}`}
       >
         {messages.length === 0 ? (
           <motion.div
