@@ -10,9 +10,10 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
+  const router = useRouter();
   return (
     <div className="flex-1 space-y-8 px-6 sm:px-8 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0">
-      <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight flex flex-col h-fit">
+      <h1 className="text-5xl font-extrabold sm:text-4xl md:text-5xl lg:text-7xl md:font-bold leading-tight flex flex-col h-fit">
         <div className="flex flex-row justify-center lg:justify-start flex-wrap">
           <span>{dictionary.hero.title.part1}</span>
           <span className="bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500 flex items-center">
@@ -26,13 +27,18 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
         </div>
         <div className="mt-2 lg:mt-0 flex flex-row justify-center lg:justify-start flex-wrap">
           {dictionary.hero.title.part3}
-          <span className="bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+          <span className="hidden md:block bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+            {dictionary.hero.title.part5}
+          </span>
+        </div>
+        <div className="md:hidden flex w-full h-fit gap-1 mt-2 flex-row items-center justify-center">
+          <span className="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#7367dd] to-blue-400">
             {dictionary.hero.title.part5}
           </span>
           <img
             src="/fr/hero/aiStar.png"
-            alt=""
-            className="size-4 ml-1 mb-2 self-end bottom-0 object-contain hidden lg:block"
+            alt="star"
+            className="size-4 ml-0 mb-2 self-end bottom-0 object-contain"
           />
         </div>
       </h1>
@@ -48,7 +54,10 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
           borderWidth={3}
           color={['#ffffff', '#000000']}
         >
-          <button className="px-4 py-2 bg-black rounded-md relative group overflow-hidden transition-all duration-300 ">
+          <button
+            onClick={() => router.push('/ks-gpt')}
+            className="px-4 py-2 bg-black rounded-md relative group overflow-hidden transition-all duration-300 "
+          >
             {/* Glow effect overlay */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300" />
 
