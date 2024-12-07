@@ -47,7 +47,7 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
         {dictionary.hero.description}
       </p>
 
-      <div className="pt-10 lg:pt-4 w-full flex flex-col">
+      <div className="pt-10 lg:pt-10 w-full flex flex-col">
         <ShineBorder
           className="size-fit self-center md:selft-start border m-0 pb-5 min-h-fit min-w-fit p-0.5 border-none"
           borderRadius={6}
