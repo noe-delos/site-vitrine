@@ -30,6 +30,11 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
           <span className="hidden md:block bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
             {dictionary.hero.title.part5}
           </span>
+          <img
+            src="/fr/hero/aiStar.png"
+            alt=""
+            className="size-4 ml-1 mb-2 self-end bottom-0 object-contain hidden lg:block"
+          />
         </div>
         <div className="md:hidden flex w-full h-fit gap-1 mt-2 flex-row items-center justify-center">
           <span className="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#7367dd] to-blue-400">
@@ -43,7 +48,7 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
         </div>
       </h1>
 
-      <p className="text-sm px-24 sm:text-xl lg:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 sm:px-12 lg:px-0">
+      <p className="text-sm px-24 sm:text-xl lg:text-lg text-gray-500 max-w-xl mx-auto lg:mx-0 sm:px-12 lg:px-0">
         {dictionary.hero.description}
       </p>
 
