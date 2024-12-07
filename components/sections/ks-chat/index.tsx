@@ -302,11 +302,14 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center justify-center h-full px-4"
           >
-            <h1 className="text-4xl font-bold mb-8 flex flex-row gap-2 items-center">
+            <h1 className="text-5xl md:text-4xl flex flex-col font-bold mb-8  md:flex-row gap-6 md:gap-2 items-center">
               Welcome to{' '}
-              <img src="/en/logo/logo-circle.png" alt="circle logo" className="size-16" /> GPT
+              <span className="flex flex-row gap-2 items-center">
+                <img src="/en/logo/logo-circle.png" alt="circle logo" className="size-16" />
+                GPT
+              </span>
             </h1>
-            <p className="text-center text-zinc-300 mb-8 max-w-lg">
+            <p className="text-center text-zinc-300 mt-5 md:mt-0 mx-5 md:mx-0 mb-8 max-w-lg">
               Start a conversation by sending a message or sharing up to 5 images.
             </p>
             <div className="w-full max-w-3xl">
@@ -368,7 +371,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
                   </button>
                 </div>
               </form>
-              <div className="flex gap-3 mt-6 w-full justify-center">
+              <div className="flex md:gap-3 mt-10 md:mt-6 md:w-full justify-center flex-col md:flex-row w-fit items-center mx-auto md:mx-0 gap-5">
                 {prompts.map((prompt) => (
                   <motion.button
                     key={prompt.text}

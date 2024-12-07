@@ -63,7 +63,7 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 
             <span className="flex flex-row items-center relative">
               <span className="bg-gradient-to-b from-white to-gray-700 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-400">
-                Introducing
+                {dictionary.hero.try}
               </span>
               <img
                 src="/en/logo/brand-logo-white-fadeout.png"
