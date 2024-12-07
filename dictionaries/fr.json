@@ -1,4 +1,15 @@
 {
+  "gpt": {
+    "title1": "Bienvenue sur",
+    "description": "Démarrez une conversation en envoyant un message ou en partageant jusqu'à 5 images.",
+    "placeholder": "Posez votre question...",
+    "q1_label": "Qui sommes nous ?",
+    "q2_label": "Notre expertise",
+    "q3_label": "La puissance de l'IA",
+    "q1_question": "Qui est l'entreprise KS consulting ?",
+    "q2_question": "Dans quel domaine est KS consulting expert ?",
+    "q3_question": "Que pouvons nous faire avec l'IA ?"
+  },
   "hero": {
     "try": "Essayer",
     "contactUs": "Nous contacter",

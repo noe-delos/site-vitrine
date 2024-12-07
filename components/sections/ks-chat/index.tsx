@@ -254,20 +254,20 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
   const prompts = [
     {
       icon: 'fa6-solid:handshake',
-      text: 'Qui sommes nous ?',
-      prompt: "Qui est l'entreprise KS consulting ?",
+      text: dictionary.gpt.q1_label,
+      prompt: dictionary.gpt.q1_question,
       color: '',
     },
     {
       icon: 'ant-design:fire-filled',
-      text: 'Notre expertise',
-      prompt: 'Dans quel domaine est KS consulting expert ?',
+      text: dictionary.gpt.q2_label,
+      prompt: dictionary.gpt.q2_question,
       color: 'text-black',
     },
     {
       icon: 'mingcute:sparkles-fill',
-      text: "La puissance de l'IA",
-      prompt: "Que pouvons nous faire avec l'IA ?",
+      text: dictionary.gpt.q3_label,
+      prompt: dictionary.gpt.q3_question,
       color: 'text-black',
     },
   ];
@@ -303,14 +303,14 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
             className="flex flex-col items-center justify-center h-full px-4"
           >
             <h1 className="text-5xl md:text-4xl flex flex-col font-bold mb-8  md:flex-row gap-6 md:gap-2 items-center">
-              Welcome to{' '}
+              {dictionary.gpt.title1}
               <span className="flex flex-row gap-2 items-center">
                 <img src="/en/logo/logo-circle.png" alt="circle logo" className="size-16" />
                 GPT
               </span>
             </h1>
             <p className="text-center text-zinc-300 mt-5 md:mt-0 mx-5 md:mx-0 mb-8 max-w-lg">
-              Start a conversation by sending a message or sharing up to 5 images.
+              {dictionary.gpt.description}
             </p>
             <div className="w-full max-w-3xl">
               {imageUrls.length > 0 && renderImagePreviews()}
@@ -331,7 +331,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
                     value={input}
                     onChange={handleInputChange}
                     onPaste={handleImagePaste}
-                    placeholder="Type your message..."
+                    placeholder={dictionary.gpt.placeholder}
                     className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none pr-24"
                     disabled={isLoading}
                   />
@@ -443,7 +443,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
                       value={input}
                       onChange={handleInputChange}
                       onPaste={handleImagePaste}
-                      placeholder="Type your message..."
+                      placeholder={dictionary.gpt.placeholder}
                       className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none pr-24"
                       disabled={isLoading}
                     />

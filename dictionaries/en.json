@@ -1,4 +1,15 @@
 {
+  "gpt": {
+    "title1": "Welcome to",
+    "description": "Start a conversation by sending a message or sharing up to 5 images.",
+    "placeholder": "Enter your question...",
+    "q1_label": "Who are we?",
+    "q2_label": "Our expertise",
+    "q3_label": "The power of AI",
+    "q1_question": "Who is KS consulting company?",
+    "q2_question": "In which field is KS consulting expert?",
+    "q3_question": "What can we do with AI?"
+  },
   "hero": {
     "try": "Introducing",
     "contactUs": "Contact us",
