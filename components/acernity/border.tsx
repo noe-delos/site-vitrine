@@ -40,7 +40,7 @@ export function ShineBorder({
       }
       className={cn(
         'relative grid min-h-[60px] w-fit min-w-[300px] place-items-center rounded-full p-[1px]',
-        className,
+        className
       )}
     >
       <div

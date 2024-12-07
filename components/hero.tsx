@@ -2,7 +2,6 @@
 
 import { ShineBorder } from '@/components/acernity/border';
 import { FollowerPointerCard } from '@/components/acernity/following-pointer';
-import { Button } from '@/components/shadcn/button';
 import Press from '@/components/socials';
 import { cn } from '@/utils/cn';
 import { motion } from 'framer-motion';
@@ -38,12 +37,37 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
         </div>
       </h1>
 
-      <p className="text-sm px-20 sm:text-xl lg:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 sm:px-12 lg:px-0">
+      <p className="text-sm px-24 sm:text-xl lg:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 sm:px-12 lg:px-0">
         {dictionary.hero.description}
       </p>
 
-      <div className="pt-10 lg:pt-16 w-full flex flex-col">
-        <p className="text-base sm:text-lg text-gray-500 mb-6 lg:mb-6 self-center">
+      <div className="pt-10 lg:pt-4 w-full flex flex-col">
+        <ShineBorder
+          className="size-fit self-center md:selft-start border m-0 pb-5 min-h-fit min-w-fit p-0.5 border-none"
+          borderRadius={6}
+          borderWidth={3}
+          color={['#ffffff', '#000000']}
+        >
+          <button className="px-4 py-2 bg-black rounded-md relative group overflow-hidden transition-all duration-300 ">
+            {/* Glow effect overlay */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300" />
+
+            <span className="flex flex-row items-center relative">
+              <span className="bg-gradient-to-b from-white to-gray-700 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-400">
+                Introducing
+              </span>
+              <img
+                src="/en/logo/brand-logo-white-fadeout.png"
+                alt="circle logo"
+                className="ml-2 mr-0.5 w-fit h-6 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+              />
+              <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-300">
+                GPT
+              </span>
+            </span>
+          </button>
+        </ShineBorder>
+        <p className="text-base sm:text-lg mt-14 text-gray-500 mb-6 lg:mb-0 self-center">
           {dictionary.hero.trust}
         </p>
         <Press
@@ -299,22 +323,6 @@ const RightSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   const router = useRouter();
   return (
     <div className="flex-1 flex items-center justify-center lg:justify-start">
-      <div className="lg:hidden w-full px-4 flex flex-col gap-4 mt-20">
-        <Button
-          onClick={() => router.push('/services')}
-          variant="default"
-          className="w-full mx-auto py-6 px-10 text-xl text-white bg-gradient-to-r opacity-70 from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600"
-        >
-          {dictionary.hero.ourServices}
-        </Button>
-        <Button
-          onClick={() => router.push('/contact')}
-          variant="outline"
-          className="w-full mx-auto py-6 px-10 text-xl text-black bg-white border-[1px] border-zinc-700 hover:bg-gray-50"
-        >
-          {dictionary.hero.contactUs}
-        </Button>
-      </div>
       <div className="hidden lg:flex-1 lg:flex items-center justify-center lg:justify-start">
         <ImageStack dictionary={dictionary} />
       </div>
@@ -324,7 +332,7 @@ const RightSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 
 const Hero: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
-    <section className="min-h-[90vh] flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
+    <section className="min-h-[70vh] md:min-h-[90vh]  flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
       <div className="max-w-[85rem] w-full mx-auto z-50">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 xs:mt-10">
           <LeftSection dictionary={dictionary} />

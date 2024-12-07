@@ -21,10 +21,19 @@ const config: Config = {
         shine: 'shine var(--duration) infinite linear',
         'spin-slow-30': 'spin 30s linear infinite',
         'spin-slow-25': 'spin 25s linear infinite',
+        'animate-shiny-text': 'animate-shiny-text 8s infinite',
         'spin-slow-10': 'spin 10s linear infinite',
         'marquee-infinite': 'marquee 25s linear infinite',
       },
       keyframes: {
+        'animate-shiny-text': {
+          '0%, 90%, 100%': {
+            'background-position': 'calc(-100% - var(--shiny-width)) 0',
+          },
+          '30%, 60%': {
+            'background-position': 'calc(100% + var(--shiny-width)) 0',
+          },
+        },
         gradient: {
           to: {
             backgroundPosition: 'var(--bg-size) 0',
