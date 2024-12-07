@@ -12,7 +12,7 @@ import React from 'react';
 const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   const router = useRouter();
   return (
-    <div className="flex-1 space-y-8 px-6 sm:px-8 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0">
+    <div className="flex-1 space-y-8 px-6 sm:px-8 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0 pb-10">
       <h1 className="text-5xl font-extrabold sm:text-4xl md:text-5xl lg:text-7xl md:font-bold leading-tight flex flex-col h-fit">
         <div className="flex flex-row justify-center lg:justify-start flex-wrap">
           <span>{dictionary.hero.title.part1}</span>
