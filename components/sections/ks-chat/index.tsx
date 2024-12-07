@@ -342,7 +342,7 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
                     onChange={handleInputChange}
                     onPaste={handleImagePaste}
                     placeholder={dictionary.gpt.placeholder}
-                    className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none pr-24"
+                    className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none pr-28 md:pr-24"
                     disabled={isLoading}
                   />
                 )}
