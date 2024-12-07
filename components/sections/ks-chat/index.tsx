@@ -18,7 +18,7 @@ interface ImageMapping {
 
 const MAX_IMAGES = 5;
 
-export default function KsChat({ dictionary }: { dictionary: any }) {
+export default function KsChat({ dictionary, lang }: { dictionary: any; lang: string }) {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [imageUrls, setImageUrls] = useState<string[]>([]);
@@ -287,7 +287,7 @@ export default function KsChat({ dictionary }: { dictionary: any }) {
   ) : (
     <>
       <button
-        onClick={() => router.push('/')}
+        onClick={() => router.push(`/${lang}/`)}
         className="absolute top-4 left-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
