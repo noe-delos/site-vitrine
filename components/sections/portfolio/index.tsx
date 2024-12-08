@@ -165,7 +165,7 @@ const StatItem = ({ number, label }: any) => (
     transition={{ duration: 0.5, delay: 0.6 }}
     className="flex flex-col space-y-1"
   >
-    <div className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-b from-zinc-900 to-zinc-400 bg-clip-text text-transparent">
+    <div className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-b from-zinc-900 to-zinc-400é bg-clip-text text-transparent">
       {number}
     </div>
     <div className="text-sm text-gray-500">{label}</div>

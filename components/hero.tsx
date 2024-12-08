@@ -54,14 +54,14 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 
       <div className="pt-10 lg:pt-10 w-full flex flex-col">
         <ShineBorder
-          className="size-fit self-center md:selft-start border m-0 pb-5 min-h-fit min-w-fit p-0.5 border-none"
+          className="size-fit self-center md:selft-start border m-0 pb-5 min-h-fit min-w-fit max-w-fit max-h-fit p-0.5 border-none"
           borderRadius={6}
           borderWidth={3}
           color={['#ffffff', '#000000']}
         >
           <button
             onClick={() => router.push('/ks-gpt')}
-            className="px-4 py-2 bg-black rounded-md relative group overflow-hidden transition-all duration-300 "
+            className="px-4 py-2 bg-black max-w-fit max-h-fit rounded-md relative group overflow-hidden transition-all duration-300 "
           >
             {/* Glow effect overlay */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300" />
