@@ -54,7 +54,7 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 
       <div className="pt-10 lg:pt-10 w-full flex flex-col">
         <ShineBorder
-          className="min-w-[20%] min-h-[10%] max-w-[50%] max-h-[15%] md:max-w-fit md:max-h-fit self-center md:selft-start border m-0 pb-5 md:size-fit p-0.5 border-none"
+          className="min-w-[20%] min-h-[10%] max-w-[50%] max-h-[15%] md:max-w-fit md:max-h-fit self-center md:selft-start border m-0 pb-5 md:size-fit p-[0.115rem] border-none"
           borderRadius={6}
           borderWidth={3}
           color={['#ffffff', '#000000']}
