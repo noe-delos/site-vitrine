@@ -258,17 +258,7 @@ const PortfolioHero = ({ dictionary }: any) => {
 };
 
 interface PortfolioPageProps {
-  dictionary: {
-    solutions: {
-      title: string;
-      description: string;
-    };
-    contact: {
-      title: string;
-      description: string;
-      cta: string;
-    };
-  };
+  dictionary: any;
 }
 
 const PortfolioPage = ({ dictionary }: PortfolioPageProps) => {
@@ -306,12 +296,20 @@ const PortfolioPage = ({ dictionary }: PortfolioPageProps) => {
       <section className="max-w-[100rem] mx-auto px-4 py-6 md:py-10">
         <PortfolioHero dictionary={dictionary} />
 
+        <motion.div
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="mt-20 lg:mt-[8rem] w-full pb-10 flex items-center justify-center"
+        >
+          <p className="text-xs opacity-20">{dictionary.portfolio.conf}</p>
+        </motion.div>
         {/* Projects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid mt-20 lg:mt-[10rem] grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 px-4 md:px-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 px-4 md:px-6"
         >
           {filteredProjects.map((project) => {
             const [isHoveringParallax, setIsHovering] = useState(false);

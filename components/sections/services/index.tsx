@@ -201,19 +201,6 @@ const HeroSection = ({ dictionary }: { dictionary: any }) => {
             {/* Main image container */}
             <div className="relative w-[35rem] h-[30rem]">
               {/* Stats card with blur effect */}
-              <div className="absolute -top-[4rem] flex flex-row items-center -right-16 size-30 bg-white/10 backdrop-blur-sm rounded-2xl z-20 border-2 border-white/30 p-4 px-6 justify-center">
-                <p className="text-white text-4xl font-bold mt-2">120K</p>
-                <span className="text-2xl mb-2 ml-0.5 text-white">*</span>
-                {/* <div className="w-[60%] h-1 rounded-full bg-white my-3" /> */}
-                {/* <p
-                  className="text-white text-lg font-bold text-center"
-                  style={{
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.1), 0 0 10px rgba(255,255,255,0.5)',
-                  }}
-                >
-                  Lines of code <br /> written
-                </p> */}
-              </div>
 
               {/* Main image */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden">
@@ -518,8 +505,8 @@ export default function ServicesPage({ dictionary }: { dictionary: any }) {
   return (
     <div className="min-h-screen bg-white space-y-20 pb-[20rem]">
       <HeroSection dictionary={dictionary} />
-      <ServicesSection imageOnLeft={true} {...serviceData1} />
       <ServicesSection imageOnLeft={false} {...serviceData2} />
+      <ServicesSection imageOnLeft={true} {...serviceData1} />
       <ProgressSection dictionary={dictionary} />
       <FAQSection dictionary={dictionary} />
     </div>

@@ -1,3 +1,4 @@
+import { KS_BOT_PROMPT } from '@/prompt/ks-gpt-bot';
 import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 
@@ -25,6 +26,10 @@ export async function POST(req: Request) {
   const result = streamText({
     model: openai('gpt-4o'),
     messages: [
+      {
+        role: 'system',
+        content: KS_BOT_PROMPT,
+      },
       ...initialMessages,
       {
         role: 'user',
