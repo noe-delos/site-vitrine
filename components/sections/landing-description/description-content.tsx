@@ -54,7 +54,7 @@ const useInView = (margin = '0px') => {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { rootMargin: margin },
+      { rootMargin: margin }
     );
 
     const currentElement = elementRef.current;
@@ -206,11 +206,7 @@ const FloatingIconsBackground = () => {
               bottom: icon.bottom,
             }}
           >
-            <img
-              src={icon.src}
-              alt="Floating icon"
-              className="w-fit h-6 object-cover"
-            />
+            <img src={icon.src} alt="Floating icon" className="w-fit h-6 object-cover" />
           </div>
         ))}
       </div>
@@ -226,11 +222,7 @@ const FloatingIconsBackground = () => {
   );
 };
 
-export default function BentoGridSection({
-  dictionary,
-}: {
-  dictionary: Dictionary;
-}) {
+export default function BentoGridSection({ dictionary }: { dictionary: Dictionary }) {
   const [containerRef, isVisible] = useInView('-100px');
 
   const features = [
@@ -254,13 +246,7 @@ export default function BentoGridSection({
       className: 'col-span-3 lg:col-span-3',
       background: (
         <div className="absolute inset-0 overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
             <source src="/hero/video.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-white/60 backdrop-blur-xs" />
@@ -305,21 +291,13 @@ export default function BentoGridSection({
             <div className="flex-1 h-28" />
             <div
               className={cn(
-                'h-10 w-10 sm:h-12 text-white sm:w-12 pb-2 origin-left transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75',
+                'h-10 w-10 sm:h-12 text-white sm:w-12 pb-2 origin-left transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75'
               )}
             />
-            <h3
-              className={cn(
-                'text-lg sm:text-xl border-white font-semibold text-white',
-              )}
-            >
+            <h3 className={cn('text-lg sm:text-xl border-white font-semibold text-white')}>
               {dictionary.bento.features.launch.name}
             </h3>
-            <p
-              className={cn(
-                'max-w-lg text-sm sm:text-base text-white border-white',
-              )}
-            >
+            <p className={cn('max-w-lg text-sm sm:text-base text-white border-white')}>
               {dictionary.bento.features.launch.description}
             </p>
           </div>
@@ -350,11 +328,7 @@ export default function BentoGridSection({
       background: (
         <div className="absolute inset-0 overflow-hidden h-2/3">
           <div className="relative w-full h-full flex flex-col">
-            <img
-              src="/hero/stat.png"
-              alt="Chart"
-              className="w-full h-full object-cover"
-            />
+            <img src="/hero/stat.png" alt="Chart" className="w-full h-full object-cover" />
             <div
               className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none"
               aria-hidden="true"
@@ -366,7 +340,7 @@ export default function BentoGridSection({
   ];
 
   return (
-    <div className="relative bg-white overflow-hidden pb-56">
+    <div className="relative bg-white overflow-hidden pb-56 pt-20">
       {/* Image gradient background */}
       <div className="absolute top-2/3 left-[55%] -translate-x-1/2 -translate-y-1/2 w-[1700px] h-[1100px] opacity-30">
         <img
@@ -376,8 +350,8 @@ export default function BentoGridSection({
         />
       </div>
 
-      <div className="relative container mx-auto px-4 py-20">
-        <div className="max-w-3xl mb-16 space-y-4">
+      <div className="relative container mx-auto w-fit py-24 px-4 items-center justify-center flex flex-col">
+        <div className="max-w-7xl mb-16 space-y-4 self-center md:self-start">
           <div className="flex flex-col gap-6">
             <p className="text-sm uppercase tracking-wider text-gray-500">
               {dictionary.bento.approach}
@@ -388,20 +362,14 @@ export default function BentoGridSection({
                 {dictionary.bento.title.part2}
               </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl">
-              {dictionary.bento.description}
-            </p>
+            <p className="text-lg text-gray-600 max-w-2xl">{dictionary.bento.description}</p>
           </div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-7xl">
           <BentoGrid className="mb-4">
             {features.map((feature) => (
-              <BentoCard
-                key={feature.id}
-                {...feature}
-                textClassName={feature.textClassName}
-              />
+              <BentoCard key={feature.id} {...feature} textClassName={feature.textClassName} />
             ))}
           </BentoGrid>
         </div>

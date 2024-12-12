@@ -45,13 +45,13 @@ export function AppleCardsCarouselDemo({ dictionary }: { dictionary: any }) {
   const cards = data.map((card) => <Card key={card.src} card={card} />);
 
   return (
-    <div className="w-full h-full py-20 bg-[#ffffff31]">
-      <div className="mb-12 max-w-4xl ml-[18%]">
+    <div className="w-full h-full py-20 bg-[#ffffff31] ">
+      <div className="mb-12 max-w-4xl ml-[15%]">
         <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
           {dictionary.aiCarousel.title}
         </h1>
         <p className="text-lg">
-          {dictionary.aiCarousel.description}{' '}
+          {dictionary.aiCarousel.description}
           <span className="text-gray-400">{dictionary.aiCarousel.subdescription}</span>
         </p>
       </div>
