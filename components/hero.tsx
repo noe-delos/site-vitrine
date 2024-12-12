@@ -17,9 +17,7 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 
   React.useEffect(() => {
     // Check if the device is iOS
-    const isIOSDevice =
-      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
     setIsIOS(isIOSDevice);
   }, []);
 
@@ -126,8 +124,8 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
                   isIOS
                     ? ({
                         WebkitUserDrag: 'none',
-                        maxWidth: '100%',
-                        height: '1.5rem',
+                        maxWidth: '10%',
+                        height: '10px',
                       } as any)
                     : {}
                 }
