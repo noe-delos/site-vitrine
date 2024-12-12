@@ -11,12 +11,36 @@ import React from 'react';
 
 const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   const router = useRouter();
+
+  // iOS detection
+  const [isIOS, setIsIOS] = React.useState(false);
+
+  React.useEffect(() => {
+    // Check if the device is iOS
+    const isIOSDevice =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    setIsIOS(isIOSDevice);
+  }, []);
+
+  // iOS-specific styles
+  const iosStyles = isIOS
+    ? {
+        WebkitTransform: 'translateZ(0)',
+        transform: 'translateZ(0)',
+        WebkitBackfaceVisibility: 'hidden',
+        backfaceVisibility: 'hidden',
+        WebkitPerspective: 1000,
+        perspective: 1000,
+      }
+    : {};
+
   return (
     <div className="flex-1 space-y-8 px-6 sm:px-8 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0 pb-10">
       <h1 className="text-5xl font-extrabold sm:text-4xl md:text-5xl lg:text-7xl md:font-bold leading-tight flex flex-col h-fit">
         <div className="flex flex-row justify-center lg:justify-start flex-wrap">
-          <span>{dictionary.hero.title.part1}</span>
-          <span className="bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500 flex items-center">
+          <span className="font-extrabold font-sans">{dictionary.hero.title.part1}</span>
+          <span className="font-extrabold font-sans bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500 flex items-center">
             {dictionary.hero.title.part2}
           </span>
           <img
@@ -25,9 +49,9 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
             className="size-4 ml-1 mb-2 self-end bottom-0 object-contain hidden lg:block"
           />
         </div>
-        <div className="mt-2 lg:mt-0 flex flex-row justify-center lg:justify-start flex-wrap">
+        <div className="font-extrabold font-sans mt-2 lg:mt-0 flex flex-row justify-center lg:justify-start flex-wrap">
           {dictionary.hero.title.part3}
-          <span className="hidden md:block bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+          <span className="font-extrabold font-sans hidden md:block bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
             {dictionary.hero.title.part5}
           </span>
           <img
@@ -54,28 +78,72 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 
       <div className="pt-10 lg:pt-10 w-full flex flex-col">
         <ShineBorder
-          className="min-w-[20%] min-h-[10%] max-w-[50%] max-h-[15%] md:max-w-fit md:max-h-fit self-center md:selft-start border m-0 pb-5 md:size-fit p-[0.115rem] border-none"
+          className="min-w-[20%] min-h-[10%] max-w-[50%] max-h-[15%] md:min-w-fit md:min-h-fit md:max-w-fit md:max-h-fit self-center md:selft-start border m-0 pb-5 md:size-fit p-[0.115rem] border-none"
           borderRadius={6}
           borderWidth={3}
           color={['#ffffff', '#000000']}
         >
           <button
             onClick={() => router.push('/ks-gpt')}
-            className="px-4 py-2 bg-black w-[10rem] h-[2.5rem] md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300 "
+            className="px-4 py-2 bg-black w-[10rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
+            style={
+              isIOS
+                ? ({
+                    ...iosStyles,
+                    WebkitAppearance: 'none',
+                    backgroundColor: '#000',
+                    position: 'relative',
+                    zIndex: 1,
+                  } as any)
+                : {}
+            }
           >
-            {/* Glow effect overlay */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300" />
+            {/* Glow effect overlay - hidden on iOS mobile */}
+            <div
+              className={`hidden ${isIOS ? 'md:hidden' : 'md:absolute'} inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300`}
+            />
 
-            <span className="flex flex-row items-center relative">
-              <span className="bg-gradient-to-b from-white to-gray-700 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-400">
+            <span className="flex flex-row items-center relative" style={iosStyles as any}>
+              <span
+                className="bg-gradient-to-b from-white to-gray-700 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-400"
+                style={
+                  isIOS
+                    ? {
+                        WebkitTextFillColor: 'transparent',
+                        display: 'block',
+                        color: '#fff',
+                      }
+                    : {}
+                }
+              >
                 {dictionary.hero.try}
               </span>
               <img
                 src="/en/logo/brand-logo-white-fadeout.png"
                 alt="circle logo"
                 className="ml-2 mr-0.5 w-fit h-6 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+                style={
+                  isIOS
+                    ? ({
+                        WebkitUserDrag: 'none',
+                        maxWidth: '100%',
+                        height: '1.5rem',
+                      } as any)
+                    : {}
+                }
               />
-              <span className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-300">
+              <span
+                className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-300"
+                style={
+                  isIOS
+                    ? {
+                        WebkitTextFillColor: 'transparent',
+                        display: 'block',
+                        color: '#fff',
+                      }
+                    : {}
+                }
+              >
                 GPT
               </span>
             </span>
@@ -97,6 +165,7 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
     </div>
   );
 };
+
 const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   return (
     <div className="relative w-full">
