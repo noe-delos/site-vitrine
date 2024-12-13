@@ -85,18 +85,7 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 				>
 					<button
 						onClick={() => router.push('/ks-gpt')}
-						className="px-4 py-2 bg-black w-[10rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
-						style={
-							isIOS
-								? ({
-										...iosStyles,
-										WebkitAppearance: 'none',
-										backgroundColor: '#000',
-										position: 'relative',
-										zIndex: 1,
-									} as any)
-								: {}
-						}
+						className="px-4 py-2 bg-[#000000] w-[10rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
 					>
 						{/* Glow effect overlay - hidden on iOS mobile */}
 						<div

@@ -3,6 +3,7 @@
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 const videos = [
 	'/hero/expertise/video1.mp4',
@@ -48,7 +49,13 @@ const FeatureGrid = ({ dictionary }: { dictionary: any }) => {
 
 export default function Expertise({ dictionary }: { dictionary: any }) {
 	const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+	const [isIOS, setIsIOS] = React.useState(false);
 
+	React.useEffect(() => {
+		// Check if the device is iOS
+		const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
+		setIsIOS(isIOSDevice);
+	}, []);
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
@@ -106,33 +113,35 @@ export default function Expertise({ dictionary }: { dictionary: any }) {
 					</motion.div>
 
 					{/* Right Video Section */}
-					<div className="relative h-[600px] w-full rounded-lg">
-						<div className="relative lg:w-[50rem] md:w-[40rem] sm:w-[30rem] w-full h-full brightness-100 rounded-lg shadow-xl">
-							<div className="absolute hidden lg:block -top-10 -right-7 z-40 -mt-0 rotate-6">
-								<div className="p-6 bg-white rounded-lg shadow-xl drop-shadow-lg">
-									<img
-										src="/logo/brand-logo.png"
-										alt="Title"
-										className="lg:size-10 md:size-8 size-6 object-contain"
-									/>
+					{!isIOS && (
+						<div className="relative h-[600px] w-full rounded-lg">
+							<div className="relative lg:w-[50rem] md:w-[40rem] sm:w-[30rem] w-full h-full brightness-100 rounded-lg shadow-xl">
+								<div className="absolute hidden lg:block -top-10 -right-7 z-40 -mt-0 rotate-6">
+									<div className="p-6 bg-white rounded-lg shadow-xl drop-shadow-lg">
+										<img
+											src="/logo/brand-logo.png"
+											alt="Title"
+											className="lg:size-10 md:size-8 size-6 object-contain"
+										/>
+									</div>
 								</div>
+								<video
+									key={currentVideoIndex}
+									className="w-full h-full object-cover scale-100 overflow-hidden rounded-lg"
+									autoPlay
+									muted
+									onEnded={() =>
+										setCurrentVideoIndex(
+											(prevIndex) => (prevIndex + 1) % videos.length
+										)
+									}
+								>
+									<source src={videos[currentVideoIndex]} type="video/mp4" />
+									{dictionary.expertise.video_fallback}
+								</video>
 							</div>
-							<video
-								key={currentVideoIndex}
-								className="w-full h-full object-cover scale-100 overflow-hidden rounded-lg"
-								autoPlay
-								muted
-								onEnded={() =>
-									setCurrentVideoIndex(
-										(prevIndex) => (prevIndex + 1) % videos.length
-									)
-								}
-							>
-								<source src={videos[currentVideoIndex]} type="video/mp4" />
-								{dictionary.expertise.video_fallback}
-							</video>
 						</div>
-					</div>
+					)}
 				</div>
 			</div>
 		</div>
