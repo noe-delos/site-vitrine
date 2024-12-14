@@ -18,6 +18,16 @@ interface ImageMapping {
 
 const MAX_IMAGES = 5;
 
+// Helper function to get domain from URL
+const getDomainFromUrl = (url: string) => {
+  try {
+    const domain = new URL(url).hostname.replace('www.', '');
+    return domain;
+  } catch {
+    return url;
+  }
+};
+
 export default function KsChat({ dictionary, lang }: { dictionary: any; lang: string }) {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
@@ -188,7 +198,7 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
           </div>
         )}
         <div
-          className={`flex flex-col  mmax-w-[70%] ${message.role === 'user' ? '' : 'w-full'} pb-3 no-scrollbar`}
+          className={`flex flex-col max-w-[70%] ${message.role === 'user' ? '' : 'w-full'} pb-3 no-scrollbar`}
         >
           {message.role === 'user' && associatedImages.length > 0 && (
             <div className="grid grid-cols-2 gap-2 mb-2">
@@ -209,9 +219,79 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
             }`}
           >
             <ReactMarkdown
-              remarkPlugins={[remarkGfm, [remarkMath]]}
+              remarkPlugins={[remarkGfm, remarkMath]}
+              components={{
+                h1: ({ node, ...props }) => (
+                  <h1 className="text-2xl font-bold mb-4 mt-6" {...props} />
+                ),
+                h2: ({ node, ...props }) => (
+                  <h2 className="text-xl font-bold mb-3 mt-5" {...props} />
+                ),
+                img: ({ node, src, alt, ...props }) => {
+                  // Check if this is a model logo by looking at the URL
+                  const isModelLogo = src?.includes('logo') || src?.includes('Logo');
+                  return (
+                    <img
+                      src={src}
+                      alt={alt}
+                      className={cn(
+                        // Base styles for all images
+                        'rounded-md',
+                        // If it's a model logo, make it smaller
+                        isModelLogo ? 'h-20 w-auto object-contain' : 'w-fit h-36 object-contain'
+                      )}
+                      {...props}
+                    />
+                  );
+                },
+                h3: ({ node, ...props }) => (
+                  <h3 className="text-lg font-bold mb-2 mt-4" {...props} />
+                ),
+                p: ({ node, ...props }) => <p className="mb-4 leading-7" {...props} />,
+                ul: ({ node, ...props }) => <ul className="list-disc pl-6 mb-4" {...props} />,
+                ol: ({ node, ...props }) => <ol className="list-decimal pl-6 mb-4" {...props} />,
+                li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+                blockquote: ({ node, ...props }) => (
+                  <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4" {...props} />
+                ),
+                hr: ({ node, ...props }) => (
+                  <hr className="my-6 border-t border-gray-300" {...props} />
+                ),
+                table: ({ node, ...props }) => (
+                  <div className="overflow-x-auto my-4">
+                    <table className="min-w-full border-collapse" {...props} />
+                  </div>
+                ),
+                th: ({ node, ...props }) => (
+                  <th
+                    className="border border-gray-300 bg-gray-100 px-4 py-2 text-left"
+                    {...props}
+                  />
+                ),
+                td: ({ node, ...props }) => (
+                  <td className="border border-gray-300 px-4 py-2" {...props} />
+                ),
+                a: ({ node, href, children, ...props }) => (
+                  <a
+                    href={href}
+                    className="text-blue-600 font-semibold hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={href ? getDomainFromUrl(href) : undefined}
+                    {...props}
+                  >
+                    {children || (href ? getDomainFromUrl(href) : href)}
+                  </a>
+                ),
+              }}
               className={cn(
-                'prose prose-sm w-full max-w-none break-words prose-p:leading-relaxed prose-pre:p-0'
+                'prose prose-sm w-full max-w-none break-words overflow-hidden',
+                'prose-headings:font-bold prose-headings:text-black',
+                'prose-p:leading-7 prose-p:mb-4',
+                'prose-ul:my-4 prose-li:my-1',
+                'prose-pre:bg-gray-100 prose-pre:p-4 prose-pre:rounded-lg',
+                'prose-blockquote:border-l-4 prose-blockquote:border-gray-300 prose-blockquote:pl-4',
+                'prose-a:text-blue-600 prose-a:font-semibold hover:prose-a:underline'
               )}
             >
               {message.content}
@@ -306,7 +386,7 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
         </svg>
       </button>
       <div
-        className={`relative no-scrollbar max-w-4xl mx-auto ${messages.length === 0 ? 'h-screen overflow-hidden' : 'h-screen'}`}
+        className={`relative overflow-hidden max-w-4xl mx-auto ${messages.length === 0 ? 'h-screen' : 'h-screen'}`}
       >
         {messages.length === 0 ? (
           <motion.div
@@ -404,7 +484,7 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
             <div
               ref={chatContainerRef}
               onScroll={handleScroll}
-              className="flex-1 overflow-y-auto p-4 pt-14 space-y-4 h-[calc(100vh-80px)]"
+              className="flex-1 overflow-y-auto no-scrollbar p-4 pt-14 space-y-4 h-[calc(100vh-80px)]"
             >
               <AnimatePresence>{messages.map(renderMessage)}</AnimatePresence>
             </div>
