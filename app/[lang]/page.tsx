@@ -15,8 +15,8 @@ export default async function HomePage({ params }: any) {
     <div className="bg-gray-50 mt-16">
       <Hero dictionary={dictionary} />
       <Description dictionary={dictionary} />
-      <WhyUsPage dictionary={dictionary} />
       <AppleCardsCarouselDemo dictionary={dictionary} />
+      <WhyUsPage dictionary={dictionary} />
       <Expertise dictionary={dictionary} />
       <div className="md:hidden">
         <></>

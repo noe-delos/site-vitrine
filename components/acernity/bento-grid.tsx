@@ -66,7 +66,11 @@ const BentoCard = ({
         />
       )}
       <h3
-        className={cn('text-lg sm:text-xl border-white font-semibold text-gray-900', textClassName)}
+        className={cn(
+          'text-lg sm:text-xl border-white font-extrabold text-gray-900',
+          textClassName,
+          'font-extrabold'
+        )}
       >
         {name}
       </h3>
