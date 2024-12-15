@@ -394,7 +394,7 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center justify-center h-full px-4"
           >
-            <h1 className="text-5xl md:text-4xl flex flex-col font-bold mb-8  md:flex-row gap-6 md:gap-2 items-center">
+            <h1 className="text-5xl md:text-4xl flex flex-col font-extrabold mb-8  md:flex-row gap-6 md:gap-2 items-center">
               {dictionary.gpt.title1}
               <span className="flex flex-row gap-2 items-center">
                 <img src="/en/logo/logo-circle.png" alt="circle logo" className="size-16" />
