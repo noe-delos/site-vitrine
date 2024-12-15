@@ -34,10 +34,6 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
       hasSparkle: true,
     },
     { label: dictionary.header.navigation.team, href: `/${lang}/team` },
-    {
-      label: dictionary.header.navigation.portfolio,
-      href: `/${lang}/portfolio`,
-    },
   ];
 
   // Dynamic header style based on services page and scroll position
