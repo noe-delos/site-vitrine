@@ -150,7 +150,7 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
                         <img
                           src="/fr/hero/aiStar.png"
                           alt=""
-                          className="size-3 ml-1 mb-1.5 self-end bottom-0 object-contain hidden lg:block"
+                          className="w-fit h-2.5 ml-0.5 mb-1.5 self-end bottom-0 object-contain hidden lg:block"
                         />
                       )}
                     </div>
