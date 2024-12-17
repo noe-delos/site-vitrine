@@ -5,7 +5,7 @@ import { cn } from '@/utils/cn';
 import { Icon } from '@iconify/react';
 import { useChat } from 'ai/react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Check, Copy, Loader2, RefreshCw, X } from 'lucide-react';
+import { Check, Copy, Loader2, RefreshCw, X, ChevronDown } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -16,7 +16,57 @@ interface ImageMapping {
   [messageId: string]: string[];
 }
 
+interface SimulatorForm {
+  sector: string;
+  activity: string;
+  serviceType: string;
+  useDocuments: boolean;
+  documentTypes: string[];
+  useCase: string;
+  problemDescription: string;
+}
+
 const MAX_IMAGES = 5;
+
+// Predefined values for dropdowns
+const SECTORS = [
+  "Finance & Banking",
+  "Healthcare",
+  "Retail & E-commerce",
+  "Manufacturing",
+  "Education",
+  "Legal",
+  "Real Estate",
+  "Technology",
+  "Transportation & Logistics",
+  "Energy & Utilities"
+];
+
+const SERVICE_TYPES = [
+  "Customer Service",
+  "Data Analysis",
+  "Document Processing",
+  "Quality Control",
+  "Resource Management",
+  "Sales & Marketing",
+  "Supply Chain",
+  "Administrative Tasks",
+  "Research & Development",
+  "Training & Education"
+];
+
+const DOCUMENT_TYPES = [
+  "Text Documents",
+  "Spreadsheets",
+  "PDFs",
+  "Images",
+  "Audio Files",
+  "Video Files",
+  "Presentations",
+  "Forms",
+  "Contracts",
+  "Technical Documentation"
+];
 
 // Helper function to get domain from URL
 const getDomainFromUrl = (url: string) => {
@@ -28,6 +78,70 @@ const getDomainFromUrl = (url: string) => {
   }
 };
 
+// Custom Select Component
+const CustomSelect = ({ value, onChange, options, placeholder }: { 
+  value: string;
+  onChange: (value: string) => void;
+  options: string[];
+  placeholder: string;
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-4 py-2 text-left rounded-lg border border-gray-200 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500/40 transition-all flex items-center justify-between"
+      >
+        {value || placeholder}
+        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'transform rotate-180' : ''}`} />
+      </button>
+      {isOpen && (
+        <div className="absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-auto">
+          {options.map((option) => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => {
+                onChange(option);
+                setIsOpen(false);
+              }}
+              className={cn(
+                "w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors",
+                value === option ? "bg-blue-50 text-blue-600" : ""
+              )}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Custom Checkbox Component
+const CustomCheckbox = ({ checked, onChange, label, id }: {
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  label?: string;
+  id?: string;
+}) => (
+  <label className="flex items-center space-x-2 cursor-pointer">
+    <div
+      onClick={() => onChange(!checked)}
+      className={cn(
+        "w-5 h-5 rounded border transition-colors flex items-center justify-center",
+        checked ? "bg-blue-500 border-blue-500" : "border-gray-300 hover:border-blue-500"
+      )}
+    >
+      {checked && <Check className="w-3 h-3 text-white" />}
+    </div>
+    {label && <span className="text-sm text-gray-700">{label}</span>}
+  </label>
+);
+
 export default function KsChat({ dictionary, lang }: { dictionary: any; lang: string }) {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
@@ -38,6 +152,16 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
   const [copiedMessageId, setCopiedMessageId] = useState<string | null>(null);
   const [selectedPrompt, setSelectedPrompt] = useState<null | { text: string }>(null);
   const [isTyping, setIsTyping] = useState(false);
+  const [showSimulator, setShowSimulator] = useState(false);
+  const [simulatorForm, setSimulatorForm] = useState<SimulatorForm>({
+    sector: '',
+    activity: '',
+    serviceType: '',
+    useDocuments: false,
+    documentTypes: [],
+    useCase: '',
+    problemDescription: '',
+  });
   const fileInputRef = useRef<HTMLInputElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
@@ -151,6 +275,25 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
     }
   };
 
+  const handleSimulatorSubmit = () => {
+    const promptText = `As a business owner, I would like to receive an AI solution proposal. Here are the details:
+
+**Sector**: ${simulatorForm.sector}
+**Activity**: ${simulatorForm.activity}
+**Service Type**: ${simulatorForm.serviceType}
+**Documents Used**: ${simulatorForm.useDocuments ? simulatorForm.documentTypes.join(', ') : 'None'}
+${simulatorForm.useCase ? `**Use Case Example**: ${simulatorForm.useCase}` : ''}
+**Problem Description**: ${simulatorForm.problemDescription}
+
+Please provide suggestions on how generative AI could improve my business operations.`;
+
+    append(
+      { role: 'user', content: promptText },
+      { data: { text: promptText } }
+    );
+    setShowSimulator(false);
+  };
+
   const copyToClipboard = async (text: string, messageId: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -228,16 +371,13 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
                   <h2 className="text-xl font-bold mb-3 mt-5" {...props} />
                 ),
                 img: ({ node, src, alt, ...props }) => {
-                  // Check if this is a model logo by looking at the URL
                   const isModelLogo = src?.includes('logo') || src?.includes('Logo');
                   return (
                     <img
                       src={src}
                       alt={alt}
                       className={cn(
-                        // Base styles for all images
                         'rounded-md',
-                        // If it's a model logo, make it smaller
                         isModelLogo ? 'h-20 w-auto object-contain' : 'w-fit h-36 object-contain'
                       )}
                       {...props}
@@ -257,7 +397,7 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
                 hr: ({ node, ...props }) => (
                   <hr className="my-6 border-t border-gray-300" {...props} />
                 ),
-                table: ({ node, ...props }) => (
+table: ({ node, ...props }) => (
                   <div className="overflow-x-auto my-4">
                     <table className="min-w-full border-collapse" {...props} />
                   </div>
@@ -321,6 +461,122 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
       </motion.div>
     );
   };
+
+  const renderSimulatorForm = () => (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="w-full p-6 rounded-xl bg-white border border-gray-200 shadow-sm space-y-6"
+    >
+      <h3 className="text-lg font-semibold">AI Solution Simulator</h3>
+      
+      <div className="grid grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label className="block text-sm font-medium text-gray-700">Sector</label>
+          <CustomSelect
+            value={simulatorForm.sector}
+            onChange={(value) => setSimulatorForm({...simulatorForm, sector: value})}
+            options={SECTORS}
+            placeholder="Select sector"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label className="block text-sm font-medium text-gray-700">Service Type</label>
+          <CustomSelect
+            value={simulatorForm.serviceType}
+            onChange={(value) => setSimulatorForm({...simulatorForm, serviceType: value})}
+            options={SERVICE_TYPES}
+            placeholder="Select service type"
+          />
+        </div>
+
+        <div className="col-span-2 space-y-2">
+          <label className="block text-sm font-medium text-gray-700">Activity</label>
+          <input
+            type="text"
+            placeholder="Describe your company's main activity"
+            value={simulatorForm.activity}
+            onChange={(e) => setSimulatorForm({...simulatorForm, activity: e.target.value})}
+            className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
+          />
+        </div>
+
+        <div className="col-span-2 space-y-2">
+          <label className="block text-sm font-medium text-gray-700">Problem Description</label>
+          <textarea
+            placeholder="Describe the problem you're trying to solve"
+            value={simulatorForm.problemDescription}
+            onChange={(e) => setSimulatorForm({...simulatorForm, problemDescription: e.target.value})}
+            className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/40 min-h-[100px] resize-none"
+          />
+        </div>
+
+        <div className="col-span-2 space-y-2">
+          <label className="block text-sm font-medium text-gray-700">Use Case Example (Optional)</label>
+          <textarea
+            placeholder="Describe a specific use case"
+            value={simulatorForm.useCase}
+            onChange={(e) => setSimulatorForm({...simulatorForm, useCase: e.target.value})}
+            className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/40 min-h-[100px] resize-none"
+          />
+        </div>
+
+        <div className="col-span-2">
+          <CustomCheckbox
+            checked={simulatorForm.useDocuments}
+            onChange={(checked) => setSimulatorForm({...simulatorForm, useDocuments: checked})}
+            label="Do you use documents in your service?"
+          />
+        </div>
+
+        {simulatorForm.useDocuments && (
+          <div className="col-span-2 pl-7 space-y-2">
+            <label className="block text-sm font-medium text-gray-700">Document Types</label>
+            <div className="grid grid-cols-2 gap-3">
+              {DOCUMENT_TYPES.map((type) => (
+                <CustomCheckbox
+                  key={type}
+                  checked={simulatorForm.documentTypes.includes(type)}
+                  onChange={(checked) => {
+                    if (checked) {
+                      setSimulatorForm({
+                        ...simulatorForm,
+                        documentTypes: [...simulatorForm.documentTypes, type]
+                      });
+                    } else {
+                      setSimulatorForm({
+                        ...simulatorForm,
+                        documentTypes: simulatorForm.documentTypes.filter(t => t !== type)
+                      });
+                    }
+                  }}
+                  label={type}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="col-span-2 flex justify-end space-x-2 pt-4">
+          <button
+            onClick={() => setShowSimulator(false)}
+            className="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={handleSimulatorSubmit}
+            disabled={!simulatorForm.sector || !simulatorForm.activity || !simulatorForm.serviceType || !simulatorForm.problemDescription}
+            className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90 transition-opacity disabled:opacity-50"
+          >
+            Generate Solution
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  );
 
   const renderImagePreviews = () => (
     <div className="flex gap-7 mt-0 pb-5 pl-5">
@@ -406,76 +662,97 @@ export default function KsChat({ dictionary, lang }: { dictionary: any; lang: st
             </p>
             <div className="w-full max-w-3xl">
               {imageUrls.length > 0 && renderImagePreviews()}
-              <form onSubmit={handleFormSubmit} className="relative">
-                {isTyping && selectedPrompt?.text ? (
-                  <div className="w-full px-6 rounded-full bg-gray-100">
-                    <TypewriterEffect
-                      words={selectedPrompt.text
-                        .split(' ')
-                        .map((word) => ({ text: word, classname: '' }))}
-                      duration={0.04}
-                      className={cn('h-full py-3 border-none')}
-                      onComplete={handleTypewriterComplete}
-                    />
-                  </div>
+              
+              <AnimatePresence mode="wait">
+                {showSimulator ? (
+                  renderSimulatorForm()
                 ) : (
-                  <input
-                    value={input}
-                    onChange={handleInputChange}
-                    onPaste={handleImagePaste}
-                    placeholder={dictionary.gpt.placeholder}
-                    className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none pr-28 md:pr-24"
-                    disabled={isLoading}
-                  />
+                  <form onSubmit={handleFormSubmit} className="relative">
+                    {isTyping && selectedPrompt?.text ? (
+                      <div className="w-full px-6 rounded-full bg-gray-100">
+                        <TypewriterEffect
+                          words={selectedPrompt.text
+                            .split(' ')
+                            .map((word) => ({ text: word, classname: '' }))}
+                          duration={0.04}
+                          className={cn('h-full py-3 border-none')}
+                          onComplete={handleTypewriterComplete}
+                        />
+                      </div>
+                    ) : (
+                      <input
+                        value={input}
+                        onChange={handleInputChange}
+                        onPaste={handleImagePaste}
+                        placeholder={dictionary.gpt.placeholder}
+                        className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500/40 pr-24"
+                        disabled={isLoading}
+                      />
+                    )}
+                    <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        ref={fileInputRef}
+                        className="hidden"
+                        multiple
+                        max={MAX_IMAGES}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => fileInputRef.current?.click()}
+                        className="p-2 hover:bg-gray-200 rounded-full transition-colors relative"
+                        disabled={isLoading || isUploading || imageUrls.length >= MAX_IMAGES}
+                      >
+                        {isUploading ? (
+                          <Loader2 className="w-5 h-5 animate-spin text-black" />
+                        ) : (
+                          <Icon icon="mynaui:image-solid" className="size-6 text-zinc-600" />
+                        )}
+                      </button>
+                      <button
+                        type="submit"
+                        disabled={isLoading || (!input && imageUrls.length === 0)}
+                        className="p-2 hover:bg-gray-200 rounded-full pr-3 transition-colors disabled:bg-transparent disabled:cursor-default disabled:opacity-50"
+                      >
+                        {isLoading ? (
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                        ) : (
+                          <Icon icon="mynaui:send-solid" className="size-6 text-zinc-600" />
+                        )}
+                      </button>
+                    </div>
+                  </form>
                 )}
-                <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleImageUpload}
-                    ref={fileInputRef}
-                    className="hidden"
-                    multiple
-                    max={MAX_IMAGES}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => fileInputRef.current?.click()}
-                    className="p-2 hover:bg-gray-200 rounded-full transition-colors relative"
-                    disabled={isLoading || isUploading || imageUrls.length >= MAX_IMAGES}
-                  >
-                    {isUploading ? (
-                      <Loader2 className="w-5 h-5 animate-spin text-black" />
-                    ) : (
-                      <Icon icon="mynaui:image-solid" className="size-6 text-zinc-600" />
-                    )}
-                  </button>
-                  <button
-                    type="submit"
-                    disabled={isLoading || (!input && imageUrls.length === 0)}
-                    className="p-2 hover:bg-gray-200 rounded-full pr-3 transition-colors disabled:bg-transparent disabled:cursor-default disabled:opacity-50"
-                  >
-                    {isLoading ? (
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                    ) : (
-                      <Icon icon="mynaui:send-solid" className="size-6 text-zinc-600" />
-                    )}
-                  </button>
-                </div>
-              </form>
+              </AnimatePresence>
+
               <div className="flex md:gap-3 mt-10 md:mt-6 md:w-full justify-center flex-col md:flex-row w-fit items-center mx-auto md:mx-0 gap-5">
                 {prompts.map((prompt) => (
                   <motion.button
                     key={prompt.text}
                     onClick={() => handlePromptClick(prompt.prompt)}
-                    className="flex items-center gap-2 px-6 py-2 bg-zinc-100 rounded-xl shadow-sm hover:bg-zinc-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex items-center gap-2 px-6 py-2 bg-zinc-100 rounded-xl shadow-sm hover:bg-zinc-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                     disabled={imageUrls.length > 0}
-                  >
-                    <Icon icon={prompt.icon} className={`size-5 ${prompt.color}`} />
+                  ><Icon icon={prompt.icon} className={`size-5 ${prompt.color}`} />
                     <span className="ml-1 font-extralight text-zinc-600">{prompt.text}</span>
                   </motion.button>
                 ))}
+              </div>
+              
+              <div className="mt-4 flex justify-center">
+                <motion.button
+                  onClick={() => setShowSimulator(true)}
+                  className="flex items-center gap-2 px-6 py-2 bg-white border border-blue-500/30 hover:border-purple-500/30 hover:shadow-md rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                  disabled={imageUrls.length > 0}
+                >
+                  <Icon icon="heroicons:sparkles" className="size-5 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent" />
+                  <span className="ml-1 font-medium bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    AI Solution Simulator
+                  </span>
+                </motion.button>
               </div>
             </div>
           </motion.div>
