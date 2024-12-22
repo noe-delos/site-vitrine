@@ -35,7 +35,10 @@ const GptPopup = ({ lang }: GptPopupProps) => {
 				@keyframes ripple {
 					0% {
 						transform: scale(1);
-						opacity: 0.4;
+						opacity: 0.5;
+					}
+					50% {
+						opacity: 0.3;
 					}
 					100% {
 						transform: scale(1.5);
@@ -43,8 +46,8 @@ const GptPopup = ({ lang }: GptPopupProps) => {
 					}
 				}
 
-				.ripple-effect::before,
-				.ripple-effect::after {
+				.ripple-container::before,
+				.ripple-container::after {
 					content: '';
 					position: absolute;
 					top: 0;
@@ -52,20 +55,20 @@ const GptPopup = ({ lang }: GptPopupProps) => {
 					right: 0;
 					bottom: 0;
 					border-radius: 50%;
-					background: rgba(59, 130, 246, 0.5);
-					animation: ripple 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+					background: rgba(82, 95, 217, 0.7);
+					animation: ripple 4s infinite cubic-bezier(0.4, 0, 0.6, 1);
 				}
 
-				.ripple-effect::after {
-					animation-delay: 1s;
+				.ripple-container::after {
+					animation-delay: 2s;
 				}
 			`}</style>
 
 			<div className="relative">
-				{/* Ripple effect container */}
-				<div className="absolute inset-0 ripple-effect" />
+				{/* Single ripple effect container for cleaner animation */}
+				<div className="absolute inset-0 ripple-container" />
 
-				{/* Main button - removed animate-pulse and hover effects */}
+				{/* Main button */}
 				<div
 					onClick={handleClick}
 					className="relative w-16 h-16 rounded-full bg-black shadow-lg cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 flex items-center justify-center"
