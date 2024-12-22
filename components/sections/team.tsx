@@ -81,12 +81,12 @@ const getTeamMembers = (lang: string): TeamMember[] => [
 	},
 	{
 		name: 'Hugo Pradier',
-		role: lang === 'fr' ? 'Ingénieur DevOps' : 'DevOps Engineer',
+		role: lang === 'fr' ? 'Ingénieur Cloud DevOps' : 'Cloud DevOps Engineer',
 		education: 'IIT Madras',
 		expertise: [
 			'DevOps',
 			'SRE',
-			lang === 'fr' ? 'Archi Cloud' : 'Cloud Architecture',
+			lang === 'fr' ? 'Architecture Cloud' : 'Cloud Architecture',
 		],
 		image: '/team/hugo.jpg',
 		description:
