@@ -1,5 +1,6 @@
 "use client";
 
+import { ShinyButton } from "@/components/acernity/shiny-button";
 import { TypewriterEffect } from "@/components/acernity/typewriter-effect";
 import { cn } from "@/utils/cn";
 import { Icon } from "@iconify/react";
@@ -81,11 +82,15 @@ const CustomSelect = ({
   onChange,
   options,
   placeholder,
+  hasError,
+  isMulti = false,
 }: {
-  value: string;
-  onChange: (value: string) => void;
+  value: string | string[];
+  onChange: (value: string | string[]) => void;
   options: string[];
   placeholder: string;
+  hasError?: boolean;
+  isMulti?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef<HTMLDivElement>(null);
@@ -104,16 +109,43 @@ const CustomSelect = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const handleOptionClick = (option: string) => {
+    if (isMulti) {
+      const currentValues = Array.isArray(value) ? value : [];
+      const newValues = currentValues.includes(option)
+        ? currentValues.filter((v) => v !== option)
+        : [...currentValues, option];
+      onChange(newValues);
+    } else {
+      onChange(option);
+      setIsOpen(false);
+    }
+  };
+
+  const displayValue = isMulti
+    ? (Array.isArray(value) ? value : []).slice(0, 2).join(", ") +
+      (Array.isArray(value) && value.length > 2
+        ? ` (+${value.length - 2} more)`
+        : "")
+    : value;
+
   return (
     <div className="relative" ref={selectRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-4 py-2 text-left rounded-lg bg-white hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-blue-500/40 transition-all flex items-center justify-between"
+        className={cn(
+          "w-full px-4 py-2 text-left rounded-lg bg-white hover:bg-gray-50 focus:outline-none transition-all flex items-center justify-between",
+          hasError
+            ? "border-red-500 border-[0.5px] ring-red-500"
+            : "border-none"
+        )}
       >
-        {value || placeholder}
+        {displayValue || placeholder}
         <ChevronDown
-          className={`w-4 h-4 transition-transform ${isOpen ? "transform rotate-180" : ""}`}
+          className={`w-4 h-4 transition-transform ${
+            isOpen ? "transform rotate-180" : ""
+          }`}
         />
       </button>
       {isOpen && (
@@ -122,16 +154,22 @@ const CustomSelect = ({
             <button
               key={option}
               type="button"
-              onClick={() => {
-                onChange(option);
-                setIsOpen(false);
-              }}
+              onClick={() => handleOptionClick(option)}
               className={cn(
-                "w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors",
-                value === option ? "bg-blue-50 text-blue-600" : ""
+                "w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors flex items-center justify-between",
+                isMulti
+                  ? Array.isArray(value) && value.includes(option)
+                    ? "bg-blue-50 text-blue-600"
+                    : ""
+                  : value === option
+                    ? "bg-blue-50 text-blue-600"
+                    : ""
               )}
             >
               {option}
+              {isMulti && Array.isArray(value) && value.includes(option) && (
+                <Check className="w-4 h-4 text-blue-600" />
+              )}
             </button>
           ))}
         </div>
@@ -139,31 +177,6 @@ const CustomSelect = ({
     </div>
   );
 };
-
-const CustomCheckbox = ({
-  checked,
-  onChange,
-  label,
-}: {
-  checked: boolean;
-  onChange: (checked: boolean) => void;
-  label?: string;
-}) => (
-  <label className="flex items-center space-x-2 cursor-pointer">
-    <div
-      onClick={() => onChange(!checked)}
-      className={cn(
-        "w-5 h-5 rounded border transition-colors flex items-center justify-center",
-        checked
-          ? "bg-blue-500 border-blue-500"
-          : "border-gray-300 hover:border-blue-500"
-      )}
-    >
-      {checked && <Check className="w-3 h-3 text-white" />}
-    </div>
-    {label && <span className="text-sm text-gray-700">{label}</span>}
-  </label>
-);
 
 export default function KsChat({
   dictionary,
@@ -326,11 +339,11 @@ export default function KsChat({
 **Sector**: ${simulatorForm.sector}
 **Activity**: ${simulatorForm.activity}
 **Service Type**: ${simulatorForm.serviceType}
-**Documents Used**: ${simulatorForm.useDocuments ? simulatorForm.documentTypes.join(", ") : "None"}
+**Documents Used**: ${simulatorForm.documentTypes.length > 0 ? simulatorForm.documentTypes.join(", ") : "None"}
 ${simulatorForm.useCase ? `**Use Case Example**: ${simulatorForm.useCase}` : ""}
 **Problem Description**: ${simulatorForm.problemDescription}
 
-Please provide suggestions on how generative AI could improve my business operations.`;
+Please provide suggestions on how generative AI could improve my business operations without being too technical.`;
 
     append(
       { role: "user", content: promptText },
@@ -367,177 +380,256 @@ Please provide suggestions on how generative AI could improve my business operat
     }
   };
 
-  const renderSimulatorForm = () => (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className="w-full p-6 rounded-xl bg-gray-50 shadow-sm space-y-4"
-    >
+  const [formErrors, setFormErrors] = useState({
+    sector: false,
+    activity: false,
+    serviceType: false,
+    problemDescription: false,
+  });
+
+  useEffect(() => {
+    if (!showSimulator) {
+      setFormErrors({
+        sector: false,
+        activity: false,
+        serviceType: false,
+        problemDescription: false,
+      });
+    }
+  }, [showSimulator]);
+
+  const renderSimulatorForm = () => {
+    const validateForm = () => {
+      const newErrors = {
+        sector: !simulatorForm.sector,
+        activity: !simulatorForm.activity,
+        serviceType: !simulatorForm.serviceType,
+        problemDescription: !simulatorForm.problemDescription,
+      };
+
+      setFormErrors(newErrors);
+      return !Object.values(newErrors).some((error) => error);
+    };
+
+    const handleSubmit = (e?: React.FormEvent) => {
+      e?.preventDefault();
+
+      if (validateForm()) {
+        handleSimulatorSubmit();
+      }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        handleSubmit();
+      }
+    };
+
+    return (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ staggerChildren: 0.15, delayChildren: 0.1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="w-full p-4 md:p-6 rounded-xl bg-gray-100 shadow-sm space-y-4 mt-3"
       >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          className="space-y-2 mb-3"
+          transition={{ staggerChildren: 0.15, delayChildren: 0.1 }}
         >
-          <p className="text-gray-600">
-            Transform your business with custom AI solutions designed
-            specifically for you. Share your unique business context and
-            challenges, and we'll create a tailored AI implementation strategy.
-          </p>
-        </motion.div>
-
-        <div className="space-y-2.5">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="flex items-center gap-2"
+            transition={{ duration: 0.4 }}
+            className="space-y-2 mb-3"
           >
-            <span className=" text-gray-600">My company operates in</span>
-            <div className="w-48">
-              <CustomSelect
-                value={simulatorForm.sector}
-                onChange={(value) =>
-                  setSimulatorForm({ ...simulatorForm, sector: value })
-                }
-                options={SECTORS}
-                placeholder="Select sector"
-              />
-            </div>
+            <p className="text-gray-600 text-sm md:text-base">
+              Transform your business with custom AI solutions designed
+              specifically for you. Share your unique business context and
+              challenges, and we'll create a tailored AI implementation
+              strategy.
+            </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            className="flex items-center gap-2"
-          >
-            <span className=" text-gray-600">focusing on</span>
-            <div className="w-48">
-              <CustomSelect
-                value={simulatorForm.serviceType}
-                onChange={(value) =>
-                  setSimulatorForm({ ...simulatorForm, serviceType: value })
-                }
-                options={SERVICE_TYPES}
-                placeholder="Select service type"
-              />
-            </div>
-            <span className=" text-gray-600">with core activities in</span>
-            <input
-              type="text"
-              placeholder="Main activity"
-              value={simulatorForm.activity}
-              onChange={(e) =>
-                setSimulatorForm({ ...simulatorForm, activity: e.target.value })
-              }
-              className="flex-1 px-3 py-2 rounded-lg bg-white focus:outline-none focus:ring-1 focus:ring-blue-500/40"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-            className="space-y-2"
-          >
-            <label className="block  font-medium text-gray-700">
-              What challenges are you looking to solve?
-            </label>
-            <input
-              type="text"
-              placeholder="Describe your business challenge"
-              value={simulatorForm.problemDescription}
-              onChange={(e) =>
-                setSimulatorForm({
-                  ...simulatorForm,
-                  problemDescription: e.target.value,
-                })
-              }
-              className="w-full px-4 py-2 rounded-lg bg-white focus:outline-none focus:ring-1 focus:ring-blue-500/40"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.5 }}
-            className="flex flex-row gap-6 items-center"
-          >
-            {simulatorForm.useDocuments && (
-              <div className="flex-1">
-                <label className="block  font-medium text-gray-700 mb-2">
-                  Document Types:
-                </label>
-                <div className="grid grid-cols-2 gap-2">
-                  {DOCUMENT_TYPES.map((type) => (
-                    <CustomCheckbox
-                      key={type}
-                      checked={simulatorForm.documentTypes.includes(type)}
-                      onChange={(checked) => {
-                        if (checked) {
-                          setSimulatorForm({
-                            ...simulatorForm,
-                            documentTypes: [
-                              ...simulatorForm.documentTypes,
-                              type,
-                            ],
-                          });
-                        } else {
-                          setSimulatorForm({
-                            ...simulatorForm,
-                            documentTypes: simulatorForm.documentTypes.filter(
-                              (t) => t !== type
-                            ),
-                          });
-                        }
-                      }}
-                      label={type}
-                    />
-                  ))}
-                </div>
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-2.5">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="flex flex-col md:flex-row md:items-center gap-2"
+            >
+              <span className="text-gray-600 text-sm md:text-base">
+                My company operates in
+              </span>
+              <div className="w-full md:w-48">
+                <CustomSelect
+                  value={simulatorForm.sector}
+                  onChange={(value) => {
+                    setSimulatorForm({
+                      ...simulatorForm,
+                      sector: value as string,
+                    });
+                    setFormErrors({ ...formErrors, sector: false });
+                  }}
+                  options={SECTORS}
+                  placeholder="Select sector"
+                  hasError={formErrors.sector}
+                />
               </div>
-            )}
-          </motion.div>
+              <span className="text-gray-600 text-sm md:text-base">
+                and is mainly focusing on the sector of
+              </span>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.6 }}
-            className="flex justify-end space-x-2 pt-0"
-          >
-            <button
-              onClick={() => setShowSimulator(false)}
-              className="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-100 transition-colors"
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="flex flex-col md:flex-row md:items-center gap-2"
             >
-              Cancel
-            </button>
-            <button
-              onClick={handleSimulatorSubmit}
-              disabled={
-                !simulatorForm.sector ||
-                !simulatorForm.activity ||
-                !simulatorForm.serviceType ||
-                !simulatorForm.problemDescription
-              }
-              className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90 transition-opacity disabled:opacity-50"
+              <span className="text-gray-600 text-sm md:text-base">
+                focusing on
+              </span>
+              <div className="w-full md:w-48">
+                <CustomSelect
+                  value={simulatorForm.serviceType}
+                  onChange={(value) => {
+                    setSimulatorForm({
+                      ...simulatorForm,
+                      serviceType: value as string,
+                    });
+                    setFormErrors({ ...formErrors, serviceType: false });
+                  }}
+                  options={SERVICE_TYPES}
+                  placeholder="Select service type"
+                  hasError={formErrors.serviceType}
+                />
+              </div>
+              <span className="text-gray-600 text-sm md:text-base whitespace-nowrap">
+                with core activities in
+              </span>
+              <input
+                type="text"
+                placeholder="Main activity"
+                value={simulatorForm.activity}
+                onChange={(e) => {
+                  setSimulatorForm({
+                    ...simulatorForm,
+                    activity: e.target.value,
+                  });
+                  setFormErrors({ ...formErrors, activity: false });
+                }}
+                onKeyDown={handleKeyDown}
+                className={cn(
+                  "w-full flex-1 px-3 py-2 rounded-lg bg-white focus:outline-none text-sm md:text-base",
+                  formErrors.activity
+                    ? "border-[0.5px] border-red-500 ring-red-500"
+                    : "border-none"
+                )}
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="space-y-2"
             >
-              Generate AI Solution
-            </button>
-          </motion.div>
-        </div>
+              <label className="block text-gray-700 text-sm md:text-base mb-2">
+                Does your company works with specific documents formats ?
+                (optionnal)
+              </label>
+              <CustomSelect
+                value={simulatorForm.documentTypes}
+                onChange={(value) => {
+                  setSimulatorForm({
+                    ...simulatorForm,
+                    documentTypes: value as string[],
+                  });
+                }}
+                options={DOCUMENT_TYPES}
+                placeholder="Select document types"
+                isMulti={true}
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="space-y-2"
+            >
+              <label className="block font-medium text-gray-700 text-sm md:text-base">
+                What challenges are you looking to solve?
+              </label>
+              <textarea
+                placeholder="Describe your business challenge"
+                value={simulatorForm.problemDescription}
+                onChange={(e) => {
+                  setSimulatorForm({
+                    ...simulatorForm,
+                    problemDescription: e.target.value,
+                  });
+                  setFormErrors({ ...formErrors, problemDescription: false });
+                }}
+                onKeyDown={handleKeyDown}
+                className={cn(
+                  "w-full px-4 py-2 resize-none rounded-lg bg-white focus:outline-none text-sm md:text-base",
+                  formErrors.problemDescription
+                    ? "border-[0.5px] border-red-500 ring-red-500"
+                    : "border-none"
+                )}
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.6 }}
+              className="flex justify-end space-x-2 pt-1"
+            >
+              <button
+                type="button"
+                onClick={() => setShowSimulator(false)}
+                className="px-3 md:px-4 py-1.5 rounded-lg border border-gray-300 hover:bg-gray-100 transition-colors text-sm md:text-base"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="px-3 md:px-4 py-2 md:py-3 rounded-lg dark:bg-[radial-gradient(ellipse_at_top,#454545,transparent_70%),radial-gradient(ellipse_at_bottom,#000000,transparent),linear-gradient(90deg,#1a1a1a,#404040)] text-white hover:opacity-90 transition-opacity"
+              >
+                <Icon
+                  icon="formkit:submit"
+                  className="text-white size-4 md:size-5"
+                />
+              </button>
+            </motion.div>
+          </form>
+        </motion.div>
       </motion.div>
-    </motion.div>
-  );
-
+    );
+  };
   const renderMessage = (message: any) => {
+    if (
+      message.content.includes(
+        "As a business owner, I would like to receive an AI solution proposal"
+      )
+    ) {
+      return null;
+    }
+
+    const isSimulatorResponse =
+      messages.findIndex(
+        (msg: any) =>
+          msg.id !== message.id &&
+          msg.content.includes(
+            "As a business owner, I would like to receive an AI solution proposal"
+          )
+      ) !== -1 && message.role === "assistant";
+
     const associatedImages =
       Object.entries(imageMapping).find(([tempId]) => {
         return (
@@ -554,7 +646,7 @@ Please provide suggestions on how generative AI could improve my business operat
         className={`flex no-scrollbar ${message.role === "user" ? "justify-end" : "justify-start"} mb-4`}
       >
         {message.role === "assistant" && (
-          <div className="w-8 h-8 rounded-full mt-2 bg-black flex items-center justify-center mr-2 flex-shrink-0">
+          <div className="w-8 h-8 rounded-full mt-9 bg-black flex items-center justify-center mr-2 flex-shrink-0">
             <img
               src="/fr/logo/brand-logo-white.png"
               alt="AI Avatar"
@@ -579,9 +671,7 @@ Please provide suggestions on how generative AI could improve my business operat
             </div>
           )}
           <div
-            className={`rounded-2xl px-4 py-2 ${
-              message.role === "user" ? "bg-gray-100" : "bg-white"
-            }`}
+            className={`rounded-2xl px-4 py-2 ${message.role === "user" ? "bg-gray-100" : "bg-white"}`}
           >
             <ReactMarkdown
               remarkPlugins={[remarkGfm, remarkMath]}
@@ -670,6 +760,50 @@ Please provide suggestions on how generative AI could improve my business operat
             >
               {message.content}
             </ReactMarkdown>
+
+            {isSimulatorResponse && !isLoading && (
+              <div className="mt-6 bg-gradient-to-br from-blue-200 to-purple-200 rounded-xl p-5 relative overflow-hidden">
+                <div className="absolute -right-2 -bottom-8">
+                  <img
+                    src="/fr/logo/brand-logo-white.png"
+                    alt="Brand Logo"
+                    className="size-40 opacity-30"
+                  />
+                </div>
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      Need help with your AI project?
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Get personalized guidance from our AI experts and
+                      transform your business
+                    </p>
+                  </div>
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center px-4 py-2 rounded-lg bg-black text-white hover:opacity-90 transition-opacity text-sm whitespace-nowrap"
+                  >
+                    Contact Us
+                    <svg
+                      className="ml-2 w-4 h-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 12H19M19 12L12 5M19 12L12 19"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            )}
+
             {message.role === "assistant" && (
               <div className="flex gap-2 mt-2 text-gray-400">
                 <button
@@ -695,7 +829,6 @@ Please provide suggestions on how generative AI could improve my business operat
       </motion.div>
     );
   };
-
   const prompts = [
     {
       icon: "fa6-solid:handshake",
@@ -814,7 +947,7 @@ Please provide suggestions on how generative AI could improve my business operat
                         onChange={handleInputChange}
                         onPaste={handleImagePaste}
                         placeholder={dictionary.gpt.placeholder}
-                        className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500/40 pr-24"
+                        className="w-full py-3 px-6 rounded-full bg-gray-100 focus:outline-none  pr-24"
                         disabled={isLoading}
                       />
                     )}
@@ -875,7 +1008,7 @@ Please provide suggestions on how generative AI could improve my business operat
                       <motion.button
                         key={prompt.text}
                         onClick={() => handlePromptClick(prompt.prompt)}
-                        className="flex items-center gap-2 px-6 py-2 bg-zinc-100 rounded-xl shadow-sm hover:bg-zinc-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="flex items-center gap-2 px-6 py-2 bg-zinc-100 rounded-md shadow-sm hover:bg-zinc-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                         whileHover={{
                           scale: 1.02,
                           transition: { duration: 0.2 },
@@ -894,23 +1027,18 @@ Please provide suggestions on how generative AI could improve my business operat
                   </div>
 
                   <div className="mt-4 flex justify-center">
-                    <motion.button
+                    <ShinyButton
                       onClick={() => setShowSimulator(true)}
-                      className="flex items-center gap-2 px-6 py-2 bg-white border border-blue-500/30 hover:border-purple-500/30 hover:shadow-md rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                      whileHover={{
-                        scale: 1.02,
-                        transition: { duration: 0.2 },
-                      }}
                       disabled={imageUrls.length > 0}
                     >
-                      <Icon
-                        icon="heroicons:sparkles"
-                        className="size-5 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
-                      />
-                      <span className="ml-1 font-medium bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                        AI Solution Simulator
-                      </span>
-                    </motion.button>
+                      <div className="flex flex-row items-center gap-2">
+                        <Icon
+                          icon="ant-design:bulb-filled"
+                          className={`size-5 text-white`}
+                        />
+                        <span className="text-white"> Simulateur KS</span>
+                      </div>
+                    </ShinyButton>
                   </div>
                 </>
               )}
