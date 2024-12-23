@@ -60,11 +60,16 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
           </span>
         </div>
         <div className="font-extrabold font-sans mt-2 lg:mt-0 flex flex-row justify-center lg:justify-start flex-wrap">
-          <span className="font-extrabold font-sans hidden md:block bg-clip-text pr-2 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+          <span className="font-extrabold font-sans hidden md:block bg-clip-text pr-3 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
             {dictionary.hero.title.part3}
           </span>
           {dictionary.hero.title.part4}
-          <span className="font-extrabold font-sans bg-clip-text ml-1 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+          <span
+            className={cn(
+              "font-extrabold font-sans bg-clip-text ml-1 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500",
+              lang === "en" && "ml-3"
+            )}
+          >
             {dictionary.hero.title.part5}
           </span>
           <img
