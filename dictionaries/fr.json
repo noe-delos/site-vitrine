@@ -725,5 +725,12 @@
     "cancel_button": "Annuler",
     "select_sector": "Sélectionner",
     "select_service": "Sélectionner"
+  },
+  "cookie": {
+    "title": "Paramètres des cookies",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation, diffuser du contenu personnalisé et analyser notre trafic. Veuillez accepter pour continuer.",
+    "acceptButton": "Tout accepter",
+    "declineButton": "Refuser",
+    "privacyPolicy": "Politique de confidentialité"
   }
 }

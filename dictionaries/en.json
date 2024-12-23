@@ -720,5 +720,12 @@
     "cancel_button": "Cancel",
     "select_sector": "Select sector",
     "select_service": "Select service type"
+  },
+  "cookie": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. Please accept to continue.",
+    "acceptButton": "Accept All",
+    "declineButton": "Decline",
+    "privacyPolicy": "Privacy Policy"
   }
 }

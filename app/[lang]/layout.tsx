@@ -4,6 +4,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import React from "react";
 
+import CookieConsent from "@/components/cookies";
 import GptPopup from "@/components/gpt-popup";
 import { getDictionary } from "@/get-dictionary";
 import { i18n, Locale } from "@/i18n-config";
@@ -56,6 +57,7 @@ const Layout: React.FC<LayoutProps> = async ({ children, params }) => {
           <Header dictionary={dictionary} lang={params.lang} />
           <main>{children}</main>
           <GptPopup lang={params.lang} />
+          <CookieConsent dictionary={dictionary} />
           <Footer dictionary={dictionary} />
         </div>
         <Toaster richColors={true} position="top-center" />
