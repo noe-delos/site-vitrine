@@ -2,8 +2,8 @@
 
 import { Locale } from "@/i18n-config";
 import { cn } from "@/utils/cn";
+import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -45,11 +45,11 @@ const getTeamMembers = (lang: string): TeamMember[] => [
     companies: [
       {
         name: "Delos Intelligence",
-        logo: "https://media.licdn.com/dms/image/v2/D4E0BAQHvN_9bX1mb8A/company-logo_200_200/company-logo_200_200/0/1734711600698/delos_intelligence_logo?e=1743033600&v=beta&t=AhoILPpJBkbV9PAAjV_yR79pO7Lqr9qXKQAieiIG9R8",
+        logo: "/fr/team/delos1.png",
       },
       {
         name: "Seiki",
-        logo: "https://static.wixstatic.com/media/a8a0e3_40619bf7a3284dfda57184f3e0425818~mv2.jpg/v1/fit/w_2500,h_1330,al_c/a8a0e3_40619bf7a3284dfda57184f3e0425818~mv2.jpg",
+        logo: "/fr/team/seiki.png",
       },
     ],
   },
@@ -71,7 +71,7 @@ const getTeamMembers = (lang: string): TeamMember[] => [
     companies: [
       {
         name: "Delos Intelligence",
-        logo: "https://media.licdn.com/dms/image/v2/D4E0BAQHvN_9bX1mb8A/company-logo_200_200/company-logo_200_200/0/1734711600698/delos_intelligence_logo?e=1743033600&v=beta&t=AhoILPpJBkbV9PAAjV_yR79pO7Lqr9qXKQAieiIG9R8",
+        logo: "/fr/team/delos1.png",
       },
       {
         name: "Institut Pasteur",
@@ -123,12 +123,21 @@ const getTeamMembers = (lang: string): TeamMember[] => [
       lang === "fr"
         ? "Chargé du développement commercial, focalisé sur la création de partenariats stratégiques durables. S'attache à comprendre les besoins des clients pour proposer des solutions adaptées et construire des relations de confiance."
         : "Business development representative, focused on creating lasting strategic partnerships. Committed to understanding client needs to propose tailored solutions and build trust-based relationships.",
-    linkedin: "https://www.linkedin.com/in/maxime-cividini/",
+    linkedin: "https://www.linkedin.com/in/nicolas-henaux/",
     schools: [
       "https://keystoneacademic-res.cloudinary.com/image/upload/element/16/169621_LogoSKEMA-Couleur.png",
       "https://brand.ncsu.edu/img/logo/2x2white.jpg",
     ],
-    companies: [],
+    companies: [
+      {
+        name: "Aveine",
+        logo: "https://media.licdn.com/dms/image/v2/C4E0BAQFkptSHtm9f8A/company-logo_200_200/company-logo_200_200/0/1670487825342/aveine_logo?e=1743033600&v=beta&t=ZsYfimbkaAUkqag12Py7oLry7T3II4FDUvTyL6VpTRk",
+      },
+      {
+        name: "Pomona Group",
+        logo: "https://media.licdn.com/dms/image/v2/D4E0BAQHzaBxN9P9XpQ/company-logo_200_200/company-logo_200_200/0/1714996462545/pomona_logo?e=1743033600&v=beta&t=epwPw-qMOiUFCivfGQX7YIFEmU2XiBRRlAQyBJA43UY",
+      },
+    ],
   },
 ];
 
@@ -375,24 +384,19 @@ const Card3D = ({ member, index }: { member: TeamMember; index: number }) => {
 
   const handleMouseMove = (e: any) => {
     if (!cardRef.current) return;
-
     const card: any = cardRef.current;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-
-    const rotateX = -((y - centerY) / centerY) * 5;
-    const rotateY = ((x - centerX) / centerX) * 5;
-
-    setRotation({ x: rotateX, y: rotateY });
+    setRotation({
+      x: -((y - centerY) / centerY) * 5,
+      y: ((x - centerX) / centerX) * 5,
+    });
   };
 
-  const handleMouseLeave = () => {
-    setRotation({ x: 0, y: 0 });
-  };
+  const handleMouseLeave = () => setRotation({ x: 0, y: 0 });
 
   return (
     <motion.div
@@ -408,37 +412,45 @@ const Card3D = ({ member, index }: { member: TeamMember; index: number }) => {
       }}
       className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
     >
-      <div className="flex flex-col md:flex-row h-full">
-        <div className="relative w-full md:w-56 h-52 md:h-auto shrink-0">
+      <div className={cn("flex flex-col md:flex-row h-full")}>
+        <div className="relative w-full md:w-56 md:h-auto h-[25rem] shrink-0">
           <Image
             src={member.image}
             alt={member.name}
             fill
             className={cn(
               "object-cover object-center group-hover:scale-105 transition duration-300",
-              member.name === "Noé Campo" && "scale-110"
+              member.name === "Noé Campo" && "scale-110",
+              member.name === "Hugo Pradier" && "scale-100"
             )}
           />
-          <Link
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute top-4 right-4 bg-white/90 p-2 rounded-full hover:bg-white transition-colors duration-200"
-          >
-            <Linkedin className="w-5 h-5 text-blue-600" />
-          </Link>
         </div>
 
         <div
-          className="flex-1 p-6 md:p-8"
+          className={"flex-1 p-4 sm:p-6"}
           style={{ transform: "translateZ(30px)" }}
         >
-          <div className="space-y-4">
+          <div
+            className={cn(
+              "space-y-1 md:space-y-3 ",
+              index === 0 && member.name === "Noé Campo" && "pl-2 pt-4 md:pt-0"
+            )}
+          >
+            <Link
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute md:top-3 top-7 right-3 bg-transparent p-2 rounded-md transition-colors duration-200"
+            >
+              <Icon
+                icon="ri:linkedin-fill"
+                className="size-5 text-black hover:text-zinc-800"
+              />
+            </Link>
+
             <div>
-              <h3 className="text-xl font-bold text-gray-900 tracking-wide">
-                {member.name}
-              </h3>
-              <p className="text-base bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium mt-0.5">
+              <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
+              <p className="text-sm bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
                 {member.role}
               </p>
             </div>
@@ -447,45 +459,57 @@ const Card3D = ({ member, index }: { member: TeamMember; index: number }) => {
               {member.description}
             </p>
 
-            <div className="flex flex-wrap gap-1.5 pb-2">
+            <div className="flex flex-wrap gap-1">
               {member.expertise.map((skill) => (
                 <span
                   key={skill}
-                  className="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full font-medium"
+                  className="px-2 py-0.5 text-xs bg-gray-100 text-gray-700 rounded-full"
                 >
                   {skill}
                 </span>
               ))}
             </div>
 
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                {member.schools.map((school) => (
-                  <img
-                    key={school}
-                    src={school}
-                    alt="school"
-                    className={cn(
-                      "w-auto pr-4",
-                      member.name === "Julien Bergerot"
-                        ? "h-7 md:h-8"
-                        : "h-6 md:h-6"
-                    )}
-                  />
-                ))}
+            <div className="space-y-3 pt-3">
+              <div className="border-b border-gray-100 pb-4">
+                <p className="text-xs text-gray-500 mb-2">Education</p>
+                <div className="flex items-center gap-3">
+                  {member.schools.map((school, _index) => (
+                    <img
+                      key={school}
+                      src={school}
+                      alt="school"
+                      className={cn(
+                        "w-auto pr-3",
+                        member.name === "Julien Bergerot" ? "h-10" : "h-7",
+                        _index === 0 && member.name === "Nicolas Henaux"
+                          ? "h-6"
+                          : ""
+                      )}
+                    />
+                  ))}
+                </div>
               </div>
 
-              <div className="flex items-center gap-4 pt-2 border-t border-gray-100">
-                <span className="text-xs text-gray-500">
-                  Previous experiences:
-                </span>
-                <div className="flex gap-3">
-                  {member.companies.map((company) => (
+              <div>
+                <p className="text-xs text-gray-500 mb-2 pt-0.5">
+                  Professional Experience
+                </p>
+                <div className="flex gap-3 items-center">
+                  {member.companies.map((company, _index) => (
                     <img
                       key={company.name}
                       src={company.logo}
                       alt={company.name}
-                      className="h-6 w-auto object-contain"
+                      className={cn(
+                        "h-7 w-auto object-contain pr-3",
+                        _index === 1 && member.name === "Noé Campo" && "h-5",
+                        member.name === "Hugo Pradier" && _index === 0 && "h-9",
+                        member.name === "Hugo Pradier" &&
+                          _index === 1 &&
+                          "h-11",
+                        member.name === "Nicolas Henaux" && "h-9"
+                      )}
                       title={company.name}
                     />
                   ))}
@@ -623,43 +647,6 @@ export default function OurTeam({
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 bg-white">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center relative"
-        >
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4 md:mb-6 text-gray-900">
-            {dictionary.solutions.title}
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8">
-            {dictionary.solutions.description}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.2 }}
-              className="relative inline-flex items-center"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-md opacity-100 transition-opacity duration-300 group-hover:opacity-90" />
-              <div className="relative bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-[5px] m-[1px] px-4 md:px-6 py-2 transition-all duration-300">
-                <a
-                  href="/contact-us"
-                  className="text-white font-medium whitespace-nowrap text-sm md:text-base"
-                >
-                  {dictionary.portfolio.cta}
-                </a>
-              </div>
-              <div className="absolute inset-0 rounded-md overflow-hidden">
-                <div className="absolute inset-0 translate-x-[-100%] animate-[shine_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform" />
-              </div>
-            </motion.button>
-          </div>
-        </motion.div>
       </section>
     </div>
   );
