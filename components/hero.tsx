@@ -1,15 +1,18 @@
-'use client';
+"use client";
 
-import { ShineBorder } from '@/components/acernity/border';
-import { FollowerPointerCard } from '@/components/acernity/following-pointer';
-import Press from '@/components/socials';
-import { cn } from '@/utils/cn';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import React from 'react';
+import { ShineBorder } from "@/components/acernity/border";
+import { FollowerPointerCard } from "@/components/acernity/following-pointer";
+import Press from "@/components/socials";
+import { cn } from "@/utils/cn";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React from "react";
 
-const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
+const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
+  dictionary,
+  lang,
+}) => {
   const router = useRouter();
 
   // iOS detection
@@ -24,53 +27,55 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   // iOS-specific styles
   const iosStyles = isIOS
     ? {
-        WebkitTransform: 'translateZ(0)',
-        transform: 'translateZ(0)',
-        WebkitBackfaceVisibility: 'hidden',
-        backfaceVisibility: 'hidden',
+        WebkitTransform: "translateZ(0)",
+        transform: "translateZ(0)",
+        WebkitBackfaceVisibility: "hidden",
+        backfaceVisibility: "hidden",
         WebkitPerspective: 1000,
         perspective: 1000,
       }
     : {};
 
   return (
-    <div className="flex-1 space-y-8 px-6 sm:px-8 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0 pb-10">
-      <h1 className="text-5xl font-extrabold sm:text-4xl md:text-5xl lg:text-7xl md:font-bold leading-tight flex flex-col h-fit">
+    <div className="flex-1 space-y-8 sm:px-8 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0 pb-10 pl-0">
+      <h1
+        className={cn(
+          "text-5xl font-extrabold sm:text-4xl md:text-5xl lg:text-[3.7rem] md:font-bold leading-tight flex flex-col h-fit",
+          lang === "en" && "lg:text-[3.8rem]"
+        )}
+      >
         <div className="flex flex-row justify-center lg:justify-start flex-wrap">
-          <span className="font-extrabold font-sans">{dictionary.hero.title.part1}</span>
-          <span className="font-extrabold font-sans bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500 flex items-center">
-            {dictionary.hero.title.part2}
+          <span className="font-extrabold font-sans">
+            {dictionary.hero.title.part1} <br className="block md:hidden" />
+            <span className="hidden md:inline m-0 p-0">
+              {dictionary.hero.title.part2}
+            </span>
+            <div className="flex md:hidden flex-row gap-2">
+              {" "}
+              {dictionary.hero.title.part2}
+              <span className="block md:hidden">
+                {dictionary.hero.title.part3}
+              </span>
+            </div>
           </span>
-          <img
-            src="/fr/hero/aiStar.png"
-            alt=""
-            className="size-4 ml-1 mb-2 self-end bottom-0 object-contain hidden lg:block"
-          />
         </div>
         <div className="font-extrabold font-sans mt-2 lg:mt-0 flex flex-row justify-center lg:justify-start flex-wrap">
-          {dictionary.hero.title.part3}
-          <span className="font-extrabold font-sans hidden md:block bg-clip-text ml-4 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+          <span className="font-extrabold font-sans hidden md:block bg-clip-text pr-2 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+            {dictionary.hero.title.part3}
+          </span>
+          {dictionary.hero.title.part4}
+          <span className="font-extrabold font-sans bg-clip-text ml-1 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
             {dictionary.hero.title.part5}
           </span>
           <img
             src="/fr/hero/aiStar.png"
             alt=""
-            className="size-4 ml-1 mb-2 self-end bottom-0 object-contain hidden lg:block"
-          />
-        </div>
-        <div className="md:hidden flex w-full h-fit gap-1 mt-2 flex-row items-center justify-center">
-          <span className="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#7367dd] to-blue-400">
-            {dictionary.hero.title.part5}
-          </span>
-          <img
-            src="/fr/hero/aiStar.png"
-            alt="star"
-            className="size-4 ml-0 mb-2 self-end bottom-0 object-contain"
+            className="size-4 ml-1 mb-2 self-end bottom-0 object-contain"
           />
         </div>
       </h1>
 
-      <p className="text-sm px-24 sm:text-xl lg:text-lg text-gray-500 max-w-xl mx-auto lg:mx-0 sm:px-12 lg:px-0">
+      <p className="text-sm px-24 sm:text-xl lg:text-[1rem] lg:leading-6 text-gray-500 max-w-xl mx-auto lg:mx-0 sm:px-12 lg:px-0">
         {dictionary.hero.description}
       </p>
 
@@ -79,26 +84,29 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
           className="min-w-[20%] min-h-[10%] max-w-[50%] max-h-[15%] md:min-w-fit md:min-h-fit md:max-w-fit md:max-h-fit self-center md:selft-start border m-0 pb-5 md:size-fit p-[0.115rem] border-none"
           borderRadius={6}
           borderWidth={3}
-          color={['#ffffff', '#000000']}
+          color={["#ffffff", "#000000"]}
         >
           <button
-            onClick={() => router.push('/ks-gpt')}
-            className="px-4 py-2 bg-[#000000] w-[10rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
+            onClick={() => router.push("/ks-gpt")}
+            className="px-4 py-2 bg-[#000000] w-[12rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
           >
             {/* Glow effect overlay - hidden on iOS mobile */}
             <div
-              className={`hidden ${isIOS ? 'md:hidden' : 'md:absolute'} inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300`}
+              className={`hidden ${isIOS ? "md:hidden" : "md:absolute"} inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300`}
             />
 
-            <span className="flex flex-row items-center relative" style={iosStyles as any}>
+            <span
+              className="flex flex-row items-center relative"
+              style={iosStyles as any}
+            >
               <span
                 className="bg-gradient-to-b from-white to-gray-700 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-400"
                 style={
                   isIOS
                     ? {
-                        WebkitTextFillColor: 'transparent',
-                        display: 'block',
-                        color: '#fff',
+                        WebkitTextFillColor: "transparent",
+                        display: "block",
+                        color: "#fff",
                       }
                     : {}
                 }
@@ -115,9 +123,9 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
                 style={
                   isIOS
                     ? {
-                        WebkitTextFillColor: 'transparent',
-                        display: 'block',
-                        color: '#fff',
+                        WebkitTextFillColor: "transparent",
+                        display: "block",
+                        color: "#fff",
                       }
                     : {}
                 }
@@ -132,10 +140,10 @@ const LeftSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
         </p>
         <Press
           images={[
-            '/fr/socials/logo0.png',
-            '/fr/socials/logo1.png',
-            '/fr/socials/logo2.png',
-            '/fr/socials/logo3.png',
+            "/fr/socials/logo0.png",
+            "/fr/socials/logo1.png",
+            "/fr/socials/logo2.png",
+            "/fr/socials/logo3.png",
           ]}
           title=""
         />
@@ -170,7 +178,7 @@ const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
               {index === 1 ? (
                 <ShineBorder
                   className="relative size-full border rounded-full"
-                  color={['#6BA1FA', '#266CDE', '#0945A7']}
+                  color={["#6BA1FA", "#266CDE", "#0945A7"]}
                 >
                   <div className="relative h-[250px] w-full rounded-2xl overflow-hidden shadow-2xl">
                     <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
@@ -224,11 +232,11 @@ const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
                       duration: 0.8,
                       scale: {
                         duration: 4,
-                        ease: 'easeOut',
+                        ease: "easeOut",
                       },
                       hover: {
                         duration: 1,
-                        ease: 'easeOut',
+                        ease: "easeOut",
                       },
                     }}
                     className="relative w-full h-full"
@@ -242,13 +250,13 @@ const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
                     />
                   </motion.div>
                   <motion.div
-                    className="absolute inset-0 flex items-center justify-center"
+                    className="absolute inset-0 flex items-center justify-center font-extrabold"
                     transition={{ delay: 1.4, duration: 0.5 }}
                   >
                     <motion.span className="px-6 py-3 text-2xl font-bold rounded-lg text-gray-800 relative">
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-transparent backdrop-blur-md rounded-lg" />
-                      <span className="relative z-10">
+                      <span className="relative z-10 font-extrabold">
                         {dictionary.hero.ai.part1}
                         <span className="bg-gradient-to-r font-extrabold from-purple-600 to-blue-500 bg-clip-text text-transparent">
                           {dictionary.hero.ai.part2}
@@ -293,7 +301,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
           {index === 1 ? (
             <ShineBorder
               className="relative size-full border rounded-full"
-              color={['#6BA1FA', '#266CDE', '#0945A7']}
+              color={["#6BA1FA", "#266CDE", "#0945A7"]}
             >
               <div className="relative w-[35vw] h-[28vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
@@ -301,7 +309,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
                   src={`/fr/hero/hero${index}.png`}
                   alt="Hero illustration"
                   fill
-                  className={cn('object-cover')}
+                  className={cn("object-cover")}
                 />
               </div>
             </ShineBorder>
@@ -312,7 +320,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
                 src={`/fr/hero/hero${index}.png`}
                 alt="Hero illustration"
                 fill
-                className={cn('object-cover')}
+                className={cn("object-cover")}
               />
             </div>
           )}
@@ -345,11 +353,11 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
                       duration: 0.8,
                       scale: {
                         duration: 4,
-                        ease: 'easeOut',
+                        ease: "easeOut",
                       },
                       hover: {
                         duration: 1,
-                        ease: 'easeOut',
+                        ease: "easeOut",
                       },
                     }}
                     className="w-full h-full object-cover rounded-lg blur-[1px]"
@@ -391,12 +399,15 @@ const RightSection: React.FC<{ dictionary: any }> = ({ dictionary }) => {
   );
 };
 
-const Hero: React.FC<{ dictionary: any }> = ({ dictionary }) => {
+const Hero: React.FC<{ dictionary: any; lang: string }> = ({
+  dictionary,
+  lang,
+}) => {
   return (
-    <section className="min-h-[70vh] md:min-h-[90vh]  flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
-      <div className="max-w-[85rem] w-full mx-auto z-50">
+    <section className="min-h-[70vh] md:min-h-[90vh] flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
+      <div className="max-w-[90rem] w-full mx-auto z-50">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 xs:mt-10">
-          <LeftSection dictionary={dictionary} />
+          <LeftSection dictionary={dictionary} lang={lang} />
           <RightSection dictionary={dictionary} />
         </div>
       </div>

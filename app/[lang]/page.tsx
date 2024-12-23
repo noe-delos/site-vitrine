@@ -13,7 +13,7 @@ export default async function HomePage({ params }: any) {
 
   return (
     <div className="bg-gray-50 mt-16">
-      <Hero dictionary={dictionary} />
+      <Hero dictionary={dictionary} lang={params.lang} />
       <Description dictionary={dictionary} />
       <AppleCardsCarouselDemo dictionary={dictionary} />
       <WhyUsPage dictionary={dictionary} />
