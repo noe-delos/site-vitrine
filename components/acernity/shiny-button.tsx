@@ -22,9 +22,9 @@ const animationProps = {
     mass: 2,
     scale: {
       type: "spring",
-      stiffness: 400, // Increased from 200
-      damping: 10, // Increased from 5
-      mass: 0.3, // Decreased from 0.5
+      stiffness: 400,
+      damping: 10,
+      mass: 0.3,
     },
   },
 } as AnimationProps;
@@ -43,8 +43,8 @@ const ShinyButton = React.forwardRef<HTMLButtonElement, ShinyButtonProps>(
         {...props}
         className={cn(
           "relative rounded-md px-6 py-2 font-medium backdrop-blur-xl transition-all duration-300 ease-in-out hover:shadow",
-          "dark:bg-[radial-gradient(ellipse_at_top,#454545,transparent_70%),radial-gradient(ellipse_at_bottom,#000000,transparent),linear-gradient(90deg,#1a1a1a,#404040)]",
-          "hover:dark:bg-[radial-gradient(ellipse_at_top,#555555,transparent_70%),radial-gradient(ellipse_at_bottom,#111111,transparent),linear-gradient(90deg,#2a2a2a,#505050)]",
+          "bg-gradient-to-b from-zinc-600 to-zinc-950 dark:bg-gradient-to-b dark:from-zinc-600 dark:to-zinc-950",
+          "hover:dark:bg-gradient-to-b hover:dark:from-zinc-700 hover:dark:to-zinc-900",
           "dark:hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]",
           className
         )}
@@ -63,7 +63,7 @@ const ShinyButton = React.forwardRef<HTMLButtonElement, ShinyButtonProps>(
             mask: "linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) content-box,linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255))",
             maskComposite: "exclude",
           }}
-          className="absolute inset-0 z-10 block rounded-[inherit] bg-[linear-gradient(-75deg,rgba(90,90,90,0.2)_calc(var(--x)+20%),rgba(120,120,120,0.4)_calc(var(--x)+25%),rgba(90,90,90,0.2)_calc(var(--x)+100%))] p-px border border-[#3a3a3a] dark:hover:border-[#5a5a5a]"
+          className="absolute inset-0 z-10 block rounded-[inherit] bg-[linear-gradient(-75deg,rgba(90,90,90,0.2)_calc(var(--x)+20%),rgba(120,120,120,0.4)_calc(var(--x)+25%),rgba(90,90,90,0.2)_calc(var(--x)+100%))] p-px border border-zinc-800 dark:hover:border-zinc-600"
         ></span>
       </motion.button>
     );

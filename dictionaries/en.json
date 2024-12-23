@@ -113,7 +113,11 @@
       },
       "security": {
         "title": "Enterprise Security",
-        "features": ["Multi-factor authentication", "End-to-end encryption", "GDPR compliance"]
+        "features": [
+          "Multi-factor authentication",
+          "End-to-end encryption",
+          "GDPR compliance"
+        ]
       },
       "realtime": {
         "title": "Integration Examples",
@@ -172,7 +176,11 @@
       },
       "performance": {
         "title": "Performance",
-        "features": ["Parallel processing", "Smart caching", "Advanced monitoring"]
+        "features": [
+          "Parallel processing",
+          "Smart caching",
+          "Advanced monitoring"
+        ]
       }
     },
     "sites": {
@@ -243,7 +251,12 @@
       },
       "cloud": {
         "title": "Cloud Infrastructure",
-        "features": ["Vercel Edge Network", "Scaleway Cloud", "Global CDN", "Automatic SSL"]
+        "features": [
+          "Vercel Edge Network",
+          "Scaleway Cloud",
+          "Global CDN",
+          "Automatic SSL"
+        ]
       },
       "security": {
         "title": "Security & Compliance",
@@ -262,7 +275,11 @@
       },
       "cicd": {
         "title": "CI/CD",
-        "features": ["Continuous deployment", "Preview deployments", "Instant rollback"]
+        "features": [
+          "Continuous deployment",
+          "Preview deployments",
+          "Instant rollback"
+        ]
       }
     }
   },
@@ -688,5 +705,20 @@
         "description": "Communicate across 95+ languages with context-aware, culturally appropriate translations."
       }
     }
+  },
+  "simulator": {
+    "title": "Transform your business with custom AI solutions designed specifically for you. Share your unique business context and challenges, and we'll create a tailored AI implementation strategy.",
+    "company_operates": "My company operates in",
+    "focusing_on": "",
+    "main_focus": "and is mainly focusing on",
+    "core_activities": "with core activities in",
+    "main_activity_placeholder": "Main activity",
+    "document_formats_label": "Does your company works with specific documents formats ? (optionnal)",
+    "select_document_types": "Select document types",
+    "challenges_label": "What challenges are you looking to solve?",
+    "challenge_placeholder": "Describe your business challenge",
+    "cancel_button": "Cancel",
+    "select_sector": "Select sector",
+    "select_service": "Select service type"
   }
 }

@@ -177,7 +177,11 @@
       },
       "performance": {
         "title": "Performances",
-        "features": ["Traitement parallèle", "Cache intelligent", "Monitoring avancé"]
+        "features": [
+          "Traitement parallèle",
+          "Cache intelligent",
+          "Monitoring avancé"
+        ]
       }
     },
     "sites": {
@@ -248,11 +252,20 @@
       },
       "cloud": {
         "title": "Infrastructure Cloud",
-        "features": ["Vercel Edge Network", "Scaleway Cloud", "CDN mondial", "SSL automatique"]
+        "features": [
+          "Vercel Edge Network",
+          "Scaleway Cloud",
+          "CDN mondial",
+          "SSL automatique"
+        ]
       },
       "security": {
         "title": "Sécurité & Conformité",
-        "features": ["Hébergement français", "Conformité RGPD", "Backups quotidiens"]
+        "features": [
+          "Hébergement français",
+          "Conformité RGPD",
+          "Backups quotidiens"
+        ]
       },
       "tools": {
         "title": "Notre sélection de services",
@@ -267,7 +280,11 @@
       },
       "cicd": {
         "title": "CI/CD",
-        "features": ["Déploiement continu", "Preview deployments", "Rollback instantané"]
+        "features": [
+          "Déploiement continu",
+          "Preview deployments",
+          "Rollback instantané"
+        ]
       }
     }
   },
@@ -693,5 +710,20 @@
         "description": "Communiquez dans plus de 95 langues avec une traduction contextuelle et culturellement adaptée."
       }
     }
+  },
+  "simulator": {
+    "title": "Transformez votre entreprise avec des solutions d'IA personnalisées conçues spécifiquement pour vous. Partagez votre contexte et vos défis commerciaux, et nous créerons une stratégie de mise en œuvre de l'IA sur mesure.",
+    "company_operates": "Mon entreprise opère dans",
+    "focusing_on": "",
+    "main_focus": "et se concentre principalement dans",
+    "core_activities": "avec comme activité principale",
+    "main_activity_placeholder": "Activité principale",
+    "document_formats_label": "Votre entreprise travaille-t-elle avec des formats de documents spécifiques ? (optionnel)",
+    "select_document_types": "Sélectionner les types de documents",
+    "challenges_label": "Quels défis cherchez-vous à résoudre ?",
+    "challenge_placeholder": "Décrivez votre défi commercial",
+    "cancel_button": "Annuler",
+    "select_sector": "Sélectionner",
+    "select_service": "Sélectionner"
   }
 }

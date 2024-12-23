@@ -68,6 +68,45 @@ const DOCUMENT_TYPES = [
   "Technical Documentation",
 ];
 
+const SECTEURS_ACTIVITE = [
+  "Finance et Banque",
+  "Santé",
+  "Commerce et E-commerce",
+  "Industrie",
+  "Éducation",
+  "Juridique",
+  "Immobilier",
+  "Technologie",
+  "Transport et Logistique",
+  "Énergie et Services Publics",
+];
+
+const TYPES_SERVICES = [
+  "Service Client",
+  "Analyse de Données",
+  "Traitement de Documents",
+  "Contrôle Qualité",
+  "Gestion des Ressources",
+  "Ventes et Marketing",
+  "Chaîne d'Approvisionnement",
+  "Tâches Administratives",
+  "Recherche et Développement",
+  "Formation et Éducation",
+];
+
+const TYPES_DOCUMENTS = [
+  "Documents Texte",
+  "Tableurs",
+  "PDFs",
+  "Images",
+  "Fichiers Audio",
+  "Fichiers Vidéo",
+  "Présentations",
+  "Formulaires",
+  "Contrats",
+  "Documentation Technique",
+];
+
 const getDomainFromUrl = (url: string) => {
   try {
     const domain = new URL(url).hostname.replace("www.", "");
@@ -446,10 +485,7 @@ Please provide suggestions on how generative AI could improve my business operat
             className="space-y-2 mb-3"
           >
             <p className="text-gray-600 text-sm md:text-base">
-              Transform your business with custom AI solutions designed
-              specifically for you. Share your unique business context and
-              challenges, and we'll create a tailored AI implementation
-              strategy.
+              {dictionary.simulator.title}
             </p>
           </motion.div>
 
@@ -461,7 +497,7 @@ Please provide suggestions on how generative AI could improve my business operat
               className="flex flex-col md:flex-row md:items-center gap-2"
             >
               <span className="text-gray-600 text-sm md:text-base">
-                My company operates in
+                {dictionary.simulator.company_operates}
               </span>
               <div className="w-full md:w-48">
                 <CustomSelect
@@ -473,13 +509,13 @@ Please provide suggestions on how generative AI could improve my business operat
                     });
                     setFormErrors({ ...formErrors, sector: false });
                   }}
-                  options={SECTORS}
-                  placeholder="Select sector"
+                  options={lang === "fr" ? SECTEURS_ACTIVITE : SECTORS}
+                  placeholder={dictionary.simulator.select_sector}
                   hasError={formErrors.sector}
                 />
               </div>
               <span className="text-gray-600 text-sm md:text-base">
-                and is mainly focusing on the sector of
+                {dictionary.simulator.main_focus}
               </span>
             </motion.div>
 
@@ -490,7 +526,7 @@ Please provide suggestions on how generative AI could improve my business operat
               className="flex flex-col md:flex-row md:items-center gap-2"
             >
               <span className="text-gray-600 text-sm md:text-base">
-                focusing on
+                {dictionary.simulator.focusing_on}
               </span>
               <div className="w-full md:w-48">
                 <CustomSelect
@@ -502,17 +538,17 @@ Please provide suggestions on how generative AI could improve my business operat
                     });
                     setFormErrors({ ...formErrors, serviceType: false });
                   }}
-                  options={SERVICE_TYPES}
-                  placeholder="Select service type"
+                  options={lang === "fr" ? TYPES_SERVICES : SERVICE_TYPES}
+                  placeholder={dictionary.simulator.select_service}
                   hasError={formErrors.serviceType}
                 />
               </div>
               <span className="text-gray-600 text-sm md:text-base whitespace-nowrap">
-                with core activities in
+                {dictionary.simulator.core_activities}
               </span>
               <input
                 type="text"
-                placeholder="Main activity"
+                placeholder={dictionary.simulator.main_activity_placeholder}
                 value={simulatorForm.activity}
                 onChange={(e) => {
                   setSimulatorForm({
@@ -538,8 +574,7 @@ Please provide suggestions on how generative AI could improve my business operat
               className="space-y-2"
             >
               <label className="block text-gray-700 text-sm md:text-base mb-2">
-                Does your company works with specific documents formats ?
-                (optionnal)
+                {dictionary.simulator.document_formats_label}
               </label>
               <CustomSelect
                 value={simulatorForm.documentTypes}
@@ -549,8 +584,8 @@ Please provide suggestions on how generative AI could improve my business operat
                     documentTypes: value as string[],
                   });
                 }}
-                options={DOCUMENT_TYPES}
-                placeholder="Select document types"
+                options={lang === "fr" ? TYPES_DOCUMENTS : DOCUMENT_TYPES}
+                placeholder={dictionary.simulator.select_document_types}
                 isMulti={true}
               />
             </motion.div>
@@ -562,10 +597,10 @@ Please provide suggestions on how generative AI could improve my business operat
               className="space-y-2"
             >
               <label className="block font-medium text-gray-700 text-sm md:text-base">
-                What challenges are you looking to solve?
+                {dictionary.simulator.challenges_label}
               </label>
               <textarea
-                placeholder="Describe your business challenge"
+                placeholder={dictionary.simulator.challenge_placeholder}
                 value={simulatorForm.problemDescription}
                 onChange={(e) => {
                   setSimulatorForm({
@@ -595,11 +630,11 @@ Please provide suggestions on how generative AI could improve my business operat
                 onClick={() => setShowSimulator(false)}
                 className="px-3 md:px-4 py-1.5 rounded-lg border border-gray-300 hover:bg-gray-100 transition-colors text-sm md:text-base"
               >
-                Cancel
+                {dictionary.simulator.cancel_button}
               </button>
               <button
                 type="submit"
-                className="px-3 md:px-4 py-2 md:py-3 rounded-lg dark:bg-[radial-gradient(ellipse_at_top,#454545,transparent_70%),radial-gradient(ellipse_at_bottom,#000000,transparent),linear-gradient(90deg,#1a1a1a,#404040)] text-white hover:opacity-90 transition-opacity"
+                className="px-3 md:px-4 py-2 md:py-3 rounded-lg bg-gradient-to-b from-zinc-600 to-zinc-950 text-white hover:opacity-90 transition-opacity"
               >
                 <Icon
                   icon="formkit:submit"
@@ -612,6 +647,7 @@ Please provide suggestions on how generative AI could improve my business operat
       </motion.div>
     );
   };
+
   const renderMessage = (message: any) => {
     if (
       message.content.includes(
