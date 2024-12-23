@@ -934,7 +934,7 @@ Please provide suggestions on how generative AI could improve my business operat
         </svg>
       </button>
       <div
-        className={`relative overflow-auto md:overflow-hidden max-w-4xl mx-auto ${messages.length === 0 ? "h-screen" : "h-screen"}`}
+        className={`relative overflow-auto pt-20 md:pt-0 md:overflow-hidden max-w-4xl mx-auto ${messages.length === 0 ? "h-screen" : "h-screen"}`}
       >
         {messages.length === 0 ? (
           <motion.div
