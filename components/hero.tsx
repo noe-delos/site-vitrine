@@ -14,17 +14,13 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
   lang,
 }) => {
   const router = useRouter();
-
-  // iOS detection
   const [isIOS, setIsIOS] = React.useState(false);
 
   React.useEffect(() => {
-    // Check if the device is iOS
     const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
     setIsIOS(isIOSDevice);
   }, []);
 
-  // iOS-specific styles
   const iosStyles = isIOS
     ? {
         WebkitTransform: "translateZ(0)",
@@ -38,9 +34,16 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
 
   return (
     <div className="flex-1 space-y-8 sm:px-8 lg:pr-8 text-center lg:text-left mt-10 lg:mt-0 pb-10 pl-0">
+      {/* Mobile gradient cloud */}
+      <div className="absolute top-0 right-0 md:hidden opacity-20">
+        <div className="size-48 bg-gradient-to-bl from-purple-400 via-blue-400 to-transparent rounded-bl-full blur-xl" />
+        <div className="absolute -top-8 right-12 size-32 bg-gradient-to-tr from-blue-500/30 to-transparent rounded-full blur-lg" />
+        <div className="absolute top-12 -right-4 size-24 bg-gradient-to-bl from-purple-500/20 to-transparent rounded-full blur-xl" />
+      </div>
+
       <h1
         className={cn(
-          "text-5xl font-extrabold sm:text-4xl md:text-5xl lg:text-[3.7rem] md:font-bold leading-tight flex flex-col h-fit",
+          "text-[2.5rem] pt-10 sm:pt-0 font-extrabold sm:text-3xl md:text-5xl lg:text-[3.7rem] md:font-bold leading-[3rem] sm:leading-tight flex flex-col h-fit",
           lang === "en" && "lg:text-[3.8rem]"
         )}
       >
@@ -59,7 +62,7 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
             </div>
           </span>
         </div>
-        <div className="font-extrabold font-sans mt-2 lg:mt-0 flex flex-row justify-center lg:justify-start flex-wrap">
+        <div className="font-extrabold font-sans mt-0 flex flex-row justify-center lg:justify-start flex-wrap">
           <span className="font-extrabold font-sans hidden md:block bg-clip-text pr-3 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
             {dictionary.hero.title.part3}
           </span>
@@ -80,7 +83,7 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
         </div>
       </h1>
 
-      <p className="text-sm px-24 sm:text-xl lg:text-[1rem] lg:leading-6 text-gray-500 max-w-xl mx-auto lg:mx-0 sm:px-12 lg:px-0">
+      <p className="text-sm xs:px-28 px-24 sm:text-xl lg:text-[1rem] lg:leading-6 text-gray-500 max-w-xl mx-auto lg:mx-0 sm:px-12 lg:px-0">
         {dictionary.hero.description}
       </p>
 
@@ -95,7 +98,6 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
             onClick={() => router.push("/ks-gpt")}
             className="px-4 py-2 bg-[#000000] w-[10rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
           >
-            {/* Glow effect overlay - hidden on iOS mobile */}
             <div
               className={`hidden ${isIOS ? "md:hidden" : "md:absolute"} inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300`}
             />
