@@ -42,17 +42,6 @@ const HeroSection = ({ dictionary }: { dictionary: any }) => {
           <div className="space-y-12">
             <div className="w-full md:hidden flex flex-row items-center justify-center gap-4"></div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className=" hidden md:inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md"
-            >
-              <Icon icon="mdi:magic" className="text-indigo-600" />
-              <span className="text-sm font-medium text-gray-600">
-                {dictionary.services.hero.tagline}
-              </span>
-            </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
