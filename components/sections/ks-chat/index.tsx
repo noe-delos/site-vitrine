@@ -934,7 +934,7 @@ Please provide suggestions on how generative AI could improve my business operat
         </svg>
       </button>
       <div
-        className={`relative overflow-auto pt-[10rem] sm:pt-0 md:overflow-hidden max-w-4xl mx-auto ${messages.length === 0 ? "h-screen" : "h-screen"}`}
+        className={`relative overflow-auto ${showSimulator && "pt-[10rem]"} sm:pt-0 md:overflow-hidden max-w-4xl mx-auto ${messages.length === 0 ? "h-screen" : "h-screen"}`}
       >
         {messages.length === 0 ? (
           <motion.div
@@ -943,7 +943,7 @@ Please provide suggestions on how generative AI could improve my business operat
             className="flex flex-col items-center justify-center h-full px-4"
           >
             <h1 className="text-5xl md:text-4xl flex flex-col font-extrabold mb-8 md:flex-row gap-6 md:gap-2 items-center">
-              {dictionary.gpt.title1}
+              {!showSimulator && dictionary.gpt.title1}
               <span className="flex flex-row gap-2 items-center">
                 <img
                   src="/en/logo/logo-circle.png"
