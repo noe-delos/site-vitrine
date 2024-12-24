@@ -325,7 +325,7 @@
     "rdv": "Book a call",
     "brand": {
       "title": "Consulting",
-      "subtitle": "IT solutions"
+      "subtitle": "AI solutions"
     },
     "navigation": {
       "home": "Home",
@@ -340,7 +340,7 @@
   "footer": {
     "brand": {
       "title": "consulting",
-      "subtitle": "IT solutions"
+      "subtitle": "AI solutions"
     },
     "description": "Let's create tomorrow's digital solutions together. Our expertise in SaaS and AI at the service of your success.",
     "sections": {
