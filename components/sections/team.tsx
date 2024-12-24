@@ -32,7 +32,7 @@ const getTeamMembers = (lang: string): TeamMember[] => [
       "Full-Stack Dev",
       lang === "fr" ? "Intégration IA" : "AI Integration",
     ],
-    image: "/team/noe.jpg",
+    image: "/fr/team/noe.png",
     description:
       lang === "fr"
         ? "Développeur Full-Stack spécialisé dans l'intégration d'IA générative. Passionné par la conception et le développement de solutions techniques, avec une approche orientée vers l'innovation et la qualité."
@@ -299,7 +299,7 @@ const AnimatedHeroSection = ({
             className="relative size-72 rounded-xl overflow-hidden"
           >
             <Image
-              src="/team/noe.jpg"
+              src="/fr/team/noe.png"
               alt="Noé Campo"
               fill
               className="object-cover"
