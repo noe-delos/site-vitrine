@@ -434,7 +434,8 @@
   },
   "contactPage": {
     "hero": {
-      "title": "Connectons-nous",
+      "title1": "Connectons-",
+      "title2": "nous.",
       "subtitle": "De Paris au reste du monde, nous créons des solutions innovantes pour n'importe qui."
     },
     "info": {
@@ -732,5 +733,10 @@
     "acceptButton": "Tout accepter",
     "declineButton": "Refuser",
     "privacyPolicy": "Politique de confidentialité"
+  },
+  "gptCta": {
+    "title": "Besoin d'aide pour votre projet IA ?",
+    "description": "Obtenez des conseils personnalisés de nos experts en IA et transformez votre entreprise",
+    "button": "Nous contacter"
   }
 }
