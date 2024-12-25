@@ -88,15 +88,10 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
       </p>
 
       <div className="pt-10 lg:pt-10 w-full flex flex-col">
-        <ShineBorder
-          className="min-w-[20%] min-h-[10%] max-w-[50%] max-h-[15%] md:min-w-fit md:min-h-fit md:max-w-fit md:max-h-fit self-center md:selft-start border m-0 pb-5 md:size-fit p-[0.115rem] border-none"
-          borderRadius={6}
-          borderWidth={3}
-          color={["#ffffff", "#000000"]}
-        >
+        {isIOS ? (
           <button
             onClick={() => router.push("/ks-gpt")}
-            className="px-4 py-2 bg-[#000000] w-[10rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
+            className="px-4 py-2 self-center bg-[#000000] w-[10rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
           >
             <div
               className={`hidden ${isIOS ? "md:hidden" : "md:absolute"} inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300`}
@@ -141,7 +136,62 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
               </span>
             </span>
           </button>
-        </ShineBorder>
+        ) : (
+          <ShineBorder
+            className="min-w-[20%] min-h-[10%] max-w-[50%] max-h-[15%] md:min-w-fit md:min-h-fit md:max-w-fit md:max-h-fit self-center md:selft-start border m-0 pb-5 md:size-fit p-[0.115rem] border-none"
+            borderRadius={6}
+            borderWidth={3}
+            color={["#ffffff", "#000000"]}
+          >
+            <button
+              onClick={() => router.push("/ks-gpt")}
+              className="px-4 py-2 bg-[#000000] w-[10rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
+            >
+              <div
+                className={`hidden ${isIOS ? "md:hidden" : "md:absolute"} inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300`}
+              />
+
+              <span
+                className="flex flex-row items-center relative"
+                style={iosStyles as any}
+              >
+                <span
+                  className="bg-gradient-to-b from-white to-gray-700 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-400"
+                  style={
+                    isIOS
+                      ? {
+                          WebkitTextFillColor: "transparent",
+                          display: "block",
+                          color: "#fff",
+                        }
+                      : {}
+                  }
+                >
+                  {dictionary.hero.try}
+                </span>
+                <img
+                  src="/en/logo/brand-logo-white-fadeout.png"
+                  alt="circle logo"
+                  className="ml-2 mr-0.5 w-6 h-6 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+                />
+                <span
+                  className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-300"
+                  style={
+                    isIOS
+                      ? {
+                          WebkitTextFillColor: "transparent",
+                          display: "block",
+                          color: "#fff",
+                        }
+                      : {}
+                  }
+                >
+                  GPT
+                </span>
+              </span>
+            </button>
+          </ShineBorder>
+        )}
         <p className="text-base sm:text-lg mt-14 text-gray-500 mb-6 lg:mb-0 self-center">
           {dictionary.hero.trust}
         </p>
@@ -334,7 +384,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
         </motion.div>
       ))}
 
-      <div className="absolute bottom-10 lg:right-0 md:right-0 translate-y-1/4 lg:translate-x-1/4 md:lg:translate-x-1/4">
+      <div className="absolute bottom-2 right-[0%]">
         <motion.div
           initial={{ x: 1000 }}
           animate={{ x: 120 }}
