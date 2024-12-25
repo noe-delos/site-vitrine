@@ -108,10 +108,10 @@ const ContactPage = ({ dictionary }: { dictionary: any }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-gray-900 mb-6 flex flex-row"
+            className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-gray-900 mb-6 flex flex-row items-center justify-center"
           >
             {dictionary.contactPage.hero.title1}
-            <span className="font-extrabold font-sans hidden md:block bg-clip-text pr-3 text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
+            <span className="font-extrabold font-sans bg-clip-text text-transparent bg-gradient-to-r from-[#7066CB] to-blue-500">
               {dictionary.contactPage.hero.title2}
             </span>
           </motion.h1>
