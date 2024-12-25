@@ -809,18 +809,17 @@ Please provide suggestions on how generative AI could improve my business operat
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                      Need help with your AI project?
+                      {dictionary.gptCta.title}
                     </h3>
                     <p className="text-gray-600 text-sm">
-                      Get personalized guidance from our AI experts and
-                      transform your business
+                      {dictionary.gptCta.description}
                     </p>
                   </div>
                   <a
                     href="/contact"
                     className="inline-flex items-center px-4 py-2 rounded-lg bg-black text-white hover:opacity-90 transition-opacity text-sm whitespace-nowrap"
                   >
-                    Contact Us
+                    {dictionary.gptCta.button}
                     <svg
                       className="ml-2 w-4 h-4"
                       viewBox="0 0 24 24"

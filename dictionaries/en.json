@@ -727,5 +727,10 @@
     "acceptButton": "Accept All",
     "declineButton": "Decline",
     "privacyPolicy": "Privacy Policy"
+  },
+  "gptCta": {
+    "title": "Need help with your AI project?",
+    "description": "Get personalized guidance from our AI experts and transform your business",
+    "button": "Contact us"
   }
 }
