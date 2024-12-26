@@ -113,29 +113,129 @@ const ContactInfo = memo(({ dictionary }: { dictionary: any }) => (
 
 ContactInfo.displayName = "ContactInfo";
 
-// Separate form component to isolate state updates
+// Memoized Input Component
+const FormInput = memo(
+  ({
+    id,
+    label,
+    value,
+    onChange,
+    type = "text",
+    disabled,
+    required = false,
+  }: {
+    id: string;
+    label: string;
+    value: string;
+    onChange: (value: string) => void;
+    type?: string;
+    disabled?: boolean;
+    required?: boolean;
+  }) => (
+    <div>
+      <label
+        htmlFor={id}
+        className="block text-sm font-medium text-gray-700 mb-2"
+      >
+        {label}
+      </label>
+      <input
+        type={type}
+        id={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        disabled={disabled}
+        required={required}
+        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#7066CB] focus:border-transparent outline-none transition"
+      />
+    </div>
+  )
+);
+
+FormInput.displayName = "FormInput";
+
+// Memoized Textarea Component
+const FormTextarea = memo(
+  ({
+    value,
+    onChange,
+    disabled,
+    label,
+    required = false,
+  }: {
+    value: string;
+    onChange: (value: string) => void;
+    disabled?: boolean;
+    label: string;
+    required?: boolean;
+  }) => (
+    <div>
+      <label
+        htmlFor="message"
+        className="block text-sm font-medium text-gray-700 mb-2"
+      >
+        {label}
+      </label>
+      <textarea
+        id="message"
+        rows={6}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        disabled={disabled}
+        required={required}
+        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#7066CB] focus:border-transparent outline-none transition"
+      />
+    </div>
+  )
+);
+
+FormTextarea.displayName = "FormTextarea";
+
+// Memoized Submit Button
+const SubmitButton = memo(
+  ({ loading, dictionary }: { loading: boolean; dictionary: any }) => (
+    <motion.button
+      whileHover={{ scale: loading ? 1 : 1.03 }}
+      whileTap={{ scale: loading ? 1 : 0.98 }}
+      className="relative w-full group"
+      disabled={loading}
+      type="submit"
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-md opacity-100 transition-opacity duration-300" />
+      <div className="relative bg-white rounded-[5px] m-[1px] py-3 transition-all duration-300 hover:bg-gray-50">
+        <span className="text-gray-900 font-medium">
+          {loading
+            ? dictionary.contactPage.form.sending
+            : dictionary.contactPage.form.submit}
+        </span>
+      </div>
+      <div className="absolute inset-0 rounded-md overflow-hidden">
+        <div className="absolute inset-0 translate-x-[-100%] animate-[shine_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform" />
+      </div>
+    </motion.button>
+  )
+);
+
+SubmitButton.displayName = "SubmitButton";
+
+// Contact Form with optimized inputs
 const ContactForm = memo(({ dictionary }: { dictionary: any }) => {
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
-  };
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
+    const formData = {
+      name,
+      email,
+      company,
+      message,
+    };
 
     try {
       const response = await fetch("/api/send", {
@@ -152,12 +252,11 @@ const ContactForm = memo(({ dictionary }: { dictionary: any }) => {
 
       toast.success(dictionary.contactPage.form.success);
 
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        message: "",
-      });
+      // Reset form
+      setName("");
+      setEmail("");
+      setCompany("");
+      setMessage("");
     } catch (error) {
       toast.error(dictionary.contactPage.form.error);
     } finally {
@@ -174,95 +273,42 @@ const ContactForm = memo(({ dictionary }: { dictionary: any }) => {
     >
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              {dictionary.contactPage.form.fullName}
-            </label>
-            <input
-              type="text"
-              id="name"
-              value={formData.name}
-              onChange={handleChange}
-              disabled={loading}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#7066CB] focus:border-transparent outline-none transition"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="company"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              {dictionary.contactPage.form.company}
-            </label>
-            <input
-              type="text"
-              id="company"
-              value={formData.company}
-              onChange={handleChange}
-              disabled={loading}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#7066CB] focus:border-transparent outline-none transition"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            {dictionary.contactPage.form.email}
-          </label>
-          <input
-            type="email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
+          <FormInput
+            id="name"
+            label={dictionary.contactPage.form.fullName}
+            value={name}
+            onChange={setName}
             disabled={loading}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#7066CB] focus:border-transparent outline-none transition"
             required
+          />
+          <FormInput
+            id="company"
+            label={dictionary.contactPage.form.company}
+            value={company}
+            onChange={setCompany}
+            disabled={loading}
           />
         </div>
 
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            {dictionary.contactPage.form.message}
-          </label>
-          <textarea
-            id="message"
-            rows={6}
-            value={formData.message}
-            onChange={handleChange}
-            disabled={loading}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#7066CB] focus:border-transparent outline-none transition"
-            required
-          />
-        </div>
-
-        <motion.button
-          whileHover={{ scale: loading ? 1 : 1.03 }}
-          whileTap={{ scale: loading ? 1 : 0.98 }}
-          className="relative w-full group"
+        <FormInput
+          id="email"
+          type="email"
+          label={dictionary.contactPage.form.email}
+          value={email}
+          onChange={setEmail}
           disabled={loading}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#7066CB] to-blue-500 rounded-md opacity-100 transition-opacity duration-300" />
-          <div className="relative bg-white rounded-[5px] m-[1px] py-3 transition-all duration-300 hover:bg-gray-50">
-            <span className="text-gray-900 font-medium">
-              {loading
-                ? dictionary.contactPage.form.sending
-                : dictionary.contactPage.form.submit}
-            </span>
-          </div>
-          <div className="absolute inset-0 rounded-md overflow-hidden">
-            <div className="absolute inset-0 translate-x-[-100%] animate-[shine_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform" />
-          </div>
-        </motion.button>
+          required
+        />
+
+        <FormTextarea
+          value={message}
+          onChange={setMessage}
+          disabled={loading}
+          label={dictionary.contactPage.form.message}
+          required
+        />
+
+        <SubmitButton loading={loading} dictionary={dictionary} />
       </form>
     </motion.div>
   );

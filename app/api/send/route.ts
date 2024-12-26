@@ -1,16 +1,16 @@
-import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     // Log API key presence (don't log the actual key)
-    console.log('API Key exists:', !!process.env.RESEND_API_KEY);
+    console.log("API Key exists:", !!process.env.RESEND_API_KEY);
 
     // Log incoming request data
     const body = await request.json();
-    console.log('Received form data:', {
+    console.log("Received form data:", {
       name: body.name,
       email: body.email,
       company: body.company,
@@ -20,11 +20,11 @@ export async function POST(request: Request) {
     const { name, email, company, message } = body;
 
     // Log email attempt
-    console.log('Attempting to send email...');
+    console.log("Attempting to send email...");
 
     const data = await resend.emails.send({
-      from: 'KS consulting <onboarding@resend.dev>', // Update this with your verified domain
-      to: ['contact@ks-entreprise.com'], // Update with your email
+      from: "KS consulting <onboarding@resend.dev>", // Update this with your verified domain
+      to: ["contact@ks-consulting.io"], // Update with your email
       subject: `Nouveau message de ${name} - KS consulting`,
       html: `
 <html lang="fr">
@@ -93,15 +93,15 @@ export async function POST(request: Request) {
     });
 
     // Log success
-    console.log('Email sent successfully:', data);
+    console.log("Email sent successfully:", data);
 
     return NextResponse.json({ success: true, data });
   } catch (error: any) {
     // Log the error
-    console.error('Failed to send email:', error);
+    console.error("Failed to send email:", error);
 
     return NextResponse.json(
-      { error: 'Failed to send email', details: error.message },
+      { error: "Failed to send email", details: error.message },
       { status: 500 }
     );
   }
