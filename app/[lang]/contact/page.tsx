@@ -1,8 +1,17 @@
 import ContactPage from '@/components/sections/contact';
 import { getDictionary } from '@/get-dictionary';
+import { Locale } from '@/i18n-config';
 
-export default async function Page({ params }: any) {
-  const dictionary = await getDictionary(params.lang);
+interface PageProps {
+	params: {
+		lang: Locale;
+	};
+}
 
-  return <ContactPage dictionary={dictionary} />;
+export default async function Page(props: PageProps) {
+	const resolvedParams = await Promise.resolve(props.params);
+	const lang = resolvedParams.lang;
+	const dictionary = await getDictionary(lang);
+
+	return <ContactPage dictionary={dictionary} lang={lang} />;
 }

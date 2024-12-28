@@ -180,22 +180,17 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 									{dictionary.technologies.ai.infrastructure.features
 										.slice(0, 4)
 										.map((feature: string, index: number) => (
-											<>
-												<li
-													key={index}
-													className="flex items-center gap-3 group"
-												>
-													<Icon
-														icon={
-															dictionary.technologies.ai.infrastructure.icons[
-																index
-															]
-														}
-														className="size-5 text-white"
-													/>
-													<span className="text-gray-300">{feature}</span>
-												</li>
-											</>
+											<li key={index} className="flex items-center gap-3 group">
+												<Icon
+													icon={
+														dictionary.technologies.ai.infrastructure.icons[
+															index
+														]
+													}
+													className="size-5 text-white"
+												/>
+												<span className="text-gray-300">{feature}</span>
+											</li>
 										))}
 								</ul>
 								<ul className="space-y-3">
@@ -320,17 +315,15 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 									{dictionary.technologies.data.realtime.features
 										.slice(0, 2)
 										.map((feature: string, index: number) => (
-											<>
-												<li
-													key={index}
-													className="flex items-center gap-3 group"
-												>
+											<li key={index}>
+												<div className="flex items-center gap-3 group">
 													<Icon
 														icon="radix-icons:dot-filled"
 														className="size-6 text-green-400"
 													/>
 													<span className="text-gray-300">{feature}</span>
-												</li>
+												</div>
+
 												{index === 0 && (
 													<div className="flex flex-row gap-4 items-center ml-10">
 														<Icon
@@ -344,7 +337,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 														<Icon icon="logos:meta-icon" className="size-6" />
 													</div>
 												)}
-											</>
+											</li>
 										))}
 								</ul>
 								<ul className="space-y-3">

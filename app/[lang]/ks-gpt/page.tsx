@@ -1,8 +1,17 @@
 import KsChat from '@/components/sections/ks-chat';
 import { getDictionary } from '@/get-dictionary';
+import { Locale } from '@/i18n-config';
 
-export default async function Page({ params }: any) {
-  const dictionary = await getDictionary(params.lang);
+interface PageProps {
+	params: {
+		lang: Locale;
+	};
+}
 
-  return <KsChat dictionary={dictionary} lang={params.lang} />;
+export default async function Page(props: PageProps) {
+	const resolvedParams = await Promise.resolve(props.params);
+	const lang = resolvedParams.lang;
+	const dictionary = await getDictionary(lang);
+
+	return <KsChat dictionary={dictionary} lang={lang} />;
 }
