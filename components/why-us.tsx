@@ -30,8 +30,11 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
 
 					{/* Hero section */}
 					<div className="mb-12">
-						<h1 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
+						<h1 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-center">
 							{dictionary.whyUs.title}
+							<span className="bg-gradient-to-r  from-violet-400 to-blue-500 bg-clip-text text-transparent">
+								{dictionary.whyUs.title2}
+							</span>
 						</h1>
 						<p className="text-lg">
 							{dictionary.whyUs.heroText}{' '}
