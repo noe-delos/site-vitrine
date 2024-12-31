@@ -304,7 +304,7 @@ const AnimatedHeroSection = ({
 							fill
 							className="object-cover"
 							sizes="(max-width: 768px) 100vw, 288px"
-							loading="lazy"
+							loading="eager"
 						/>
 						<div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 						<div className="absolute bottom-4 left-6 text-white">
@@ -322,7 +322,7 @@ const AnimatedHeroSection = ({
 							fill
 							className="object-cover"
 							sizes="(max-width: 768px) 100vw, 288px"
-							loading="lazy"
+							loading="eager"
 						/>
 						<div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 						<div className="absolute bottom-4 left-6 text-white">
@@ -342,7 +342,7 @@ const AnimatedHeroSection = ({
 							fill
 							className="object-cover"
 							sizes="(max-width: 768px) 100vw, 288px"
-							loading="lazy"
+							loading="eager"
 						/>
 						<div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 						<div className="absolute bottom-4 left-6 text-white">
@@ -360,7 +360,7 @@ const AnimatedHeroSection = ({
 							fill
 							className="object-cover"
 							sizes="(max-width: 768px) 100vw, 288px"
-							loading="lazy"
+							loading="eager"
 						/>
 						<div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 						<div className="absolute bottom-4 left-6 text-white">
