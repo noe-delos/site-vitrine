@@ -16,7 +16,6 @@ export default async function HomePage({ params }: any) {
 			<Hero dictionary={dictionary} lang={params.lang} />
 			<Description dictionary={dictionary} />
 			<AppleCardsCarouselDemo dictionary={dictionary} />
-			{/* <Expertise dictionary={dictionary} /> */}
 			<div className="md:hidden">
 				<></>
 			</div>

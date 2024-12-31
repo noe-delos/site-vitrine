@@ -301,6 +301,7 @@ const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 										<Image
 											src="/hero/llms.webp"
 											alt="LLMs Hero"
+											loading="eager"
 											fill
 											sizes="100vw"
 											className="object-cover rounded-lg blur-[1px]"
@@ -365,6 +366,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 								<Image
 									src={`/fr/hero/hero${index}.webp`}
 									alt="Hero illustration"
+									loading="eager"
 									fill
 									className={cn('object-cover')}
 								/>
@@ -377,6 +379,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 								src={`/fr/hero/hero${index}.webp`}
 								alt="Hero illustration"
 								fill
+								loading="eager"
 								className={cn('object-cover')}
 							/>
 						</div>
@@ -402,6 +405,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 									<motion.img
 										src="/hero/llms.webp"
 										alt="LLMs Hero"
+										loading="eager"
 										initial={{ opacity: 0, scale: 1.1 }}
 										animate={{ opacity: 1, scale: 1.2 }}
 										whileHover={{ scale: 1.4 }}
