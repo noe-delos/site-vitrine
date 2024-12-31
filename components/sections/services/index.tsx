@@ -195,6 +195,7 @@ const HeroSection = ({ dictionary }: { dictionary: any }) => {
 							<div className="relative w-full h-full rounded-2xl overflow-hidden">
 								<Image
 									src="/en/services/mockups-service.webp"
+									loading="eager"
 									alt="Service Mockups"
 									fill
 									className="object-cover opacity-100"
@@ -206,7 +207,7 @@ const HeroSection = ({ dictionary }: { dictionary: any }) => {
 							<div className="absolute -bottom-6 -left-6 rounded-2xl p-1 shadow-lg z-20">
 								<div className="relative size-24 rounded-xl overflow-hidden">
 									<Image
-										src="/fr/services/purple-bg.webp"
+										src="/fr/services/purple-bg.avif"
 										alt="AI Background"
 										fill
 										className="object-cover opacity-80"
@@ -503,6 +504,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
 						<img
 							src={imageSrc}
 							alt="Service illustration"
+							loading="eager"
 							className="w-full h-auto rounded-lg"
 						/>
 					</div>
