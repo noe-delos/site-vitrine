@@ -29,18 +29,7 @@ export function middleware(request: NextRequest) {
 			)
 		: NextResponse.next();
 
-	// Ajout des headers de sécurité et performance
 	response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
-	response.headers.set(
-		'Content-Security-Policy',
-		"default-src 'self'; img-src 'self' api.microlink.io images.unsplash.com assets.aceternity.com data:; style-src 'self' 'unsafe-inline';"
-	);
-	response.headers.set('X-Content-Type-Options', 'nosniff');
-	response.headers.set('X-Frame-Options', 'DENY');
-	response.headers.set(
-		'Strict-Transport-Security',
-		'max-age=31536000; includeSubDomains'
-	);
 
 	return response;
 }
