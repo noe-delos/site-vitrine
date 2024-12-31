@@ -68,7 +68,7 @@ const Footer = ({ dictionary }: { dictionary: any }) => {
 						>
 							<div className="relative">
 								<Image
-									src="/logo/brand-logo.png"
+									src="/logo/brand-logo.webp"
 									alt="KS Enterprise Logo"
 									width={32}
 									height={32}

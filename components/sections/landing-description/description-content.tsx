@@ -350,7 +350,7 @@ export default function BentoGridSection({
 				<div className="absolute inset-0 overflow-hidden h-2/3">
 					<div className="relative w-full h-full flex flex-col">
 						<img
-							src="/hero/stat.png"
+							src="/hero/stat.webp"
 							alt="Chart"
 							className="w-full h-full object-cover"
 						/>
@@ -369,7 +369,7 @@ export default function BentoGridSection({
 			{/* Image gradient background */}
 			<div className="absolute top-2/3 left-[55%] -translate-x-1/2 -translate-y-1/2 w-[1700px] h-[1100px] opacity-30">
 				<img
-					src="/hero/gradient1.png"
+					src="/hero/gradient1.webp"
 					alt="Gradient background"
 					className="w-full h-full object-cover"
 				/>

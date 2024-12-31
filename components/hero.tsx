@@ -76,7 +76,7 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
 						{dictionary.hero.title.part5}
 					</span>
 					<img
-						src="/fr/hero/aiStar.png"
+						src="/fr/hero/aiStar.webp"
 						alt=""
 						className="size-4 ml-1 mb-2 self-end bottom-0 object-contain"
 					/>
@@ -116,7 +116,7 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
 								{dictionary.hero.try}
 							</span>
 							<img
-								src="/en/logo/brand-logo-white-fadeout.png"
+								src="/en/logo/brand-logo-white-fadeout.webp"
 								alt="circle logo"
 								className="ml-2 mr-0.5 w-6 h-6 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
 							/>
@@ -170,7 +170,7 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
 									{dictionary.hero.try}
 								</span>
 								<img
-									src="/en/logo/brand-logo-white-fadeout.png"
+									src="/en/logo/brand-logo-white-fadeout.webp"
 									alt="circle logo"
 									className="ml-2 mr-0.5 w-6 h-6 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
 								/>
@@ -197,10 +197,10 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
 				</p>
 				<Press
 					images={[
-						'/fr/socials/logo0.png',
-						'/fr/socials/logo1.png',
-						'/fr/socials/logo2.png',
-						'/fr/socials/logo3.png',
+						'/fr/socials/logo0.webp',
+						'/fr/socials/logo1.webp',
+						'/fr/socials/logo2.webp',
+						'/fr/socials/logo3.webp',
 					]}
 					title=""
 				/>
@@ -240,7 +240,7 @@ const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 									<div className="relative h-[250px] w-full rounded-2xl overflow-hidden shadow-2xl">
 										<div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
 										<Image
-											src={`/hero/hero${index}.png`}
+											src={`/hero/hero${index}.webp`}
 											alt="Hero illustration"
 											fill
 											sizes="100vw"
@@ -252,7 +252,7 @@ const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 								<div className="relative h-[250px] w-full bg-white rounded-2xl overflow-hidden shadow-2xl">
 									<div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
 									<Image
-										src={`/hero/hero${index}.png`}
+										src={`/hero/hero${index}.webp`}
 										alt="Hero illustration"
 										fill
 										sizes="100vw"
@@ -299,7 +299,7 @@ const MobileImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 										className="relative w-full h-full"
 									>
 										<Image
-											src="/hero/llms.png"
+											src="/hero/llms.webp"
 											alt="LLMs Hero"
 											fill
 											sizes="100vw"
@@ -363,7 +363,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 							<div className="relative w-[35vw] h-[28vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] rounded-2xl overflow-hidden shadow-2xl">
 								<div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
 								<Image
-									src={`/fr/hero/hero${index}.png`}
+									src={`/fr/hero/hero${index}.webp`}
 									alt="Hero illustration"
 									fill
 									className={cn('object-cover')}
@@ -374,7 +374,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 						<div className="relative w-[45vw] h-[40vw] max-w-[700px] max-h-[450px] min-w-[280px] min-h-[180px] bg-white rounded-2xl overflow-hidden shadow-2xl">
 							<div className="absolute inset-0 backdrop-blur-sm border border-white/50 rounded-2xl" />
 							<Image
-								src={`/fr/hero/hero${index}.png`}
+								src={`/fr/hero/hero${index}.webp`}
 								alt="Hero illustration"
 								fill
 								className={cn('object-cover')}
@@ -400,7 +400,7 @@ const ImageStack: React.FC<{ dictionary: any }> = ({ dictionary }) => {
 							<div className="absolute inset-[6px] rounded-lg border border-gradient-to-r from-blue-100/50 via-purple-200/50 to-pink-100/50">
 								<div className="w-full h-full rounded-lg backdrop-blur-[6px] bg-white/10 flex items-center justify-center overflow-hidden">
 									<motion.img
-										src="/hero/llms.png"
+										src="/hero/llms.webp"
 										alt="LLMs Hero"
 										initial={{ opacity: 0, scale: 1.1 }}
 										animate={{ opacity: 1, scale: 1.2 }}
@@ -470,7 +470,7 @@ const Hero: React.FC<{ dictionary: any; lang: string }> = ({
 			</div>
 			<div className="absolute z-0 top-15 -right-32 hidden lg:block">
 				<img
-					src="/logo/brand-logo-white.png"
+					src="/logo/brand-logo-white.webp"
 					alt="Logo"
 					className="w-[32rem] h-fit object-contain"
 				/>

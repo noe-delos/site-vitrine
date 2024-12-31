@@ -9,7 +9,7 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
 				{/* Left image - absolute positioned */}
 				<div className="hidden lg:block absolute left-[1rem] top-64">
 					<img
-						src="/en/logo/openai.png"
+						src="/en/logo/openai.webp"
 						alt={dictionary.whyUs.leftImageAlt}
 						className="rounded-lg w-[400px]"
 					/>
@@ -18,7 +18,7 @@ const WhyUsPage = ({ dictionary }: { dictionary: any }) => {
 				{/* Right image - absolute positioned */}
 				<div className="hidden lg:block absolute right-3 top-0">
 					<img
-						src="/en/logo/transparent-logo.png"
+						src="/en/logo/transparent-logo.webp"
 						alt={dictionary.whyUs.rightImageAlt}
 						className="rounded-lg w-[400px]"
 					/>

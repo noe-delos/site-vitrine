@@ -101,8 +101,8 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
 							<Image
 								src={
 									isServicesPage && !hasScrolled
-										? '/fr/logo/brand-logo-white.png'
-										: '/logo/brand-logo.png'
+										? '/fr/logo/brand-logo-white.webp'
+										: '/logo/brand-logo.webp'
 								}
 								alt="Finpay Logo"
 								fill
@@ -156,7 +156,7 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
 											</span>
 											{item.hasSparkle && (
 												<img
-													src="/fr/hero/aiStar.png"
+													src="/fr/hero/aiStar.webp"
 													alt=""
 													className="w-fit h-2.5 ml-0.5 mb-1.5 self-end bottom-0 object-contain hidden lg:block"
 												/>
@@ -311,7 +311,7 @@ const Header = ({ dictionary, lang }: { dictionary: any; lang: string }) => {
 												{item.label}
 												{item.hasSparkle && (
 													<img
-														src="/fr/hero/aiStar.png"
+														src="/fr/hero/aiStar.webp"
 														alt=""
 														className="size-3 ml-1 mb-1.5 self-end object-contain"
 													/>

@@ -268,14 +268,7 @@
 			},
 			"tools": {
 				"title": "Plateforme KS LAB",
-				"features": [
-					"/fr/technologies/kslab/dashboard.png",
-					"/fr/technologies/kslab/tickets.png",
-					"/fr/technologies/kslab/api.png",
-					"/fr/technologies/kslab/meetings.png",
-					"/fr/technologies/kslab/docs.png",
-					"/fr/technologies/kslab/support.png"
-				]
+				"features": [""]
 			},
 			"cicd": {
 				"title": "Déploiement",

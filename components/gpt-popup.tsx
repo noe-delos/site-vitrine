@@ -74,7 +74,7 @@ const GptPopup = ({ lang }: GptPopupProps) => {
 					className="relative w-16 h-16 rounded-full bg-black shadow-lg cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 flex items-center justify-center"
 				>
 					<Image
-						src="/fr/logo/brand-logo-white.png"
+						src="/fr/logo/brand-logo-white.webp"
 						alt="Circle Button Icon"
 						width={32}
 						height={32}
