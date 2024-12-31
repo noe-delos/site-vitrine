@@ -1,85 +1,81 @@
 'use client';
-import { WorldMap } from '@/components/acernity/world-map';
-import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import { memo, useState } from 'react';
+import { memo, useMemo } from 'react';
 import { toast } from 'sonner';
+import { useState } from 'react';
+
+const WorldMap = dynamic<any>(
+	() => import('@/components/acernity/world-map').then((mod) => mod.WorldMap),
+	{
+		ssr: false,
+		loading: () => (
+			<div className="w-full aspect-[2/1] animate-pulse bg-gray-100" />
+		),
+	}
+);
 
 const Globe3D = dynamic(() => import('@/components/Globe3D'), { ssr: false });
 
-// Memoized hero section to prevent re-renders
-const Hero = memo(({ dictionary }: { dictionary: any }) => (
-	<section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-		<div className="block sm:hidden absolute inset-0">
-			<Globe3D />
-		</div>
-		<div className="hidden sm:block absolute inset-0">
-			<WorldMap
-				dots={[
-					{
-						start: { lat: 64.2008, lng: -149.4937 },
-						end: { lat: 34.0522, lng: -118.2437 },
-					},
-					{
-						start: { lat: 64.2008, lng: -149.4937 },
-						end: { lat: -15.7975, lng: -47.8919 },
-					},
-					{
-						start: { lat: -15.7975, lng: -47.8919 },
-						end: { lat: 38.7223, lng: -9.1393 },
-					},
-					{
-						start: { lat: 51.5074, lng: -0.1278 },
-						end: { lat: 28.6139, lng: 77.209 },
-					},
-					{
-						start: { lat: 28.6139, lng: 77.209 },
-						end: { lat: 43.1332, lng: 131.9113 },
-					},
-					{
-						start: { lat: 28.6139, lng: 77.209 },
-						end: { lat: -1.2921, lng: 36.8219 },
-					},
-				]}
-			/>
-		</div>
+const mapDots = [
+	{
+		start: { lat: 64.2008, lng: -149.4937 },
+		end: { lat: 34.0522, lng: -118.2437 },
+	},
+	{
+		start: { lat: 64.2008, lng: -149.4937 },
+		end: { lat: -15.7975, lng: -47.8919 },
+	},
+	{
+		start: { lat: -15.7975, lng: -47.8919 },
+		end: { lat: 38.7223, lng: -9.1393 },
+	},
+	{
+		start: { lat: 51.5074, lng: -0.1278 },
+		end: { lat: 28.6139, lng: 77.209 },
+	},
+	{
+		start: { lat: 28.6139, lng: 77.209 },
+		end: { lat: 43.1332, lng: 131.9113 },
+	},
+	{
+		start: { lat: 28.6139, lng: 77.209 },
+		end: { lat: -1.2921, lng: 36.8219 },
+	},
+];
 
-		<div className="relative z-10 text-center px-4">
-			<motion.h1
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.6 }}
-				className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-gray-900 mb-6 flex flex-row items-center justify-center"
-			>
-				{dictionary.contactPage.hero.title1}
-				<span className="font-extrabold font-sans bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-blue-500">
-					{dictionary.contactPage.hero.title2}
-				</span>
-			</motion.h1>
-			<motion.p
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.6, delay: 0.2 }}
-				className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto"
-			>
-				{dictionary.contactPage.hero.subtitle}
-			</motion.p>
-		</div>
+const Hero = memo(({ dictionary }: { dictionary: any }) => {
+	const memoizedDots = useMemo(() => mapDots, []);
 
-		<div className="absolute inset-0 bg-gradient-to-b from-transparent to-white" />
-	</section>
-));
+	return (
+		<section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+			<div className="block sm:hidden absolute inset-0">
+				<Globe3D />
+			</div>
+			<div className="hidden sm:block absolute inset-0">
+				<WorldMap dots={memoizedDots} />
+			</div>
+
+			<div className="relative z-10 text-center px-4">
+				<h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-gray-900 mb-6 flex flex-row items-center justify-center animate-fade-up">
+					{dictionary.contactPage.hero.title1}
+					<span className="font-extrabold font-sans bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-blue-500">
+						{dictionary.contactPage.hero.title2}
+					</span>
+				</h1>
+				<p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto animate-fade-up animation-delay-100">
+					{dictionary.contactPage.hero.subtitle}
+				</p>
+			</div>
+
+			<div className="absolute inset-0 bg-gradient-to-b from-transparent to-white" />
+		</section>
+	);
+});
 
 Hero.displayName = 'Hero';
 
-// Memoized contact info section
 const ContactInfo = memo(({ dictionary }: { dictionary: any }) => (
-	<motion.div
-		initial={{ opacity: 0, x: -20 }}
-		animate={{ opacity: 1, x: 0 }}
-		transition={{ duration: 0.6 }}
-		className="space-y-8"
-	>
+	<div className="space-y-8 animate-fade-right">
 		<div>
 			<h2 className="text-3xl font-extrabold text-gray-900 mb-6">
 				{dictionary.contactPage.info.title}
@@ -108,12 +104,11 @@ const ContactInfo = memo(({ dictionary }: { dictionary: any }) => (
 				</span>
 			</div>
 		</div>
-	</motion.div>
+	</div>
 ));
 
 ContactInfo.displayName = 'ContactInfo';
 
-// Memoized Input Component
 const FormInput = memo(
 	({
 		id,
@@ -154,7 +149,6 @@ const FormInput = memo(
 
 FormInput.displayName = 'FormInput';
 
-// Memoized Textarea Component
 const FormTextarea = memo(
 	({
 		value,
@@ -191,13 +185,10 @@ const FormTextarea = memo(
 
 FormTextarea.displayName = 'FormTextarea';
 
-// Memoized Submit Button
 const SubmitButton = memo(
 	({ loading, dictionary }: { loading: boolean; dictionary: any }) => (
-		<motion.button
-			whileHover={{ scale: loading ? 1 : 1.03 }}
-			whileTap={{ scale: loading ? 1 : 0.98 }}
-			className="relative w-full group"
+		<button
+			className={`relative w-full group transition-transform ${loading ? '' : 'hover:scale-[1.03] active:scale-[0.98]'}`}
 			disabled={loading}
 			type="submit"
 		>
@@ -212,109 +203,108 @@ const SubmitButton = memo(
 			<div className="absolute inset-0 rounded-md overflow-hidden">
 				<div className="absolute inset-0 translate-x-[-100%] animate-[shine_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform" />
 			</div>
-		</motion.button>
+		</button>
 	)
 );
 
 SubmitButton.displayName = 'SubmitButton';
 
-// Contact Form with optimized inputs
-const ContactForm = memo(({ dictionary }: { dictionary: any }) => {
-	const [loading, setLoading] = useState(false);
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [company, setCompany] = useState('');
-	const [message, setMessage] = useState('');
+const ContactForm = dynamic(
+	() =>
+		Promise.resolve().then(() => {
+			const Form = memo(({ dictionary }: { dictionary: any }) => {
+				const [loading, setLoading] = useState(false);
+				const [formData, setFormData] = useState({
+					name: '',
+					email: '',
+					company: '',
+					message: '',
+				});
 
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault();
-		setLoading(true);
+				const handleSubmit = async (e: React.FormEvent) => {
+					e.preventDefault();
+					setLoading(true);
 
-		const formData = {
-			name,
-			email,
-			company,
-			message,
-		};
+					try {
+						const response = await fetch('/api/send', {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify(formData),
+						});
 
-		try {
-			const response = await fetch('/api/send', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(formData),
+						if (!response.ok) throw new Error('Failed to send message');
+
+						toast.success(dictionary.contactPage.form.success);
+						setFormData({ name: '', email: '', company: '', message: '' });
+					} catch (error) {
+						toast.error(dictionary.contactPage.form.error);
+					} finally {
+						setLoading(false);
+					}
+				};
+
+				return (
+					<div className="bg-white rounded-2xl shadow-xl p-8 animate-fade-left">
+						<form onSubmit={handleSubmit} className="space-y-6">
+							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+								<FormInput
+									id="name"
+									label={dictionary.contactPage.form.fullName}
+									value={formData.name}
+									onChange={(value) =>
+										setFormData((prev) => ({ ...prev, name: value }))
+									}
+									disabled={loading}
+									required
+								/>
+								<FormInput
+									id="company"
+									label={dictionary.contactPage.form.company}
+									value={formData.company}
+									onChange={(value) =>
+										setFormData((prev) => ({ ...prev, company: value }))
+									}
+									disabled={loading}
+								/>
+							</div>
+
+							<FormInput
+								id="email"
+								type="email"
+								label={dictionary.contactPage.form.email}
+								value={formData.email}
+								onChange={(value) =>
+									setFormData((prev) => ({ ...prev, email: value }))
+								}
+								disabled={loading}
+								required
+							/>
+
+							<FormTextarea
+								value={formData.message}
+								onChange={(value) =>
+									setFormData((prev) => ({ ...prev, message: value }))
+								}
+								disabled={loading}
+								label={dictionary.contactPage.form.message}
+								required
+							/>
+
+							<SubmitButton loading={loading} dictionary={dictionary} />
+						</form>
+					</div>
+				);
 			});
 
-			if (!response.ok) {
-				throw new Error('Failed to send message');
-			}
-
-			toast.success(dictionary.contactPage.form.success);
-
-			// Reset form
-			setName('');
-			setEmail('');
-			setCompany('');
-			setMessage('');
-		} catch (error) {
-			toast.error(dictionary.contactPage.form.error);
-		} finally {
-			setLoading(false);
-		}
-	};
-
-	return (
-		<motion.div
-			initial={{ opacity: 0, x: 20 }}
-			animate={{ opacity: 1, x: 0 }}
-			transition={{ duration: 0.6 }}
-			className="bg-white rounded-2xl shadow-xl p-8"
-		>
-			<form onSubmit={handleSubmit} className="space-y-6">
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-					<FormInput
-						id="name"
-						label={dictionary.contactPage.form.fullName}
-						value={name}
-						onChange={setName}
-						disabled={loading}
-						required
-					/>
-					<FormInput
-						id="company"
-						label={dictionary.contactPage.form.company}
-						value={company}
-						onChange={setCompany}
-						disabled={loading}
-					/>
-				</div>
-
-				<FormInput
-					id="email"
-					type="email"
-					label={dictionary.contactPage.form.email}
-					value={email}
-					onChange={setEmail}
-					disabled={loading}
-					required
-				/>
-
-				<FormTextarea
-					value={message}
-					onChange={setMessage}
-					disabled={loading}
-					label={dictionary.contactPage.form.message}
-					required
-				/>
-
-				<SubmitButton loading={loading} dictionary={dictionary} />
-			</form>
-		</motion.div>
-	);
-});
-
-ContactForm.displayName = 'ContactForm';
+			Form.displayName = 'ContactForm';
+			return Form;
+		}),
+	{
+		loading: () => (
+			<div className="animate-pulse bg-white rounded-2xl h-[600px]" />
+		),
+	}
+);
 
 const ContactPage = ({ dictionary }: { dictionary: any }) => {
 	return (
@@ -330,4 +320,4 @@ const ContactPage = ({ dictionary }: { dictionary: any }) => {
 	);
 };
 
-export default ContactPage;
+export default memo(ContactPage);
