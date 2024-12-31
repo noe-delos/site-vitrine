@@ -11,7 +11,7 @@
 		"q3_question": "Que pouvons nous faire avec l'IA ?"
 	},
 	"hero": {
-		"try": "Essayer",
+		"try": "Découvrir",
 		"contactUs": "Nous contacter",
 		"ourServices": "Nos services",
 		"title": {
@@ -32,8 +32,10 @@
 	"bento": {
 		"approach": "Notre approche",
 		"title": {
-			"part1": "Vos défis business, nos solutions",
-			"part2": "IA."
+			"part2": "Vos défis ",
+			"part3": "business, ",
+			"part4": "nos solutions ",
+			"part5": "IA."
 		},
 		"description": "Nous transformons vos problématiques business en avantages concurrentiels grâce à l'IA. Notre expertise vous accompagne dans la réduction des coûts, l'automatisation des tâches et l'amélioration de votre expérience client.",
 		"features": {
@@ -65,27 +67,27 @@
 		}
 	},
 	"technologies": {
-		"main_title": "Des",
-		"main_title_2": "Des",
-		"word1": "technologies nouvelle génération.",
-		"word2": "méthodes performantes.",
-		"word3": "solutions innovantes.",
-		"secret": "Notre force",
-		"main_description": "Découvrez l'excellence technologique qui propulsera votre entreprise vers de nouveaux sommets. Nos solutions ultra-performantes, à la pointe de l'innovation, transforment vos défis en véritables opportunités de croissance.",
-		"main_description2": "En associant technologies de dernière génération et expertise pointue, nous créons pour vous des solutions personnalisées qui révolutionneront votre activité et vous donneront une longueur d'avance décisive sur le marché.",
+		"main_title": "La",
+		"main_title_2": "La",
+		"word1": "technologie au service de l'innovation.",
+		"word2": "performance au cœur de nos solutions.",
+		"word3": "transformation digitale maîtrisée.",
+		"secret": "Notre expertise",
+		"main_description": "Nous combinons expertise technique et vision business pour propulser votre croissance. Nos solutions innovantes transforment vos défis d'aujourd'hui en avantages concurrentiels de demain.",
+		"main_description2": "Notre maîtrise des technologies de pointe et notre approche orientée résultats vous garantissent des solutions performantes qui maximisent votre ROI et renforcent votre position sur le marché.",
 		"performance": {
 			"title": "Performance & Analytics",
 			"instant_loading": {
-				"title": "Chargement instantané",
-				"description": "Performance optimisée avec temps de chargement < 0.5s"
+				"title": "Rapidité optimale",
+				"description": "Des solutions ultra-réactives pour une expérience utilisateur premium"
 			},
 			"realtime_analytics": {
-				"title": "Analytics temps réel",
-				"description": "Suivi en direct des métriques clés de performance"
+				"title": "Pilotage en temps réel",
+				"description": "Tableaux de bord intelligents pour des décisions éclairées"
 			},
 			"advanced_monitoring": {
-				"title": "Monitoring avancé",
-				"description": "Tableaux de bord personnalisables avec alertes intelligentes"
+				"title": "Supervision avancée",
+				"description": "Alertes prédictives et optimisation continue des performances"
 			}
 		},
 		"data": {
@@ -132,38 +134,38 @@
 			}
 		},
 		"ai": {
-			"title": "IA générative.",
-			"subtitle": "Transformez votre entreprise avec des solutions d'IA générative sur mesure.",
-			"subtitle2": "De la création de contenu à l'analyse prédictive, nos systèmes s'appuient sur les modèles de langage les plus avancés pour automatiser vos tâches complexes.",
+			"title": "Technologies de pointe",
+			"subtitle": "Des solutions avancées qui créent de la valeur immédiate.",
+			"subtitle2": "Nos technologies s'intègrent naturellement à vos processus existants pour augmenter votre productivité et réduire vos coûts opérationnels.",
 			"solutions": {
-				"title": "Solutions IA intégrées",
+				"title": "Bénéfices concrets",
 				"features": [
-					"Analyse documents",
-					"Génération contenu",
-					"Chatbots IA",
-					"Extraction données",
-					"Classification auto",
-					"Analyse sentiment"
+					"Automatisation de vos processus documentaires (-60% de temps de traitement)",
+					"Production de contenus optimisés (x3 en productivité)",
+					"Service client 24/7 (satisfaction client +40%)",
+					"Analyse prédictive pour anticiper les tendances",
+					"Prise de décision accélérée grâce aux données",
+					"Réduction des erreurs humaines (-80%)"
 				]
 			},
 			"LLmApis": {
-				"title": "APIs d'LLM",
-				"description": "Utiliser les APIs des différents modèles de langage du marché pour produire des systèmes robustes n'est pour nous plus qu'une habitude."
+				"title": "Expertise IA avancée",
+				"description": "Notre maîtrise des modèles d'IA les plus performants du marché nous permet de créer des solutions robustes adaptées à vos enjeux business."
 			},
 			"advancedFeatures": {
-				"title": "Fonctionnalités avancées",
-				"description": "En 2024, l'IA générative va au-delà des chatbots en offrant des fonctionnalités intégrées qui révolutionnent tous les secteurs, allant de l'analyse de documents complexes à l'automatisation de tâches. Voici quelques exemples ci-dessous :"
+				"title": "Solutions intégrées",
+				"description": "Nos solutions IA dépassent les simples chatbots pour offrir une suite complète de fonctionnalités qui transforment vos opérations et créent un avantage concurrentiel durable."
 			},
 			"infrastructure": {
-				"title": "Dernières innovations",
+				"title": "Capacités stratégiques",
 				"features": [
-					"OCR (extraction sur images)",
-					"Text to Speech (synthèse vocale)",
-					"Analyse de documents RAG",
-					"Transcription vocale",
-					"Language naturel web",
-					"Génération de documents",
-					"Éditeur de texte intelligent"
+					"Extraction intelligente de données",
+					"Communication multimodale avancée",
+					"Analyse documentaire augmentée",
+					"Automatisation des processus vocaux",
+					"Intelligence conversationnelle",
+					"Génération de contenu stratégique",
+					"Optimisation des processus rédactionnels"
 				],
 				"icons": [
 					"ri:image-circle-ai-fill",
@@ -290,16 +292,15 @@
 	},
 	"expertise": {
 		"title": {
-			"part1": "Des interfaces qui font la",
-			"part2": "différence."
+			"part1": "L'expérience utilisateur qui transforme vos ",
+			"part2": "résultats."
 		},
-		"description": "Du premier regard à la dernière interaction, nous créons des interfaces SaaS qui captivent et convertissent.",
-		"description2": "Notre expertise en UI/UX transforme la complexité en élégance, offrant à vos utilisateurs une expérience fluide et mémorable, quel que soit votre secteur.",
+		"description": "Nous concevons des interfaces qui transforment vos processus complexes en solutions intuitives. Notre expertise en UX/UI permet à vos équipes de gagner en efficacité tout en maximisant leur impact business.",
 		"keyFeatures": {
-			"ft1": "Design centré utilisateur",
-			"ft2": "Interfaces ultra rapides",
-			"ft3": "Optimisation UX",
-			"ft4": "Conversion stratégique"
+			"ft1": "Adoption rapide par vos équipes",
+			"ft2": "Productivité augmentée",
+			"ft3": "ROI mesurable",
+			"ft4": "Satisfaction utilisateur maximale"
 		},
 		"permanent_contact": {
 			"title": "En contact permanent",
@@ -312,16 +313,17 @@
 		"video_fallback": "Votre navigateur ne prend pas en charge la lecture de vidéos."
 	},
 	"contact": {
-		"title": "Créons ensemble votre prochain projet.",
+		"title": "Concrétisons ensemble votre projet",
+
 		"description": "Vous avez un projet en tête ? Notre équipe d'experts est là pour transformer vos idées en réalité.",
 		"contact_info": {
 			"email": {
 				"label": "Email",
-				"value": "contact@ks-entreprise.com"
+				"value": "contact@ks-consulting.io"
 			},
 			"phone": {
 				"label": "Téléphone",
-				"value": "07 68 56 68 36"
+				"value": "+33 7 68 56 68 36"
 			}
 		},
 		"cta": "Contactez-nous"
@@ -352,16 +354,18 @@
 			"pages": {
 				"title": "Pages",
 				"links": {
-					"home": "Menu",
-					"team": "Équipe",
-					"portfolio": "Portfolio",
-					"contact": "Contact"
+					"home": "Accueil",
+					"services": "Services",
+					"ksgpt": "KS GPT",
+					"team": "Notre équipe",
+					"contact": "Contact",
+					"meeting": "Prendre RDV"
 				}
 			},
 			"contact": {
 				"title": "Contact",
-				"email": "contact@ks-entreprise.com",
-				"phone": "07 68 56 68 36"
+				"email": "contact@ks-consulting.io",
+				"phone": "+33 7 68 56 68 36"
 			}
 		},
 		"copyright": "© 2024 KS Enterprise. Tous droits réservés."
@@ -465,7 +469,8 @@
 		"leftImageAlt": "Fonctionnalité de gauche",
 		"rightImageAlt": "Fonctionnalité de droite",
 		"tagline": "Notre recette",
-		"title": "Notre Différence",
+		"title": "Notre",
+		"title2": " Différence",
 		"heroText": "Nous sommes une agence nouvelle génération.",
 		"heroSubtext": "Notre double expertise en développement et IA nous permet de concevoir des solutions innovantes qui créent de la valeur pour votre entreprise.",
 		"features": {
@@ -676,8 +681,13 @@
 		}
 	},
 	"aiCarousel": {
-		"title": "Solutions IA concrètes pour votre entreprise",
-		"description": "Découvrez comment nos solutions d'IA peuvent optimiser vos opérations quotidiennes, de l'automatisation documentaire à l'analyse d'images ...",
+		"ontitle": "Nos solutions",
+		"title": "Nos solutions concrètes",
+		"title2": " sur-mesure ",
+		"title3": "pour ",
+		"title4": "votre entreprise.",
+
+		"description": "Découvrez nos solutions d'IA modulables et sur mesure, parfaitement intégrées à votre écosystème, qui transforment vos opérations quotidiennes - de l'automatisation documentaire à l'analyse d'images, et bien plus encore ...",
 		"subdescription": "",
 		"cards": {
 			"documentIntelligence": {
@@ -708,6 +718,11 @@
 			"translation": {
 				"category": "Traduction",
 				"title": "Traduction Multilingue",
+				"description": "Communiquez efficacement dans plus de 95 langues avec une traduction précise et culturellement adaptée."
+			},
+			"others": {
+				"category": "more",
+				"title": "Et bien plus encore ...",
 				"description": "Communiquez efficacement dans plus de 95 langues avec une traduction précise et culturellement adaptée."
 			}
 		}

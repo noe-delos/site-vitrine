@@ -113,7 +113,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 						<div className="w-full relative">
 							{/* Hero section */}
 							<div className="mb-12">
-								<p className="text-lg text-purple-900">
+								<p className="text-lg text-blue-500">
 									{dictionary.technologies.ai.subtitle}{' '}
 									<span className="text-gray-400">
 										{dictionary.technologies.ai.subtitle2}
@@ -163,7 +163,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 							</div>
 						</div>
 					</div>
-					<div className="relative p-6 bg-gradient-to-br from-purple-900 to-purple-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-purple-100 overflow-hidden">
+					<div className="relative p-6 bg-gradient-to-br from-violet-400 to-blue-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
 						<div className="absolute inset-0 overflow-hidden left-60 -top-14">
 							<img
 								src="/technologies/scaleway5.webp"
@@ -172,7 +172,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 							/>
 						</div>
 						<div className="relative z-10">
-							<h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
+							<h3 className="text-lg font-semibold text-white flex items-center gap-2 mb-4">
 								{dictionary.technologies.ai.infrastructure.title}
 							</h3>
 							<div className="grid grid-cols-2 gap-6">
@@ -193,7 +193,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 														}
 														className="size-5 text-white"
 													/>
-													<span className="text-gray-300">{feature}</span>
+													<span className="text-white">{feature}</span>
 												</li>
 											</>
 										))}
@@ -211,7 +211,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 													}
 													className="size-5 text-white"
 												/>
-												<span className="text-gray-300">{feature}</span>
+												<span className="text-white">{feature}</span>
 											</li>
 										))}
 								</ul>
@@ -225,7 +225,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 			title: (
 				<p className="text-4xl font-extrabold">
 					{dictionary.technologies.data.title.part1}{' '}
-					<span className="bg-gradient-to-r from-black to-green-500 inline-block text-transparent bg-clip-text">
+					<span className="bg-gradient-to-br from-violet-400 to-blue-500 inline-block text-transparent bg-clip-text">
 						{dictionary.technologies.data.title.part2}
 					</span>
 				</p>
@@ -296,8 +296,8 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 							</div>
 						</div>
 					</div>
-					<div className="relative p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-800 overflow-hidden">
-						<div className="absolute inset-0 bg-gradient-to-br from-[#131313] to-[#424242]" />
+					<div className="relative p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+						<div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-blue-500" />
 
 						<div className="absolute inset-0 overflow-hidden -top-12">
 							<img
@@ -308,7 +308,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 						</div>
 
 						<div className="relative z-10">
-							<h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
+							<h3 className="text-lg font-semibold text-white flex items-center gap-2 mb-4">
 								<Icon
 									icon="material-symbols:star"
 									className="size-6 text-green-400"
@@ -329,7 +329,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 														icon="radix-icons:dot-filled"
 														className="size-6 text-green-400"
 													/>
-													<span className="text-gray-300">{feature}</span>
+													<span className="text-white">{feature}</span>
 												</li>
 												{index === 0 && (
 													<div className="flex flex-row gap-4 items-center ml-10">
@@ -356,7 +356,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 													icon="radix-icons:dot-filled"
 													className="size-6 text-green-400"
 												/>
-												<span className="text-gray-300">{feature}</span>
+												<span className="text-white">{feature}</span>
 											</li>
 										))}
 								</ul>
@@ -392,7 +392,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 							<div className="mb-12">
 								<p className="text-lg text-gray-900">
 									{dictionary.technologies.sites.subtitle}{' '}
-									<span className="text-gray-400">
+									<span className="text-white">
 										{dictionary.technologies.sites.subtitle2}
 									</span>
 								</p>
@@ -407,7 +407,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 											{dictionary.technologies.sites.perf.title}
 										</h3>
 									</div>
-									<p className="text-gray-400">
+									<p className="text-white">
 										{dictionary.technologies.sites.perf.description}
 									</p>
 								</div>
@@ -419,14 +419,14 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 											{dictionary.technologies.sites.experience.title}
 										</h3>
 									</div>
-									<p className="text-gray-400">
+									<p className="text-white">
 										{dictionary.technologies.sites.experience.description}
 									</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className="relative p-6 pb-0 rounded-xl shadow-lg hover:shadow-xl bg-gradient-to-br from-[#131313] to-[#424242] transition-shadow border border-gray-800">
+					<div className="relative p-6 pb-0 rounded-xl shadow-lg hover:shadow-xl bg-gradient-to-br from-violet-400 to-blue-500 transition-shadow">
 						<div className="absolute z-50 bottom-0 rounded-xl left-0 right-0 h-16 bg-gradient-to-t from-[#131313] to-transparent pointer-events-none" />
 
 						<div className="absolute inset-0 overflow-hidden -top-10 left-80">
@@ -565,7 +565,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 							</div>
 						</div>
 					</div>
-					<div className="relative p-6 bg-gradient-to-br from-blue-800 to-blue-400 text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-purple-100 overflow-hidden">
+					<div className="relative p-6 bg-gradient-to-br from-violet-400 to-blue-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
 						<div className="absolute inset-0 overflow-hidden z-50 -top-5 left-96">
 							<img
 								src="/technologies/scaleway6.png"
@@ -574,7 +574,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 							/>
 						</div>
 						<div className="relative z-10">
-							<h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
+							<h3 className="text-lg font-semibold text-white flex items-center gap-2 mb-4">
 								{dictionary.technologies.deployment.tools.title}
 							</h3>
 							<div className="grid grid-cols-3 gap-6 pt-2">
