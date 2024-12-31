@@ -67,14 +67,10 @@
 		}
 	},
 	"technologies": {
-		"main_title": "The",
-		"main_title_2": "The",
-		"word1": "technology serving innovation.",
-		"word2": "performance at the heart of our solutions.",
-		"word3": "mastered digital transformation.",
+		"main_title": "Our",
 		"secret": "Our expertise",
-		"main_description": "We combine technical expertise and business vision to propel your growth. Our innovative solutions transform today's challenges into tomorrow's competitive advantages.",
-		"main_description2": "Our mastery of cutting-edge technologies and results-oriented approach guarantee you high-performance solutions that maximize your ROI and strengthen your market position.",
+		"main_description": "The combination of our generative AI expertise and our KS LAB platform transforms your complex processes into sustainable competitive advantages. Total visibility on your projects and complete control of your solutions guarantee measurable results.",
+		"main_description2": "",
 		"performance": {
 			"title": "Performance & Analytics",
 			"instant_loading": {
@@ -133,9 +129,9 @@
 			}
 		},
 		"ai": {
-			"title": "Cutting-edge Technologies",
-			"subtitle": "Advanced solutions that create immediate value.",
-			"subtitle2": "Our technologies naturally integrate with your existing processes to increase your productivity and reduce operational costs.",
+			"title": "Custom AI Solutions",
+			"subtitle": "A perfect integration into your ecosystem.",
+			"subtitle2": "Generative AI solutions that adapt to your existing processes to transform your productivity.",
 			"solutions": {
 				"title": "Concrete Benefits",
 				"features": [
@@ -148,139 +144,136 @@
 				]
 			},
 			"LLmApis": {
-				"title": "Advanced AI Expertise",
-				"description": "Our mastery of the market's most powerful AI models allows us to create robust solutions adapted to your business challenges."
+				"title": "Custom Integration",
+				"description": "Our solutions perfectly adapt to your existing technical environment, ensuring rapid adoption and optimal use."
 			},
 			"advancedFeatures": {
-				"title": "Integrated Solutions",
-				"description": "Our AI solutions go beyond simple chatbots to offer a complete suite of features that transform your operations and create sustainable competitive advantage."
+				"title": "KS LAB - Your Project Space",
+				"description": "A unique platform to manage your AI project: real-time tracking, ticketing, API testing, meeting management, and centralized documentation."
 			},
 			"infrastructure": {
-				"title": "Strategic Capabilities",
+				"title": "KS LAB Features",
 				"features": [
-					"Intelligent data extraction",
-					"Advanced multimodal communication",
-					"Enhanced document analysis",
-					"Voice process automation",
-					"Conversational intelligence",
-					"Strategic content generation",
-					"Editorial process optimization"
+					"Real-time project tracking",
+					"Integrated ticketing system",
+					"API testing interface",
+					"Meeting scheduling",
+					"Automatic summaries",
+					"Centralized documentation",
+					"Responsive support"
 				],
 				"icons": [
-					"ri:image-circle-ai-fill",
-					"ri:speak-ai-fill",
-					"ri:ai-generate",
-					"ri:voice-ai-fill",
-					"streamline:ai-network-spark-solid",
-					"mingcute:pencil-2-ai-fill",
-					"mingcute:textbox-ai-fill"
+					"ri:dashboard-fill",
+					"ri:ticket-fill",
+					"ri:api-fill",
+					"ri:calendar-fill",
+					"ri:file-list-fill",
+					"ri:book-fill",
+					"ri:customer-service-fill"
 				]
 			},
 			"performance": {
-				"title": "Performance",
+				"title": "Security & Reliability",
 				"features": [
-					"Parallel processing",
-					"Smart caching",
-					"Advanced monitoring"
+					"Secure deployment on Azure",
+					"GDPR compliance guaranteed",
+					"Sensitive data protection"
 				]
 			}
 		},
 		"sites": {
-			"title": "Don't keep your users waiting.",
-			"subtitle": "Today's modern technologies revolutionize the web experience by eliminating latency.",
-			"subtitle2": "These next-generation frameworks prepare all content upfront, offering navigation as responsive as a native application. The result? A premium user experience that naturally builds user loyalty.",
+			"title": "Rapid and Secure Deployment",
+			"subtitle": "A controlled production deployment of your AI solutions.",
+			"subtitle2": "Our deployment expertise ensures a smooth and secure integration of your solutions, with constant support via KS LAB.",
 			"perf": {
-				"title": "Optimal Performance",
-				"description": "Our applications anticipate your users' actions through intelligent systems. Everything is prepared in advance for instant navigation."
+				"title": "Premium Support",
+				"description": "Comprehensive team training and continuous support for successful adoption."
 			},
 			"experience": {
-				"title": "Frictionless Experience",
-				"description": "Gone are visible loading times and jerky interfaces. Your application's content is intelligently orchestrated in the backend, then delivered optimally to your users."
+				"title": "Transparent Tracking",
+				"description": "Real-time access to your project progress and solution performance via KS LAB."
 			},
 			"infrastructure": {
-				"title": "Concrete Benefits",
+				"title": "KS LAB Advantages",
 				"features": [
 					{
-						"gain1": "Smart Loading",
-						"gain2": "Performance",
-						"explanation": "Exceptional display speed"
+						"gain1": "Project Vision",
+						"gain2": "Clarity",
+						"explanation": "Real-time progress tracking"
 					},
 					{
-						"gain1": "Action Anticipation",
-						"gain2": "Instantaneity",
-						"explanation": "Zero wait time between pages"
+						"gain1": "Communication",
+						"gain2": "Efficiency",
+						"explanation": "All your exchanges centralized"
 					},
 					{
-						"gain1": "Backend Preparation",
-						"gain2": "Reliability",
-						"explanation": "Content always available and structured"
+						"gain1": "API Tests",
+						"gain2": "Autonomy",
+						"explanation": "Test your solutions in real-time"
 					},
 					{
-						"gain1": "Intuitive Navigation",
-						"gain2": "Fluidity",
-						"explanation": "Transitions worthy of a native app"
+						"gain1": "Meetings",
+						"gain2": "Organization",
+						"explanation": "Automatic planning and summaries"
 					},
 					{
-						"gain1": "Instant Feedback",
-						"gain2": "Reactivity",
-						"explanation": "Every user action is immediately visible"
+						"gain1": "Documentation",
+						"gain2": "Accessibility",
+						"explanation": "Centralized guides and resources"
 					},
 					{
-						"gain1": "Premium UX",
-						"gain2": "Impact",
-						"explanation": "An experience that enhances your brand"
+						"gain1": "Support",
+						"gain2": "Responsiveness",
+						"explanation": "A team dedicated to your success"
 					}
 				]
 			}
 		},
 		"deployment": {
 			"title": {
-				"part1": "Sites",
+				"part1": "Solutions",
 				"part2": "deployed",
 				"part3": "in",
-				"part4": "one",
-				"part5": "day"
+				"part4": "complete",
+				"part5": "security"
 			},
-			"subtitle": "From design to deployment, we get your site online in just hours.",
-			"subtitle2": "Our mastery of cloud platforms and automation processes enables fast and secure production deployment, giving you the agility to seize every opportunity.",
+			"subtitle": "A progressive and controlled deployment of your AI solutions.",
+			"subtitle2": "Our secure deployment expertise guarantees successful integration of your solutions, with minimal impact on your existing operations.",
 			"infrastructure": {
-				"title": "Scaled to Your Ambitions",
-				"description": "We configure the cloud infrastructure to automatically scale with your audience. From 100 to 1 million visitors, your site remains performant and responsive. No risk of downtime or slowdown, even during traffic spikes."
+				"title": "Maximum Security",
+				"description": "Deployment on Azure with the highest security standards. Total protection of your sensitive data and guaranteed GDPR compliance."
 			},
 			"updates": {
-				"title": "Updates Without Interruption",
-				"description": "We implement continuous deployment solutions for smooth evolution. Each improvement is tested and deployed automatically, without impact on your users. Your site stays available 24/7, even during updates."
+				"title": "Progressive Integration",
+				"description": "Phased deployment with validation at each stage. Continuous training of your teams for optimal adoption."
 			},
 			"cloud": {
-				"title": "Cloud Infrastructure",
+				"title": "Azure Infrastructure",
 				"features": [
-					"Vercel Edge Network",
-					"Scaleway Cloud",
-					"Global CDN",
-					"Automatic SSL"
+					"Highly secure environment",
+					"High availability",
+					"Automatic scalability",
+					"Advanced monitoring"
 				]
 			},
 			"security": {
 				"title": "Security & Compliance",
-				"features": ["French hosting", "GDPR compliance", "Daily backups"]
-			},
-			"tools": {
-				"title": "Our Service Selection",
 				"features": [
-					"/fr/technologies/cloud/vercel.png",
-					"/fr/technologies/cloud/docker.png",
-					"/fr/technologies/cloud/aws.png",
-					"/fr/technologies/cloud/google.png",
-					"/fr/technologies/cloud/scaleway.png",
-					"/fr/technologies/cloud/kube.png"
+					"Secure Azure hosting",
+					"GDPR compliance",
+					"Data protection"
 				]
 			},
+			"tools": {
+				"title": "KS LAB Platform",
+				"features": [""]
+			},
 			"cicd": {
-				"title": "CI/CD",
+				"title": "Deployment",
 				"features": [
-					"Continuous deployment",
-					"Preview deployments",
-					"Instant rollback"
+					"Progressive integration",
+					"Comprehensive testing",
+					"Continuous support"
 				]
 			}
 		}
@@ -464,7 +457,7 @@
 		"rightImageAlt": "Right feature",
 		"tagline": "Our recipe",
 		"title": "Our",
-		"title2": "Difference",
+		"title2": " Difference",
 		"heroText": "We are a next-generation agency.",
 		"heroSubtext": "Our dual expertise in development and AI allows us to design innovative solutions that create value for your business.",
 		"features": {

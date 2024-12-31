@@ -9,15 +9,14 @@ export default async function Page({ params }: any) {
 		<div className="fixed inset-0 overflow-hidden">
 			<div className="absolute inset-0 z-0">
 				<BackgroundGradientAnimation
-					gradientBackgroundStart="hsl(263, 100%, 95%)"
-					gradientBackgroundEnd="hsl(226, 100%, 95%)"
-					firstColor="89, 87, 255"
-					secondColor="115, 86, 255"
-					thirdColor="78, 126, 255"
-					fourthColor="105, 170, 255"
-					fifthColor="143, 192, 255"
-					pointerColor="112, 102, 255"
-					size="80%"
+					gradientBackgroundStart="hsl(255, 100%, 98%)"
+					gradientBackgroundEnd="hsl(255, 100%, 95%)"
+					firstColor="167, 139, 250" // violet-400 uniquement
+					secondColor="167, 139, 250" // violet-400 uniquement
+					fourthColor="59, 130, 246" // blue-500 uniquement
+					fifthColor="59, 130, 246" // blue-500 uniquement
+					pointerColor="167, 139, 250" // violet-400
+					size="175%"
 					blendingValue="hard-light"
 					interactive={false}
 				/>

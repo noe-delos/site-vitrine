@@ -461,7 +461,7 @@ const Hero: React.FC<{ dictionary: any; lang: string }> = ({
 	lang,
 }) => {
 	return (
-		<section className="min-h-[70vh] md:min-h-[90vh] flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
+		<section className="min-h-[70vh] md:min-h-[95vh] flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
 			<div className="max-w-[90rem] w-full mx-auto z-50">
 				<div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 xs:mt-10">
 					<LeftSection dictionary={dictionary} lang={lang} />

@@ -52,12 +52,12 @@ export function AppleCardsCarouselDemo({ dictionary }: { dictionary: any }) {
 	const cards = data.map((card) => <Card key={card.src} card={card} />);
 
 	return (
-		<div className="w-full h-full py-20 bg-white pb-[15rem] ">
-			<div className="mb-12 max-w-4xl ml-[15%]">
+		<div className="w-full h-full bg-white ">
+			<div className="mb-12 max-w-4xl ml-[15%] flex flex-col gap-6">
 				<p className="text-sm uppercase tracking-wider text-gray-500">
 					{dictionary.aiCarousel.ontitle}
 				</p>
-				<h1 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
+				<h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
 					{dictionary.aiCarousel.title}
 					<span className="bg-gradient-to-r  from-violet-400 to-blue-500 bg-clip-text text-transparent">
 						{dictionary.aiCarousel.title2}
@@ -67,9 +67,9 @@ export function AppleCardsCarouselDemo({ dictionary }: { dictionary: any }) {
 						{dictionary.aiCarousel.title4}
 					</span>
 				</h1>
-				<p className="text-lg">
+				<p className="text-lg text-gray-600">
 					{dictionary.aiCarousel.description}
-					<span className="text-gray-400">
+					<span className="text-gray-600">
 						{dictionary.aiCarousel.subdescription}
 					</span>
 				</p>

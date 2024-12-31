@@ -758,35 +758,20 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 	}, []);
 
 	return (
-		<div
-			className="bg-gradient-to-br from-gray-50 to-white w-full relative min-h-screen py-[13rem]"
-			ref={containerRef}
-		>
+		<div className="bg-white w-full relative min-h-screen" ref={containerRef}>
 			<div className="max-w-[100rem] mx-auto">
-				<div className="flex flex-col items-center justify-center mb-[12rem] w-full px-4">
+				<div className="flex flex-col items-center justify-center w-full px-4">
 					<div className="w-full max-w-4xl">
-						<div className="flex flex-row gap-2 items-center">
-							<Icon
-								icon="heroicons:squares-plus-16-solid"
-								className="size-4 text-black"
-							/>
+						<div className="flex flex-row gap-2 items-center text-gray-500">
 							<p>{dictionary.technologies.secret}</p>
 						</div>
 						<div className="flex flex-row gap-1 items-center mb-5 p-4 pl-0 w-fit">
 							<h1 className="text-5xl font-extrabold text-gray-900 pr-3">
-								{dictionary.technologies.main_title_2}
+								{dictionary.technologies.main_title}
 							</h1>
-							<FlipWords
-								words={[
-									dictionary.technologies.word1,
-									dictionary.technologies.word2,
-									dictionary.technologies.word3,
-								]}
-								className="text-5xl font-extrabold text-gray-900"
-							/>
 						</div>
 						<p className="leading-relaxed text-xl">
-							<span className="text-gray-700 ">
+							<span className="text-gray-600 ">
 								{dictionary.technologies.main_description}
 							</span>{' '}
 							<span className="text-gray-400">

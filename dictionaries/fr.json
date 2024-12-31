@@ -67,14 +67,10 @@
 		}
 	},
 	"technologies": {
-		"main_title": "La",
-		"main_title_2": "La",
-		"word1": "technologie au service de l'innovation.",
-		"word2": "performance au cœur de nos solutions.",
-		"word3": "transformation digitale maîtrisée.",
+		"main_title": "Notre savoir faire",
 		"secret": "Notre expertise",
-		"main_description": "Nous combinons expertise technique et vision business pour propulser votre croissance. Nos solutions innovantes transforment vos défis d'aujourd'hui en avantages concurrentiels de demain.",
-		"main_description2": "Notre maîtrise des technologies de pointe et notre approche orientée résultats vous garantissent des solutions performantes qui maximisent votre ROI et renforcent votre position sur le marché.",
+		"main_description": "La combinaison de notre expertise en IA générative et notre plateforme KS LAB transforme vos processus complexes en avantages concurrentiels durables. La visibilité totale sur vos projets et le contrôle complet de vos solutions garantissent des résultats mesurables.",
+		"main_description2": "",
 		"performance": {
 			"title": "Performance & Analytics",
 			"instant_loading": {
@@ -133,10 +129,11 @@
 				]
 			}
 		},
+
 		"ai": {
-			"title": "Technologies de pointe",
-			"subtitle": "Des solutions avancées qui créent de la valeur immédiate.",
-			"subtitle2": "Nos technologies s'intègrent naturellement à vos processus existants pour augmenter votre productivité et réduire vos coûts opérationnels.",
+			"title": "Solutions IA sur-mesure",
+			"subtitle": "Une intégration parfaite dans votre écosystème.",
+			"subtitle2": "Des solutions d'IA générative qui s'adaptent à vos processus existants pour transformer votre productivité.",
 			"solutions": {
 				"title": "Bénéfices concrets",
 				"features": [
@@ -149,143 +146,143 @@
 				]
 			},
 			"LLmApis": {
-				"title": "Expertise IA avancée",
-				"description": "Notre maîtrise des modèles d'IA les plus performants du marché nous permet de créer des solutions robustes adaptées à vos enjeux business."
+				"title": "Intégration sur mesure",
+				"description": "Nos solutions s'adaptent parfaitement à votre environnement technique existant, garantissant une adoption rapide et une utilisation optimale."
 			},
 			"advancedFeatures": {
-				"title": "Solutions intégrées",
-				"description": "Nos solutions IA dépassent les simples chatbots pour offrir une suite complète de fonctionnalités qui transforment vos opérations et créent un avantage concurrentiel durable."
+				"title": "KS LAB - Votre espace projet",
+				"description": "Une plateforme unique pour piloter votre projet IA : suivi en temps réel, ticketing, tests API, gestion des réunions et documentation centralisée."
 			},
 			"infrastructure": {
-				"title": "Capacités stratégiques",
+				"title": "Fonctionnalités KS LAB",
 				"features": [
-					"Extraction intelligente de données",
-					"Communication multimodale avancée",
-					"Analyse documentaire augmentée",
-					"Automatisation des processus vocaux",
-					"Intelligence conversationnelle",
-					"Génération de contenu stratégique",
-					"Optimisation des processus rédactionnels"
+					"Suivi de projet en temps réel",
+					"Système de ticketing intégré",
+					"Interface de test des APIs",
+					"Planification des réunions",
+					"Synthèses automatiques",
+					"Documentation centralisée",
+					"Support réactif"
 				],
 				"icons": [
-					"ri:image-circle-ai-fill",
-					"ri:speak-ai-fill",
-					"ri:ai-generate",
-					"ri:voice-ai-fill",
-					"streamline:ai-network-spark-solid",
-					"mingcute:pencil-2-ai-fill",
-					"mingcute:textbox-ai-fill"
+					"ri:dashboard-fill",
+					"ri:ticket-fill",
+					"ri:api-fill",
+					"ri:calendar-fill",
+					"ri:file-list-fill",
+					"ri:book-fill",
+					"ri:customer-service-fill"
 				]
 			},
 			"performance": {
-				"title": "Performances",
+				"title": "Sécurité & Fiabilité",
 				"features": [
-					"Traitement parallèle",
-					"Cache intelligent",
-					"Monitoring avancé"
+					"Déploiement sécurisé sur Azure",
+					"Conformité RGPD garantie",
+					"Protection des données sensibles"
 				]
 			}
 		},
 		"sites": {
-			"title": "Ne faites pas attendre vos utilisateurs.",
-			"subtitle": "Les technologies modernes d'aujourd'hui révolutionnent l'expérience web en éliminant toute latence.",
-			"subtitle2": "Ces frameworks nouvelle génération préparent l'intégralité du contenu en amont, offrant une navigation aussi réactive qu'une application native. Le résultat ? Une expérience utilisateur premium qui fidélise naturellement vos utilisateurs.",
+			"title": "Déploiement rapide et sécurisé",
+			"subtitle": "Une mise en production maîtrisée de vos solutions IA.",
+			"subtitle2": "Notre expertise en déploiement assure une intégration fluide et sécurisée de vos solutions, avec un accompagnement constant via KS LAB.",
 			"perf": {
-				"title": "Une performance optimale",
-				"description": "Nos applications anticipent les actions de vos utilisateurs grâce à des systèmes intelligents. Tout est préparé en amont pour une navigation instantanée."
+				"title": "Accompagnement premium",
+				"description": "Formation complète de vos équipes et support continu pour une adoption réussie."
 			},
 			"experience": {
-				"title": "Une expérience sans friction",
-				"description": "Fini les temps de chargement visibles et les interfaces qui saccadent. Le contenu de votre application est orchestré intelligemment en backend, puis délivré de manière optimale à vos utilisateurs."
+				"title": "Suivi transparent",
+				"description": "Accès en temps réel à l'avancement de votre projet et aux performances de vos solutions via KS LAB."
 			},
 			"infrastructure": {
-				"title": "Gains concrets",
+				"title": "Avantages KS LAB",
 				"features": [
 					{
-						"gain1": "Chargement Intelligent",
-						"gain2": "Performance",
-						"explanation": "Une rapidité d'affichage exceptionnelle"
+						"gain1": "Vision projet",
+						"gain2": "Clarté",
+						"explanation": "Suivi en temps réel de l'avancement"
 					},
 					{
-						"gain1": "Anticipation des Actions",
-						"gain2": "Instantanéité",
-						"explanation": "Zero temps d'attente entre les pages"
+						"gain1": "Communication",
+						"gain2": "Efficacité",
+						"explanation": "Tous vos échanges centralisés"
 					},
 					{
-						"gain1": "Préparation Backend",
-						"gain2": "Fiabilité",
-						"explanation": "Un contenu toujours disponible et structuré"
+						"gain1": "Tests API",
+						"gain2": "Autonomie",
+						"explanation": "Testez vos solutions en direct"
 					},
 					{
-						"gain1": "Navigation Intuitive",
-						"gain2": "Fluidité",
-						"explanation": "Des transitions dignes d'une app native"
+						"gain1": "Réunions",
+						"gain2": "Organisation",
+						"explanation": "Planning et synthèses automatiques"
 					},
 					{
-						"gain1": "Feedback Instantané",
+						"gain1": "Documentation",
+						"gain2": "Accessibilité",
+						"explanation": "Guides et ressources centralisés"
+					},
+					{
+						"gain1": "Support",
 						"gain2": "Réactivité",
-						"explanation": "Chaque action utilisateur est immédiatement visible"
-					},
-					{
-						"gain1": "UX Premium",
-						"gain2": "Impact",
-						"explanation": "Une expérience qui valorise votre marque"
+						"explanation": "Une équipe dédiée à votre réussite"
 					}
 				]
 			}
 		},
 		"deployment": {
 			"title": {
-				"part1": "Des sites",
-				"part2": "déployés",
+				"part1": "Solutions",
+				"part2": "déployées",
 				"part3": "en",
-				"part4": "une",
-				"part5": "journée"
+				"part4": "toute",
+				"part5": "sécurité"
 			},
-			"subtitle": "De la conception au déploiement, nous mettons votre site en ligne en quelques heures.",
-			"subtitle2": "Notre maîtrise des plateformes cloud et nos processus d'automatisation permettent une mise en production rapide et sécurisée, vous donnant l'agilité nécessaire pour saisir chaque opportunité.",
+			"subtitle": "Un déploiement progressif et maîtrisé de vos solutions IA.",
+			"subtitle2": "Notre expertise en déploiement sécurisé garantit une intégration réussie de vos solutions, avec un impact minimal sur vos opérations existantes.",
 			"infrastructure": {
-				"title": "À l'échelle de vos ambitions",
-				"description": "Nous configurons l'infrastructure cloud pour qu'elle évolue automatiquement avec votre audience. De 100 à 1 million de visiteurs, votre site reste performant et réactif. Aucun risque de panne ou de ralentissement, même lors des pics de trafic."
+				"title": "Sécurité maximale",
+				"description": "Déploiement sur Azure avec les plus hauts standards de sécurité. Protection totale de vos données sensibles et conformité RGPD garantie."
 			},
 			"updates": {
-				"title": "Mises à Jour Sans Interruption",
-				"description": "Nous mettons en place des solutions de déploiement continu pour une évolution sereine. Chaque amélioration est testée et mise en ligne automatiquement, sans impact pour vos utilisateurs. Votre site reste disponible 24/7, même pendant les mises à jour."
+				"title": "Intégration Progressive",
+				"description": "Déploiement par étapes avec validation à chaque phase. Formation continue de vos équipes pour une adoption optimale."
 			},
 			"cloud": {
-				"title": "Infrastructure Cloud",
+				"title": "Infrastructure Azure",
 				"features": [
-					"Vercel Edge Network",
-					"Scaleway Cloud",
-					"CDN mondial",
-					"SSL automatique"
+					"Environnement hautement sécurisé",
+					"Haute disponibilité",
+					"Scalabilité automatique",
+					"Monitoring avancé"
 				]
 			},
 			"security": {
 				"title": "Sécurité & Conformité",
 				"features": [
-					"Hébergement français",
+					"Hébergement sécurisé Azure",
 					"Conformité RGPD",
-					"Backups quotidiens"
+					"Protection des données"
 				]
 			},
 			"tools": {
-				"title": "Notre sélection de services",
+				"title": "Plateforme KS LAB",
 				"features": [
-					"/fr/technologies/cloud/vercel.png",
-					"/fr/technologies/cloud/docker.png",
-					"/fr/technologies/cloud/aws.png",
-					"/fr/technologies/cloud/google.png",
-					"/fr/technologies/cloud/scaleway.png",
-					"/fr/technologies/cloud/kube.png"
+					"/fr/technologies/kslab/dashboard.png",
+					"/fr/technologies/kslab/tickets.png",
+					"/fr/technologies/kslab/api.png",
+					"/fr/technologies/kslab/meetings.png",
+					"/fr/technologies/kslab/docs.png",
+					"/fr/technologies/kslab/support.png"
 				]
 			},
 			"cicd": {
-				"title": "CI/CD",
+				"title": "Déploiement",
 				"features": [
-					"Déploiement continu",
-					"Preview deployments",
-					"Rollback instantané"
+					"Intégration progressive",
+					"Tests approfondis",
+					"Support continu"
 				]
 			}
 		}

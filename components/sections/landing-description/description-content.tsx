@@ -375,7 +375,7 @@ export default function BentoGridSection({
 				/>
 			</div>
 
-			<div className="relative container mx-auto w-fit py-24 px-4 items-center justify-center flex flex-col">
+			<div className="relative container mx-auto w-fit px-4 items-center justify-center flex flex-col">
 				<div className="max-w-7xl mb-16 space-y-4 self-center md:self-start">
 					<div className="flex flex-col gap-6">
 						<p className="text-sm uppercase tracking-wider text-gray-500">
