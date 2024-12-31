@@ -460,7 +460,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
 							<div className="flex items-center justify-center gap-5">
 								<div className="w-12 h-12 rounded-full bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)] flex items-center justify-center">
 									<img
-										src="https://seeklogo.com/images/M/mistral-ai-icon-logo-B3319DCA6B-seeklogo.com.webp"
+										src="https://seeklogo.com/images/M/mistral-ai-icon-logo-B3319DCA6B-seeklogo.com.png"
 										alt="Circle 1"
 										className="size-6 opacity-45 object-contain"
 									/>
@@ -481,7 +481,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
 								</div>
 								<div className="w-16 h-16 rounded-full bg-white shadow-[0_0_20px_rgba(0,0,0,0.12)] flex items-center justify-center">
 									<img
-										src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.webp"
+										src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png"
 										alt="Circle 4"
 										className="size-8 opacity-85 object-contain"
 									/>

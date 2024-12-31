@@ -39,7 +39,7 @@ const getTeamMembers = (lang: string): TeamMember[] => [
 				: 'Full-Stack developer specialized in generative AI integration. Passionate about designing and developing technical solutions, with a focus on innovation and quality.',
 		linkedin: 'https://linkedin.com/in/noe-campo',
 		schools: [
-			'https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.webp',
+			'https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png',
 			'/team/cau.webp',
 		],
 		companies: [
@@ -95,8 +95,8 @@ const getTeamMembers = (lang: string): TeamMember[] => [
 				: 'DevOps engineer with strong understanding of cloud infrastructure and distributed architectures. Designs and implements efficient deployment solutions, ensuring application reliability and scalability.',
 		linkedin: 'https://linkedin.com/in/hugo-pradier',
 		schools: [
-			'https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.webp',
-			'https://upload.wikimedia.org/wikipedia/fr/0/0d/Logo_OpenClassrooms.webp',
+			'https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png',
+			'https://upload.wikimedia.org/wikipedia/fr/0/0d/Logo_OpenClassrooms.png',
 			'https://media.licdn.com/dms/image/v2/D4E0BAQFvK1i51HdI3Q/company-logo_200_200/company-logo_200_200/0/1665753595055/dev_university_logo?e=2147483647&v=beta&t=Yo5EjU3GCovYAi5FbPyeioXElaWCMHtkCVzyejAPmf4',
 		],
 		companies: [
@@ -126,7 +126,7 @@ const getTeamMembers = (lang: string): TeamMember[] => [
 		linkedin: 'https://www.linkedin.com/in/nicolas-henaux/',
 		schools: [
 			'https://keystoneacademic-res.cloudinary.com/image/upload/element/16/169621_LogoSKEMA-Couleur.webp',
-			'https://brand.ncsu.edu/img/logo/2x2white.webp',
+			'https://brand.ncsu.edu/img/logo/2x2white.jpg',
 		],
 		companies: [
 			{
@@ -249,7 +249,7 @@ const AnimatedHeroSection = ({
 						},
 						{
 							href: 'https://www.epitech.eu/',
-							src: 'https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.webp',
+							src: 'https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png',
 							alt: 'EPITECH',
 							size: 'size-10 md:size-14 lg:size-16',
 						},
