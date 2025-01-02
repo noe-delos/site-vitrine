@@ -1,747 +1,746 @@
 {
-	"gpt": {
-		"title1": "Bienvenue sur",
-		"description": "Démarrez une conversation en envoyant un message ou en partageant jusqu'à 5 images.",
-		"placeholder": "Posez votre question...",
-		"q1_label": "Qui sommes nous ?",
-		"q2_label": "Notre expertise",
-		"q3_label": "La puissance de l'IA",
-		"q1_question": "Qui est l'entreprise KS consulting, présente aussi les membres ?",
-		"q2_question": "Dans quel domaine est KS consulting expert ?",
-		"q3_question": "Que pouvons nous faire avec l'IA ?"
-	},
-	"hero": {
-		"try": "Découvrir",
-		"contactUs": "Nous contacter",
-		"ourServices": "Nos services",
-		"title": {
-			"part1": "Révolutionnez",
-			"part2": "votre",
-			"part3": "Business",
-			"part4": "avec",
-			"part5": "l'IA"
-		},
-		"description": "Acteurs de votre transition à l'IA générative, nous vous garrantissons une automatisation de vos processus, amélioration de l'expérience client et réduction des coûts opérationnels.",
-		"trust": "Ces entreprises nous font confiance",
-		"ai": {
-			"part1": "intégrez l'",
-			"part2": "IA",
-			"part3": "."
-		}
-	},
-	"bento": {
-		"approach": "Notre approche",
-		"title": {
-			"part2": "Vos défis ",
-			"part3": "business, ",
-			"part4": "nos solutions ",
-			"part5": "IA."
-		},
-		"description": "Nous transformons vos problématiques business en avantages concurrentiels grâce à l'IA. Notre expertise vous accompagne dans la réduction des coûts, l'automatisation des tâches et l'amélioration de votre expérience client.",
-		"features": {
-			"immersion": {
-				"name": "1. Analyse de vos besoins",
-				"description": "Nous étudions vos enjeux métier, vos processus actuels et vos objectifs de performance pour identifier les opportunités d'optimisation.",
-				"cta": "En savoir plus"
-			},
-			"conception": {
-				"name": "2. Proposition de solution",
-				"description": "Nous concevons une solution sur mesure alignée avec vos objectifs de ROI et vos contraintes organisationnelles.",
-				"cta": "En savoir plus"
-			},
-			"development": {
-				"name": "3. Mise en œuvre",
-				"description": "Nous déployons progressivement la solution en impliquant vos équipes à chaque étape pour garantir son adoption.",
-				"cta": "En savoir plus"
-			},
-			"launch": {
-				"name": "4. Accompagnement",
-				"description": "Nous mesurons les résultats, formons vos équipes et optimisons continuellement la solution pour maximiser votre retour sur investissement.",
-				"cta": "En savoir plus"
-			},
-			"monitoring": {
-				"name": "5. Suivi et optimisation",
-				"description": "Nous assurons un suivi continu des performances et des coûts pour garantir un ROI optimal. Nos tableaux de bord vous donnent une visibilité complète sur vos indicateurs clés.",
-				"cta": "En savoir plus"
-			}
-		}
-	},
-	"technologies": {
-		"main_title": "Notre savoir faire",
-		"secret": "Notre expertise",
-		"main_description": "La combinaison de notre expertise en IA générative et notre plateforme KS LAB transforme vos processus complexes en avantages concurrentiels durables. La visibilité totale sur vos projets et le contrôle complet de vos solutions garantissent des résultats mesurables.",
-		"main_description2": "",
-		"performance": {
-			"title": "Performance & Analytics",
-			"instant_loading": {
-				"title": "Rapidité optimale",
-				"description": "Des solutions ultra-réactives pour une expérience utilisateur premium"
-			},
-			"realtime_analytics": {
-				"title": "Pilotage en temps réel",
-				"description": "Tableaux de bord intelligents pour des décisions éclairées"
-			},
-			"advanced_monitoring": {
-				"title": "Supervision avancée",
-				"description": "Alertes prédictives et optimisation continue des performances"
-			}
-		},
-		"data": {
-			"title": {
-				"part1": "Données et",
-				"part2": "sécurité."
-			},
-			"subtitle": "Protection maximale de vos données d'entreprise grâce à une infrastructure cloud hautement sécurisée de nouvelle génération.",
-			"subtitle2": "Performance, confidentialité et fonctionnalités IA garanties.",
+  "gpt": {
+    "title1": "Bienvenue sur",
+    "description": "Démarrez une conversation en envoyant un message ou en partageant jusqu'à 5 images.",
+    "placeholder": "Posez votre question...",
+    "q1_label": "Qui sommes nous ?",
+    "q2_label": "Notre expertise",
+    "q3_label": "La puissance de l'IA",
+    "q1_question": "Qui est l'entreprise KS consulting, présente aussi les membres ?",
+    "q2_question": "Dans quel domaine est KS consulting expert ?",
+    "q3_question": "Que pouvons nous faire avec l'IA ?"
+  },
+  "hero": {
+    "try": "Découvrir",
+    "contactUs": "Nous contacter",
+    "ourServices": "Nos services",
+    "title": {
+      "part1": "Révolutionnez",
+      "part2": "votre",
+      "part3": "Business",
+      "part4": "avec",
+      "part5": "l'IA"
+    },
+    "description": "Acteurs de votre transition à l'IA générative, nous vous garrantissons une automatisation de vos processus et réduction des coûts opérationnels.",
+    "trust": "Ces entreprises nous font confiance",
+    "ai": {
+      "part1": "intégrez l'",
+      "part2": "IA",
+      "part3": "."
+    }
+  },
+  "bento": {
+    "approach": "Notre approche",
+    "title": {
+      "part2": "Vos défis ",
+      "part3": "business, ",
+      "part4": "nos solutions ",
+      "part5": "IA."
+    },
+    "description": "Nous transformons vos problématiques business en avantages concurrentiels grâce à l'IA. Notre expertise vous accompagne dans la réduction des coûts, l'automatisation des tâches et l'amélioration de votre expérience client.",
+    "features": {
+      "immersion": {
+        "name": "1. Analyse de vos besoins",
+        "description": "Nous étudions vos enjeux métier, vos processus actuels et vos objectifs de performance pour identifier les opportunités d'optimisation.",
+        "cta": "En savoir plus"
+      },
+      "conception": {
+        "name": "2. Proposition de solution",
+        "description": "Nous concevons une solution sur mesure alignée avec vos objectifs de ROI et vos contraintes organisationnelles.",
+        "cta": "En savoir plus"
+      },
+      "development": {
+        "name": "3. Mise en œuvre",
+        "description": "Nous déployons progressivement la solution en impliquant vos équipes à chaque étape pour garantir son adoption.",
+        "cta": "En savoir plus"
+      },
+      "launch": {
+        "name": "4. Accompagnement",
+        "description": "Nous mesurons les résultats, formons vos équipes et optimisons continuellement la solution pour maximiser votre retour sur investissement.",
+        "cta": "En savoir plus"
+      },
+      "monitoring": {
+        "name": "5. Suivi et optimisation",
+        "description": "Nous assurons un suivi continu des performances et des coûts pour garantir un ROI optimal. Nos tableaux de bord vous donnent une visibilité complète sur vos indicateurs clés.",
+        "cta": "En savoir plus"
+      }
+    }
+  },
+  "technologies": {
+    "main_title": "Des",
+    "main_title_2": "Des",
+    "secret": "Notre expertise",
+    "main_description": "La combinaison de notre expertise en IA générative et notre plateforme KS LAB transforme vos processus complexes en avantages concurrentiels durables. La visibilité totale sur vos projets et le contrôle complet de vos solutions garantissent des résultats mesurables.",
+    "main_description2": "",
+    "word1": "technologies nouvelle génération.",
+    "word2": "méthodes performantes.",
+    "word3": "solutions innovantes.",
+    "performance": {
+      "title": "Performance & Analytics",
+      "instant_loading": {
+        "title": "Rapidité optimale",
+        "description": "Des solutions ultra-réactives pour une expérience utilisateur premium"
+      },
+      "realtime_analytics": {
+        "title": "Pilotage en temps réel",
+        "description": "Tableaux de bord intelligents pour des décisions éclairées"
+      },
+      "advanced_monitoring": {
+        "title": "Supervision avancée",
+        "description": "Alertes prédictives et optimisation continue des performances"
+      }
+    },
+    "data": {
+      "title": {
+        "part1": "Données et",
+        "part2": "sécurité."
+      },
+      "subtitle": "Protection maximale de vos données d'entreprise grâce à une infrastructure cloud hautement sécurisée de nouvelle génération.",
+      "subtitle2": "Performance, confidentialité et fonctionnalités IA garanties.",
 
-			"Azure": {
-				"title": "Azure",
-				"description": "Nous ne prennons pas l'IA et les données à la légère. Nous déployons les modèles (GPT, Mistral, Llama,..) sur Azure afin d'assurer la sécurité et la confidentialité des données."
-			},
-			"Supabase": {
-				"title": "Supabase",
-				"description": "Nous avons adopté Supabase en tant que service de base de donnée pour des intégrations professionnelles et une sécurité avancée. Ce service nous permet d'avoir une rapidité d'éxécution doublée."
-			},
-			"infrastructure": {
-				"title": "Infrastructure PostgreSQL",
-				"features": [
-					"Portabilité 100% garantie",
-					"Authentification intégrée RLS",
-					"Extensions faciles à intégrer"
-				]
-			},
-			"security": {
-				"title": "Sécurité entreprise",
-				"features": [
-					"Authentification multi-facteurs",
-					"Chiffrement bout en bout",
-					"Conformité RGPD"
-				]
-			},
-			"realtime": {
-				"title": "Exemples d'intégrations",
-				"features": [
-					"Connexions multi-facteurs.",
-					"Cryptage mot des passe en Bcrypt.",
-					"Mode Realtime (interractions en temps réel).",
-					"Système de Mailing intégré.",
-					"Terrabytes de stockage."
-				]
-			}
-		},
+      "Azure": {
+        "title": "Azure",
+        "description": "Nous ne prennons pas l'IA et les données à la légère. Nous déployons les modèles (GPT, Mistral, Llama,..) sur Azure afin d'assurer la sécurité et la confidentialité des données."
+      },
+      "Supabase": {
+        "title": "Supabase",
+        "description": "Nous avons adopté Supabase en tant que service de base de donnée pour des intégrations professionnelles et une sécurité avancée. Ce service nous permet d'avoir une rapidité d'éxécution doublée."
+      },
+      "infrastructure": {
+        "title": "Infrastructure PostgreSQL",
+        "features": [
+          "Portabilité 100% garantie",
+          "Authentification intégrée RLS",
+          "Extensions faciles à intégrer"
+        ]
+      },
+      "security": {
+        "title": "Sécurité entreprise",
+        "features": [
+          "Authentification multi-facteurs",
+          "Chiffrement bout en bout",
+          "Conformité RGPD"
+        ]
+      },
+      "realtime": {
+        "title": "Exemples d'intégrations",
+        "features": [
+          "Connexions multi-facteurs.",
+          "Cryptage mot des passe en Bcrypt.",
+          "Mode Realtime (interractions en temps réel).",
+          "Système de Mailing intégré.",
+          "Terrabytes de stockage."
+        ]
+      }
+    },
 
-		"ai": {
-			"title": "Solutions IA sur-mesure",
-			"subtitle": "Une intégration parfaite dans votre écosystème.",
-			"subtitle2": "Des solutions d'IA générative qui s'adaptent à vos processus existants pour transformer votre productivité.",
-			"solutions": {
-				"title": "Bénéfices concrets",
-				"features": [
-					"Automatisation de vos processus documentaires (-60% de temps de traitement)",
-					"Production de contenus optimisés (x3 en productivité)",
-					"Service client 24/7 (satisfaction client +40%)",
-					"Analyse prédictive pour anticiper les tendances",
-					"Prise de décision accélérée grâce aux données",
-					"Réduction des erreurs humaines (-80%)"
-				]
-			},
-			"LLmApis": {
-				"title": "Intégration sur mesure",
-				"description": "Nos solutions s'adaptent parfaitement à votre environnement technique existant, garantissant une adoption rapide et une utilisation optimale."
-			},
-			"advancedFeatures": {
-				"title": "KS LAB - Votre espace projet",
-				"description": "Une plateforme unique pour piloter votre projet IA : suivi en temps réel, ticketing, tests API, gestion des réunions et documentation centralisée."
-			},
-			"infrastructure": {
-				"title": "Fonctionnalités KS LAB",
-				"features": [
-					"Suivi de projet en temps réel",
-					"Système de ticketing intégré",
-					"Interface de test des APIs",
-					"Planification des réunions",
-					"Synthèses automatiques",
-					"Documentation centralisée",
-					"Support réactif"
-				],
-				"icons": [
-					"ri:dashboard-fill",
-					"ri:ticket-fill",
-					"ri:api-fill",
-					"ri:calendar-fill",
-					"ri:file-list-fill",
-					"ri:book-fill",
-					"ri:customer-service-fill"
-				]
-			},
-			"performance": {
-				"title": "Sécurité & Fiabilité",
-				"features": [
-					"Déploiement sécurisé sur Azure",
-					"Conformité RGPD garantie",
-					"Protection des données sensibles"
-				]
-			}
-		},
-		"sites": {
-			"title": "Déploiement rapide et sécurisé",
-			"subtitle": "Une mise en production maîtrisée de vos solutions IA.",
-			"subtitle2": "Notre expertise en déploiement assure une intégration fluide et sécurisée de vos solutions, avec un accompagnement constant via KS LAB.",
-			"perf": {
-				"title": "Accompagnement premium",
-				"description": "Formation complète de vos équipes et support continu pour une adoption réussie."
-			},
-			"experience": {
-				"title": "Suivi transparent",
-				"description": "Accès en temps réel à l'avancement de votre projet et aux performances de vos solutions via KS LAB."
-			},
-			"infrastructure": {
-				"title": "Avantages KS LAB",
-				"features": [
-					{
-						"gain1": "Vision projet",
-						"gain2": "Clarté",
-						"explanation": "Suivi en temps réel de l'avancement"
-					},
-					{
-						"gain1": "Communication",
-						"gain2": "Efficacité",
-						"explanation": "Tous vos échanges centralisés"
-					},
-					{
-						"gain1": "Tests API",
-						"gain2": "Autonomie",
-						"explanation": "Testez vos solutions en direct"
-					},
-					{
-						"gain1": "Réunions",
-						"gain2": "Organisation",
-						"explanation": "Planning et synthèses automatiques"
-					},
-					{
-						"gain1": "Documentation",
-						"gain2": "Accessibilité",
-						"explanation": "Guides et ressources centralisés"
-					},
-					{
-						"gain1": "Support",
-						"gain2": "Réactivité",
-						"explanation": "Une équipe dédiée à votre réussite"
-					}
-				]
-			}
-		},
-		"deployment": {
-			"title": {
-				"part1": "Solutions",
-				"part2": "déployées",
-				"part3": "en",
-				"part4": "toute",
-				"part5": "sécurité"
-			},
-			"subtitle": "Un déploiement progressif et maîtrisé de vos solutions IA.",
-			"subtitle2": "Notre expertise en déploiement sécurisé garantit une intégration réussie de vos solutions, avec un impact minimal sur vos opérations existantes.",
-			"infrastructure": {
-				"title": "Sécurité maximale",
-				"description": "Déploiement sur Azure avec les plus hauts standards de sécurité. Protection totale de vos données sensibles et conformité RGPD garantie."
-			},
-			"updates": {
-				"title": "Intégration Progressive",
-				"description": "Déploiement par étapes avec validation à chaque phase. Formation continue de vos équipes pour une adoption optimale."
-			},
-			"cloud": {
-				"title": "Infrastructure Azure",
-				"features": [
-					"Environnement hautement sécurisé",
-					"Haute disponibilité",
-					"Scalabilité automatique",
-					"Monitoring avancé"
-				]
-			},
-			"security": {
-				"title": "Sécurité & Conformité",
-				"features": [
-					"Hébergement sécurisé Azure",
-					"Conformité RGPD",
-					"Protection des données"
-				]
-			},
-			"tools": {
-				"title": "Plateforme KS LAB",
-				"features": [""]
-			},
-			"cicd": {
-				"title": "Déploiement",
-				"features": [
-					"Intégration progressive",
-					"Tests approfondis",
-					"Support continu"
-				]
-			}
-		}
-	},
-	"expertise": {
-		"title": {
-			"part1": "L'expérience utilisateur qui transforme vos ",
-			"part2": "résultats."
-		},
-		"description": "Nous concevons des interfaces qui transforment vos processus complexes en solutions intuitives. Notre expertise en UX/UI permet à vos équipes de gagner en efficacité tout en maximisant leur impact business.",
-		"keyFeatures": {
-			"ft1": "Adoption rapide par vos équipes",
-			"ft2": "Productivité augmentée",
-			"ft3": "ROI mesurable",
-			"ft4": "Satisfaction utilisateur maximale"
-		},
-		"permanent_contact": {
-			"title": "En contact permanent",
-			"description": "Nous savons que chaque entreprise est unique. C'est pourquoi notre équipe met un point d'honneur à établir une collaboration étroite et transparente tout au long du développement de votre solution. De l'immersion initiale au lancement, nous restons alignés sur vos objectifs."
-		},
-		"efficiency": {
-			"title": "Rapidité et efficacité : notre signature",
-			"description": "Notre méthodologie agile, associée à notre maîtrise des dernières technologies front-end, garantit la livraison d'interfaces performantes et évolutives. Chaque pixel est pensé pour offrir une expérience utilisateur exceptionnelle, quel que soit votre secteur d'activité."
-		},
-		"video_fallback": "Votre navigateur ne prend pas en charge la lecture de vidéos."
-	},
-	"contact": {
-		"title": "Concrétisons ensemble votre projet",
+    "ai": {
+      "title": "Solutions IA sur-mesure",
+      "subtitle": "Une intégration parfaite dans votre écosystème.",
+      "subtitle2": "Des solutions d'IA générative qui s'adaptent à vos processus existants pour transformer votre productivité.",
+      "solutions": {
+        "title": "Bénéfices concrets",
+        "features": [
+          "Automatisation de vos processus documentaires (-60% de temps de traitement)",
+          "Production de contenus optimisés (x3 en productivité)",
+          "Service client 24/7 (satisfaction client +40%)",
+          "Analyse prédictive pour anticiper les tendances",
+          "Prise de décision accélérée grâce aux données",
+          "Réduction des erreurs humaines (-80%)"
+        ]
+      },
+      "LLmApis": {
+        "title": "Intégration sur mesure",
+        "description": "Nos solutions s'adaptent parfaitement à votre environnement technique existant, garantissant une adoption rapide et une utilisation optimale."
+      },
+      "advancedFeatures": {
+        "title": "KS LAB - Votre espace projet",
+        "description": "Une plateforme unique pour piloter votre projet IA : suivi en temps réel, ticketing, tests API, gestion des réunions et documentation centralisée."
+      },
+      "infrastructure": {
+        "title": "Fonctionnalités KS LAB",
+        "features": [
+          "Suivi de projet en temps réel",
+          "Système de ticketing intégré",
+          "Interface de test des APIs",
+          "Planification des réunions",
+          "Synthèses automatiques",
+          "Documentation centralisée",
+          "Support réactif"
+        ],
+        "icons": [
+          "ri:dashboard-fill",
+          "ri:ticket-fill",
+          "ri:api-fill",
+          "ri:calendar-fill",
+          "ri:file-list-fill",
+          "ri:book-fill",
+          "ri:customer-service-fill"
+        ]
+      },
+      "performance": {
+        "title": "Sécurité & Fiabilité",
+        "features": [
+          "Déploiement sécurisé sur Azure",
+          "Conformité RGPD garantie",
+          "Protection des données sensibles"
+        ]
+      }
+    },
+    "sites": {
+      "title": "Déploiement rapide et sécurisé",
+      "subtitle": "Une mise en production maîtrisée de vos solutions IA.",
+      "subtitle2": "Notre expertise en déploiement assure une intégration fluide et sécurisée de vos solutions, avec un accompagnement constant via KS LAB.",
+      "perf": {
+        "title": "Accompagnement premium",
+        "description": "Formation complète de vos équipes et support continu pour une adoption réussie."
+      },
+      "experience": {
+        "title": "Suivi transparent",
+        "description": "Accès en temps réel à l'avancement de votre projet et aux performances de vos solutions via KS LAB."
+      },
+      "infrastructure": {
+        "title": "Avantages KS LAB",
+        "features": [
+          {
+            "gain1": "Vision projet",
+            "gain2": "Clarté",
+            "explanation": "Suivi en temps réel de l'avancement"
+          },
+          {
+            "gain1": "Communication",
+            "gain2": "Efficacité",
+            "explanation": "Tous vos échanges centralisés"
+          },
+          {
+            "gain1": "Tests API",
+            "gain2": "Autonomie",
+            "explanation": "Testez vos solutions en direct"
+          },
+          {
+            "gain1": "Réunions",
+            "gain2": "Organisation",
+            "explanation": "Planning et synthèses automatiques"
+          },
+          {
+            "gain1": "Documentation",
+            "gain2": "Accessibilité",
+            "explanation": "Guides et ressources centralisés"
+          },
+          {
+            "gain1": "Support",
+            "gain2": "Réactivité",
+            "explanation": "Une équipe dédiée à votre réussite"
+          }
+        ]
+      }
+    },
+    "deployment": {
+      "title": {
+        "part1": "Solutions",
+        "part2": "déployées",
+        "part3": "en",
+        "part4": "toute",
+        "part5": "sécurité"
+      },
+      "subtitle": "Un déploiement progressif et maîtrisé de vos solutions IA.",
+      "subtitle2": "Notre expertise en déploiement sécurisé garantit une intégration réussie de vos solutions, avec un impact minimal sur vos opérations existantes.",
+      "infrastructure": {
+        "title": "Sécurité maximale",
+        "description": "Déploiement sur Azure avec les plus hauts standards de sécurité. Protection totale de vos données sensibles et conformité RGPD garantie."
+      },
+      "updates": {
+        "title": "Intégration Progressive",
+        "description": "Déploiement par étapes avec validation à chaque phase. Formation continue de vos équipes pour une adoption optimale."
+      },
+      "cloud": {
+        "title": "Infrastructure Azure",
+        "features": [
+          "Environnement hautement sécurisé",
+          "Haute disponibilité",
+          "Scalabilité automatique",
+          "Monitoring avancé"
+        ]
+      },
+      "security": {
+        "title": "Sécurité & Conformité",
+        "features": [
+          "Hébergement sécurisé Azure",
+          "Conformité RGPD",
+          "Protection des données"
+        ]
+      },
+      "tools": {
+        "title": "Plateforme KS LAB",
+        "features": [""]
+      },
+      "cicd": {
+        "title": "Déploiement",
+        "features": [
+          "Intégration progressive",
+          "Tests approfondis",
+          "Support continu"
+        ]
+      }
+    }
+  },
+  "expertise": {
+    "title": {
+      "part1": "L'expérience utilisateur qui transforme vos ",
+      "part2": "résultats."
+    },
+    "description": "Nous concevons des interfaces qui transforment vos processus complexes en solutions intuitives. Notre expertise en UX/UI permet à vos équipes de gagner en efficacité tout en maximisant leur impact business.",
+    "keyFeatures": {
+      "ft1": "Adoption rapide par vos équipes",
+      "ft2": "Productivité augmentée",
+      "ft3": "ROI mesurable",
+      "ft4": "Satisfaction utilisateur maximale"
+    },
+    "permanent_contact": {
+      "title": "En contact permanent",
+      "description": "Nous savons que chaque entreprise est unique. C'est pourquoi notre équipe met un point d'honneur à établir une collaboration étroite et transparente tout au long du développement de votre solution. De l'immersion initiale au lancement, nous restons alignés sur vos objectifs."
+    },
+    "efficiency": {
+      "title": "Rapidité et efficacité : notre signature",
+      "description": "Notre méthodologie agile, associée à notre maîtrise des dernières technologies front-end, garantit la livraison d'interfaces performantes et évolutives. Chaque pixel est pensé pour offrir une expérience utilisateur exceptionnelle, quel que soit votre secteur d'activité."
+    },
+    "video_fallback": "Votre navigateur ne prend pas en charge la lecture de vidéos."
+  },
+  "contact": {
+    "title": "Concrétisons ensemble votre projet",
 
-		"description": "Vous avez un projet en tête ? Notre équipe d'experts est là pour transformer vos idées en réalité.",
-		"contact_info": {
-			"email": {
-				"label": "Email",
-				"value": "contact@ks-consulting.io"
-			},
-			"phone": {
-				"label": "Téléphone",
-				"value": "+33 7 68 56 68 36"
-			}
-		},
-		"cta": "Contactez-nous"
-	},
-	"header": {
-		"rdv": "Prendre RDV",
-		"brand": {
-			"title": "Consulting",
-			"subtitle": "AI solutions"
-		},
-		"navigation": {
-			"home": "Accueil",
-			"team": "Notre équipe",
-			"portfolio": "Réalisations"
-		},
-		"contact_btn": "Contact",
-		"mobile_menu": {
-			"title": "Menu"
-		}
-	},
-	"footer": {
-		"brand": {
-			"title": "consulting",
-			"subtitle": "AI solutions"
-		},
-		"description": "Créons ensemble les solutions digitales de demain. Notre expertise en SaaS et en IA au service de votre réussite.",
-		"sections": {
-			"pages": {
-				"title": "Pages",
-				"links": {
-					"home": "Accueil",
-					"services": "Services",
-					"ksgpt": "KS GPT",
-					"team": "Notre équipe",
-					"contact": "Contact",
-					"meeting": "Prendre RDV"
-				}
-			},
-			"contact": {
-				"title": "Contact",
-				"email": "contact@ks-consulting.io",
-				"phone": "+33 7 68 56 68 36"
-			}
-		},
-		"copyright": "© 2024 KS Enterprise. Tous droits réservés."
-	},
-	"team": {
-		"member": "Notre équipe.",
-		"memberDescription": "Derrière chaque projet réussi, il y a des personnes engagées. Découvrez les visages et les talents qui font notre force au quotidien.",
-		"title": {
-			"part1": "Une équipe d'",
-			"part2": "experts"
-		},
-		"subtitle": "L'excellence à la française",
-		"frenchTech": "French Tech Innovation",
-		"description": "Jeunes, ambitieux et animés par l'excellence. Nous sommes une petite équipe d'innovateurs passionnés par la création de solutions SaaS de pointe qui transforment les entreprises.",
-		"imageAlt": "Équipe de développement"
-	},
-	"expertiseTeam": {
-		"title": "Notre expertise",
-		"solutions": {
-			"title": "Solutions de développement sur mesure",
-			"description": "Découvrez nos forfaits adaptés à vos besoins en développement et maintenance.",
-			"emphasis": "Notre équipe d'experts vous accompagne à chaque étape de votre projet digital."
-		},
-		"technical": {
-			"title": "Expertise technique",
-			"subtitle": "Développement Full-stack",
-			"description": "Une équipe maîtrisant les dernières technologies pour concrétiser vos projets avec excellence."
-		},
-		"agility": {
-			"title": "Agilité & Flexibilité",
-			"subtitle": "Méthode Agile",
-			"description": "Une méthodologie éprouvée pour s'adapter à vos besoins et garantir des livraisons efficientes."
-		},
-		"support": {
-			"title": "Support continu",
-			"subtitle": "Maintenance & Support",
-			"description": "Un accompagnement personnalisé et un support technique garantissant la pérennité de vos solutions."
-		}
-	},
-	"solutions": {
-		"title": "Nos Réalisations",
-		"description": "Découvrez comment nous transformons les défis technologiques en solutions innovantes. Notre portfolio témoigne de notre savoir-faire en développement, infrastructure et conseil IT."
-	},
-	"portfolio": {
-		"conf": "Pour des raisons de confidentialité, les projets IA métiers sur mesure ne sont pas affichés ici.",
-		"title": "Nos Réalisations",
-		"description": "Découvrez comment nous transformons les idées innovantes en solutions digitales performantes pour nos clients du monde entier.",
-		"categories": {
-			"all": "Tous",
-			"ecommerce": "E-commerce",
-			"saas": "SaaS",
-			"ai": "IA",
-			"mobile": "Mobile"
-		},
-		"stats": {
-			"projects": {
-				"number": "50+",
-				"label": "Projets Réalisés"
-			},
-			"clients": {
-				"number": "20+",
-				"label": "Clients Satisfaits"
-			},
-			"satisfaction": {
-				"number": "100%",
-				"label": "Satisfaction Client"
-			}
-		},
-		"cta": "Portfolio"
-	},
-	"contactPage": {
-		"hero": {
-			"title1": "Connectons-",
-			"title2": "nous.",
-			"subtitle": "De Paris au reste du monde, nous créons des solutions innovantes pour n'importe qui."
-		},
-		"info": {
-			"title": "Parlons de votre projet",
-			"description": "Que vous soyez une startup ambitieuse ou une entreprise établie, nous sommes là pour transformer vos idées en réalité.",
-			"email": {
-				"label": "Email",
-				"value": "contact@ks-entreprise.com"
-			},
-			"phone": {
-				"label": "Téléphone",
-				"value": "07 68 56 68 36"
-			}
-		},
-		"form": {
-			"fullName": "Nom complet",
-			"company": "Entreprise",
-			"email": "Email",
-			"message": "Message",
-			"submit": "Envoyer le message",
-			"sending": "Envoi en cours...",
-			"success": "Message bien reçu ! Nous vous répondrons au plus vite.",
-			"error": "Une erreur est survenue, veuillez réessayer plus tard."
-		}
-	},
-	"whyUs": {
-		"leftImageAlt": "Fonctionnalité de gauche",
-		"rightImageAlt": "Fonctionnalité de droite",
-		"tagline": "Notre recette",
-		"title": "Notre",
-		"title2": " Différence",
-		"heroText": "Nous sommes une agence nouvelle génération.",
-		"heroSubtext": "Notre double expertise en développement et IA nous permet de concevoir des solutions innovantes qui créent de la valeur pour votre entreprise.",
-		"features": {
-			"expertise": {
-				"title": "Expertise reconnue",
-				"description": "Une équipe d'experts formés dans les meilleures écoles d'ingénieurs françaises."
-			},
-			"ai": {
-				"title": "Excellence en IA",
-				"description": "Notre maîtrise de l'IA réduit vos coûts et délais tout en garantissant des résultats premium."
-			},
-			"innovation": {
-				"title": "Innovation continue",
-				"description": "Nous intégrons les dernières technologies pour des solutions durables et évolutives."
-			},
-			"support": {
-				"title": "Accompagnement",
-				"description": "Un suivi personnalisé et transparent tout au long de votre projet."
-			}
-		},
-		"testimonial": "Nous avons fait appel à KS dans le cadre du développement de notre site Spliit et de notre web app. Leur accompagnement était complet avec une forte expertise technique et une approche produit.",
-		"spliiitLinkAriaLabel": "Naviguer vers la page d'accueil de Spliiit"
-	},
-	"portfolioHero": {
-		"category": "Nos réalisations",
-		"categoryDetail": "Gallerie de projets",
-		"title": "Nos réalisations",
-		"subtitle": "De la conception à la réalisation, nous donnons vie à vos projets numériques avec excellence et créativité.",
-		"description": {
-			"highlight": "Une expertise technique reconnue et une approche centrée sur vos besoins.",
-			"secondary": "Notre équipe s'engage à transformer vos idées en solutions innovantes et performantes."
-		},
-		"stats": {
-			"context": "Notre expertise en chiffres qui parlent d'eux-mêmes",
-			"projects": {
-				"number": "30+",
-				"label": "Projets réalisés"
-			},
-			"satisfaction": {
-				"number": "100%",
-				"label": "Satisfaction client"
-			}
-		},
-		"testimonial": {
-			"quote": "Une équipe professionnelle qui a su comprendre notre cas d'usage et y répondre efficacement, avec un excellent suivi tout au long du projet.",
-			"author": "Florian de Milleville",
-			"role": "Chef de projet, FDJ group"
-		}
-	},
-	"services": {
-		"hero": {
-			"tagline": "Nos enjeux",
-			"title": {
-				"part1": "Concrétisez vos",
-				"part2": "projets",
-				"part3": "avec l'IA"
-			},
-			"titleMobile": {
-				"part1": "Concrétisez",
-				"part2": "vos",
-				"part3": "projets",
-				"part4": "avec",
-				"part5": "l'IA"
-			},
-			"sections": {
-				"saas": {
-					"title": "Logiciels Saas IA",
-					"description": "Nous vous proposons des solutions Saas entièrement prêtes à l'emploi contenant toutes les fonctionnalités nécessaires pour répondre à vos besoins."
-				},
-				"custom": {
-					"title": "Solutions sur mesure",
-					"description": "Pour les besoins plus spécifiques nous vous accompagnons dans vos réflexions et développements."
-				}
-			},
-			"stats": [
-				{
-					"value": "30+",
-					"label": "Projets réalisés"
-				},
-				{
-					"value": "5",
-					"label": "Experts certifiés"
-				},
-				{
-					"value": "100%",
-					"label": "Satisfaction client"
-				},
-				{
-					"value": "5+",
-					"label": "Années d'expérience"
-				}
-			]
-		},
-		"sections": {
-			"saas": {
-				"label": "Solutions SaaS",
-				"title": "Logiciels Saas prêts à l'emploi",
-				"description": "Notre expertise cross technologies nous permet de développer des solutions Saas (Software as a Service) robustes et performantes en un temps record.",
-				"subtitle": "Confiez-nous la réalisation de votre plateforme et consacrez-vous pleinement à votre cœur de métier. Voici quelques exemples d'intégrations que nous proposons :",
-				"features": [
-					{
-						"text": "Système de paiement sécurisés",
-						"link": "https://stripe.com/"
-					},
-					{
-						"text": "Gestion d'utilisateurs et SSO"
-					},
-					{
-						"text": "Intégration d'APIs et SDK diverses"
-					},
-					{
-						"text": "Dashboards et interfaces diverses"
-					},
-					{
-						"text": "Fonctionnalités Realtime (Édition de documents ou chats)"
-					},
-					{
-						"text": "Monitoring de traffic et performance"
-					}
-				]
-			},
-			"ai": {
-				"label": "Expertise IA",
-				"title": "Solutions IA sur mesure",
-				"description": "Pour les besoins les plus spécifiques ou qui concernent des cas d'usage métier, nous vous proposons des solutions à base d'IA générative pour répondre à vos besoins.",
-				"subtitle": "Notre expérience avec les derniers modèles IA tels que GPT, Claude ou Gemini nous permet de vous donner accès facilement à des technologies très avancées décrites ci-dessous :",
-				"features": [
-					{
-						"text": "OCR (extraction sur images)"
-					},
-					{
-						"text": "Text to Speech"
-					},
-					{
-						"text": "Transcription vocale"
-					},
-					{
-						"text": "Analyse de documents RAG"
-					},
-					{
-						"text": "Language naturel web"
-					},
-					{
-						"text": "Génération de documents"
-					},
-					{
-						"text": "Éditeur de texte intelligent"
-					}
-				]
-			}
-		},
-		"progress": {
-			"label": "Notre méthode",
-			"title": "Notre Approche pour un projet à succès",
-			"description": "Cinq étapes pour un développement agile : analyse, co-construction, conception sur mesure, déploiement, et accompagnement.",
-			"steps": [
-				{
-					"number": "01.",
-					"title": "Analyse initiale",
-					"description": "Compréhension de vos processus métiers actuels et identification des vrais points de douleur"
-				},
-				{
-					"number": "02.",
-					"title": "Co-construction",
-					"description": "Définition collaborative des fonctionnalités essentielles et de l'expérience utilisateur pour maximiser la valeur de votre IA"
-				},
-				{
-					"number": "03.",
-					"title": "Conception sur mesure",
-					"description": "Développement d'une interface utilisateur intuitive et d'une architecture technique robuste adaptée à votre modèle d'IA"
-				},
-				{
-					"number": "04.",
-					"title": "Déploiement",
-					"description": "Mise en production sécurisée de votre solution avec tests approfondis et monitoring en temps réel"
-				},
-				{
-					"number": "05.",
-					"title": "Accompagnement",
-					"description": "Support technique continu et optimisation des performances pour assurer la croissance de votre solution"
-				}
-			]
-		},
-		"faq": {
-			"title": "Questions fréquentes",
-			"items": [
-				{
-					"question": "Quels avantages offre notre approche de développement SAAS pour l'IA ?",
-					"answer": "Notre approche unique combine expertise technique et vision business. Contrairement aux agences web classiques, nous sommes spécialisés dans la transformation de modèles d'IA en produits commerciaux. Notre plateforme SaaS accélère considérablement le développement tout en garantissant qualité et évolutivité."
-				},
-				{
-					"question": "Comment intégrons-nous votre modèle d'IA dans une solution commerciale complète ?",
-					"answer": "Notre processus d'intégration est conçu pour être simple et efficace. Nous commençons par analyser les spécifications techniques de votre modèle d'IA et vos besoins business. Ensuite, nous développons une API sécurisée pour communiquer avec votre modèle."
-				},
-				{
-					"question": "Quelles garanties techniques et sécurité offrons-nous pour votre solution ?",
-					"answer": "La sécurité et la fiabilité sont au cœur de notre approche. Notre infrastructure est construite sur des standards enterprise-grade : chiffrement de bout en bout, authentification multi-facteurs, monitoring 24/7, sauvegardes automatiques, et conformité RGPD."
-				},
-				{
-					"question": "En combien de temps votre modèle d'IA peut-il être mis sur le marché ?",
-					"answer": "Notre approche standardisée et notre plateforme éprouvée nous permettent d'être très efficaces. Pour une solution standard, le délai typique est de 8 à 12 semaines entre le début du projet et la mise en production."
-				},
-				{
-					"question": "Comment personnalisons-nous l'interface et l'expérience utilisateur pour vos clients ?",
-					"answer": "La personnalisation est essentielle pour le succès commercial de votre solution. Notre processus de design commence par une analyse approfondie de vos utilisateurs finaux et de leurs besoins."
-				}
-			]
-		}
-	},
-	"aiCarousel": {
-		"ontitle": "Nos solutions",
-		"title": "Nos solutions concrètes",
-		"title2": " sur-mesure ",
-		"title3": "pour ",
-		"title4": "votre entreprise.",
+    "description": "Vous avez un projet en tête ? Notre équipe d'experts est là pour transformer vos idées en réalité.",
+    "contact_info": {
+      "email": {
+        "label": "Email",
+        "value": "contact@ks-consulting.io"
+      },
+      "phone": {
+        "label": "Téléphone",
+        "value": "+33 7 68 56 68 36"
+      }
+    },
+    "cta": "Contactez-nous"
+  },
+  "header": {
+    "rdv": "Prendre RDV",
+    "brand": {
+      "title": "Consulting",
+      "subtitle": "AI solutions"
+    },
+    "navigation": {
+      "home": "Accueil",
+      "team": "Notre équipe",
+      "portfolio": "Réalisations"
+    },
+    "contact_btn": "Contact",
+    "mobile_menu": {
+      "title": "Menu"
+    }
+  },
+  "footer": {
+    "brand": {
+      "title": "consulting",
+      "subtitle": "AI solutions"
+    },
+    "description": "Créons ensemble les solutions digitales de demain. Notre expertise en SaaS et en IA au service de votre réussite.",
+    "sections": {
+      "pages": {
+        "title": "Pages",
+        "links": {
+          "home": "Accueil",
+          "services": "Services",
+          "ksgpt": "KS GPT",
+          "team": "Notre équipe",
+          "contact": "Contact",
+          "meeting": "Prendre RDV"
+        }
+      },
+      "contact": {
+        "title": "Contact",
+        "email": "contact@ks-consulting.io",
+        "phone": "+33 7 68 56 68 36"
+      }
+    },
+    "copyright": "© 2024 KS Enterprise. Tous droits réservés."
+  },
+  "team": {
+    "member": "Notre équipe.",
+    "memberDescription": "Derrière chaque projet réussi, il y a des personnes engagées. Découvrez les visages et les talents qui font notre force au quotidien.",
+    "title": {
+      "part1": "Une équipe d'",
+      "part2": "experts"
+    },
+    "subtitle": "L'excellence à la française",
+    "frenchTech": "French Tech Innovation",
+    "description": "Jeunes, ambitieux et animés par l'excellence. Nous sommes une petite équipe d'innovateurs passionnés par la création de solutions SaaS de pointe qui transforment les entreprises.",
+    "imageAlt": "Équipe de développement"
+  },
+  "expertiseTeam": {
+    "title": "Notre expertise",
+    "solutions": {
+      "title": "Solutions de développement sur mesure",
+      "description": "Découvrez nos forfaits adaptés à vos besoins en développement et maintenance.",
+      "emphasis": "Notre équipe d'experts vous accompagne à chaque étape de votre projet digital."
+    },
+    "technical": {
+      "title": "Expertise technique",
+      "subtitle": "Développement Full-stack",
+      "description": "Une équipe maîtrisant les dernières technologies pour concrétiser vos projets avec excellence."
+    },
+    "agility": {
+      "title": "Agilité & Flexibilité",
+      "subtitle": "Méthode Agile",
+      "description": "Une méthodologie éprouvée pour s'adapter à vos besoins et garantir des livraisons efficientes."
+    },
+    "support": {
+      "title": "Support continu",
+      "subtitle": "Maintenance & Support",
+      "description": "Un accompagnement personnalisé et un support technique garantissant la pérennité de vos solutions."
+    }
+  },
+  "solutions": {
+    "title": "Nos Réalisations",
+    "description": "Découvrez comment nous transformons les défis technologiques en solutions innovantes. Notre portfolio témoigne de notre savoir-faire en développement, infrastructure et conseil IT."
+  },
+  "portfolio": {
+    "conf": "Pour des raisons de confidentialité, les projets IA métiers sur mesure ne sont pas affichés ici.",
+    "title": "Nos Réalisations",
+    "description": "Découvrez comment nous transformons les idées innovantes en solutions digitales performantes pour nos clients du monde entier.",
+    "categories": {
+      "all": "Tous",
+      "ecommerce": "E-commerce",
+      "saas": "SaaS",
+      "ai": "IA",
+      "mobile": "Mobile"
+    },
+    "stats": {
+      "projects": {
+        "number": "50+",
+        "label": "Projets Réalisés"
+      },
+      "clients": {
+        "number": "20+",
+        "label": "Clients Satisfaits"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "Satisfaction Client"
+      }
+    },
+    "cta": "Portfolio"
+  },
+  "contactPage": {
+    "hero": {
+      "title1": "Connectons-",
+      "title2": "nous.",
+      "subtitle": "De Paris au reste du monde, nous créons des solutions innovantes pour n'importe qui."
+    },
+    "info": {
+      "title": "Parlons de votre projet",
+      "description": "Que vous soyez une startup ambitieuse ou une entreprise établie, nous sommes là pour transformer vos idées en réalité.",
+      "email": {
+        "label": "Email",
+        "value": "contact@ks-entreprise.com"
+      },
+      "phone": {
+        "label": "Téléphone",
+        "value": "07 68 56 68 36"
+      }
+    },
+    "form": {
+      "fullName": "Nom complet",
+      "company": "Entreprise",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message bien reçu ! Nous vous répondrons au plus vite.",
+      "error": "Une erreur est survenue, veuillez réessayer plus tard."
+    }
+  },
+  "whyUs": {
+    "leftImageAlt": "Fonctionnalité de gauche",
+    "rightImageAlt": "Fonctionnalité de droite",
+    "tagline": "Notre recette",
+    "title": "Notre",
+    "title2": " Différence",
+    "heroText": "Nous sommes une agence nouvelle génération.",
+    "heroSubtext": "Notre double expertise en développement et IA nous permet de concevoir des solutions innovantes qui créent de la valeur pour votre entreprise.",
+    "features": {
+      "expertise": {
+        "title": "Expertise reconnue",
+        "description": "Une équipe d'experts formés dans les meilleures écoles d'ingénieurs françaises."
+      },
+      "ai": {
+        "title": "Excellence en IA",
+        "description": "Notre maîtrise de l'IA réduit vos coûts et délais tout en garantissant des résultats premium."
+      },
+      "innovation": {
+        "title": "Innovation continue",
+        "description": "Nous intégrons les dernières technologies pour des solutions durables et évolutives."
+      },
+      "support": {
+        "title": "Accompagnement",
+        "description": "Un suivi personnalisé et transparent tout au long de votre projet."
+      }
+    },
+    "testimonial": "Nous avons fait appel à KS dans le cadre du développement de notre site Spliit et de notre web app. Leur accompagnement était complet avec une forte expertise technique et une approche produit.",
+    "spliiitLinkAriaLabel": "Naviguer vers la page d'accueil de Spliiit"
+  },
+  "portfolioHero": {
+    "category": "Nos réalisations",
+    "categoryDetail": "Gallerie de projets",
+    "title": "Nos réalisations",
+    "subtitle": "De la conception à la réalisation, nous donnons vie à vos projets numériques avec excellence et créativité.",
+    "description": {
+      "highlight": "Une expertise technique reconnue et une approche centrée sur vos besoins.",
+      "secondary": "Notre équipe s'engage à transformer vos idées en solutions innovantes et performantes."
+    },
+    "stats": {
+      "context": "Notre expertise en chiffres qui parlent d'eux-mêmes",
+      "projects": {
+        "number": "30+",
+        "label": "Projets réalisés"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "Satisfaction client"
+      }
+    },
+    "testimonial": {
+      "quote": "Une équipe professionnelle qui a su comprendre notre cas d'usage et y répondre efficacement, avec un excellent suivi tout au long du projet.",
+      "author": "Florian de Milleville",
+      "role": "Chef de projet, FDJ group"
+    }
+  },
+  "services": {
+    "hero": {
+      "tagline": "Nos enjeux",
+      "title": {
+        "part1": "Concrétisez vos",
+        "part2": "projets",
+        "part3": "avec l'IA"
+      },
+      "titleMobile": {
+        "part1": "Concrétisez",
+        "part2": "vos",
+        "part3": "projets",
+        "part4": "avec",
+        "part5": "l'IA"
+      },
+      "sections": {
+        "saas": {
+          "title": "Logiciels Saas IA",
+          "description": "Nous vous proposons des solutions Saas entièrement prêtes à l'emploi contenant toutes les fonctionnalités nécessaires pour répondre à vos besoins."
+        },
+        "custom": {
+          "title": "Solutions sur mesure",
+          "description": "Pour les besoins plus spécifiques nous vous accompagnons dans vos réflexions et développements."
+        }
+      },
+      "stats": [
+        {
+          "value": "30+",
+          "label": "Projets réalisés"
+        },
+        {
+          "value": "5",
+          "label": "Experts certifiés"
+        },
+        {
+          "value": "100%",
+          "label": "Satisfaction client"
+        },
+        {
+          "value": "5+",
+          "label": "Années d'expérience"
+        }
+      ]
+    },
+    "sections": {
+      "saas": {
+        "label": "Solutions SaaS",
+        "title": "Logiciels Saas prêts à l'emploi",
+        "description": "Notre expertise cross technologies nous permet de développer des solutions Saas (Software as a Service) robustes et performantes en un temps record.",
+        "subtitle": "Confiez-nous la réalisation de votre plateforme et consacrez-vous pleinement à votre cœur de métier. Voici quelques exemples d'intégrations que nous proposons :",
+        "features": [
+          {
+            "text": "Système de paiement sécurisés",
+            "link": "https://stripe.com/"
+          },
+          {
+            "text": "Gestion d'utilisateurs et SSO"
+          },
+          {
+            "text": "Intégration d'APIs et SDK diverses"
+          },
+          {
+            "text": "Dashboards et interfaces diverses"
+          },
+          {
+            "text": "Fonctionnalités Realtime (Édition de documents ou chats)"
+          },
+          {
+            "text": "Monitoring de traffic et performance"
+          }
+        ]
+      },
+      "ai": {
+        "label": "Expertise IA",
+        "title": "Solutions IA sur mesure",
+        "description": "Pour les besoins les plus spécifiques ou qui concernent des cas d'usage métier, nous vous proposons des solutions à base d'IA générative pour répondre à vos besoins.",
+        "subtitle": "Notre expérience avec les derniers modèles IA tels que GPT, Claude ou Gemini nous permet de vous donner accès facilement à des technologies très avancées décrites ci-dessous :",
+        "features": [
+          {
+            "text": "OCR (extraction sur images)"
+          },
+          {
+            "text": "Text to Speech"
+          },
+          {
+            "text": "Transcription vocale"
+          },
+          {
+            "text": "Analyse de documents RAG"
+          },
+          {
+            "text": "Language naturel web"
+          },
+          {
+            "text": "Génération de documents"
+          },
+          {
+            "text": "Éditeur de texte intelligent"
+          }
+        ]
+      }
+    },
+    "progress": {
+      "label": "Notre méthode",
+      "title": "Notre Approche pour un projet à succès",
+      "description": "Cinq étapes pour un développement agile : analyse, co-construction, conception sur mesure, déploiement, et accompagnement.",
+      "steps": [
+        {
+          "number": "01.",
+          "title": "Analyse initiale",
+          "description": "Compréhension de vos processus métiers actuels et identification des vrais points de douleur"
+        },
+        {
+          "number": "02.",
+          "title": "Co-construction",
+          "description": "Définition collaborative des fonctionnalités essentielles et de l'expérience utilisateur pour maximiser la valeur de votre IA"
+        },
+        {
+          "number": "03.",
+          "title": "Conception sur mesure",
+          "description": "Développement d'une interface utilisateur intuitive et d'une architecture technique robuste adaptée à votre modèle d'IA"
+        },
+        {
+          "number": "04.",
+          "title": "Déploiement",
+          "description": "Mise en production sécurisée de votre solution avec tests approfondis et monitoring en temps réel"
+        },
+        {
+          "number": "05.",
+          "title": "Accompagnement",
+          "description": "Support technique continu et optimisation des performances pour assurer la croissance de votre solution"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": [
+        {
+          "question": "Quels avantages offre notre approche de développement SAAS pour l'IA ?",
+          "answer": "Notre approche unique combine expertise technique et vision business. Contrairement aux agences web classiques, nous sommes spécialisés dans la transformation de modèles d'IA en produits commerciaux. Notre plateforme SaaS accélère considérablement le développement tout en garantissant qualité et évolutivité."
+        },
+        {
+          "question": "Comment intégrons-nous votre modèle d'IA dans une solution commerciale complète ?",
+          "answer": "Notre processus d'intégration est conçu pour être simple et efficace. Nous commençons par analyser les spécifications techniques de votre modèle d'IA et vos besoins business. Ensuite, nous développons une API sécurisée pour communiquer avec votre modèle."
+        },
+        {
+          "question": "Quelles garanties techniques et sécurité offrons-nous pour votre solution ?",
+          "answer": "La sécurité et la fiabilité sont au cœur de notre approche. Notre infrastructure est construite sur des standards enterprise-grade : chiffrement de bout en bout, authentification multi-facteurs, monitoring 24/7, sauvegardes automatiques, et conformité RGPD."
+        },
+        {
+          "question": "En combien de temps votre modèle d'IA peut-il être mis sur le marché ?",
+          "answer": "Notre approche standardisée et notre plateforme éprouvée nous permettent d'être très efficaces. Pour une solution standard, le délai typique est de 8 à 12 semaines entre le début du projet et la mise en production."
+        },
+        {
+          "question": "Comment personnalisons-nous l'interface et l'expérience utilisateur pour vos clients ?",
+          "answer": "La personnalisation est essentielle pour le succès commercial de votre solution. Notre processus de design commence par une analyse approfondie de vos utilisateurs finaux et de leurs besoins."
+        }
+      ]
+    }
+  },
+  "aiCarousel": {
+    "ontitle": "Nos solutions",
+    "title": "Nos solutions concrètes",
+    "title2": " sur-mesure ",
+    "title3": "pour ",
+    "title4": "votre entreprise.",
 
-		"description": "Découvrez nos solutions d'IA modulables et sur mesure, parfaitement intégrées à votre écosystème, qui transforment vos opérations quotidiennes - de l'automatisation documentaire à l'analyse d'images, et bien plus encore ...",
-		"subdescription": "",
-		"cards": {
-			"documentIntelligence": {
-				"category": "Intelligence Documentaire",
-				"title": "Automatisation Documentaire",
-				"description": "Analysez et extrayez instantanément les informations clés de vos documents. Posez des questions en langage naturel et obtenez des réponses précises."
-			},
-			"chatbots": {
-				"category": "Bots intelligents",
-				"title": "Assistants IA 24/7",
-				"description": "Optimisez votre service client avec des assistants IA qui comprennent vos clients et répondent à leurs besoins en temps réel."
-			},
-			"computerVision": {
-				"category": "Vision par IA",
-				"title": "Analyse d'Images",
-				"description": "Détectez, analysez et extrayez automatiquement les données de vos documents visuels avec une précision inégalée."
-			},
-			"audioTranscription": {
-				"category": "Traitement Audio",
-				"title": "Transcription Intelligente",
-				"description": "Convertissez automatiquement vos réunions et contenus audio en texte exploitable avec identification des intervenants."
-			},
-			"webIntelligence": {
-				"category": "Web Intelligence",
-				"title": "Assistant Web",
-				"description": "Analysez le web en temps réel et obtenez des insights pertinents grâce à votre assistant IA personnalisé."
-			},
-			"translation": {
-				"category": "Traduction",
-				"title": "Traduction Multilingue",
-				"description": "Communiquez efficacement dans plus de 95 langues avec une traduction précise et culturellement adaptée."
-			},
-			"others": {
-				"category": "more",
-				"title": "Et bien plus encore ...",
-				"description": "Communiquez efficacement dans plus de 95 langues avec une traduction précise et culturellement adaptée."
-			}
-		}
-	},
-	"simulator": {
-		"title": "Transformez votre entreprise avec des solutions d'IA personnalisées conçues spécifiquement pour vous. Partagez votre contexte et vos défis commerciaux, et nous créerons une stratégie de mise en œuvre de l'IA sur mesure.",
-		"company_operates": "Mon entreprise opère dans",
-		"focusing_on": "",
-		"main_focus": "et se concentre principalement dans",
-		"core_activities": "avec comme activité principale",
-		"main_activity_placeholder": "Activité principale",
-		"document_formats_label": "Votre entreprise travaille-t-elle avec des formats de documents spécifiques ? (optionnel)",
-		"select_document_types": "Sélectionner les types de documents",
-		"challenges_label": "Quels défis cherchez-vous à résoudre ?",
-		"challenge_placeholder": "Décrivez votre défi commercial",
-		"cancel_button": "Annuler",
-		"select_sector": "Sélectionner",
-		"select_service": "Sélectionner"
-	},
-	"cookie": {
-		"title": "Paramètres des cookies",
-		"description": "Nous utilisons des cookies pour améliorer votre expérience de navigation, diffuser du contenu personnalisé et analyser notre trafic. Veuillez accepter pour continuer.",
-		"acceptButton": "Tout accepter",
-		"declineButton": "Refuser",
-		"privacyPolicy": "Politique de confidentialité"
-	},
-	"gptCta": {
-		"title": "Besoin d'aide pour votre projet IA ?",
-		"description": "Obtenez des conseils personnalisés de nos experts en IA et transformez votre entreprise",
-		"button": "Nous contacter"
-	}
+    "description": "Découvrez nos solutions d'IA modulables et sur mesure, parfaitement intégrées à votre écosystème, qui transforment vos opérations quotidiennes - de l'automatisation documentaire à l'analyse d'images",
+    "subdescription": "",
+    "cards": {
+      "documentIntelligence": {
+        "category": "Intelligence Documentaire",
+        "title": "Dialoguez avec vos Documents",
+        "description": "Analysez et extrayez instantanément les informations clés de vos documents. Posez des questions en langage naturel et obtenez des réponses précises."
+      },
+      "chatbots": {
+        "category": "Bots intelligents",
+        "title": "Assistants vocaux IA",
+        "description": "Optimisez votre service client avec des assistants IA qui comprennent vos clients et répondent à leurs besoins en temps réel."
+      },
+      "computerVision": {
+        "category": "Vision par IA",
+        "title": "Analyse d'Images",
+        "description": "Détectez, analysez et extrayez automatiquement les données de vos documents visuels avec une précision inégalée."
+      },
+      "audioTranscription": {
+        "category": "Traitement Audio",
+        "title": "Transcription Intelligente",
+        "description": "Convertissez automatiquement vos réunions et contenus audio en texte exploitable avec identification des intervenants."
+      },
+      "webIntelligence": {
+        "category": "Web Intelligence",
+        "title": "Assistant Web",
+        "description": "Analysez le web en temps réel et obtenez des insights pertinents grâce à votre assistant IA personnalisé."
+      },
+      "translation": {
+        "category": "Traduction",
+        "title": "Traduction Multilingue",
+        "description": "Communiquez efficacement dans plus de 95 langues avec une traduction précise et culturellement adaptée."
+      }
+    }
+  },
+  "simulator": {
+    "title": "Transformez votre entreprise avec des solutions d'IA personnalisées conçues spécifiquement pour vous. Partagez votre contexte et vos défis commerciaux, et nous créerons une stratégie de mise en œuvre de l'IA sur mesure.",
+    "company_operates": "Mon entreprise opère dans",
+    "focusing_on": "",
+    "main_focus": "et se concentre principalement dans",
+    "core_activities": "avec comme activité principale",
+    "main_activity_placeholder": "Activité principale",
+    "document_formats_label": "Votre entreprise travaille-t-elle avec des formats de documents spécifiques ? (optionnel)",
+    "select_document_types": "Sélectionner les types de documents",
+    "challenges_label": "Quels défis cherchez-vous à résoudre ?",
+    "challenge_placeholder": "Décrivez votre défi commercial",
+    "cancel_button": "Annuler",
+    "select_sector": "Sélectionner",
+    "select_service": "Sélectionner"
+  },
+  "cookie": {
+    "title": "Paramètres des cookies",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation, diffuser du contenu personnalisé et analyser notre trafic. Veuillez accepter pour continuer.",
+    "acceptButton": "Tout accepter",
+    "declineButton": "Refuser",
+    "privacyPolicy": "Politique de confidentialité"
+  },
+  "gptCta": {
+    "title": "Besoin d'aide pour votre projet IA ?",
+    "description": "Obtenez des conseils personnalisés de nos experts en IA et transformez votre entreprise",
+    "button": "Nous contacter"
+  }
 }
