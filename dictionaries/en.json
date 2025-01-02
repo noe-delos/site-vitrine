@@ -152,28 +152,28 @@
         "description": "Our solutions perfectly adapt to your existing technical environment, ensuring rapid adoption and optimal use."
       },
       "advancedFeatures": {
-        "title": "KS LAB - Your Project Space",
-        "description": "A unique platform to manage your AI project: real-time tracking, ticketing, API testing, meeting management, and centralized documentation."
+        "title": "Advanced Features",
+        "description": "In 2024, generative AI goes beyond chatbots by offering integrated features that revolutionize all sectors. Here are some examples below:"
       },
       "infrastructure": {
-        "title": "KS LAB Features",
+        "title": "Latest Innovations",
         "features": [
-          "Real-time project tracking",
-          "Integrated ticketing system",
-          "API testing interface",
-          "Meeting scheduling",
-          "Automatic summaries",
-          "Centralized documentation",
-          "Responsive support"
+          "OCR (image extraction)",
+          "Text to Speech",
+          "RAG document analysis",
+          "Voice transcription",
+          "Natural language web",
+          "Document generation",
+          "Smart text editor"
         ],
         "icons": [
-          "ri:dashboard-fill",
-          "ri:ticket-fill",
-          "ri:api-fill",
-          "ri:calendar-fill",
-          "ri:file-list-fill",
-          "ri:book-fill",
-          "ri:customer-service-fill"
+          "ri:image-circle-ai-fill",
+          "ri:speak-ai-fill",
+          "ri:ai-generate",
+          "ri:voice-ai-fill",
+          "streamline:ai-network-spark-solid",
+          "mingcute:pencil-2-ai-fill",
+          "mingcute:textbox-ai-fill"
         ]
       },
       "performance": {

@@ -141,43 +141,44 @@
       "solutions": {
         "title": "Bénéfices concrets",
         "features": [
-          "Automatisation de vos processus documentaires (-60% de temps de traitement)",
-          "Production de contenus optimisés (x3 en productivité)",
-          "Service client 24/7 (satisfaction client +40%)",
-          "Analyse prédictive pour anticiper les tendances",
-          "Prise de décision accélérée grâce aux données",
-          "Réduction des erreurs humaines (-80%)"
+          "Analyse documents",
+          "Génération contenu",
+          "Chatbots IA",
+          "Extraction données",
+          "Classification auto",
+          "Analyse sentiment"
         ]
       },
       "LLmApis": {
-        "title": "Intégration sur mesure",
-        "description": "Nos solutions s'adaptent parfaitement à votre environnement technique existant, garantissant une adoption rapide et une utilisation optimale."
+        "title": "APIs d'LLM",
+        "description": "Utiliser les APIs des différents modèles de langage du marché pour produire des systèmes robustes n'est pour nous plus qu'une habitude."
       },
       "advancedFeatures": {
         "title": "KS LAB - Votre espace projet",
         "description": "Une plateforme unique pour piloter votre projet IA : suivi en temps réel, ticketing, tests API, gestion des réunions et documentation centralisée."
       },
       "infrastructure": {
-        "title": "Fonctionnalités KS LAB",
+        "title": "Dernières innovations",
         "features": [
-          "Suivi de projet en temps réel",
-          "Système de ticketing intégré",
-          "Interface de test des APIs",
-          "Planification des réunions",
-          "Synthèses automatiques",
-          "Documentation centralisée",
-          "Support réactif"
+          "OCR (extraction sur images)",
+          "Text to Speech (synthèse vocale)",
+          "Analyse de documents RAG",
+          "Transcription vocale",
+          "Language naturel web",
+          "Génération de documents",
+          "Éditeur de texte intelligent"
         ],
         "icons": [
-          "ri:dashboard-fill",
-          "ri:ticket-fill",
-          "ri:api-fill",
-          "ri:calendar-fill",
-          "ri:file-list-fill",
-          "ri:book-fill",
-          "ri:customer-service-fill"
+          "ri:image-circle-ai-fill",
+          "ri:speak-ai-fill",
+          "ri:ai-generate",
+          "ri:voice-ai-fill",
+          "streamline:ai-network-spark-solid",
+          "mingcute:pencil-2-ai-fill",
+          "mingcute:textbox-ai-fill"
         ]
       },
+
       "performance": {
         "title": "Sécurité & Fiabilité",
         "features": [
