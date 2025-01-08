@@ -95,7 +95,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
           text={dictionary.technologies.ai.title}
         />
       ),
-      titleImg: "/technologies/scaleway2.png",
+      titleImg: "/technologies/fr/scaleway2.webp",
       subtitle: "",
       rightContent: (
         <div className="relative w-full h-full rounded-lg">
@@ -164,9 +164,9 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
             </div>
           </div>
           <div className="relative p-6 bg-gradient-to-br from-purple-900 to-purple-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-purple-100 overflow-hidden">
-            <div className="absolute inset-0 overflow-hidden left-60 -top-14">
+            <div className="absolute inset-0 overflow-hidden left-60 -top-20">
               <img
-                src="/technologies/scaleway5.webp"
+                src="/technologies/scaleway2.webp"
                 alt="Background"
                 className="w-96 h-96 opacity-10 object-cover"
               />
@@ -230,7 +230,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
           </span>
         </p>
       ),
-      titleImg: "/technologies/scaleway1.png",
+      titleImg: "/technologies/scaleway1.webp",
       subtitle: "",
       rightContent: (
         <div className="isolate relative w-full h-full">
@@ -243,7 +243,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
             className="w-full h-full object-cover rounded-xl z-30"
           />
           <img
-            src="/technologies/supabase.png"
+            src="/technologies/supabase.webp"
             className="size-20 rounded-xl absolute z-40 -top-10 -right-10"
           />
         </div>
@@ -301,7 +301,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 
             <div className="absolute inset-0 overflow-hidden -top-12">
               <img
-                src="/technologies/scaleway5.png"
+                src="/technologies/scaleway5.webp"
                 alt="Background"
                 className="size-96 opacity-10 object-cover"
               />
@@ -373,12 +373,12 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
           words={dictionary.technologies.sites.title}
         />
       ),
-      titleImg: "/technologies/scaleway4.png",
+      titleImg: "/technologies/scaleway4.webp",
       subtitle: "",
       rightContent: (
         <div className="relative w-full h-full rounded-lg">
           <img
-            src="/fr/technologies/qmslqmslqmsmq.png"
+            src="/fr/technologies/qmslqmslqmsmq.webp"
             alt="Next.js Benefits"
             className="w-full h-full object-cover rounded-xl"
           />
@@ -431,7 +431,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 
             <div className="absolute inset-0 overflow-hidden -top-10 left-80">
               <img
-                src="/technologies/nextreal.png"
+                src="/technologies/nextreal.webp"
                 alt="Background"
                 className="size-80 opacity-10 object-contain"
               />
@@ -509,12 +509,12 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
           {dictionary.technologies.deployment.title.part5}
         </h1>
       ),
-      titleImg: "/technologies/scaleway3.png",
+      titleImg: "/technologies/scaleway3.webp",
       subtitle: "",
       rightContent: (
         <div className="relative w-full h-full">
           <img
-            src="/fr/technologies/cloud/background.png"
+            src="/fr/technologies/cloud/background.webp"
             alt="Scaleway Cloud"
             className="w-full h-full object-cover rounded-xl"
           />
@@ -568,7 +568,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
           <div className="relative p-6 bg-gradient-to-br from-blue-800 to-blue-400 text-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-purple-100 overflow-hidden">
             <div className="absolute inset-0 overflow-hidden z-50 -top-5 left-96">
               <img
-                src="/technologies/scaleway6.png"
+                src="/technologies/scaleway6.webp"
                 alt="Background"
                 className="size-[17rem] z-50 opacity-15 object-cover"
               />

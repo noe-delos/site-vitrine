@@ -275,9 +275,12 @@
       "cicd": {
         "title": "Deployment",
         "features": [
-          "Progressive integration",
-          "Comprehensive testing",
-          "Continuous support"
+          "/fr/technologies/cloud/vercel.png",
+          "/fr/technologies/cloud/docker.png",
+          "/fr/technologies/cloud/aws.png",
+          "/fr/technologies/cloud/google.png",
+          "/fr/technologies/cloud/scaleway.png",
+          "/fr/technologies/cloud/kube.png"
         ]
       }
     }
