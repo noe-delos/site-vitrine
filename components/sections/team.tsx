@@ -80,37 +80,6 @@ const getTeamMembers = (lang: string): TeamMember[] => [
 		],
 	},
 	{
-		name: 'Hugo Pradier',
-		role: lang === 'fr' ? 'Ingénieur Cloud DevOps' : 'Cloud DevOps Engineer',
-		education: 'IIT Madras',
-		expertise: [
-			'DevOps',
-			'SRE',
-			lang === 'fr' ? 'Architecture Cloud' : 'Cloud Architecture',
-		],
-		image: '/team/hugo.webp',
-		description:
-			lang === 'fr'
-				? 'Ingénieur DevOps avec une bonne maîtrise des infrastructures cloud et des architectures distribuées. Conçoit et met en place des solutions de déploiement efficaces, en assurant la fiabilité et la scalabilité des applications.'
-				: 'DevOps engineer with strong understanding of cloud infrastructure and distributed architectures. Designs and implements efficient deployment solutions, ensuring application reliability and scalability.',
-		linkedin: 'https://linkedin.com/in/hugo-pradier',
-		schools: [
-			'https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png',
-			'https://upload.wikimedia.org/wikipedia/fr/0/0d/Logo_OpenClassrooms.png',
-			'https://media.licdn.com/dms/image/v2/D4E0BAQFvK1i51HdI3Q/company-logo_200_200/company-logo_200_200/0/1665753595055/dev_university_logo?e=2147483647&v=beta&t=Yo5EjU3GCovYAi5FbPyeioXElaWCMHtkCVzyejAPmf4',
-		],
-		companies: [
-			{
-				name: 'Orange',
-				logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtezznU_jVR9aLxxoGiGKPIuHKZhfGGuuqhg&s',
-			},
-			{
-				name: 'Exotec',
-				logo: 'https://upload.wikimedia.org/wikipedia/commons/5/50/2019-11-Logo-Exotec.svg',
-			},
-		],
-	},
-	{
 		name: 'Nicolas Henaux',
 		role: lang === 'fr' ? 'Commercial' : 'Sales Representative',
 		education: 'Excelia Business School',
@@ -337,24 +306,6 @@ const AnimatedHeroSection = ({
 						className="relative size-72 rounded-xl overflow-hidden"
 					>
 						<Image
-							src="/team/hugo.webp"
-							alt="Hugo Pradier"
-							fill
-							className="object-cover"
-							sizes="(max-width: 768px) 100vw, 288px"
-							loading="eager"
-						/>
-						<div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-						<div className="absolute bottom-4 left-6 text-white">
-							<h3 className="text-xl font-bold">Hugo Pradier</h3>
-							<p className="text-sm text-gray-300">DevOps Engineer</p>
-						</div>
-					</motion.div>
-					<motion.div
-						variants={itemVariants}
-						className="relative size-72 rounded-xl overflow-hidden"
-					>
-						<Image
 							src="/en/team/nicolas.webp"
 							alt="Nicolas Henaux"
 							fill
@@ -486,31 +437,6 @@ const Card3D = ({ member, index }: { member: TeamMember; index: number }) => {
 													? 'h-6'
 													: ''
 											)}
-										/>
-									))}
-								</div>
-							</div>
-
-							<div>
-								<p className="text-xs text-gray-500 mb-2 pt-0.5">
-									Professional Experience
-								</p>
-								<div className="flex gap-3 items-center">
-									{member.companies.map((company, _index) => (
-										<img
-											key={company.name}
-											src={company.logo}
-											alt={company.name}
-											className={cn(
-												'h-7 w-auto object-contain pr-3',
-												_index === 1 && member.name === 'Noé Campo' && 'h-5',
-												member.name === 'Hugo Pradier' && _index === 0 && 'h-9',
-												member.name === 'Hugo Pradier' &&
-													_index === 1 &&
-													'h-11',
-												member.name === 'Nicolas Henaux' && 'h-9'
-											)}
-											title={company.name}
 										/>
 									))}
 								</div>
