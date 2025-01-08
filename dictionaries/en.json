@@ -685,12 +685,12 @@
     "cards": {
       "documentIntelligence": {
         "category": "Document Intelligence",
-        "title": "Document Automation",
+        "title": "Document analysis",
         "description": "Instantly analyze and extract key information from your documents. Ask questions in natural language and get precise answers."
       },
       "chatbots": {
         "category": "Intelligent bots",
-        "title": "24/7 AI Assistants",
+        "title": "Smart Voice Assistants",
         "description": "Optimize your customer service with AI assistants that understand your customers and respond to their needs in real-time."
       },
       "computerVision": {
