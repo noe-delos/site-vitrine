@@ -115,15 +115,6 @@ export default function Expertise({ dictionary }: { dictionary: any }) {
           {!isIOS && (
             <div className="relative h-[600px] w-full rounded-lg">
               <div className="relative lg:w-[50rem] md:w-[40rem] sm:w-[30rem] w-full h-full brightness-100 rounded-lg shadow-xl">
-                <div className="absolute hidden lg:block -top-10 -right-7 z-40 -mt-0 rotate-6">
-                  <div className="p-6 bg-white rounded-lg shadow-xl drop-shadow-lg">
-                    <img
-                      src="/logo/brand-logo.png"
-                      alt="Title"
-                      className="lg:size-10 md:size-8 size-6 object-contain"
-                    />
-                  </div>
-                </div>
                 <video
                   key={currentVideoIndex}
                   className="w-full h-full object-cover scale-100 overflow-hidden rounded-lg"

@@ -275,12 +275,12 @@
       "cicd": {
         "title": "Deployment",
         "features": [
-          "/fr/technologies/cloud/vercel.png",
-          "/fr/technologies/cloud/docker.png",
-          "/fr/technologies/cloud/aws.png",
-          "/fr/technologies/cloud/google.png",
-          "/fr/technologies/cloud/scaleway.png",
-          "/fr/technologies/cloud/kube.png"
+          "/fr/technologies/cloud/vercel.webp",
+          "/fr/technologies/cloud/docker.webp",
+          "/fr/technologies/cloud/aws.webp",
+          "/fr/technologies/cloud/google.webp",
+          "/fr/technologies/cloud/scaleway.webp",
+          "/fr/technologies/cloud/kube.webp"
         ]
       }
     }

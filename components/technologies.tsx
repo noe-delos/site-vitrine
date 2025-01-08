@@ -575,11 +575,11 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
             </div>
             <div className="relative z-10">
               <h3 className="text-lg font-semibold text-gray-100 flex items-center gap-2 mb-4">
-                {dictionary.technologies.deployment.tools.title}
+                {dictionary.technologies.deployment.cicd.title}
               </h3>
               <div className="grid grid-cols-3 gap-6 pt-2">
                 <ul className="space-y-6">
-                  {dictionary.technologies.deployment.tools.features
+                  {dictionary.technologies.deployment.cicd.features
                     .slice(0, 2)
                     .map((feature: string, index: number) => (
                       <li key={index}>
@@ -599,7 +599,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                     ))}
                 </ul>
                 <ul className="space-y-6">
-                  {dictionary.technologies.deployment.tools.features
+                  {dictionary.technologies.deployment.cicd.features
                     .slice(2, 4)
                     .map((feature: string, index: number) => (
                       <li key={index}>
@@ -619,7 +619,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
                     ))}
                 </ul>
                 <ul className="space-y-6">
-                  {dictionary.technologies.deployment.tools.features
+                  {dictionary.technologies.deployment.cicd.features
                     .slice(4)
                     .map((feature: string, index: number) => (
                       <li key={index}>
