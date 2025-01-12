@@ -141,11 +141,11 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
             className="min-w-[20%] min-h-[10%] max-w-[50%] max-h-[15%] md:min-w-fit md:min-h-fit md:max-w-fit md:max-h-fit self-center md:selft-start border m-0 pb-5 md:size-fit p-[0.115rem] border-none"
             borderRadius={6}
             borderWidth={3}
-            color={["#8B5CF6", "#3B82F6"]} // Dégradé du violet au bleu correspondant à votre palette
+            color={["#ffffff", "#000000"]}
           >
             <button
               onClick={() => router.push("/ks-gpt")}
-              className="px-4 py-2 bg-gradient-to-r  from-violet-400 to-blue-500 w-[11rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
+              className="px-4 py-2 bg-gradient-to-b from-black via-zinc-800 to-black w-[10rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
             >
               <div
                 className={`hidden ${isIOS ? "md:hidden" : "md:absolute"} inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300`}
@@ -156,7 +156,7 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
                 style={iosStyles as any}
               >
                 <span
-                  className="text-white bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-400"
+                  className="bg-gradient-to-b from-white to-gray-700 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-400"
                   style={
                     isIOS
                       ? {
@@ -175,7 +175,7 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
                   className="ml-2 mr-0.5 w-6 h-6 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
                 />
                 <span
-                  className="text-white bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-300"
+                  className="bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent font-extrabold tracking-wider transition-all duration-300 group-hover:from-white group-hover:to-gray-300"
                   style={
                     isIOS
                       ? {
