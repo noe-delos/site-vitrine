@@ -22,7 +22,7 @@ export default async function HomePage({ params }: any) {
       <div className="hidden md:block lg:hidden">
         <TabletTechnologies dictionary={dictionary} />
       </div>
-      <div className="hidden lg:block ">
+      <div className="hidden lg:block">
         <Technologies dictionary={dictionary} />
       </div>
       <Expertise dictionary={dictionary} />

@@ -35,8 +35,8 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "consulting",
-  description: "Your Idea. Your saas.",
+  title: "KS - consulting. Your AI transformation.",
+  description: "Revolutionize your business with AI.",
 };
 interface LayoutProps {
   children: React.ReactNode;

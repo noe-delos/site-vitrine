@@ -95,7 +95,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
           text={dictionary.technologies.ai.title}
         />
       ),
-      titleImg: "/technologies/fr/scaleway2.webp",
+      titleImg: "/technologies/scaleway2.webp",
       subtitle: "",
       rightContent: (
         <div className="relative w-full h-full rounded-lg">
@@ -759,7 +759,7 @@ const Technologies = ({ dictionary }: { dictionary: any }) => {
 
   return (
     <div
-      className="bg-gradient-to-br from-gray-50 to-white w-full relative min-h-screen py-[13rem] pb-[10rem]"
+      className="bg-gradient-to-br from-gray-50 to-white w-full relative min-h-screen py-[13rem] pb-[20rem]"
       ref={containerRef}
     >
       <div className="max-w-[100rem] mx-auto">
