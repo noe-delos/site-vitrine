@@ -80,33 +80,29 @@ const getTeamMembers = (lang: string): TeamMember[] => [
     ],
   },
   {
-    name: "Hugo Pradier",
-    role: lang === "fr" ? "Ingénieur Cloud DevOps" : "Cloud DevOps Engineer",
-    education: "IIT Madras",
+    name: "Lucas Guichard",
+    role: lang === "fr" ? "Ingénieur Data & IA" : "Data & IA Engineer",
+    education: "EPITECH",
     expertise: [
-      "DevOps",
-      "SRE",
-      lang === "fr" ? "Architecture Cloud" : "Cloud Architecture",
+      "Data Science",
+      "AI",
+      lang === "fr" ? "Cloud computing" : "Cloud computing",
     ],
     image: "/team/hugo.webp",
     description:
       lang === "fr"
         ? "Ingénieur DevOps avec une bonne maîtrise des infrastructures cloud et des architectures distribuées. Conçoit et met en place des solutions de déploiement efficaces, en assurant la fiabilité et la scalabilité des applications."
         : "DevOps engineer with strong understanding of cloud infrastructure and distributed architectures. Designs and implements efficient deployment solutions, ensuring application reliability and scalability.",
-    linkedin: "https://linkedin.com/in/hugo-pradier",
+    linkedin: "https://linkedin.com/in/lucas-guichard0",
     schools: [
       "https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png",
-      "https://upload.wikimedia.org/wikipedia/fr/0/0d/Logo_OpenClassrooms.png",
-      "https://media.licdn.com/dms/image/v2/D4E0BAQFvK1i51HdI3Q/company-logo_200_200/company-logo_200_200/0/1665753595055/dev_university_logo?e=2147483647&v=beta&t=Yo5EjU3GCovYAi5FbPyeioXElaWCMHtkCVzyejAPmf4",
+      "/team/cau.webp",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/HEC_Paris.svg/1280px-HEC_Paris.svg.png",
     ],
     companies: [
       {
-        name: "Orange",
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtezznU_jVR9aLxxoGiGKPIuHKZhfGGuuqhg&s",
-      },
-      {
-        name: "Exotec",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/2019-11-Logo-Exotec.svg",
+        name: "Présidence de la République",
+        logo: "https://i.ibb.co/b3X0dgT/dizoaidaz-transformed.webp",
       },
     ],
   },
@@ -242,15 +238,15 @@ const AnimatedHeroSection = ({
               size: "size-12 md:size-16 lg:size-20",
             },
             {
-              href: "https://www.essec.edu/fr/",
-              src: "https://upload.wikimedia.org/wikipedia/commons/9/98/ESSEC_Logo.svg",
-              alt: "ESSEC Business School",
-              size: "size-10 md:size-14 lg:size-16",
-            },
-            {
               href: "https://www.epitech.eu/",
               src: "https://www.campusdessolidarites.eu/voy_content/uploads/Epitech.png",
               alt: "EPITECH",
+              size: "size-10 md:size-14 lg:size-16",
+            },
+            {
+              href: "https://www.skema.edu/fr/",
+              src: "https://upload.wikimedia.org/wikipedia/commons/f/f9/SKEMA_Business_School%27s_logo.png",
+              alt: "Skema business school",
               size: "size-10 md:size-14 lg:size-16",
             },
           ].map((school) => (
@@ -338,7 +334,7 @@ const AnimatedHeroSection = ({
           >
             <Image
               src="/team/hugo.webp"
-              alt="Hugo Pradier"
+              alt="Lucas Guichard"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 288px"
@@ -346,8 +342,8 @@ const AnimatedHeroSection = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-6 text-white">
-              <h3 className="text-xl font-bold">Hugo Pradier</h3>
-              <p className="text-sm text-gray-300">DevOps Engineer</p>
+              <h3 className="text-xl font-bold">Lucas Guichard</h3>
+              <p className="text-sm text-gray-300">Data & IA Engineer</p>
             </div>
           </motion.div>
           <motion.div
@@ -508,7 +504,8 @@ const Card3D = ({ member, index }: { member: TeamMember; index: number }) => {
                         member.name === "Hugo Pradier" &&
                           _index === 1 &&
                           "h-11",
-                        member.name === "Nicolas Henaux" && "h-9"
+                        member.name === "Nicolas Henaux" && "h-9",
+                        member.name === "Lucas Guichard" && "h-12"
                       )}
                       title={company.name}
                     />
