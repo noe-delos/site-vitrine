@@ -88,7 +88,7 @@ const getTeamMembers = (lang: string): TeamMember[] => [
       "AI",
       lang === "fr" ? "Cloud computing" : "Cloud computing",
     ],
-    image: "/team/lucas.jpg",
+    image: "/team/en/lucas.jpg",
     description:
       lang === "fr"
         ? "Ingénieur DevOps avec une bonne maîtrise des infrastructures cloud et des architectures distribuées. Conçoit et met en place des solutions de déploiement efficaces, en assurant la fiabilité et la scalabilité des applications."
@@ -333,7 +333,7 @@ const AnimatedHeroSection = ({
             className="relative size-72 rounded-xl overflow-hidden"
           >
             <Image
-              src="/team/lucas.jpg"
+              src="/team/en/lucas.jpg"
               alt="Lucas Guichard"
               fill
               className="object-cover"
