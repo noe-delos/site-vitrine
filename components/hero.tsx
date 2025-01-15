@@ -88,7 +88,7 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
       </p>
 
       <div className="pt-10 lg:pt-10 w-full flex flex-col">
-        <div className="size-fit flex flex-row gap-5 items-center justify-center mx-auto">
+        <div className="size-fit flex flex-col md:flex-row gap-5 items-center justify-center mx-auto w-full">
           {isIOS ? (
             <button
               onClick={() => router.push("/ks-gpt")}
@@ -146,7 +146,7 @@ const LeftSection: React.FC<{ dictionary: any; lang: string }> = ({
             >
               <button
                 onClick={() => router.push("/ks-gpt")}
-                className="px-4 py-2 bg-gradient-to-b from-black via-zinc-800 to-black w-[10rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
+                className="px-4 py-2 bg-gradient-to-b from-black via-zinc-800 to-black w-[11rem] h-[2.5rem] md:w-fit md:h-fit md:max-w-fit md:max-h-fit rounded-md relative group overflow-hidden transition-all duration-300"
               >
                 <div
                   className={`hidden ${isIOS ? "md:hidden" : "md:absolute"} inset-0 opacity-0 group-hover:opacity-20 bg-white rounded-md blur-md transition-opacity duration-300`}
